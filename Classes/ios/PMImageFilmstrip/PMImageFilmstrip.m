@@ -49,7 +49,7 @@ static NSString * const PMImageFilmstripCellReuseIdentifier = @"PMImageFilmstrip
 	self = [super initWithFrame:frame collectionViewLayout:layout];
 	if (self) {
 		_imageEntities = imageEntities;
-		[self _commonPMImageFilmstripInit];
+		[self PM_commonPMImageFilmstripInit];
 	}
 	return self;
 }
@@ -57,7 +57,7 @@ static NSString * const PMImageFilmstripCellReuseIdentifier = @"PMImageFilmstrip
 - (void) awakeFromNib
 {
     [super awakeFromNib];
-    [self _commonPMImageFilmstripInit];
+    [self PM_commonPMImageFilmstripInit];
 }
 
 - (void) setImageEntities:(NSArray *)imageEntities
@@ -102,7 +102,7 @@ static NSString * const PMImageFilmstripCellReuseIdentifier = @"PMImageFilmstrip
 #pragma mark - Private Methods
 
 
-- (void) _commonPMImageFilmstripInit
+- (void) PM_commonPMImageFilmstripInit
 {
     [self registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:PMImageFilmstripCellReuseIdentifier];
     self.dataSource = self;

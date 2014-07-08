@@ -84,7 +84,7 @@ static inline BOOL selector_belongsToProtocol(SEL selector, Protocol * protocol)
 - (id)forwardingTargetForSelector:(SEL)aSelector
 {
     if ([self.middleMan respondsToSelector:aSelector] &&
-        [self _isSelectorContainedInInterceptedProtocols:aSelector]) {
+        [self PM_isSelectorContainedInInterceptedProtocols:aSelector]) {
         return self.middleMan;
     }
     if ([self.receiver respondsToSelector:aSelector]) {
@@ -97,7 +97,7 @@ static inline BOOL selector_belongsToProtocol(SEL selector, Protocol * protocol)
 - (BOOL)respondsToSelector:(SEL)aSelector
 {
     if ([self.middleMan respondsToSelector:aSelector] &&
-        [self _isSelectorContainedInInterceptedProtocols:aSelector]) {
+        [self PM_isSelectorContainedInInterceptedProtocols:aSelector]) {
         return YES;
     }
     if ([self.receiver respondsToSelector:aSelector]) {
@@ -109,7 +109,7 @@ static inline BOOL selector_belongsToProtocol(SEL selector, Protocol * protocol)
 
 #pragma mark - Private Methods
 
-- (BOOL)_isSelectorContainedInInterceptedProtocols:(SEL)aSelector
+- (BOOL)PM_isSelectorContainedInInterceptedProtocols:(SEL)aSelector
 {
     __block BOOL isSelectorContainedInInterceptedProtocols = NO;
     

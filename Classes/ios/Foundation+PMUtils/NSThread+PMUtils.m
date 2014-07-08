@@ -53,5 +53,19 @@
 	}
 }
 
+- (id) threadSpecificObject:(id (^)(void))creationBlock withName:(NSString *)name
+{
+    NSMutableDictionary *dict = [self threadDictionary];
+    id obj = dict[name];
+	
+	if (!obj) {
+		obj = creationBlock();
+		if (obj) {
+			dict[name] = obj;
+        }
+	}
+	return obj;
+}
+
 
 @end

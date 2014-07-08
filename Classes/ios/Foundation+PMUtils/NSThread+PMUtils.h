@@ -31,4 +31,6 @@
 
 + (void) dispatchBackgroundThreadAsync:(void (^)(void))block;
 
+- (id) threadSpecificObject:(id (^)(void))creationBlock withName:(NSString *)name;
+
 @end

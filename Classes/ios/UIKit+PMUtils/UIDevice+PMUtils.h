@@ -27,6 +27,7 @@
 
 @interface UIDevice (PMUtils)
 
+
 + (BOOL) isPad;
 
 + (BOOL) isPhone;
