@@ -142,6 +142,33 @@ static NSUInteger const bytesPerPixel = 4;
 	return [self resizableImageWithCapInsets:capInsets];
 }
 
+- (UIImage *) crop:(CGRect)rect
+{
+    NSAssert(self.CGImage, @"-[UIImage crop:] only works on UIImages backed by a CGImage");
+    CGAffineTransform rectTransform;
+    switch (self.imageOrientation)
+    {
+        case UIImageOrientationLeft:
+            rectTransform = CGAffineTransformTranslate(CGAffineTransformMakeRotation(M_PI_2), 0, -self.size.height);
+            break;
+        case UIImageOrientationRight:
+            rectTransform = CGAffineTransformTranslate(CGAffineTransformMakeRotation(-M_PI_2), -self.size.width, 0);
+            break;
+        case UIImageOrientationDown:
+            rectTransform = CGAffineTransformTranslate(CGAffineTransformMakeRotation(-M_PI), -self.size.width, -self.size.height);
+            break;
+        default:
+            rectTransform = CGAffineTransformIdentity;
+            break;
+    }
+    rectTransform = CGAffineTransformScale(rectTransform, self.scale, self.scale);
+    
+    CGImageRef imageRef = CGImageCreateWithImageInRect(self.CGImage, CGRectApplyAffineTransform(rect, rectTransform));
+    UIImage *result = [UIImage imageWithCGImage:imageRef scale:self.scale orientation:self.imageOrientation];
+    CGImageRelease(imageRef);
+    return result;
+}
+
 - (UIImage *) drawnImage
 {
 	UIGraphicsBeginImageContextWithOptions(self.size, YES, self.scale);

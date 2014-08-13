@@ -28,6 +28,61 @@
 
 @interface NSManagedObject (PMUtils)
 
+/**
+ *  Associate a managed object context with the class object that calls this method.
+ *
+ *  @param context The managed object context to be associated with the class.
+ */
++ (void) setManagedObjectContext:(NSManagedObjectContext *)context;
+
+/**
+ *  The context that has been associated with the calling class using +[NSManagedObject setManagedObjectContext:].
+ *  If no context has been associated with the class calling this method, it looks to see if a context has been
+ *  associated with the NSManagedObject class object.
+ *
+ *  @return The associated managed object context.
+ */
++ (NSManagedObjectContext *)context;
+
+/**
+ *  The entity name for this managed object. By default, this method returns NSStringFromClass(self).
+ *  If the entity name is not equal to the name of the class, you must override this method and return the correct name.
+ *
+ *  @return The name of the entity.
+ */
++ (NSString *) entityName;
+
+/**
+ *  Creates a new instance of the managed object. This method uses +[NSManagedObject entityName] to create the object
+ *  and inserts it into the managed object context that was associated with this class using +[NSManagedObject setManagedObjectContext:].
+ *
+ *  @return An instantiated NSManagedObject or nil if no context has been associated with the calling class.
+ */
++ (instancetype) create;
+
+/**
+ *  The equivalent of calling [[NSManagedObject create] save]
+ *
+ *  @return An instantiated NSManagedObject or nil if no context has been associated with the calling class.
+ */
++ (instancetype) createAndSave;
+
+/**
+ *  Removes receiver from its managed object context's persistent store. If the receiver has not yet
+ *  been saved to a persistent store, it is simply removed from its managed object context. To achieve this the
+ *  reciever's context is saved.
+ *
+ *  @return YES if the receiver's context is successfully saved after deleting the receiver, otherwise NO
+ */
+- (BOOL) destroy;
+
+
+/**
+ *  Commits unsaved changes to the receiver to its managed object context's parent store. To acheive this, the receivers
+ *  context is saved.
+ *
+ *  @return YES if the save succeeds, otherwise NO.
+ */
 - (BOOL) save;
 
 @end

@@ -124,6 +124,15 @@
 - (UIImage *) makeResizable:(PMDirection)direction;
 
 /**
+ *  Creates a new UIImage image using the data contained within a subregion of the reciever's CGImage image. Note, the UIImage must be backed by a CGImage, not a CIImage.
+ *
+ *  @param rect The rectangle to crop the current UIImage to.
+ *
+ *  @return A new UIImage object cropped to the region specified by rect.
+ */
+- (UIImage *) crop:(CGRect)rect;
+
+/**
  *  Draws the entire image in a graphics context, respecting the image's orientation setting, and returns the result. This method can be called from any thread. In the default coordinate system, images are situated down and to the right of the specified point. This method draws the image at full opacity using the kCGBlendModeNormal blend mode.
  *
  *  @return An image object rendered into an offscreen graphics context.

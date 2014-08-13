@@ -93,7 +93,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 	NSLog(@"2: time %f", duration);
 	
 	_imageFilmstrip = [PMImageFilmstrip imageFilmstripWithFrame:self.view.bounds
-																   imageEntities:@[imgOne, imgTwo]];
+                                                  imageEntities:@[imgOne, imgTwo]];
 	_imageFilmstrip.delegate = self;
 	_imageFilmstrip.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 	[self.view insertSubview:_imageFilmstrip belowSubview:_pageControl];

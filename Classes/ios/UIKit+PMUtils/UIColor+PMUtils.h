@@ -25,7 +25,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define RGB(value) value/255.0f
+extern inline UIColor* PMColorWithRGBA(NSUInteger red, NSUInteger green, NSUInteger blue, CGFloat alpha);
 
 @interface UIColor (PMUtils)
 

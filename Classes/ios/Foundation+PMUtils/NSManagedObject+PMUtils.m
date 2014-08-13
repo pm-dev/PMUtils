@@ -24,8 +24,63 @@
 //
 
 #import "NSManagedObject+PMUtils.h"
+#import <objc/runtime.h>
 
 @implementation NSManagedObject (PMUtils)
+
+
++ (void) setManagedObjectContext:(NSManagedObjectContext *)context
+{
+    objc_setAssociatedObject(self, @selector(delegate), context, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+
++ (NSManagedObjectContext *)context
+{
+    NSManagedObjectContext *context = objc_getAssociatedObject(self, @selector(delegate));
+    if (!context) {
+        context = objc_getAssociatedObject([NSManagedObjectContext class], @selector(delegate));
+    }
+    return context;
+}
+
+
++ (NSString *) entityName
+{
+    return NSStringFromClass(self);
+}
+
+
++ (instancetype) create
+{
+    NSManagedObjectContext *context = [self context];
+    
+    if (context) {
+        NSEntityDescription *entity = [NSEntityDescription entityForName:[self entityName]
+                                                  inManagedObjectContext:context];
+        NSManagedObject *managedObject = [[NSManagedObject alloc] initWithEntity:entity
+                                                  insertIntoManagedObjectContext:context];
+        return managedObject;
+    }
+    
+    return nil;
+}
+
+
++ (instancetype) createAndSave
+{
+    NSManagedObject *object = [self create];
+    BOOL succeeded = [object save];
+    return succeeded? object : nil;
+}
+
+
+- (BOOL) destroy
+{
+    [self.managedObjectContext deleteObject:self];
+    return [self save];
+}
+
 
 - (BOOL) save
 {
