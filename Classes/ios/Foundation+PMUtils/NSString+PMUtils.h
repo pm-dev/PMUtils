@@ -27,20 +27,82 @@
 
 @interface NSString (PMUtils)
 
+/**
+ *  Returns a new string made from the receiver by replacing all characters not in the specified set 
+ *  with percent encoded characters allowed in a query URL component. UTF-8 encoding is used to determine the correct percent encoded characters. 
+ *  Entire URL strings cannot be percent-encoded. This method is intended to percent-encode an URL query, NOT the entire URL string.
+ *  The query component of a URL is the component immediately following a question mark (?). 
+ *  For example, in the URL http://www.example.com/index.php?key1=value1#jumpLink, the query component is key1=value1.
+ *  
+ *  @return Returns the encoded string or nil if the transformation is not possible.
+ */
 - (NSString *) encodedQuery;
 
+/**
+ *  Returns a SHA1 hash of the receiver, expressed as a 160 bit hex number.
+ *
+ *  @return A new string representing the SHA1 hash of the receiver.
+ */
 - (NSString *)sha1Hash;
 
-- (NSComparisonResult) compareWithVersion:(NSString *)otherVersion;
-
+/**
+ *  Compares the receiver to its capitalized string.
+ *
+ *  @return YES if the reciever is equal to [self capitalizedString], otherwise NO.
+ */
 - (BOOL) isCapitalized;
 
+/**
+ *  Compares the receiver to otherVersion after stripping any trailing periods or zeros.
+ *
+ *  @param otherVersion A string of dot separated integers to compare with the receiver.
+ *
+ *  @return Returns an NSComparisonResult value that indicates the lexical ordering of the receiver and otherVersion. 
+ *  NSOrderedAscending if the receiver precedes otherVersion, NSOrderedSame if the receiver and otherVersion are equivalent in lexical value,
+ *  and NSOrderedDescending if the receiver follows otherVersion.
+ */
+- (NSComparisonResult) compareWithVersion:(NSString *)otherVersion;
+
+/**
+ *  For a version string to be considered 'in' another version string (base version), the base version
+ *  must be a substring of the reciever, after trailing zeros and periods have been removed, where the substring starts at index 0.
+ *  1.2.8 is not included in 1.2.9
+ *  1.2 is not included in 1.2.9
+ *  1.2.8 is included in 1.2
+ *  1.2.3 is included in 1.2.3
+ *
+ *  @param baseVersion A string of dot separated integers.
+ *
+ *  @return YES if the receiver is 'in' baseVersion, otherwise NO.
+ */
 - (BOOL) inVersion:(NSString *)baseVersion;
 
+/**
+ *  Checks for an emoji character in the receiver.
+ *
+ *  @return YES if the receiver contains an emoji character, otherwise NO.
+ */
 - (BOOL) containsEmoji;
 
+/**
+ *  If the receiver contains one or more sequential underscores, the first character following the underscore(s)
+ *  is capitalized and the underscores are removed.
+ *
+ *  For example @"this_is__underscored" becomes @"thisIsUnderscored"
+ *
+ *  @return A camelCased string.
+ */
 - (NSString *) camelCaseFromUnderscores;
 
+
+/**
+ *  If an uppercase character in the receiver is preceeded by a lowercase character, and underscore '_' character is added
+ *  before the uppercase character and the uppercase character is converted to lowercase.
+ *
+ *  For example, @"thisIsCamelCase" becomes @"this_is_camel_case"
+ *
+ *  @return An underscored string.
+ */
 - (NSString *) underscoresFromCamelCase;
 
 @end

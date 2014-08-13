@@ -25,12 +25,29 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDictionary (PMUtils)
+@interface NSMutableDictionary (PMUtils)
 
-- (NSDictionary *) replaceKey:(id<NSCopying>)currentKey withKey:(id<NSCopying>)newKey;
+/**
+ *  Sets the value associated with currentKey with newKey and removes currentKey from the dictionary.
+ *  This method does nothing if nothing is associated with currentKey.
+ *
+ *  @param currentKey The key to replace. Must not be nil.
+ *  @param newKey     A new key to associate currentKey's value with. Must not be nil.
+ */
+- (void) replaceKey:(id<NSCopying>)currentKey withKey:(id<NSCopying>)newKey;
 
-- (NSDictionary *) convertUnderscoredStringKeysToCamelCase;
+/**
+ *  All keys in the receiver of type NSString are converted to camelCase if they contain underscores. 
+ *  Keys that are not strings or do not contain underscores are not affected.
+ *  e.g. @"this_is_underscored" becomes @"thisIsUnderscored"
+ */
+- (void) convertUnderscoredStringKeysToCamelCase;
 
-- (NSDictionary *) convertCamelCaseStringKeysToUnderscored;
+/**
+ *  All keys in the receiver of type NSString and formatted in camelCase are converted to underscores.
+ *  Keys that are not strings or are not camelCase are not affected.
+ *  e.g. @"thisIsCamelCase" becomes @"this_is_camel_case"
+ */
+- (void) convertCamelCaseStringKeysToUnderscored;
 
 @end

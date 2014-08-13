@@ -23,56 +23,38 @@
 //
 //
 
-#import "NSDictionary+PMUtils.h"
+#import "NSMutableDictionary+PMUtils.h"
 #import "NSString+PMUtils.h"
 
-@implementation NSDictionary (PMUtils)
+@implementation NSMutableDictionary (PMUtils)
 
-- (NSDictionary *) replaceKey:(id<NSCopying>)currentKey withKey:(id<NSCopying>)newKey
+- (void) replaceKey:(id<NSCopying>)currentKey withKey:(id<NSCopying>)newKey
 {
+    [self objectForKey:currentKey];
     id value = self[currentKey];
     if (value) {
-        NSMutableDictionary *mutableSelf = [self mutableCopy];
-        mutableSelf[newKey] = value;
-        [mutableSelf removeObjectForKey:currentKey];
-        return mutableSelf;
+        self[newKey] = value;
+        [self removeObjectForKey:currentKey];
     }
-    return self;
 }
 
 
-- (NSDictionary *) convertUnderscoredStringKeysToCamelCase
+- (void) convertUnderscoredStringKeysToCamelCase
 {
-    NSMutableDictionary *mutableSelf = [NSMutableDictionary dictionaryWithCapacity:self.count];
-    
-    [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+    for (id key in self) {
         if ([key isKindOfClass:[NSString class]]) {
-            NSString *stringKey = key;
-            mutableSelf[[stringKey camelCaseFromUnderscores]] = obj;
+            [self replaceKey:key withKey:[(NSString *)key camelCaseFromUnderscores]];
         }
-        else {
-            mutableSelf[key] = obj;
-        }
-    }];
-     
-    return mutableSelf;
+    }
 }
 
-- (NSDictionary *) convertCamelCaseStringKeysToUnderscored
+- (void) convertCamelCaseStringKeysToUnderscored
 {
-    NSMutableDictionary *mutableSelf = [NSMutableDictionary dictionaryWithCapacity:self.count];
-    
-    [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+    for (id key in self) {
         if ([key isKindOfClass:[NSString class]]) {
-            NSString *stringKey = key;
-            mutableSelf[[stringKey underscoresFromCamelCase]] = obj;
+            [self replaceKey:key withKey:[(NSString *)key underscoresFromCamelCase]];
         }
-        else {
-            mutableSelf[key] = obj;
-        }
-    }];
-     
-     return mutableSelf;
+    }
 }
 
 @end

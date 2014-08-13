@@ -26,7 +26,7 @@
 #ifndef PMUtils_iOSExample_PMUtils_h
 #define PMUtils_iOSExample_PMUtils_h
 
-#import "NSDictionary+PMUtils.h"
+#import "NSMutableDictionary+PMUtils.h"
 #import "NSManagedObject+PMUtils.h"
 #import "NSThread+PMUtils.h"
 #import "NSIndexPath+PMUtils.h"

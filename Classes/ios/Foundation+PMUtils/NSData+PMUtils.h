@@ -26,6 +26,11 @@
 
 @interface NSData (PMUtils)
 
+/**
+ *  Returns an NSString object that contains a hexadecimal representation of the receiver’s contents.
+ *
+ *  @return An NSString object that contains a hexadecimal representation of the receiver’s contents.
+ */
 - (NSString *) hexString;
 
 @end
