@@ -27,10 +27,9 @@
 
 @implementation NSThread (PMUtils)
 
-+ (void) dispatchMainThreadAsync:(void (^)(void))block
++ (void) dispatchMainThread:(void (^)(void))block
 {
 	if (block) {
-		
 		if ([NSThread isMainThread]) {
 			block();
 		}
@@ -40,10 +39,9 @@
 	}
 }
 
-+ (void) dispatchBackgroundThreadAsync:(void (^)(void))block
++ (void) dispatchBackgroundThread:(void (^)(void))block
 {
-	if (block) {
-		
+	if (block) {		
 		if (![NSThread isMainThread]) {
 			block();
 		}
@@ -53,9 +51,9 @@
 	}
 }
 
-- (id) threadSpecificObject:(id (^)(void))creationBlock withName:(NSString *)name
++ (id) objectForCurrentThreadWithName:(NSString *)name creationBlock:(id (^)(void))creationBlock
 {
-    NSMutableDictionary *dict = [self threadDictionary];
+    NSMutableDictionary *dict = [[self currentThread] threadDictionary];
     id obj = dict[name];
 	
 	if (!obj) {

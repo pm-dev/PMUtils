@@ -26,9 +26,38 @@
 
 @interface NSIndexPath (PMUtils)
 
+/**
+ *  Creates a copy of the receiver with the index at position 0 ommitted.
+ *
+ *  @return An index path equal to the reciever minus the index at position 0.
+ */
 - (NSIndexPath *) indexPathByRemovingFirstIndex;
+
+/**
+ *  Creates a copy of the receiver and inserts an index at position 0. The current indexes' positions are incremented by 1.
+ *
+ *	@param index The index to append at position 0.
+ *
+ *  @return A new index path with index appended at position 0.
+ */
 - (NSIndexPath *) indexPathByAddingFirstIndex:(NSUInteger)index;
+
+/**
+ *  Creates a copy of the receiver, deletes the last index from the path, then appends a new index.
+ *
+ *	@param index The index that will replace the currently last position's index.
+ *
+ *  @return A new index path.
+ */
 - (NSIndexPath *) indexPathByReplacingLastIndex:(NSUInteger)index;
+
+/**
+ *  Creates a copy of the receiver, deletes the index at position 0, then inserts a new index at position 0.
+ *
+ *	@param index The index that will replace the currently first position's index.
+ *
+ *  @return A new index path.
+ */
 - (NSIndexPath *) indexPathByReplacingFirstIndex:(NSUInteger)index;
 
 @end

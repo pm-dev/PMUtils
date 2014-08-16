@@ -27,10 +27,31 @@
 
 @interface NSThread (PMUtils)
 
-+ (void) dispatchMainThreadAsync:(void (^)(void))block;
 
-+ (void) dispatchBackgroundThreadAsync:(void (^)(void))block;
+/**
+ *  Executes a block on the main thread. If this method is called from the main thread, the block is synchronously executed.
+ *	If this method is called off the main thread, the block is asynchronously dispatched to the main queue.
+ *	
+ *	@param block The block to execute on the main thread. This parameter cannot be NULL.
+ */
++ (void) dispatchMainThread:(void (^)(void))block;
 
-- (id) threadSpecificObject:(id (^)(void))creationBlock withName:(NSString *)name;
+/**
+ *  Executes a block off the main thread. If this method is called off the main thread, the block is synchronously executed on the current thread.
+ *	If this method is called on the main thread, the block is asynchronously dispatched to the global queue with default priority.
+ *
+ *	@param block The block to execute off the main thread. This parameter cannot be NULL.
+ */
++ (void) dispatchBackgroundThread:(void (^)(void))block;
+
+/**
+ *  Returns an object associated with the thread this method was called from. If no object exists with the specified name,
+ *	optionally create the object with a supplied block.
+ *
+ *	@param name The name of the object.
+ *
+ *	@param creationBlock An optional block used to create an object to store on the current thread.
+ */
++ (id) objectForCurrentThreadWithName:(NSString *)name creationBlock:(id (^)(void))creationBlock;
 
 @end

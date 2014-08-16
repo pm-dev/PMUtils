@@ -62,15 +62,15 @@
 - (NSComparisonResult) compareWithVersion:(NSString *)otherVersion
 {
 	// We want 1.0 and 1.0.0 to return NSOrderedSame.
-	NSString *v1 = [self removeTrailingZerosAndPeriods];
-	NSString *v2 = [otherVersion removeTrailingZerosAndPeriods];
+	NSString *v1 = [self PM_removeTrailingZerosAndPeriods];
+	NSString *v2 = [otherVersion PM_removeTrailingZerosAndPeriods];
     return [v1 compare:v2 options:NSNumericSearch];
 }
 
 - (BOOL) inVersion:(NSString *)baseVersion
 {
-    NSString *receiver = [self removeTrailingZerosAndPeriods];
-    NSString *base = [baseVersion removeTrailingZerosAndPeriods];
+    NSString *receiver = [self PM_removeTrailingZerosAndPeriods];
+    NSString *base = [baseVersion PM_removeTrailingZerosAndPeriods];
     NSRange range = [receiver rangeOfString:base];
     return range.location = 0;
 }
@@ -118,7 +118,7 @@
 
 #pragma mark - Internal Methods
 
-- (NSString *) removeTrailingZerosAndPeriods
+- (NSString *) PM_removeTrailingZerosAndPeriods
 {
 	NSRange rangeToDelete = NSMakeRange(self.length, 0);
 	char lastChar = [self characterAtIndex:rangeToDelete.location-1];
