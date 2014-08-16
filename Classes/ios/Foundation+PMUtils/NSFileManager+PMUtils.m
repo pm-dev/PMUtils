@@ -29,12 +29,49 @@
 
 @implementation NSFileManager (PMUtils)
 
-- (NSDate *)fileModificationDateForPath:(NSString *)path
+- (NSDate *)modificationDateForFileAtPath:(NSString *)path
 {
-	NSDictionary	*attrs			= [self attributesOfItemAtPath:path error:NULL];
-	NSDate			*modDate		= [attrs fileModificationDate];
-	
+    NSError *error = nil;
+	NSDictionary *attrs = [self attributesOfItemAtPath:path error:&error];
+    NSParameterAssert(!error);
+	NSDate *modDate = [attrs fileModificationDate];
 	return modDate;
+}
+
+
+
+- (void) removeFilesInDirectory:(NSString *)path deep:(BOOL)deep
+{
+    NSAssert([NSFileManager pathIsDirectory:path], @"path parameter for -[NSFileManager removeFilesInDirectory:deep:] must be a directory.");
+    
+    NSDirectoryEnumerator *enumerator = [self enumeratorAtPath:path];
+    if (!deep) {
+        [enumerator skipDescendants];
+    }
+    
+    for (NSString *fileName in enumerator) {
+        NSString *fullPath = [path stringByAppendingString:fileName];
+        if ([NSFileManager pathIsDirectory:fullPath] == NO) {
+            NSError *error = nil;
+            [self removeItemAtPath:fullPath error:&error];
+            NSParameterAssert(!error);
+        }
+    }
+}
+
+- (void) removeContentsOfDirectory:(NSString *)path
+{
+    NSAssert([NSFileManager pathIsDirectory:path], @"path parameter for -[NSFileManager removeContentsOfDirectory:] must be a directory.");
+    
+    NSError *error = nil;
+    NSArray *fileNames = [self contentsOfDirectoryAtPath:path error:&error];
+    NSParameterAssert(!error);
+    
+    for (NSString *fileName in fileNames)  {
+        NSString *fullPath = [path stringByAppendingPathComponent:fileName];
+        [self removeItemAtPath:fullPath error:&error];
+        NSParameterAssert(!error);
+    }
 }
 
 - (NSString *)xattrStringValueForKey:(NSString *)key atPath:(NSString *)path
@@ -66,24 +103,6 @@
 	setxattr([path UTF8String], [key UTF8String], [value UTF8String], [value length], 0, 0);
 }
 
-
-- (void)shallowRemoveAllFilesInDirectory:(NSString *)path
-{
-	NSDirectoryEnumerator	*enumerator		= [self enumeratorAtPath:path];
-	
-	for (NSString *file in enumerator)
-	{
-		NSString *fullPath		= [path stringByAppendingPathComponent:file];
-		struct stat st;
-		
-		if (stat([fullPath UTF8String], &st) == 0)
-		{
-			if (!(st.st_mode & S_IFDIR))
-				unlink([fullPath UTF8String]);
-		}
-	}
-}
-
 + (NSString *) pathForCreatedCachesDirectoryWithName:(NSString *)name
 {
     NSFileManager *fileManager = [self defaultManager];
@@ -104,6 +123,14 @@
     [fileManager createDirectoryAtURL:fullURL withIntermediateDirectories:YES attributes:nil error:&error];
     NSParameterAssert(!error);
     return fullURL;
+}
+
++ (BOOL) pathIsDirectory:(NSString *)path
+{
+    struct stat st;
+    int failed = stat(path.UTF8String, &st);
+    NSParameterAssert(!failed);
+    return (st.st_mode & S_IFDIR);
 }
 
 

@@ -58,7 +58,7 @@
 #define DLog(args...)
 #endif
 
-#define DEF_weakSelf    __weak __typeof(self) weakSelf = self;
+#define DEF_weak(var, weakVar)    __weak __typeof(var) weakVar = var;
 
 extern NSTimeInterval const PMOneHour;
 extern NSTimeInterval const PMOneDay;

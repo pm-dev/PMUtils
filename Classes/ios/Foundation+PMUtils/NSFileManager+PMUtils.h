@@ -27,7 +27,14 @@
 
 @interface NSFileManager (PMUtils)
 
-- (NSDate *)fileModificationDateForPath:(NSString *)path;
+/**
+ *  This method returns the date that a file’s data was last modified.
+ *
+ *  @param path The path of a file or directory.
+ *
+ *  @return Returns the value for the key NSFileModificationDate, or nil if the item attributes at path doesn’t have an entry for the key.
+ */
+- (NSDate *)modificationDateForFileAtPath:(NSString *)path;
 
 /**
  *
@@ -38,6 +45,8 @@
  */
 - (void)shallowRemoveAllFilesInDirectory:(NSString *)path;
 
+- (void)removeFilesInDirectory:(NSString *)path;
+
 - (NSString *)xattrStringValueForKey:(NSString *)key atPath:(NSString *)path;
 
 - (void)setXAttrStringValue:(NSString *)value forKey:(NSString *)key atPath:(NSString *)path;
@@ -45,5 +54,7 @@
 + (NSString *) pathForCreatedCachesDirectoryWithName:(NSString *)name;
 
 + (NSURL *) URLForCreatedCachesDirectoryWithName:(NSString *)name;
+
++ (BOOL) pathIsDirectory:(NSString *)path;
 
 @end
