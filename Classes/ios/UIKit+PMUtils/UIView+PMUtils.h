@@ -31,11 +31,18 @@ typedef NS_OPTIONS(NSUInteger, PMDirection) {
 
 @interface UIView (PMUtils)
 
+/**
+ *  Classes inheriting from UIView will attempt to initialize its shared instance using +[self instanceFromDefaultNibWithOwner:]
+ *	instead of the default [[self alloc] init] method. For more info on +[self shared] see +[NSObject shared].
+ *
+ *  @return The shared instance for the receiver.
+ */
++ (instancetype)shared;
 
 /**
- *  The default nib name is simply the name of the class.
+ *  The default nib name is simply the name of the class. Override this method to change the default nib name.
  *
- *  @return The name of the class.
+ *  @return The default name of nib, which defaults to the name of the receiver's class.
  */
 + (NSString *) defaultNibName;
 

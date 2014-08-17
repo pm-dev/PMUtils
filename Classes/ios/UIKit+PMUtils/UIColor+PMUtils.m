@@ -29,10 +29,8 @@ inline UIColor * PMColorWithRGBA(NSUInteger red, NSUInteger green, NSUInteger bl
     return [UIColor colorWithRed:(red/255.0f) green:(green/255.0f) blue:(blue/255.0f) alpha:alpha];
 }
 
-@implementation UIColor (PMUtils)
-
-+ (UIColor*)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha
-{
+inline UIColor * PMColorWithHex(NSString *hexString, CGFloat alpha) {
+	
 	NSScanner *scanner = [NSScanner scannerWithString:hexString];
 	unsigned int colors;
 	
@@ -43,9 +41,10 @@ inline UIColor * PMColorWithRGBA(NSUInteger red, NSUInteger green, NSUInteger bl
 		unsigned int blue = colors & 0xFF;
 		return PMColorWithRGBA(red, green, blue, alpha);
 	}
-	
 	return [UIColor colorWithWhite:0.0f alpha:alpha];
 }
+
+@implementation UIColor (PMUtils)
 
 - (CGFloat) alpha
 {

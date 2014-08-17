@@ -25,34 +25,59 @@
 
 #import "UIView+PMUtils.h"
 #import "UIImage+PMUtils.h"
+#import "NSObject+PMUtils.h"
 
 @implementation UIView (PMUtils)
 
++ (void) setShared:(id)shared
+{
+	NSMutableSet *classes = [self PM_initializedSharedViewClasses];
+	[classes addObject:self];
+	[super setShared:shared];
+}
+
++ (instancetype)shared
+{
+	NSMutableSet *classes = [self PM_initializedSharedViewClasses];
+
+	id shared = nil;
+	
+	if ([classes containsObject:self] == NO) {
+		[classes addObject:self];
+		shared = [self instanceFromDefaultNibWithOwner:nil];
+		[self setShared:shared];
+	}
+	
+	if (!shared) {
+		shared = [super shared];
+	}
+	
+	return shared;
+}
+
 + (NSString *) defaultNibName
 {
-	return NSStringFromClass([self class]);
+    return NSStringFromClass(self);;
 }
 
 + (UINib *) defaultNib
 {
-    //cache nib to prevent unnecessary filesystem access
-    static NSCache *nibCache = nil;
+    // Cache nibs to prevent unnecessary filesystem access
+    static NSCache *nibs = nil;
     static dispatch_once_t cacheToken;
     dispatch_once(&cacheToken, ^{
-        nibCache = [NSCache new];
+        nibs = [NSCache new];
     });
     
-    NSString *name = [self defaultNibName];
-    UINib *nib = [nibCache objectForKey:name];
-    
-    if (!nib && [[NSBundle mainBundle] pathForResource:name ofType:@"nib"]) {
-        nib = [UINib nibWithNibName:name bundle:nil];
-        [nibCache setObject:nib?: [NSNull null]  forKey:name];
+    NSString *nibName = [self defaultNibName];
+    UINib *nib = [nibs objectForKey:nibName];
+    if (!nib) {
+		nib = [UINib nibWithNibName:nibName bundle:[NSBundle mainBundle]];
+        [nibs setObject:nib?:[NSNull null]  forKey:nibName];
     }
     else if ([nib isEqual:[NSNull null]]) {
         nib = nil;
     }
-    
 	return nib;
 }
 
@@ -60,8 +85,7 @@
 {
     UINib *nib = [self defaultNib];
     if (nib) {
-        NSArray *contents = [nib instantiateWithOwner:ownerOrNil options:nil];
-        UIView *view = [contents count]? contents[0]: nil;
+        UIView *view = [nib instantiateWithOwner:ownerOrNil options:nil].firstObject;
         NSAssert ([view isKindOfClass:self], @"First object in nib '%@' was '%@'. Expected '%@'", [self defaultNibName], view, self);
         return view;
     }
@@ -178,5 +202,19 @@
     bounds.size = size;
     self.bounds = bounds;
 }
+
+#pragma mark - Internal Methods
+
+
++ (NSMutableSet *) PM_initializedSharedViewClasses
+{
+	static dispatch_once_t cacheToken;
+	static NSMutableSet *initializedSharedViewClasses = nil;
+    dispatch_once(&cacheToken, ^{
+		initializedSharedViewClasses = [NSMutableSet set];
+    });
+	return initializedSharedViewClasses;
+}
+
 
 @end

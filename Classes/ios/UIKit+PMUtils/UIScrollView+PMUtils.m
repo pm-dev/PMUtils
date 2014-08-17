@@ -29,9 +29,8 @@
 
 - (void) killScroll
 {
-    CGPoint offset = self.contentOffset;
-    [self setContentOffset:CGPointZero animated:NO];
-    [self setContentOffset:offset animated:NO];
+	self.scrollEnabled = NO;
+	self.scrollEnabled = YES;
 }
 
 @end

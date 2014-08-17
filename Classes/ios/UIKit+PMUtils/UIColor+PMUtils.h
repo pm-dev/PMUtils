@@ -25,12 +25,17 @@
 
 #import <UIKit/UIKit.h>
 
-extern inline UIColor* PMColorWithRGBA(NSUInteger red, NSUInteger green, NSUInteger blue, CGFloat alpha);
+extern inline UIColor * PMColorWithRGBA(NSUInteger red, NSUInteger green, NSUInteger blue, CGFloat alpha);
+extern inline UIColor * PMColorWithHex(NSString *hexString, CGFloat alpha);
 
 @interface UIColor (PMUtils)
 
-+ (UIColor*)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
 
+/**
+ *  Returns the alpha component that makes up the color in the RGB color space, if the color is in a compatible color space.
+ *
+ *  @return The opacity component of the receiver, specified as a value between 0.0 and 1.0.
+ */
 - (CGFloat) alpha;
 
 @end

@@ -47,12 +47,10 @@
 
 + (int)hardwareCores
 {
-    size_t len;
     unsigned int numberOfCores;
-	
-    len = sizeof(numberOfCores);
-    sysctlbyname("hw.ncpu", &numberOfCores, &len, NULL, 0);
-	
+	size_t len = sizeof(numberOfCores);
+    int failed = sysctlbyname("hw.ncpu", &numberOfCores, &len, NULL, 0);
+	NSParameterAssert(failed == 0);
     return numberOfCores;
 }
 
@@ -61,8 +59,8 @@
 	int mib[] = { CTL_HW, HW_PHYSMEM };
 	size_t mem;
 	size_t len = sizeof(mem);
-	sysctl(mib, 2, &mem, &len, NULL, 0);
-	
+	int failed = sysctl(mib, 2, &mem, &len, NULL, 0);
+	NSParameterAssert(failed == 0);
 	return mem;
 }
 
@@ -72,22 +70,18 @@
     if ( !uname(&systemInfo) ) {
         NSString *model = [NSString stringWithUTF8String:systemInfo.machine];
         return model;
-    }
-	
+    }	
 	return @"Unknown";
 }
 
-+ (uint64_t)availableSpaceForRootVolume
++ (uint64_t)availableBytes
 {
-	struct statfs		sfs;
-	NSString			*path		= [[NSBundle mainBundle] bundlePath];
-	
-	if ( !statfs([path UTF8String], &sfs))
-	{
+	struct statfs sfs;
+	NSString *path = [[NSBundle mainBundle] bundlePath];
+	if ( !statfs(path.UTF8String, &sfs)) {
 		uint64_t availableBytes = sfs.f_bsize * sfs.f_bavail;
 		return availableBytes;
 	}
-	
 	return 0;
 }
 

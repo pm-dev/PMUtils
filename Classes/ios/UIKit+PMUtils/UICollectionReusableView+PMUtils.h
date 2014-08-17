@@ -27,8 +27,11 @@
 
 @interface UICollectionReusableView (PMUtils)
 
-+ (instancetype) sizingCell;
-
+/**
+ *  The default reuse identifier is simply the name of the class. Override this method to change the default reuse identifier.
+ *
+ *  @return The default reuse identifier.
+ */
 + (NSString *) defaultReuseIdentifier;
 
 @end

@@ -27,6 +27,19 @@
 
 @interface UICollectionViewFlowLayout (PMUtils)
 
+/**
+ *  Determines if the receiver would need to change its content offset if -[UICollectionView scrollToItemAtIndexPath:atScrollPosition:animated]
+ *	were to be called.
+ *
+ *	@param indexPath The index path the receiver would scroll to.
+ *
+ *	@param scrollPosition An option that specifies where the item should be positioned when scrolling finishes. 
+ *	For a list of possible values, see “UICollectionViewScrollPosition”.
+ *
+ *	@see -[UICollectionView scrollToItemAtIndexPath:atScrollPosition:animated]
+ *  @return Yes if the receiver would need to change its content offset if -[UICollectionView scrollToItemAtIndexPath:atScrollPosition:animated]
+ *	were to be called, otherwise NO.
+ */
 - (BOOL) requiresScrollAnimationToIndexPath:(NSIndexPath *)indexPath atPosition:(UICollectionViewScrollPosition)scrollPosition;
 
 @end

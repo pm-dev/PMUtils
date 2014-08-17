@@ -27,17 +27,52 @@
 
 @interface UICollectionView (PMUtils)
 
-- (NSIndexPath *) visibleIndexPathNearestToPoint:(CGPoint)point;
-
-// Less efficient than -visibleIndexPathNearestToPoint:
+/**
+ *  This method finds the index path of the item whose frame is closest to a
+ *	point specified relative to the content view. 
+ *
+ *	@param point A point relative to coordinates of the content view.
+ *
+ *  @return The index path of the item closest to the specified point. If there are no items or the content size is CGSizeZero, nil is returned.
+ */
 - (NSIndexPath *) indexPathNearestToPoint:(CGPoint)point;
 
+/**
+ *  This method finds the index path of the item whose frame is closest to the center of the rect returned by -[self visibleRect].
+ *
+ *	@see -[self visibleRect]
+ *  @return The index path of the item closest to the center of the currently visible content. 
+ *	If there are no items or the content size is CGSizeZero, nil is returned.
+ */
 - (NSIndexPath *) indexPathNearestToBoundsCenter;
 
+/**
+ *  Calculates the content offset if the supplied rect was centered within the currently visible rect.
+ *
+ *	@param rect A rect to base the contentOffset of off, if the rect was centered in the visible rect.
+ *
+ *  @return The point at which the origin of the content view is offset from the origin of the scroll view if rect was
+ *	centered within the scroll view.
+ */
 - (CGPoint) contentOffsetForCenteredRect:(CGRect)rect;
 
+/**
+ *  Calculates the content offset at the center of the the bounds
+ *
+ *  @return The point at which the origin of the content view is offset from the center of the scroll view.
+ */
 - (CGPoint) contentOffsetInBoundsCenter;
 
+/**
+ *  Calculates the rect of the content view currently visible within the bounds of the scroll view.
+ *
+ *  @return The rect of the content view currently visible within the bounds of the scroll view.
+ */
+- (CGRect) visibleRect;
+
+/**
+ *  Reloads just the items at visible index paths. Call this method to selectively reload only items at currently visable index paths.
+ */
 - (void) reloadVisibleItems;
 
 @end

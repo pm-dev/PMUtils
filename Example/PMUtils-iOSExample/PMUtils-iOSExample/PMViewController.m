@@ -27,6 +27,7 @@
 
 #import "PMViewController.h"
 #import "PMUtils.h"
+#import "PMSampleView.h"
 
 static CGFloat const PMPageControlHeight = 37.0f;
 
@@ -80,7 +81,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 										tintColor:nil
 											 crop:CGRectZero];
 	CFTimeInterval duration = CACurrentMediaTime() - start;
-	NSLog(@"1: time %f", duration);
+	NSLog(@"Blur #1: %f", duration);
 
 	start = CACurrentMediaTime();
 	UIImage *imgTwo = [img blurredImageWithRadius:20
@@ -90,7 +91,14 @@ static CGFloat const PMPageControlHeight = 37.0f;
 										tintColor:nil
 											 crop:CGRectZero];
 	duration = CACurrentMediaTime() - start;
-	NSLog(@"2: time %f", duration);
+	NSLog(@"Blur #2: %f", duration);
+	
+	PMSampleView *view = [PMSampleView shared];
+	DLog(@"%@", view.label.text);
+	view.label.text = @"New sample text";
+	
+	PMSampleView *view2 = [PMSampleView shared];
+	DLog(@"%@", view2.label.text);	
 	
 	_imageFilmstrip = [PMImageFilmstrip imageFilmstripWithFrame:self.view.bounds
                                                   imageEntities:@[imgOne, imgTwo]];

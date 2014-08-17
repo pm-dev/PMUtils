@@ -27,19 +27,43 @@
 
 @interface UIDevice (PMUtils)
 
-
+/**
+ *  Checks if the style of interface to use on the current device is equal to UIUserInterfaceIdiomPad.
+ *
+ *  @return Yes if the style of interface to use on the current device is equal to UIUserInterfaceIdiomPad.
+ */
 + (BOOL) isPad;
 
+/**
+ *  Checks if the style of interface to use on the current device is equal to UIUserInterfaceIdiomPhone.
+ *
+ *  @return Yes if the style of interface to use on the current device is equal to UIUserInterfaceIdiomPhone.
+ */
 + (BOOL) isPhone;
 
+/**
+ *  @return The current version of the operating system on the current device.
+ */
 + (NSString *) systemVersion;
 
-+ (int)hardwareCores;
+/**
+ *  @return The number of independent cpu's running on the current device.
+ */
++ (int) hardwareCores;
 
-+ (size_t)hardwareRam;
+/**
+ *  @return Total memory available on the current device.
+ */
++ (size_t) hardwareRam;
 
+/**
+ *  @return The machine name of the current device.
+ */
 + (NSString *) machine;
 
-+ (uint64_t)availableSpaceForRootVolume;
+/**
+ *  @return The number of bytes available in the root volume to the application.
+ */
++ (uint64_t) availableBytes;
 
 @end
