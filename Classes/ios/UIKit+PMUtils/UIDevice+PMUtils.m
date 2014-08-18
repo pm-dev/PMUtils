@@ -47,10 +47,9 @@
 
 + (int)hardwareCores
 {
-    unsigned int numberOfCores;
+    unsigned int numberOfCores = 0;
 	size_t len = sizeof(numberOfCores);
-    int failed = sysctlbyname("hw.ncpu", &numberOfCores, &len, NULL, 0);
-	NSParameterAssert(failed == 0);
+    sysctlbyname("hw.ncpu", &numberOfCores, &len, NULL, 0);
     return numberOfCores;
 }
 
@@ -59,8 +58,7 @@
 	int mib[] = { CTL_HW, HW_PHYSMEM };
 	size_t mem;
 	size_t len = sizeof(mem);
-	int failed = sysctl(mib, 2, &mem, &len, NULL, 0);
-	NSParameterAssert(failed == 0);
+	sysctl(mib, 2, &mem, &len, NULL, 0);
 	return mem;
 }
 

@@ -100,8 +100,10 @@
 {
     struct stat st;
     int failed = stat(path.UTF8String, &st);
-    NSParameterAssert(!failed);
-    return S_ISDIR(st.st_mode);
+	if (!failed) {
+		return S_ISDIR(st.st_mode);
+	}
+	return NO;
 }
 
 #pragma mark - Internal Methods

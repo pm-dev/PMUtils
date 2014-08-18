@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
     
   s.subspec 'UIKit+PMUtils' do |ss|
   	ss.source_files = 'Classes/ios/UIKit+PMUtils/*.{h,m}'
+  	ss.dependency 'PMUtils/Foundation+PMUtils'
   end  
   
   s.subspec 'Foundation+PMUtils' do |ss|
