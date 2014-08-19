@@ -38,8 +38,9 @@
 + (NSManagedObjectContext *)context
 {
     NSManagedObjectContext *context = objc_getAssociatedObject(self, @selector(delegate));
-    if (!context) {
-        context = objc_getAssociatedObject([NSManagedObjectContext class], @selector(delegate));
+	Class superclass = self.superclass;
+    if (!context && [superclass isSubclassOfClass:[NSManagedObject class]]) {
+        context = [superclass context];
     }
     return context;
 }

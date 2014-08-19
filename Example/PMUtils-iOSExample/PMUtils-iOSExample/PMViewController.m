@@ -71,7 +71,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 
 - (void)tap:(UITapGestureRecognizer *)sender
 {
-	UIImage *img = [UIImage imageNamed:@"Sample.jpg"];
+	UIImage *img = [UIImage imageNamed:@"Sample.JPG"];
 
 	CFTimeInterval start = CACurrentMediaTime();
 	UIImage *imgOne = [img blurredImageWithRadius:10

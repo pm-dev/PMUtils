@@ -38,7 +38,8 @@
 /**
  *  The context that has been associated with the calling class using +[NSManagedObject setManagedObjectContext:].
  *  If no context has been associated with the class calling this method, it looks to see if a context has been
- *  associated with the NSManagedObject class object.
+ *  associated with its superclass. This recursion continues until a context is found or until this method
+ *	is called on the NSManagedObject class.
  *
  *  @return The associated managed object context.
  */
