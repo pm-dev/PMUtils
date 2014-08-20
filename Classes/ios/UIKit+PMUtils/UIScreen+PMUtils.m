@@ -26,10 +26,15 @@
 
 @implementation UIScreen (PMUtils)
 
-- (BOOL) is568h
++ (BOOL) is568h
 {
-    CGRect screenBounds = [self bounds];
+    CGRect screenBounds = [[self mainScreen] bounds];
 	return CGRectGetHeight(screenBounds) == 568.0f || CGRectGetWidth(screenBounds) == 568.0f;
+}
+
++ (BOOL) isRetina
+{
+    return [[self mainScreen] scale] >= 2.0f;
 }
 
 @end

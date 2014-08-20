@@ -27,10 +27,15 @@
 @interface UIScreen (PMUtils)
 
 /**
- *  Check for determining whether the user's device has a screen with a height of 586 points, which is the case on iPhones starting at the iPhone 5, 5s and 5c. (As of 4/29/2014).
+ *  Check for determining whether the main screen has a height of 586 points, which is the case on iPhones starting at the iPhone 5, 5s and 5c. (As of 4/29/2014).
  *
- *  @return Boolean determining whether the screen has a height of 586 points.
+ *  @return Boolean determining whether the main screen has a height of 586 points.
  */
-- (BOOL) is568h;
++ (BOOL) is568h;
+
+/**
+ *  @return Boolean determining whether the main screen has scale of 2.0 or greater.
+ */
++ (BOOL) isRetina;
 
 @end
