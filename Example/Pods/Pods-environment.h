@@ -24,6 +24,12 @@
 #define COCOAPODS_VERSION_MINOR_PMUtils_PMAnimationQueue 9
 #define COCOAPODS_VERSION_PATCH_PMUtils_PMAnimationQueue 2
 
+// PMUtils/PMCollectionViewSwipeCell
+#define COCOAPODS_POD_AVAILABLE_PMUtils_PMCollectionViewSwipeCell
+#define COCOAPODS_VERSION_MAJOR_PMUtils_PMCollectionViewSwipeCell 0
+#define COCOAPODS_VERSION_MINOR_PMUtils_PMCollectionViewSwipeCell 9
+#define COCOAPODS_VERSION_PATCH_PMUtils_PMCollectionViewSwipeCell 2
+
 // PMUtils/PMImageFilmstrip
 #define COCOAPODS_POD_AVAILABLE_PMUtils_PMImageFilmstrip
 #define COCOAPODS_VERSION_MAJOR_PMUtils_PMImageFilmstrip 0

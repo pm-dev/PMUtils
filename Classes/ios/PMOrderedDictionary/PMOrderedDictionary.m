@@ -28,23 +28,19 @@
 
 #import "PMOrderedDictionary.h"
 
-NSString *DescriptionForObject(NSObject *object, id locale, NSUInteger indent)
+static inline NSString * PMDescriptionForObject(NSObject *object, id locale, NSUInteger indent)
 {
 	NSString *objectString;
-	if ([object isKindOfClass:[NSString class]])
-	{
+	if ([object isKindOfClass:[NSString class]]) {
 		objectString = (NSString *)object;
 	}
-	else if ([object respondsToSelector:@selector(descriptionWithLocale:indent:)])
-	{
+	else if ([object respondsToSelector:@selector(descriptionWithLocale:indent:)]) {
 		objectString = [(NSDictionary *)object descriptionWithLocale:locale indent:indent];
 	}
-	else if ([object respondsToSelector:@selector(descriptionWithLocale:)])
-	{
+	else if ([object respondsToSelector:@selector(descriptionWithLocale:)])	{
 		objectString = [(NSSet *)object descriptionWithLocale:locale];
 	}
-	else
-	{
+	else {
 		objectString = [object description];
 	}
 	return objectString;
@@ -67,8 +63,7 @@ NSString *DescriptionForObject(NSObject *object, id locale, NSUInteger indent)
 - (id)initWithCapacity:(NSUInteger)capacity
 {
 	self = [super init];
-	if (self)
-	{
+	if (self) {
 		_dictionary = [[NSMutableDictionary alloc] initWithCapacity:capacity];
 		_array = [[NSMutableArray alloc] initWithCapacity:capacity];
 	}
@@ -82,8 +77,7 @@ NSString *DescriptionForObject(NSObject *object, id locale, NSUInteger indent)
 
 - (void)setObject:(id)anObject forKey:(id)aKey
 {
-	if (![self.dictionary objectForKey:aKey])
-	{
+	if (![self.dictionary objectForKey:aKey]) {
 		[self.array addObject:aKey];
 	}
 	[self.dictionary setObject:anObject forKey:aKey];
@@ -117,8 +111,7 @@ NSString *DescriptionForObject(NSObject *object, id locale, NSUInteger indent)
 
 - (void)insertObject:(id)anObject forKey:(id)aKey atIndex:(NSUInteger)anIndex
 {
-	if ([self.dictionary objectForKey:aKey])
-	{
+	if ([self.dictionary objectForKey:aKey]) {
 		[self removeObjectForKey:aKey];
 	}
 	[self.array insertObject:aKey atIndex:anIndex];
@@ -156,19 +149,17 @@ NSString *DescriptionForObject(NSObject *object, id locale, NSUInteger indent)
 {
 	NSMutableString *indentString = [NSMutableString string];
 	NSUInteger i, count = level;
-	for (i = 0; i < count; i++)
-	{
+	for (i = 0; i < count; i++) {
 		[indentString appendFormat:@"    "];
 	}
 	
 	NSMutableString *description = [NSMutableString string];
 	[description appendFormat:@"%@{\n", indentString];
-	for (NSObject *key in self)
-	{
+	for (NSObject *key in self)	{
 		[description appendFormat:@"%@    %@ = %@;\n",
 			indentString,
-			DescriptionForObject(key, locale, level),
-			DescriptionForObject([self objectForKey:key], locale, level)];
+			PMDescriptionForObject(key, locale, level),
+			PMDescriptionForObject([self objectForKey:key], locale, level)];
 	}
 	[description appendFormat:@"%@}\n", indentString];
 	return description;

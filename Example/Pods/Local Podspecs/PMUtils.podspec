@@ -45,5 +45,10 @@ Pod::Spec.new do |s|
   	ss.source_files = 'Classes/ios/PMImageFilmstrip/PMImageFilmstrip.{h,m}'
   	ss.dependency 'PMUtils/UIKit+PMUtils'
   end
+
+  s.subspec 'PMCollectionViewSwipeCell' do |ss|
+  	ss.source_files = 'Classes/ios/PMCollectionViewSwipeCell/PMCollectionViewSwipeCell.{h,m}'
+  	ss.dependency 'PMUtils/UIKit+PMUtils'
+  end
   
 end
