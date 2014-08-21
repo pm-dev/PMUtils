@@ -28,11 +28,9 @@ typedef NS_ENUM(NSInteger, PMCellPosition)
 @property (nonatomic, strong) UIView *leftUtilityView;
 @property (nonatomic, strong) UIView *rightUtilityView;
 @property (nonatomic, weak) id <PMCollectionViewSwipeCellDelegate> delegate;
-
+@property (nonatomic) BOOL bouncesOpen;
 @property (nonatomic) PMCellPosition cellPosition;
-- (void) setCellPosition:(PMCellPosition)position animated:(BOOL)animated;
 
-- (BOOL) bouncesOpen;
-- (void) setBouncesOpen:(BOOL)bounces;
+- (void) setCellPosition:(PMCellPosition)position animated:(BOOL)animated;
 
 @end

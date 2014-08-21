@@ -36,6 +36,12 @@
 #define COCOAPODS_VERSION_MINOR_PMUtils_PMImageFilmstrip 9
 #define COCOAPODS_VERSION_PATCH_PMUtils_PMImageFilmstrip 2
 
+// PMUtils/PMInnerShadowView
+#define COCOAPODS_POD_AVAILABLE_PMUtils_PMInnerShadowView
+#define COCOAPODS_VERSION_MAJOR_PMUtils_PMInnerShadowView 0
+#define COCOAPODS_VERSION_MINOR_PMUtils_PMInnerShadowView 9
+#define COCOAPODS_VERSION_PATCH_PMUtils_PMInnerShadowView 2
+
 // PMUtils/PMOrderedDictionary
 #define COCOAPODS_POD_AVAILABLE_PMUtils_PMOrderedDictionary
 #define COCOAPODS_VERSION_MAJOR_PMUtils_PMOrderedDictionary 0

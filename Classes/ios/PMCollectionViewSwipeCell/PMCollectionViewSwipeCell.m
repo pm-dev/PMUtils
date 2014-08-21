@@ -6,7 +6,8 @@
 //
 //
 
-#import "PMUtils.h"
+#import "PMCollectionViewSwipeCell.h"
+#import "UIScrollView+PMUtils.h"
 
 @interface PMSwipeCellScrollView : UIScrollView
 @end

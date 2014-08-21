@@ -50,5 +50,9 @@ Pod::Spec.new do |s|
   	ss.source_files = 'Classes/ios/PMCollectionViewSwipeCell/PMCollectionViewSwipeCell.{h,m}'
   	ss.dependency 'PMUtils/UIKit+PMUtils'
   end
+
+  s.subspec 'PMInnerShadowView' do |ss|
+  	ss.source_files = 'Classes/ios/PMInnerShadowView/PMInnerShadowView.{h,m}'
+  end
   
 end

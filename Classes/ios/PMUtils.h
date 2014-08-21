@@ -52,6 +52,7 @@
 #import "PMImageFilmstrip.h"
 #import "PMAnimationQueue.h"
 #import "PMCollectionViewSwipeCell.h"
+#import "PMInnerShadowView.h"
 
 #if DEBUG
 #define DLog(args...)   NSLog(args)
