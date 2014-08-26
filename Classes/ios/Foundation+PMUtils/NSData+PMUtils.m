@@ -23,6 +23,7 @@
 //
 
 #import "NSData+PMUtils.h"
+#import <CommonCrypto/CommonCrypto.h>
 
 @implementation NSData (PMUtils)
 
@@ -30,13 +31,13 @@
 {
 	NSUInteger bytesCount = self.length;
 	if (bytesCount) {
-		const char *hexChars = "0123456789ABCDEF";
+		static char const *kHexChars = "0123456789ABCDEF";
 		const unsigned char *dataBuffer = self.bytes;
 		char *chars = malloc(sizeof(char) * (bytesCount * 2 + 1));
 		char *s = chars;
 		for (unsigned i = 0; i < bytesCount; ++i) {
-			*s++ = hexChars[((*dataBuffer & 0xF0) >> 4)];
-			*s++ = hexChars[(*dataBuffer & 0x0F)];
+			*s++ = kHexChars[((*dataBuffer & 0xF0) >> 4)];
+			*s++ = kHexChars[(*dataBuffer & 0x0F)];
 			dataBuffer++;
 		}
 		*s = '\0';
@@ -46,5 +47,23 @@
 	}
 	return @"";
 }
+
+- (NSString *)sha1HashString
+{
+    unsigned char digest[CC_SHA1_DIGEST_LENGTH];
+    
+    if (CC_SHA1(self.bytes, (CC_LONG)self.length, digest)) {
+        
+        NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+        
+        for (int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
+            [output appendFormat:@"%02x", digest[i]];
+        }
+        
+        return [output copy];
+    }
+    return @"";
+}
+
 
 @end

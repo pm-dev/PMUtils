@@ -34,9 +34,9 @@
  *  The query component of a URL is the component immediately following a question mark (?). 
  *  For example, in the URL http://www.example.com/index.php?key1=value1#jumpLink, the query component is key1=value1.
  *  
- *  @return Returns the encoded string or nil if the transformation is not possible.
+ *  @return The encoded string or nil if the transformation is not possible.
  */
-- (NSString *) encodedQuery;
+- (NSString *) encodedURLQuery;
 
 /**
  *  Returns a SHA1 hash of the receiver, expressed as a 160 bit hex number.

@@ -33,4 +33,11 @@
  */
 - (NSString *) hexString;
 
+/**
+ *  Returns a SHA1 hash of the receiver, expressed as a 160 bit hex number.
+ *
+ *  @return A new string representing the SHA1 hash of the receiver.
+ */
+- (NSString *)sha1HashString;
+
 @end
