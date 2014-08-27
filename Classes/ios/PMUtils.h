@@ -33,6 +33,7 @@
 #import "NSFileManager+PMUtils.h"
 #import "NSString+PMUtils.h"
 #import "NSData+PMUtils.h"
+#import "NSArray+PMUtils.h"
 
 #import "UIImage+PMUtils.h"
 #import "UIColor+PMUtils.h"
