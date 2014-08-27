@@ -31,12 +31,23 @@
 + (void) setShared:(id)shared;
 
 /**
- *  Use this method to verify an object is of a specific type.
+ *  Use this method to verify an object is an instance of the reciever or a subclass of the reciever.
  *
- *  @param aClass The class to check against.
+ *  @param object The object whose class you want to verify.
  *
- *  @return Returns self if self is an instance of aClass. Otherwise nil.
+ *  @see +[NSObject verifyMemberOfClass:]
+ *  @return Returns object if object is an instance of the reciever or any class that inherits from the reciever. Otherwise nil.
  */
-- (instancetype) ifKindOfClass:(Class)aClass;
++ (instancetype) verifyKindOfClass:(id)object;
+
+/**
+ *  Use this method to verify an object is an instance of the reciever.
+ *
+ *  @param object The object whose class you want to verify.
+ *
+ *  @see +[NSObject verifyKindOfClass:]
+ *  @return Returns object if object is an instance of the reciever. Otherwise nil.
+ */
++ (instancetype) verifyMemberOfClass:(id)object;
 
 @end

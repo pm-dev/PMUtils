@@ -37,9 +37,14 @@
     return shared;
 }
 
-- (instancetype) ifKindOfClass:(Class)aClass
++ (instancetype) verifyKindOfClass:(id)object
 {
-    return [self isKindOfClass:aClass]? self : nil;
+    return [object isKindOfClass:self]? object : nil;
+}
+
++ (instancetype) verifyMemberOfClass:(id)object
+{
+    return [object isMemberOfClass:self]? object : nil;
 }
 
 

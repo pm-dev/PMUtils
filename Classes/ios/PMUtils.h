@@ -26,27 +26,8 @@
 #ifndef PMUtils_iOSExample_PMUtils_h
 #define PMUtils_iOSExample_PMUtils_h
 
-#import "NSMutableDictionary+PMUtils.h"
-#import "NSManagedObject+PMUtils.h"
-#import "NSThread+PMUtils.h"
-#import "NSIndexPath+PMUtils.h"
-#import "NSFileManager+PMUtils.h"
-#import "NSString+PMUtils.h"
-#import "NSData+PMUtils.h"
-#import "NSArray+PMUtils.h"
-
-#import "UIImage+PMUtils.h"
-#import "UIColor+PMUtils.h"
-#import "UIDevice+PMUtils.h"
-#import "UIScreen+PMUtils.h"
-#import "UITableView+PMUtils.h"
-#import "UICollectionView+PMUtils.h"
-#import "UIScrollView+PMUtils.h"
-#import "UICollectionViewFlowLayout+PMUtils.h"
-#import "UICollectionReusableView+PMUtils.h"
-#import "UIView+PMUtils.h"
-#import "UIImageView+PMUtils.h"
-
+#import "UIKit+PMUtils.h"
+#import "Foundation+PMUtils.h"
 #import "PMOrderedDictionary.h"
 #import "PMProtocolInterceptor.h"
 #import "PMPair.h"
@@ -61,12 +42,21 @@
 #define DLog(args...)
 #endif
 
-#define DEF_weak(var, weakVar)    __weak __typeof(var) weakVar = var;
+#define DEF_weak(var, weakName)    __weak __typeof(var) weakName = var;
+#define DEF_strong(var, strongName) __strong __typeof(var) strongName = var;
 
+// Units
+extern NSTimeInterval const PMOneMilisecond;
+extern NSTimeInterval const PMOneSecond;
+extern NSTimeInterval const PMOneMinute;
+extern NSTimeInterval const PMOneMilisecond;
 extern NSTimeInterval const PMOneHour;
 extern NSTimeInterval const PMOneDay;
 extern NSTimeInterval const PMOneWeek;
+
 extern NSUInteger const PMBytesPerMegabyte;
+extern NSUInteger const PMBytesPerMegabyte;
+extern NSUInteger const PMBytesPerGigabyte;
 
 extern NSInteger PMShortestCircularDistance(NSInteger fromIndex, NSInteger toIndex, NSRange inRange);
 extern NSInteger PMReverseCircularDistance(NSInteger fromIndex, NSInteger toIndex, NSRange inRange);
