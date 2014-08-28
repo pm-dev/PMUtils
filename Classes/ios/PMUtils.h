@@ -62,4 +62,6 @@ extern NSInteger PMShortestCircularDistance(NSInteger fromIndex, NSInteger toInd
 extern NSInteger PMReverseCircularDistance(NSInteger fromIndex, NSInteger toIndex, NSRange inRange);
 extern NSInteger PMForwardCircularDistance(NSInteger fromIndex, NSInteger toIndex, NSRange inRange);
 
+extern CGMutablePathRef PMRoundedRectPath(CGRect rect, CGFloat cornerRadius);
+
 #endif

@@ -26,7 +26,7 @@
  *  and compares those values using isEqual:. If any comparison returns false, this method will return false.
  *
  *  @param otherArray An array
- *  @param key The name of one of the properties on every object of the two arrays.
+ *  @param key The name of a property of each object in the arrays.
  *
  *  @return YES if values for key between objects at a given index in each array are equal, otherwise NO.
  */

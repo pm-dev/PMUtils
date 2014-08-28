@@ -209,7 +209,7 @@ static NSUInteger const bytesPerPixel = 4;
 		static NSDictionary *cacheOptionsDict = nil;
 		static dispatch_once_t cacheOptionsToken = 0;
 		dispatch_once(&cacheOptionsToken, ^{
-			cacheOptionsDict = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
+			cacheOptionsDict = [NSDictionary dictionaryWithObject:@(YES)
 														   forKey:(id)kCGImageSourceShouldCache];
 		});
 		

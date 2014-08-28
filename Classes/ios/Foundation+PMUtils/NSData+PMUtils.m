@@ -48,21 +48,22 @@
 	return @"";
 }
 
-- (NSString *)sha1HashString
+- (NSData *)sha1Hash
 {
     unsigned char digest[CC_SHA1_DIGEST_LENGTH];
-    
     if (CC_SHA1(self.bytes, (CC_LONG)self.length, digest)) {
-        
-        NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
-        
-        for (int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
-            [output appendFormat:@"%02x", digest[i]];
-        }
-        
-        return [output copy];
+        return [NSData dataWithBytes:digest length:CC_SHA1_DIGEST_LENGTH];
     }
-    return @"";
+    return nil;
+}
+
+- (NSData *)md5Hash
+{
+    unsigned char digest[CC_MD5_DIGEST_LENGTH];
+    if (CC_MD5(self.bytes, (CC_LONG)self.length, digest)) {
+        return [NSData dataWithBytes:digest length:CC_MD5_DIGEST_LENGTH];
+    }
+    return nil;
 }
 
 

@@ -38,11 +38,21 @@
 
 /**
  *  Executes a block off the main thread. If this method is called off the main thread, the block is synchronously executed on the current thread.
- *	If this method is called on the main thread, the block is asynchronously dispatched to the global queue with default priority.
+ *	If this method is called on the main thread, the block is asynchronously dispatched to the global concurrent queue with default priority.
  *
  *	@param block The block to execute off the main thread. This parameter cannot be NULL.
+ *  @see +[NSThread dispatchBackgroundThread:priority:]
  */
 + (void) dispatchBackgroundThread:(void (^)(void))block;
+
+/**
+ *  Executes a block off the main thread. If this method is called off the main thread, the block is synchronously executed on the current thread.
+ *	If this method is called on the main thread, the block is asynchronously dispatched to a well-known global concurrent queue of a given priority level.
+ *
+ *  @param block    The block to execute off the main thread. This parameter cannot be NULL.
+ *  @param priority The priority of the queue on which to execute the block.
+ */
++ (void) dispatchBackgroundThread:(void (^)(void))block priority:(dispatch_queue_priority_t)priority;
 
 /**
  *  Returns an object associated with the thread this method was called from. If no object exists with the specified name,

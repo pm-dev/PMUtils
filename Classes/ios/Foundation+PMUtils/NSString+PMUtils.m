@@ -37,7 +37,15 @@
 - (NSString *)sha1Hash
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
-    return [data sha1HashString];
+    NSData *hash = [data sha1Hash];
+    return [hash hexString];
+}
+
+- (NSString *)md5Hash
+{
+    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *hash = [data md5Hash];
+    return [hash hexString];
 }
 
 - (BOOL) isCapitalized

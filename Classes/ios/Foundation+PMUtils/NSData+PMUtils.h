@@ -36,8 +36,15 @@
 /**
  *  Returns a SHA1 hash of the receiver, expressed as a 160 bit hex number.
  *
- *  @return A new string representing the SHA1 hash of the receiver.
+ *  @return A NSData object containing the SHA1 hash of the receiver.
  */
-- (NSString *)sha1HashString;
+- (NSData *)sha1Hash;
+
+/**
+ *  Returns a MD5 hash of the receiver, expressed as a 128 bit hex number.
+ *
+ *  @return A NSData object containing the MD5 hash of the receiver.
+ */
+- (NSData *)md5Hash;
 
 @end

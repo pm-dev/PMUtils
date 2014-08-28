@@ -25,6 +25,7 @@
 		6784D3C118CE23DD003F980D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6784D3BF18CE23DD003F980D /* InfoPlist.strings */; };
 		6784D3C318CE23DD003F980D /* PMUtils_iOSExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6784D3C218CE23DD003F980D /* PMUtils_iOSExampleTests.m */; };
 		6784D3FF18CE24A9003F980D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6784D3A918CE23DD003F980D /* Main_iPad.storyboard */; };
+		74F84E5B19AFBBBF00D59BB7 /* lebowskiipsum.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74F84E5A19AFBBBF00D59BB7 /* lebowskiipsum.txt */; };
 		DB46A33985C1411AB049EDF2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F875FA949C2459092E02117 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		6784D3BE18CE23DD003F980D /* PMUtils-iOSExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PMUtils-iOSExampleTests-Info.plist"; sourceTree = "<group>"; };
 		6784D3C018CE23DD003F980D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6784D3C218CE23DD003F980D /* PMUtils_iOSExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMUtils_iOSExampleTests.m; sourceTree = "<group>"; };
+		74F84E5A19AFBBBF00D59BB7 /* lebowskiipsum.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lebowskiipsum.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				6784D39C18CE23DD003F980D /* PMUtils-iOSExample-Info.plist */,
 				6784D39D18CE23DD003F980D /* InfoPlist.strings */,
+				74F84E5A19AFBBBF00D59BB7 /* lebowskiipsum.txt */,
 				6715D10A18CEB22500DEC92B /* Sample.JPG */,
 				6784D3A018CE23DD003F980D /* main.m */,
 				6784D3A218CE23DD003F980D /* PMUtils-iOSExample-Prefix.pch */,
@@ -256,6 +259,7 @@
 				6784D3B018CE23DD003F980D /* Images.xcassets in Resources */,
 				6715D10B18CEB22500DEC92B /* Sample.JPG in Resources */,
 				6784D39F18CE23DD003F980D /* InfoPlist.strings in Resources */,
+				74F84E5B19AFBBBF00D59BB7 /* lebowskiipsum.txt in Resources */,
 				674E825A19A00CDC000BE83F /* PMSampleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

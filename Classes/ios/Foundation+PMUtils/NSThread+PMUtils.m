@@ -41,12 +41,17 @@
 
 + (void) dispatchBackgroundThread:(void (^)(void))block
 {
-	if (block) {		
+    [self dispatchBackgroundThread:block priority:DISPATCH_QUEUE_PRIORITY_DEFAULT];
+}
+
++ (void) dispatchBackgroundThread:(void (^)(void))block priority:(dispatch_queue_priority_t)priority
+{
+	if (block) {
 		if (![NSThread isMainThread]) {
 			block();
 		}
 		else {
-			dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block);
+			dispatch_async(dispatch_get_global_queue(priority, 0), block);
 		}
 	}
 }
@@ -56,7 +61,7 @@
     NSMutableDictionary *dict = [[self currentThread] threadDictionary];
     id obj = dict[name];
 	
-	if (!obj) {
+	if (!obj && creationBlock) {
 		obj = creationBlock();
 		if (obj) {
 			dict[name] = obj;

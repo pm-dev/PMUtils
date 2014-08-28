@@ -68,3 +68,23 @@ NSInteger PMForwardCircularDistance(NSInteger fromIndex, NSInteger toIndex, NSRa
         return inRange.length - fromIndex + toIndex;
     }
 }
+
+CGMutablePathRef PMRoundedRectPath(CGRect rect, CGFloat cornerRadius)
+{
+    CGFloat minX = CGRectGetMinX(rect);
+    CGFloat midX = CGRectGetMidX(rect);
+    CGFloat maxX = CGRectGetMaxX(rect);
+    CGFloat minY = CGRectGetMinY(rect);
+    CGFloat midY = CGRectGetMidY(rect);
+    CGFloat maxY = CGRectGetMaxY(rect);
+ 
+    CGMutablePathRef path = CGPathCreateMutable();
+    
+    CGPathMoveToPoint(path, NULL, rect.origin.x, rect.origin.y);
+    CGPathAddArcToPoint(path, NULL, minX, maxY, midX, maxY, cornerRadius);
+    CGPathAddArcToPoint(path, NULL, maxX, maxY, maxX, midY, cornerRadius);
+    CGPathAddArcToPoint(path, NULL, maxX, minY, midX, minY, cornerRadius);
+    CGPathAddArcToPoint(path, NULL, minX, minY, minX, midY, cornerRadius);
+    return path;
+}
+

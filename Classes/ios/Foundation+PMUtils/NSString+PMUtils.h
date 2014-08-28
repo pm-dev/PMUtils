@@ -46,6 +46,13 @@
 - (NSString *)sha1Hash;
 
 /**
+ *  Returns a MD5 hash of the receiver, expressed as a 128 bit hex number.
+ *
+ *  @return A new string representing the MD5 hash of the receiver.
+ */
+- (NSString *)md5Hash;
+
+/**
  *  Compares the receiver to its capitalized string.
  *
  *  @return YES if the reciever is equal to [self capitalizedString], otherwise NO.
