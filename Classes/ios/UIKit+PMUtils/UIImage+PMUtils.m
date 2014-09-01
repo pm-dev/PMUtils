@@ -230,7 +230,9 @@ static NSUInteger const bytesPerPixel = 4;
 							   crop:(CGRect)crop
 {
     //image must be nonzero size
-    if (floorf(self.size.width) * floorf(self.size.height) <= 0.0f) return self;
+    if (floorf(self.size.width) * floorf(self.size.height) <= 0.0f) {
+		return self;
+	}
 	
 	if (CGRectIsEmpty(crop)) {
 		crop = CGRectMake(0, 0, self.size.width, self.size.height);
@@ -243,20 +245,20 @@ static NSUInteger const bytesPerPixel = 4;
 	// scale down image
 	NSUInteger sourceWidth = CGImageGetWidth(sourceImageRef);
 	NSUInteger sourceHeight = CGImageGetHeight(sourceImageRef);
+	size_t bytesPerRow = CGImageGetBytesPerRow(sourceImageRef);
 	
-	unsigned char *sourceData = (unsigned char*) calloc(sourceWidth * sourceHeight * bytesPerPixel, sizeof(unsigned char));
+	unsigned char *sourceData = malloc(sizeof(unsigned char) * bytesPerRow * sourceHeight);
 	
 	vImage_Buffer sourceBuffer = {
         .data = sourceData,
         .height = sourceHeight,
         .width = sourceWidth,
-        .rowBytes = CGImageGetBytesPerRow(sourceImageRef)
+        .rowBytes = bytesPerRow
     };
 	vImage_Buffer destBuffer = sourceBuffer;
 	CGImageRef scaledImageRef = sourceImageRef;
 	
-	if (scaleDownFactor > 1)
-	{
+	if (scaleDownFactor > 1) {
 		CGContextRef context = CGBitmapContextCreate(sourceData,
 													 sourceBuffer.width,
 													 sourceBuffer.height,
@@ -273,13 +275,14 @@ static NSUInteger const bytesPerPixel = 4;
 		
 		NSUInteger destWidth = sourceBuffer.width / scaleDownFactor;
 		NSUInteger destHeight = sourceBuffer.height / scaleDownFactor;
+		size_t rowBytes = destWidth * bytesPerPixel;
 		
-		unsigned char *destData = (unsigned char*) calloc(destWidth * destHeight * bytesPerPixel, sizeof(unsigned char));
+		unsigned char *destData = malloc(sizeof(unsigned char) * rowBytes * destHeight);
 		
 		destBuffer.data = destData;
 		destBuffer.height = destHeight;
 		destBuffer.width = destWidth;
-		destBuffer.rowBytes = bytesPerPixel * destWidth;
+		destBuffer.rowBytes = rowBytes;
 		
 		vImageScale_ARGB8888 (&sourceBuffer, &destBuffer, NULL, kvImageNoInterpolation);
 		
@@ -303,7 +306,7 @@ static NSUInteger const bytesPerPixel = 4;
 	// blur
     //boxsize must be an odd integer
     uint32_t boxSize = (uint32_t)(radius * self.scale);
-    if (boxSize % 2 == 0) boxSize ++;
+    if (boxSize % 2 == 0) { boxSize ++; }
     
 	// setup image buffers for blurring
 	sourceBuffer.width = destBuffer.width;
@@ -324,8 +327,7 @@ static NSUInteger const bytesPerPixel = 4;
     CFRelease(dataSource);
 	CGImageRelease(scaledImageRef);
     
-    for (NSUInteger i = 0; i < iterations; i++)
-    {
+    for (NSUInteger i = 0; i < iterations; i++) {
         //perform blur
         vImageBoxConvolve_ARGB8888(&sourceBuffer, &destBuffer, tempBuffer, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
         
@@ -346,8 +348,7 @@ static NSUInteger const bytesPerPixel = 4;
                                              sourceBitmapInfo);
     
 	BOOL hasSaturationChange = fabs(saturation - 1.) > __FLT_EPSILON__;
-	if (hasSaturationChange)
-	{
+	if (hasSaturationChange) {
 		CGFloat s = saturation;
 		CGFloat floatingPointSaturationMatrix[] = {
 			0.0722 + 0.9278 * s,  0.0722 - 0.0722 * s,  0.0722 - 0.0722 * s,  0,
@@ -374,8 +375,7 @@ static NSUInteger const bytesPerPixel = 4;
 	}
 	
     //apply tint
-    if (tintColor && CGColorGetAlpha(tintColor.CGColor) > 0.0f)
-    {
+    if (tintColor && CGColorGetAlpha(tintColor.CGColor) > 0.0f) {
         CGContextSetFillColorWithColor(ctx, tintColor.CGColor);
         CGContextFillRect(ctx, CGRectMake(0, 0, sourceBuffer.width, sourceBuffer.height));
     }
