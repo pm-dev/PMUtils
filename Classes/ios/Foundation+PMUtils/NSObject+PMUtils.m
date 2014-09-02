@@ -12,11 +12,10 @@
 
 + (void) setShared:(id)shared
 {
-	NSAssert(shared, @"Parameter shared must not be nil.");
-	NSAssert([shared isMemberOfClass:self], @"Parameter shared %@ must be an instance of the receiving class %@", shared, self);
 	NSMutableDictionary *sharedDictionary = [self PM_sharedInstancesDictionary];
 	NSString *className = [self PM_className];
 	if (shared) {
+		NSAssert([shared isKindOfClass:self], @"Parameter shared - %@ - must be an instance of the receiving class %@", shared, self);
 		sharedDictionary[className] = shared;
 	}
 	else {

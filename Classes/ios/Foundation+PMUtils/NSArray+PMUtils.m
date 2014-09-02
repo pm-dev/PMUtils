@@ -10,7 +10,7 @@
 
 @implementation NSArray (PMUtils)
 
-- (BOOL) isItenticalToArray:(NSArray *)otherArray
+- (BOOL) isIdenticalToArray:(NSArray *)otherArray
 {
     if (self.count == otherArray.count) {
         __block BOOL identical = YES;

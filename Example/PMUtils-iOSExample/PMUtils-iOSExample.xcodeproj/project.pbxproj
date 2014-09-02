@@ -7,7 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F2F3438656F41F89907061A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F875FA949C2459092E02117 /* libPods.a */; };
 		6715D10B18CEB22500DEC92B /* Sample.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 6715D10A18CEB22500DEC92B /* Sample.JPG */; };
+		6725138119B51C450037F7E1 /* NSArrayTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725138019B51C450037F7E1 /* NSArrayTestCase.m */; };
+		6725138319B529370037F7E1 /* NSDataTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725138219B529370037F7E1 /* NSDataTestCase.m */; };
+		6725138719B5345B0037F7E1 /* NSIndexPathTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725138619B5345B0037F7E1 /* NSIndexPathTestCase.m */; };
+		6725138919B536D10037F7E1 /* NSManagedObjectTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725138819B536D10037F7E1 /* NSManagedObjectTestCase.m */; };
+		6725138C19B53B790037F7E1 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6725138A19B53B790037F7E1 /* TestModel.xcdatamodeld */; };
+		6725138D19B53C8F0037F7E1 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6725138A19B53B790037F7E1 /* TestModel.xcdatamodeld */; };
+		6725139019B53D9A0037F7E1 /* PMTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725138F19B53D9A0037F7E1 /* PMTest.m */; };
+		6725139219B542770037F7E1 /* NSMutableDictionaryTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725139119B542770037F7E1 /* NSMutableDictionaryTestCase.m */; };
+		6725139419B545D80037F7E1 /* NSObjectTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725139319B545D80037F7E1 /* NSObjectTestCase.m */; };
+		6725139619B54F6B0037F7E1 /* NSRegularExpressionTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725139519B54F6B0037F7E1 /* NSRegularExpressionTestCase.m */; };
+		6725139819B55D260037F7E1 /* NSStringTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725139719B55D260037F7E1 /* NSStringTestCase.m */; };
 		674E825A19A00CDC000BE83F /* PMSampleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 674E825919A00CDC000BE83F /* PMSampleView.xib */; };
 		674E825D19A00CF0000BE83F /* PMSampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 674E825C19A00CF0000BE83F /* PMSampleView.m */; };
 		6784D39518CE23DD003F980D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6784D39418CE23DD003F980D /* Foundation.framework */; };
@@ -23,7 +35,6 @@
 		6784D3B818CE23DD003F980D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6784D39418CE23DD003F980D /* Foundation.framework */; };
 		6784D3B918CE23DD003F980D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6784D39818CE23DD003F980D /* UIKit.framework */; };
 		6784D3C118CE23DD003F980D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6784D3BF18CE23DD003F980D /* InfoPlist.strings */; };
-		6784D3C318CE23DD003F980D /* PMUtils_iOSExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6784D3C218CE23DD003F980D /* PMUtils_iOSExampleTests.m */; };
 		6784D3FF18CE24A9003F980D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6784D3A918CE23DD003F980D /* Main_iPad.storyboard */; };
 		74F84E5B19AFBBBF00D59BB7 /* lebowskiipsum.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74F84E5A19AFBBBF00D59BB7 /* lebowskiipsum.txt */; };
 		DB46A33985C1411AB049EDF2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F875FA949C2459092E02117 /* libPods.a */; };
@@ -43,6 +54,17 @@
 		247A155959E54ED4A989335E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		4F875FA949C2459092E02117 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6715D10A18CEB22500DEC92B /* Sample.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sample.JPG; sourceTree = "<group>"; };
+		6725138019B51C450037F7E1 /* NSArrayTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayTestCase.m; sourceTree = "<group>"; };
+		6725138219B529370037F7E1 /* NSDataTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataTestCase.m; sourceTree = "<group>"; };
+		6725138619B5345B0037F7E1 /* NSIndexPathTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSIndexPathTestCase.m; sourceTree = "<group>"; };
+		6725138819B536D10037F7E1 /* NSManagedObjectTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSManagedObjectTestCase.m; sourceTree = "<group>"; };
+		6725138B19B53B790037F7E1 /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
+		6725138E19B53D9A0037F7E1 /* PMTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMTest.h; sourceTree = "<group>"; };
+		6725138F19B53D9A0037F7E1 /* PMTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMTest.m; sourceTree = "<group>"; };
+		6725139119B542770037F7E1 /* NSMutableDictionaryTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableDictionaryTestCase.m; sourceTree = "<group>"; };
+		6725139319B545D80037F7E1 /* NSObjectTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectTestCase.m; sourceTree = "<group>"; };
+		6725139519B54F6B0037F7E1 /* NSRegularExpressionTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRegularExpressionTestCase.m; sourceTree = "<group>"; };
+		6725139719B55D260037F7E1 /* NSStringTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTestCase.m; sourceTree = "<group>"; };
 		674E825919A00CDC000BE83F /* PMSampleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMSampleView.xib; sourceTree = "<group>"; };
 		674E825B19A00CF0000BE83F /* PMSampleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMSampleView.h; sourceTree = "<group>"; };
 		674E825C19A00CF0000BE83F /* PMSampleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMSampleView.m; sourceTree = "<group>"; };
@@ -65,7 +87,6 @@
 		6784D3B618CE23DD003F980D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6784D3BE18CE23DD003F980D /* PMUtils-iOSExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PMUtils-iOSExampleTests-Info.plist"; sourceTree = "<group>"; };
 		6784D3C018CE23DD003F980D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6784D3C218CE23DD003F980D /* PMUtils_iOSExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMUtils_iOSExampleTests.m; sourceTree = "<group>"; };
 		74F84E5A19AFBBBF00D59BB7 /* lebowskiipsum.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lebowskiipsum.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,12 +109,28 @@
 				6784D3B718CE23DD003F980D /* XCTest.framework in Frameworks */,
 				6784D3B918CE23DD003F980D /* UIKit.framework in Frameworks */,
 				6784D3B818CE23DD003F980D /* Foundation.framework in Frameworks */,
+				5F2F3438656F41F89907061A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6725139E19B5994E0037F7E1 /* Foundation+PMUtils Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6725138019B51C450037F7E1 /* NSArrayTestCase.m */,
+				6725138219B529370037F7E1 /* NSDataTestCase.m */,
+				6725138619B5345B0037F7E1 /* NSIndexPathTestCase.m */,
+				6725139119B542770037F7E1 /* NSMutableDictionaryTestCase.m */,
+				6725138819B536D10037F7E1 /* NSManagedObjectTestCase.m */,
+				6725139319B545D80037F7E1 /* NSObjectTestCase.m */,
+				6725139519B54F6B0037F7E1 /* NSRegularExpressionTestCase.m */,
+				6725139719B55D260037F7E1 /* NSStringTestCase.m */,
+			);
+			name = "Foundation+PMUtils Tests";
+			sourceTree = "<group>";
+		};
 		6784D38818CE23DD003F980D = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +197,7 @@
 		6784D3BC18CE23DD003F980D /* PMUtils-iOSExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				6784D3C218CE23DD003F980D /* PMUtils_iOSExampleTests.m */,
+				6725139E19B5994E0037F7E1 /* Foundation+PMUtils Tests */,
 				6784D3BD18CE23DD003F980D /* Supporting Files */,
 			);
 			path = "PMUtils-iOSExampleTests";
@@ -171,6 +208,9 @@
 			children = (
 				6784D3BE18CE23DD003F980D /* PMUtils-iOSExampleTests-Info.plist */,
 				6784D3BF18CE23DD003F980D /* InfoPlist.strings */,
+				6725138A19B53B790037F7E1 /* TestModel.xcdatamodeld */,
+				6725138E19B53D9A0037F7E1 /* PMTest.h */,
+				6725138F19B53D9A0037F7E1 /* PMTest.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -201,9 +241,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6784D3C918CE23DD003F980D /* Build configuration list for PBXNativeTarget "PMUtils-iOSExampleTests" */;
 			buildPhases = (
+				CAFA0309076745B488CB9E92 /* Check Pods Manifest.lock */,
 				6784D3B118CE23DD003F980D /* Sources */,
 				6784D3B218CE23DD003F980D /* Frameworks */,
 				6784D3B318CE23DD003F980D /* Resources */,
+				F5964CEC2EC240D8B54C39EC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -305,6 +347,36 @@
 			shellScript = "\"${SRCROOT}/../Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CAFA0309076745B488CB9E92 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F5964CEC2EC240D8B54C39EC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -313,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6784D3A118CE23DD003F980D /* main.m in Sources */,
+				6725138D19B53C8F0037F7E1 /* TestModel.xcdatamodeld in Sources */,
 				6784D3AE18CE23DD003F980D /* PMViewController.m in Sources */,
 				6784D3A518CE23DD003F980D /* PMAppDelegate.m in Sources */,
 				674E825D19A00CF0000BE83F /* PMSampleView.m in Sources */,
@@ -323,7 +396,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6784D3C318CE23DD003F980D /* PMUtils_iOSExampleTests.m in Sources */,
+				6725139219B542770037F7E1 /* NSMutableDictionaryTestCase.m in Sources */,
+				6725139419B545D80037F7E1 /* NSObjectTestCase.m in Sources */,
+				6725138119B51C450037F7E1 /* NSArrayTestCase.m in Sources */,
+				6725139619B54F6B0037F7E1 /* NSRegularExpressionTestCase.m in Sources */,
+				6725138C19B53B790037F7E1 /* TestModel.xcdatamodeld in Sources */,
+				6725138919B536D10037F7E1 /* NSManagedObjectTestCase.m in Sources */,
+				6725138319B529370037F7E1 /* NSDataTestCase.m in Sources */,
+				6725139019B53D9A0037F7E1 /* PMTest.m in Sources */,
+				6725138719B5345B0037F7E1 /* NSIndexPathTestCase.m in Sources */,
+				6725139819B55D260037F7E1 /* NSStringTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +557,7 @@
 		};
 		6784D3CA18CE23DD003F980D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 247A155959E54ED4A989335E /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PMUtils-iOSExample.app/PMUtils-iOSExample";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -497,6 +580,7 @@
 		};
 		6784D3CB18CE23DD003F980D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 247A155959E54ED4A989335E /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PMUtils-iOSExample.app/PMUtils-iOSExample";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -544,6 +628,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6725138A19B53B790037F7E1 /* TestModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6725138B19B53B790037F7E1 /* TestModel.xcdatamodel */,
+			);
+			currentVersion = 6725138B19B53B790037F7E1 /* TestModel.xcdatamodel */;
+			path = TestModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6784D38918CE23DD003F980D /* Project object */;
 }

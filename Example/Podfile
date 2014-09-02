@@ -2,3 +2,5 @@ xcodeproj 'PMUtils-iOSExample/PMUtils-iOSExample.xcodeproj'
 
 
 pod "PMUtils", :path => "../PMUtils.podspec"
+
+link_with ["PMUtils-iOSExample", "PMUtils-iOSExampleTests"]

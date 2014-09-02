@@ -60,9 +60,10 @@
 - (BOOL) isCapitalized;
 
 /**
- *  Compares the receiver to otherVersion after stripping any trailing periods or zeros.
+ *  Compares the receiver to otherVersion after stripping any trailing periods or zeros. The receiver must be a string of dot, '.',
+ *	separated integers.
  *
- *  @param otherVersion A string of dot separated integers to compare with the receiver.
+ *  @param otherVersion A string of dot separated integers to compare with the receiver. Must not be nil.
  *
  *  @return Returns an NSComparisonResult value that indicates the lexical ordering of the receiver and otherVersion. 
  *  NSOrderedAscending if the receiver precedes otherVersion, NSOrderedSame if the receiver and otherVersion are equivalent in lexical value,

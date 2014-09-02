@@ -41,7 +41,8 @@
 + (instancetype) verifyKindOfClass:(id)object;
 
 /**
- *  Use this method to verify an object is an instance of the reciever.
+ *  Use this method to verify an object is an instance of the reciever. Be careful the object you are 
+ *	verifying with is not a class cluster, such as NSArray, NSDictionary, NSValue, etc.
  *
  *  @param object The object whose class you want to verify.
  *

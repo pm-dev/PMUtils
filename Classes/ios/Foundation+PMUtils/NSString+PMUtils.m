@@ -56,6 +56,8 @@
 - (NSComparisonResult) compareWithVersion:(NSString *)otherVersion
 {
 	// We want 1.0 and 1.0.0 to return NSOrderedSame.
+	NSParameterAssert([self PM_isVersionString]);
+	NSParameterAssert([otherVersion PM_isVersionString]);
 	NSString *v1 = [self PM_removeTrailingZerosAndPeriods];
 	NSString *v2 = [otherVersion PM_removeTrailingZerosAndPeriods];
     return [v1 compare:v2 options:NSNumericSearch];
@@ -63,10 +65,12 @@
 
 - (BOOL) inVersion:(NSString *)baseVersion
 {
+	NSParameterAssert([self PM_isVersionString]);
+	NSParameterAssert([baseVersion PM_isVersionString]);
     NSString *receiver = [self PM_removeTrailingZerosAndPeriods];
     NSString *base = [baseVersion PM_removeTrailingZerosAndPeriods];
     NSRange range = [receiver rangeOfString:base];
-    return range.location = 0;
+    return range.location == 0;
 }
 
 - (BOOL)containsEmoji
@@ -88,26 +92,30 @@
     NSMutableString *output = [NSMutableString stringWithString:components[0]];
     
     for (NSUInteger i = 1; i < components.count; i++) {
-        [output appendString:[components[i] capitalizedString]];
+		NSString *component = components[i];
+        [output appendString:[component stringByReplacingCharactersInRange:NSMakeRange(0,1)
+																withString:[[component substringToIndex:1] uppercaseString]]];
     }
-    
     return [output copy];
 }
 
 - (NSString *) underscoresFromCamelCase
 {
-    NSMutableString *output = [NSMutableString string];
+    NSMutableString *output = [[self substringToIndex:1] mutableCopy];
     NSCharacterSet *uppercaseCharacters = [NSCharacterSet uppercaseLetterCharacterSet];
-    
-    for (NSInteger i = 0; i < self.length; i++ ) {
+    NSCharacterSet *whitespaceCharacters = [NSCharacterSet whitespaceCharacterSet];
+	
+    for (NSInteger i = 1; i < self.length; i++ ) {
         unichar c = [self characterAtIndex:i];
-        if ([uppercaseCharacters characterIsMember:c]) {
+        if ([uppercaseCharacters characterIsMember:c] &&
+			![whitespaceCharacters characterIsMember:[self characterAtIndex:i-1]]) {
             [output appendFormat:@"_%@", [[NSString stringWithCharacters:&c length:1] lowercaseString]];
-        } else {
+        }
+		else {
             [output appendFormat:@"%C", c];
         }
     }
-    return output;
+    return [output copy];
 }
 
 #pragma mark - Internal Methods
@@ -123,6 +131,19 @@
 		lastChar = [self characterAtIndex:rangeToDelete.location-1];
 	}
 	return [self stringByReplacingCharactersInRange:rangeToDelete withString:@""];
+}
+
+- (BOOL) PM_isVersionString
+{
+	NSArray *components = [self componentsSeparatedByString:@"."];
+	BOOL isVersionString = YES;
+	for (NSString *integerString in components) {
+		if ([[integerString stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]] isEqualToString:@""] == NO) {
+			isVersionString = NO;
+			break;
+		}
+	}
+	return isVersionString;
 }
 
 @end

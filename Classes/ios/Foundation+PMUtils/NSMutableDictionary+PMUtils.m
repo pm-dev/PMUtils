@@ -41,7 +41,7 @@
 
 - (void) convertUnderscoredStringKeysToCamelCase
 {
-    for (id key in self) {
+    for (id key in self.allKeys) {
         if ([key isKindOfClass:[NSString class]]) {
             [self replaceKey:key withKey:[(NSString *)key camelCaseFromUnderscores]];
         }
@@ -50,7 +50,7 @@
 
 - (void) convertCamelCaseStringKeysToUnderscored
 {
-    for (id key in self) {
+    for (id key in self.allKeys) {
         if ([key isKindOfClass:[NSString class]]) {
             [self replaceKey:key withKey:[(NSString *)key underscoresFromCamelCase]];
         }

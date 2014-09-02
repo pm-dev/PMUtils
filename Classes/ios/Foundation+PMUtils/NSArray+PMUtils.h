@@ -19,7 +19,7 @@
  *
  *  @return YES if the contents of otherArray have pointer equality to the contents of the receiving array, otherwise NO.
  */
-- (BOOL) isItenticalToArray:(NSArray *)otherArray;
+- (BOOL) isIdenticalToArray:(NSArray *)otherArray;
 
 /**
  *  Compares the receiving array to another array. This method looks up the value at a key path for objects at a given index in each array,

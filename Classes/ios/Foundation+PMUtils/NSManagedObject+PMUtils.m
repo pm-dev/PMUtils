@@ -55,7 +55,8 @@
 + (instancetype) create
 {
     NSManagedObjectContext *context = [self context];
-    
+    NSParameterAssert(context.persistentStoreCoordinator.managedObjectModel);
+	
     if (context) {
         NSEntityDescription *entity = [NSEntityDescription entityForName:[self entityName]
                                                   inManagedObjectContext:context];
@@ -74,7 +75,6 @@
     BOOL succeeded = [object save];
     return succeeded? object : nil;
 }
-
 
 - (BOOL) destroy
 {
