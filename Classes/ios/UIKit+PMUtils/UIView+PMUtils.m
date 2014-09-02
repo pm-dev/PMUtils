@@ -25,14 +25,18 @@
 
 #import "UIView+PMUtils.h"
 #import "UIImage+PMUtils.h"
-#import "NSObject+PMUtils.h"
 
 @implementation UIView (PMUtils)
 
 + (void) setShared:(id)shared
 {
 	NSMutableSet *classes = [self PM_initializedSharedViewClasses];
-	[classes addObject:self];
+	if (shared) {
+		[classes addObject:self];
+	}
+	else {
+		[classes removeObject:self];
+	}
 	[super setShared:shared];
 }
 
@@ -108,7 +112,9 @@
 {
 	UIGraphicsBeginImageContextWithOptions(crop.size, YES, 1.0f);
 
-	[self drawViewHierarchyInRect:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height) afterScreenUpdates:NO];
+	CGRect rect = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+	
+	[self drawViewHierarchyInRect:rect afterScreenUpdates:NO];
 	
 	UIImage *snapshot = UIGraphicsGetImageFromCurrentImageContext();
 	

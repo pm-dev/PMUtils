@@ -23,6 +23,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NSObject+PMUtils.h"
 
 typedef NS_OPTIONS(NSUInteger, PMDirection) {
     PMDirectionVertical = 1 << 0,

@@ -93,13 +93,6 @@ static CGFloat const PMPageControlHeight = 37.0f;
 	duration = CACurrentMediaTime() - start;
 	NSLog(@"Blur #2: %f", duration);
 	
-	PMSampleView *view = [PMSampleView shared];
-	DLog(@"%@", view.label.text);
-	view.label.text = @"New sample text";
-	
-	PMSampleView *view2 = [PMSampleView shared];
-	DLog(@"%@", view2.label.text);	
-	
 	_imageFilmstrip = [PMImageFilmstrip imageFilmstripWithFrame:self.view.bounds
                                                   imageEntities:@[imgOne, imgTwo]];
 	_imageFilmstrip.delegate = self;

@@ -20,6 +20,7 @@
 		6725139419B545D80037F7E1 /* NSObjectTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725139319B545D80037F7E1 /* NSObjectTestCase.m */; };
 		6725139619B54F6B0037F7E1 /* NSRegularExpressionTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725139519B54F6B0037F7E1 /* NSRegularExpressionTestCase.m */; };
 		6725139819B55D260037F7E1 /* NSStringTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725139719B55D260037F7E1 /* NSStringTestCase.m */; };
+		672513A119B59C110037F7E1 /* UIViewTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 672513A019B59C110037F7E1 /* UIViewTestCase.m */; };
 		674E825A19A00CDC000BE83F /* PMSampleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 674E825919A00CDC000BE83F /* PMSampleView.xib */; };
 		674E825D19A00CF0000BE83F /* PMSampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 674E825C19A00CF0000BE83F /* PMSampleView.m */; };
 		6784D39518CE23DD003F980D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6784D39418CE23DD003F980D /* Foundation.framework */; };
@@ -65,9 +66,10 @@
 		6725139319B545D80037F7E1 /* NSObjectTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectTestCase.m; sourceTree = "<group>"; };
 		6725139519B54F6B0037F7E1 /* NSRegularExpressionTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRegularExpressionTestCase.m; sourceTree = "<group>"; };
 		6725139719B55D260037F7E1 /* NSStringTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTestCase.m; sourceTree = "<group>"; };
-		674E825919A00CDC000BE83F /* PMSampleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMSampleView.xib; sourceTree = "<group>"; };
-		674E825B19A00CF0000BE83F /* PMSampleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMSampleView.h; sourceTree = "<group>"; };
-		674E825C19A00CF0000BE83F /* PMSampleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMSampleView.m; sourceTree = "<group>"; };
+		672513A019B59C110037F7E1 /* UIViewTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewTestCase.m; sourceTree = "<group>"; };
+		674E825919A00CDC000BE83F /* PMSampleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PMSampleView.xib; path = "../PMUtils-iOSExample/PMSampleView.xib"; sourceTree = "<group>"; };
+		674E825B19A00CF0000BE83F /* PMSampleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMSampleView.h; path = "../PMUtils-iOSExample/PMSampleView.h"; sourceTree = "<group>"; };
+		674E825C19A00CF0000BE83F /* PMSampleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMSampleView.m; path = "../PMUtils-iOSExample/PMSampleView.m"; sourceTree = "<group>"; };
 		6784D39118CE23DD003F980D /* PMUtils-iOSExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PMUtils-iOSExample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6784D39418CE23DD003F980D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6784D39618CE23DD003F980D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +133,14 @@
 			name = "Foundation+PMUtils Tests";
 			sourceTree = "<group>";
 		};
+		6725139F19B59BF90037F7E1 /* UIKit+PMUtils Tests */ = {
+			isa = PBXGroup;
+			children = (
+				672513A019B59C110037F7E1 /* UIViewTestCase.m */,
+			);
+			name = "UIKit+PMUtils Tests";
+			sourceTree = "<group>";
+		};
 		6784D38818CE23DD003F980D = {
 			isa = PBXGroup;
 			children = (
@@ -172,9 +182,6 @@
 				6784D3A918CE23DD003F980D /* Main_iPad.storyboard */,
 				6784D3AC18CE23DD003F980D /* PMViewController.h */,
 				6784D3AD18CE23DD003F980D /* PMViewController.m */,
-				674E825919A00CDC000BE83F /* PMSampleView.xib */,
-				674E825B19A00CF0000BE83F /* PMSampleView.h */,
-				674E825C19A00CF0000BE83F /* PMSampleView.m */,
 				6784D3AF18CE23DD003F980D /* Images.xcassets */,
 				6784D39B18CE23DD003F980D /* Supporting Files */,
 			);
@@ -198,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				6725139E19B5994E0037F7E1 /* Foundation+PMUtils Tests */,
+				6725139F19B59BF90037F7E1 /* UIKit+PMUtils Tests */,
 				6784D3BD18CE23DD003F980D /* Supporting Files */,
 			);
 			path = "PMUtils-iOSExampleTests";
@@ -211,6 +219,9 @@
 				6725138A19B53B790037F7E1 /* TestModel.xcdatamodeld */,
 				6725138E19B53D9A0037F7E1 /* PMTest.h */,
 				6725138F19B53D9A0037F7E1 /* PMTest.m */,
+				674E825919A00CDC000BE83F /* PMSampleView.xib */,
+				674E825B19A00CF0000BE83F /* PMSampleView.h */,
+				674E825C19A00CF0000BE83F /* PMSampleView.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -398,6 +409,7 @@
 			files = (
 				6725139219B542770037F7E1 /* NSMutableDictionaryTestCase.m in Sources */,
 				6725139419B545D80037F7E1 /* NSObjectTestCase.m in Sources */,
+				672513A119B59C110037F7E1 /* UIViewTestCase.m in Sources */,
 				6725138119B51C450037F7E1 /* NSArrayTestCase.m in Sources */,
 				6725139619B54F6B0037F7E1 /* NSRegularExpressionTestCase.m in Sources */,
 				6725138C19B53B790037F7E1 /* TestModel.xcdatamodeld in Sources */,
