@@ -35,7 +35,7 @@
  *
  *  @return Returns the value for the key NSFileModificationDate, or nil if the item attributes at path doesn’t have an entry for the key.
  */
-- (NSDate *)modificationDateForFileAtPath:(NSString *)path;
+- (NSDate *)modificationDateForFileAtURL:(NSURL *)URL;
 
 
 /**
@@ -46,7 +46,7 @@
  *
  *  @param deep If YES, this method will recurse into subdirectories.
  */
-- (void) removeFilesInDirectory:(NSString *)path deep:(BOOL)deep;
+- (void) removeFilesInDirectory:(NSURL *)URL deep:(BOOL)deep;
 
 
 /**
@@ -56,7 +56,7 @@
  *  @param path A path string indicating the directory whose files you wish to remove.
  *
  */
-- (void) removeContentsOfDirectory:(NSString *)path;
+- (void) removeContentsOfDirectory:(NSURL *)URL;
 
 
 /**
@@ -69,7 +69,7 @@
  *
  *	@return path The filesystem location to attribute value with.
  */
-+ (NSString *)xattrStringValueForKey:(NSString *)key atPath:(NSString *)path;
++ (NSString *)xattrStringValueForKey:(NSString *)key atURL:(NSURL *)URL;
 
 
 /**
@@ -86,28 +86,7 @@
  *
  *	@return YES if setting the attribute was successful, otherwise NO.
  */
-+ (BOOL)setXAttrStringValue:(NSString *)value forKey:(NSString *)key atPath:(NSString *)path;
-
-
-/**
- *  Finds a directory inside a search path directory, creating it if it doesn't exist. If you specify nil for the attributes parameter,
- *	this method uses a default set of values for the owner, group, and permissions of any newly created directories in the path. Similarly,
- *	if you omit a specific attribute, the default value is used. *Note* see -[NSFileManager URLForDirectoryWithName:attributes:inDirectory:]
- *	which returns URLs, which is the preferred format.
- *
- *  @param name A name string identifying the directory. If name contains a path relative to the search path's directory, 
- *	intermediate directories will be created if necessary.
- *
- *  @param attributes The file attributes for the new directory and any newly created intermediate directories. You can set the owner and group numbers, 
- *	file permissions, and modification date. If you specify nil for this parameter or omit a particular value, one or more default values are used as 
- *	described in the discussion. For a list of keys you can include in this dictionary, see “Constants” section lists the global constants used as keys in 
- *	the attributes dictionary. Some of the keys, such as NSFileHFSCreatorCode and NSFileHFSTypeCode, do not apply to directories.
- *
- *	@param directory The search path directory. The supported values are described in NSSearchPathDirectory.
- *
- *	@return A path identifying the directory.
- */
-- (NSString *) pathForCachesDirectoryWithName:(NSString *)name attributes:(NSDictionary *)attributes inDirectory:(NSSearchPathDirectory)directory;
++ (BOOL)setXAttrStringValue:(NSString *)value forKey:(NSString *)key atURL:(NSURL *)URL;
 
 
 /**
@@ -137,6 +116,6 @@
  *
  *  @return YES if a directory exists at path, otherwise NO.
  */
-+ (BOOL) pathIsDirectory:(NSString *)path;
+- (BOOL) URLIsDirectory:(NSURL *)URL;
 
 @end

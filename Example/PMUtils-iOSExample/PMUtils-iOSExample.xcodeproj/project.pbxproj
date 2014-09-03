@@ -127,12 +127,12 @@
 			children = (
 				6725138019B51C450037F7E1 /* NSArrayTestCase.m */,
 				6725138219B529370037F7E1 /* NSDataTestCase.m */,
+				74953E8019B64480009E0AAD /* NSFileManagerTestCase.m */,
 				6725138619B5345B0037F7E1 /* NSIndexPathTestCase.m */,
-				6725139119B542770037F7E1 /* NSMutableDictionaryTestCase.m */,
 				6725138819B536D10037F7E1 /* NSManagedObjectTestCase.m */,
+				6725139119B542770037F7E1 /* NSMutableDictionaryTestCase.m */,
 				6725139319B545D80037F7E1 /* NSObjectTestCase.m */,
 				6725139519B54F6B0037F7E1 /* NSRegularExpressionTestCase.m */,
-				74953E8019B64480009E0AAD /* NSFileManagerTestCase.m */,
 				6725139719B55D260037F7E1 /* NSStringTestCase.m */,
 				74953E8419B64E6A009E0AAD /* NSThreadTestCase.m */,
 			);
