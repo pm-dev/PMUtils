@@ -70,11 +70,6 @@ static inline NSString * PMDescriptionForObject(NSObject *object, id locale, NSU
 	return self;
 }
 
-- (id)copy
-{
-	return [self mutableCopy];
-}
-
 - (void)setObject:(id)anObject forKey:(id)aKey
 {
 	if (![self.dictionary objectForKey:aKey]) {
@@ -109,12 +104,13 @@ static inline NSString * PMDescriptionForObject(NSObject *object, id locale, NSU
 	return self.array.reverseObjectEnumerator;
 }
 
-- (void)insertObject:(id)anObject forKey:(id)aKey atIndex:(NSUInteger)anIndex
+- (void)insertObject:(id)anObject forKey:(id<NSCopying>)aKey atIndex:(NSUInteger)anIndex
 {
 	if ([self.dictionary objectForKey:aKey]) {
 		[self removeObjectForKey:aKey];
 	}
-	[self.array insertObject:aKey atIndex:anIndex];
+    
+	[self.array insertObject:[aKey copyWithZone:NULL] atIndex:anIndex];
 	[self.dictionary setObject:anObject forKey:aKey];
 }
 
@@ -136,13 +132,27 @@ static inline NSString * PMDescriptionForObject(NSObject *object, id locale, NSU
 
 - (NSUInteger)indexOfObject:(id)object
 {
-    for (NSUInteger i = 0; i < self.array.count; i++) {
-        id<NSCopying> key = self.array[i];
+    __block NSUInteger objidx = NSNotFound;
+    [self.array enumerateObjectsUsingBlock:^(id<NSCopying> key, NSUInteger idx, BOOL *stop) {
         if ([object isEqual:self.dictionary[key]]) {
-            return i;
+            objidx = idx;
+            *stop = YES;
         }
-    }
-    return NSNotFound;
+    }];
+    return objidx;
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    return [self mutableCopyWithZone:zone];
+}
+
+- (id)mutableCopyWithZone:(NSZone *)zone
+{
+    PMOrderedDictionary *dict = [[[self class] allocWithZone:zone] init];
+    dict.array = [self.array mutableCopy];
+    dict.dictionary = [self.dictionary mutableCopy];
+    return dict;
 }
 
 - (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level
