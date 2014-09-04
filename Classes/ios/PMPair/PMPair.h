@@ -24,11 +24,21 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PMPair : NSObject
+@interface PMPair : NSObject <NSSecureCoding, NSMutableCopying, NSFastEnumeration>
 
-@property (nonatomic, strong) id object1;
-@property (nonatomic, strong) id object2;
+- (instancetype) initWithFirstObject:(id)object secondObject:(id)otherObject;
++ (instancetype) pairWithFirstObject:(id)object secondObject:(id)otherObject;
 
-+ (instancetype) pairWithObject1:(id)object1 object2:(id)object2;
+- (instancetype) initWithFirstObject:(id)object secondObject:(id)otherObject options:(NSMapTableOptions)options;
++ (instancetype) pairWithFirstObject:(id)object secondObject:(id)otherObject options:(NSMapTableOptions)options;
+
+- (NSMapTableOptions) options;
+- (void) setOptions:(NSMapTableOptions)options;
+
+- (id) firstObject;
+- (void) setFirstObject:(id)object;
+
+- (id) secondObject;
+- (void) setSecondObject:(id)object;
 
 @end
