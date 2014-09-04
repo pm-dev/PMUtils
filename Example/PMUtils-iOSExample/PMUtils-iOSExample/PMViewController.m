@@ -63,7 +63,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 	
 	CGRect pageControlFrame = CGRectMake(0, self.view.bounds.size.height - PMPageControlHeight , self.view.bounds.size.width, PMPageControlHeight);
 	_pageControl = [[UIPageControl alloc] initWithFrame:pageControlFrame];
-	_pageControl.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+	_pageControl.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;
 	_pageControl.hidden = YES;
 	[self.view addSubview:_pageControl];
 }
@@ -106,6 +106,12 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
 	((UICollectionViewFlowLayout *)_imageFilmstrip.collectionViewLayout).itemSize = self.view.bounds.size;
+}
+
+- (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_pageControl.currentPage inSection:0];
+    [_imageFilmstrip scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally animated:YES];
 }
 
 - (void) scrollViewWillEndDragging:(PMImageFilmstrip *)imageFilmstrip withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset

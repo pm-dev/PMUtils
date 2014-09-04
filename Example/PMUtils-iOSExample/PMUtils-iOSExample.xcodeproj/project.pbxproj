@@ -37,6 +37,8 @@
 		6784D3B918CE23DD003F980D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6784D39818CE23DD003F980D /* UIKit.framework */; };
 		6784D3C118CE23DD003F980D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6784D3BF18CE23DD003F980D /* InfoPlist.strings */; };
 		6784D3FF18CE24A9003F980D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6784D3A918CE23DD003F980D /* Main_iPad.storyboard */; };
+		74953E8119B64480009E0AAD /* NSFileManagerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 74953E8019B64480009E0AAD /* NSFileManagerTestCase.m */; };
+		74953E8519B64E6A009E0AAD /* NSThreadTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 74953E8419B64E6A009E0AAD /* NSThreadTestCase.m */; };
 		74F84E5B19AFBBBF00D59BB7 /* lebowskiipsum.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74F84E5A19AFBBBF00D59BB7 /* lebowskiipsum.txt */; };
 		DB46A33985C1411AB049EDF2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F875FA949C2459092E02117 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -89,6 +91,8 @@
 		6784D3B618CE23DD003F980D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6784D3BE18CE23DD003F980D /* PMUtils-iOSExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PMUtils-iOSExampleTests-Info.plist"; sourceTree = "<group>"; };
 		6784D3C018CE23DD003F980D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		74953E8019B64480009E0AAD /* NSFileManagerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSFileManagerTestCase.m; sourceTree = "<group>"; };
+		74953E8419B64E6A009E0AAD /* NSThreadTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSThreadTestCase.m; sourceTree = "<group>"; };
 		74F84E5A19AFBBBF00D59BB7 /* lebowskiipsum.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lebowskiipsum.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,12 +127,14 @@
 			children = (
 				6725138019B51C450037F7E1 /* NSArrayTestCase.m */,
 				6725138219B529370037F7E1 /* NSDataTestCase.m */,
+				74953E8019B64480009E0AAD /* NSFileManagerTestCase.m */,
 				6725138619B5345B0037F7E1 /* NSIndexPathTestCase.m */,
-				6725139119B542770037F7E1 /* NSMutableDictionaryTestCase.m */,
 				6725138819B536D10037F7E1 /* NSManagedObjectTestCase.m */,
+				6725139119B542770037F7E1 /* NSMutableDictionaryTestCase.m */,
 				6725139319B545D80037F7E1 /* NSObjectTestCase.m */,
 				6725139519B54F6B0037F7E1 /* NSRegularExpressionTestCase.m */,
 				6725139719B55D260037F7E1 /* NSStringTestCase.m */,
+				74953E8419B64E6A009E0AAD /* NSThreadTestCase.m */,
 			);
 			name = "Foundation+PMUtils Tests";
 			sourceTree = "<group>";
@@ -417,6 +423,8 @@
 				6725138319B529370037F7E1 /* NSDataTestCase.m in Sources */,
 				6725139019B53D9A0037F7E1 /* PMTest.m in Sources */,
 				6725138719B5345B0037F7E1 /* NSIndexPathTestCase.m in Sources */,
+				74953E8519B64E6A009E0AAD /* NSThreadTestCase.m in Sources */,
+				74953E8119B64480009E0AAD /* NSFileManagerTestCase.m in Sources */,
 				6725139819B55D260037F7E1 /* NSStringTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

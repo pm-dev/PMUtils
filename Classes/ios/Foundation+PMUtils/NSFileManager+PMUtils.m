@@ -30,33 +30,23 @@
 @implementation NSFileManager (PMUtils)
 
 
-- (NSDate *)modificationDateForFileAtPath:(NSString *)path
+- (NSDate *)modificationDateForFileAtURL:(NSURL *)URL;
 {
     NSError *error = nil;
-	NSDictionary *attrs = [self attributesOfItemAtPath:path error:&error];
+	NSDictionary *attrs = [self attributesOfItemAtPath:URL.path error:&error];
     NSParameterAssert(!error);
 	NSDate *modDate = [attrs fileModificationDate];
 	return modDate;
 }
 
-- (void) removeContentsOfDirectory:(NSString *)path
+- (void) removeContentsOfDirectory:(NSURL *)URL
 {
-	[self PM_removeContentsOfDirectory:path removingSubdirectories:YES deep:NO];
+	[self PM_removeContentsOfDirectory:URL removingSubdirectories:YES deep:NO];
 }
 
-- (void) removeFilesInDirectory:(NSString *)path deep:(BOOL)deep
+- (void) removeFilesInDirectory:(NSURL *)URL deep:(BOOL)deep
 {
-	[self PM_removeContentsOfDirectory:path removingSubdirectories:NO deep:deep];
-}
-
-- (NSString *) pathForCachesDirectoryWithName:(NSString *)name attributes:(NSDictionary *)attributes inDirectory:(NSSearchPathDirectory)directory
-{
-	NSString *basePath = NSSearchPathForDirectoriesInDomains(directory, NSUserDomainMask, YES).lastObject;
-	NSString *path = [basePath stringByAppendingPathComponent:name];
-    NSError *error = nil;
-    [self createDirectoryAtPath:path withIntermediateDirectories:YES attributes:attributes error:&error];
-    NSParameterAssert(!error);
-	return path;
+	[self PM_removeContentsOfDirectory:URL removingSubdirectories:NO deep:deep];
 }
 
 - (NSURL *) URLForDirectoryWithName:(NSString *)name attributes:(NSDictionary *)attributes inDirectory:(NSSearchPathDirectory)directory
@@ -69,11 +59,11 @@
     return fullURL;
 }
 
-+ (NSString *)xattrStringValueForKey:(NSString *)key atPath:(NSString *)path
++ (NSString *)xattrStringValueForKey:(NSString *)key atURL:(NSURL *)URL
 {
 	NSString *value = nil;
 	const char *keyName = key.UTF8String;
-	const char *filePath = path.fileSystemRepresentation;
+	const char *filePath = URL.fileSystemRepresentation;
 	
 	ssize_t bufferSize = getxattr(filePath, keyName, NULL, 0, 0, 0);
 
@@ -90,48 +80,37 @@
 	return value;
 }
 
-+ (BOOL)setXAttrStringValue:(NSString *)value forKey:(NSString *)key atPath:(NSString *)path
++ (BOOL)setXAttrStringValue:(NSString *)value forKey:(NSString *)key atURL:(NSURL *)URL
 {
-	int failed = setxattr(path.UTF8String, key.UTF8String, value.UTF8String, value.length, 0, 0);
+	int failed = setxattr(URL.fileSystemRepresentation, key.UTF8String, value.UTF8String, value.length, 0, 0);
 	return (failed == 0);
 }
 
-+ (BOOL) pathIsDirectory:(NSString *)path
+- (BOOL) URLIsDirectory:(NSURL *)URL
 {
-    struct stat st;
-    int failed = stat(path.UTF8String, &st);
-	if (!failed) {
-		return S_ISDIR(st.st_mode);
-	}
-	return NO;
+    NSError *error = nil;
+	NSDictionary *attrs = [self attributesOfItemAtPath:URL.path error:&error];
+    NSParameterAssert(!error);
+    return [[attrs fileType] isEqualToString:NSFileTypeDirectory];
 }
 
 #pragma mark - Internal Methods
 
-
-- (void) PM_removeContentsOfDirectory:(NSString *)path
+- (void) PM_removeContentsOfDirectory:(NSURL *)URL
 			   removingSubdirectories:(BOOL)subdirectories
 								 deep:(BOOL)deep
 {
-    NSAssert([NSFileManager pathIsDirectory:path],
-			 @"path parameter %@ for -[NSFileManager removeFilesInDirectory:deep:] must be a directory.", path);
-    
-    NSDirectoryEnumerator *enumerator = [self enumeratorAtPath:path];
-    
-	if (!deep) {
-        [enumerator skipDescendants];
-    }
-    
-    for (NSString *fileName in enumerator) {
-						
-        NSString *fullPath = [path stringByAppendingPathComponent:fileName];
-		if (![NSFileManager pathIsDirectory:fullPath] || subdirectories) {
-			NSError *error = nil;
-			[self removeItemAtPath:fullPath error:&error];
-			NSParameterAssert(!error);
-		}
+    NSDirectoryEnumerator *enumerator = [self enumeratorAtURL:URL
+                                   includingPropertiesForKeys:@[NSURLIsDirectoryKey]
+                                                      options:deep? 0 : NSDirectoryEnumerationSkipsSubdirectoryDescendants
+                                                 errorHandler:nil];
+    for (NSURL *item in enumerator) {
+        if (subdirectories || ![self URLIsDirectory:item]) {
+            NSError *error = nil;
+            [self removeItemAtURL:item error:&error];
+            NSParameterAssert(!error);
+        }
     }
 }
-
 
 @end
