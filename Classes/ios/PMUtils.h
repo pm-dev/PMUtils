@@ -30,7 +30,6 @@
 #import "Foundation+PMUtils.h"
 #import "PMOrderedDictionary.h"
 #import "PMProtocolInterceptor.h"
-#import "PMPair.h"
 #import "PMImageFilmstrip.h"
 #import "PMAnimationQueue.h"
 #import "PMCollectionViewSwipeCell.h"

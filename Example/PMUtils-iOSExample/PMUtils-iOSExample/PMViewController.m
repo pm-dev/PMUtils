@@ -38,6 +38,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 {
 	UIPageControl *_pageControl;
 	PMImageFilmstrip *_imageFilmstrip;
+    PMAnimationQueue *_animationQueue;
 }
 
 - (void)viewDidLoad
@@ -101,6 +102,30 @@ static CGFloat const PMPageControlHeight = 37.0f;
 	
 	_pageControl.numberOfPages = _imageFilmstrip.imageEntities.count;
 	_pageControl.hidden = NO;
+    
+    
+    UIView *sq = [UIView new];
+    sq.backgroundColor = [UIColor redColor];
+    sq.frame = CGRectMake(0, 0, 10, 10);
+    [self.view addSubview:sq];
+    
+    _animationQueue = [PMAnimationQueue new];
+
+    [_animationQueue addAnimationWithDelay:0 options:0 preAnimation:^NSTimeInterval{
+        return 5;
+    } animation:^{
+        sq.frame = CGRectMake(100, 0, 10, 10);
+    } completion:^(BOOL finished) {
+        DLog(@"finished1");
+    }];
+    
+    [_animationQueue addAnimationWithDelay:0 options:0 preAnimation:^NSTimeInterval{
+        return 5;
+    } animation:^{
+        sq.frame = CGRectMake(100, 100, 10, 10);
+    } completion:^(BOOL finished) {
+        DLog(@"finished2");
+    }];
 }
 
 - (void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration

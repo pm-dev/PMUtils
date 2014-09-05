@@ -23,21 +23,24 @@
 //
 
 #import "PMAnimationQueue.h"
+#import "PMUtils.h"
 
 @interface PMAnimationQueue ()
 
-@property (nonatomic, strong) NSMutableArray *animations;
+@property (nonatomic, strong) NSOperationQueue *animations;
 
 @end
 
 @implementation PMAnimationQueue
 
-- (id) init
+
+- (instancetype) init
 {
     self = [super init];
     if (self)
     {
-        _animations = [NSMutableArray arrayWithCapacity:2];
+        _animations = [NSOperationQueue new];
+        _animations.maxConcurrentOperationCount = 1;
     }
     return self;
 }
@@ -52,66 +55,49 @@
      * If something is currently animating the passed in animation
      * will execute in the completion block of the current animation.
      */
+    NSParameterAssert(animation);
 
-    __weak PMAnimationQueue	*weakSelf = self;
-    
-    [self.animations addObject: ^{
-        
-		void (^nextAnimation)(void) = ^
-		{
-			[weakSelf.animations removeObjectAtIndex:0];
-			if (weakSelf.animations.count)
-				((void (^)(void))weakSelf.animations[0])(); // Start next animation
-		};
-		
-		NSTimeInterval duration = 0.0;
-		if (preAnimation)
+    DEF_weak(self, weakSelf);
+    NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+        NSTimeInterval duration = 0.0;
+		if (preAnimation) {
 			duration = preAnimation();
-		
-		
-		if (!animation)
-		{
-			if (completion)
-				completion(NO);
-			
-			nextAnimation();
-			return;
-		}
-		
-		
-		if (duration <= 0.0)
-		{
-			if (animation)
+        }
+        
+		if (duration <= 0.0) {
+			if (animation) {
 				animation();
-			if (completion)
+            }
+			if (completion) {
 				completion(YES);
-			
-			nextAnimation();
-			return;
+            }
 		}
-		
-		
-        [UIView animateWithDuration:duration
-                              delay:delay
-                            options:options
-                         animations:animation
-                         completion:^(BOOL finished)
-         {
-             if(completion)
-                 completion(finished);
-			 
-			 nextAnimation();
-         }];
-    }];
+        else {
+            DEF_strong(weakSelf, strongSelf);
+            [strongSelf.animations setSuspended:YES];
+            [UIView animateWithDuration:duration
+                                  delay:delay
+                                options:options
+                             animations:animation
+                             completion:^(BOOL finished) {
+                                 DEF_strong(weakSelf, strongSelf);
+                                 [strongSelf.animations setSuspended:NO];
+                                 if(completion) {
+                                     completion(finished);
+                                 }
+                             }];
+        }
+    }]
     
-	
-    if (self.animations.count == 1)
-        ((void (^)(void))self.animations[0])(); // Kick off the first animation
+    [self.animations addOperationWithBlock:^{
+        
+
+    }];
 }
 
 - (NSUInteger) animationCount
 {
-	return self.animations.count;
+	return self.animations.operationCount;
 }
 
 @end
