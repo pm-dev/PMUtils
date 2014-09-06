@@ -1,7 +1,7 @@
 PODS:
   - PMUtils (0.9.2):
     - PMUtils/Foundation+PMUtils
-    - PMUtils/PMAnimationQueue
+    - PMUtils/PMAnimationOperation
     - PMUtils/PMCollectionViewSwipeCell
     - PMUtils/PMImageFilmstrip
     - PMUtils/PMInnerShadowView
@@ -10,7 +10,7 @@ PODS:
     - PMUtils/PMProtocolInterceptor
     - PMUtils/UIKit+PMUtils
   - PMUtils/Foundation+PMUtils (0.9.2)
-  - PMUtils/PMAnimationQueue (0.9.2)
+  - PMUtils/PMAnimationOperation (0.9.2)
   - PMUtils/PMCollectionViewSwipeCell (0.9.2):
     - PMUtils/UIKit+PMUtils
   - PMUtils/PMImageFilmstrip (0.9.2):
@@ -30,6 +30,6 @@ EXTERNAL SOURCES:
     :path: ../PMUtils.podspec
 
 SPEC CHECKSUMS:
-  PMUtils: 380018de744c88addd2a78c7845bd16cd41f844a
+  PMUtils: c223651846ed75cf6eb5bb700c5e600e5cb239f4
 
 COCOAPODS: 0.33.1

@@ -18,11 +18,11 @@
 #define COCOAPODS_VERSION_MINOR_PMUtils_Foundation_PMUtils 9
 #define COCOAPODS_VERSION_PATCH_PMUtils_Foundation_PMUtils 2
 
-// PMUtils/PMAnimationQueue
-#define COCOAPODS_POD_AVAILABLE_PMUtils_PMAnimationQueue
-#define COCOAPODS_VERSION_MAJOR_PMUtils_PMAnimationQueue 0
-#define COCOAPODS_VERSION_MINOR_PMUtils_PMAnimationQueue 9
-#define COCOAPODS_VERSION_PATCH_PMUtils_PMAnimationQueue 2
+// PMUtils/PMAnimationOperation
+#define COCOAPODS_POD_AVAILABLE_PMUtils_PMAnimationOperation
+#define COCOAPODS_VERSION_MAJOR_PMUtils_PMAnimationOperation 0
+#define COCOAPODS_VERSION_MINOR_PMUtils_PMAnimationOperation 9
+#define COCOAPODS_VERSION_PATCH_PMUtils_PMAnimationOperation 2
 
 // PMUtils/PMCollectionViewSwipeCell
 #define COCOAPODS_POD_AVAILABLE_PMUtils_PMCollectionViewSwipeCell

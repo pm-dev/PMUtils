@@ -25,8 +25,8 @@ Pod::Spec.new do |s|
   	ss.frameworks   = 'CoreData'
   end
   	
-  s.subspec 'PMAnimationQueue' do |ss|
-  	ss.source_files = 'Classes/ios/PMAnimationQueue/PMAnimationQueue.{h,m}'
+  s.subspec 'PMAnimationOperation' do |ss|
+  	ss.source_files = 'Classes/ios/PMAnimationOperation/PMAnimationOperation.{h,m}'
   end
   
   s.subspec 'PMOrderedDictionary' do |ss|

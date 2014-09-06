@@ -31,7 +31,7 @@
 #import "PMOrderedDictionary.h"
 #import "PMProtocolInterceptor.h"
 #import "PMImageFilmstrip.h"
-#import "PMAnimationQueue.h"
+#import "PMAnimationOperation.h"
 #import "PMCollectionViewSwipeCell.h"
 #import "PMInnerShadowView.h"
 
