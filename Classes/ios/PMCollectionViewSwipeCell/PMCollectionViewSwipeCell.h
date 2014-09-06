@@ -33,21 +33,64 @@ typedef NS_ENUM(NSInteger, PMCellPosition)
 };
 
 @class PMCollectionViewSwipeCell;
-
 @protocol PMCollectionViewSwipeCellDelegate <NSObject>
+
 @optional
+
+/**
+ *  Tells the delegate a swipe cell changed the position of its content view.
+ *
+ *  @param cell     The swipe cell whose content view moved to a new position.
+ *  @param position The new position of the content view.
+ */
 - (void) swipeCollectionViewCell:(PMCollectionViewSwipeCell *)cell didMoveToPosition:(PMCellPosition)position;
+
 @end
 
 
 @interface PMCollectionViewSwipeCell : UICollectionViewCell
 
+/**
+ *  The view that sits below the content view when the content view is swipped right. The view sits in the coordinate system
+ *	system of the cell. A common use of a utility view is a button which commits some action related to the cell, such as deleting
+ *	it from the collection view.
+ */
 @property (nonatomic, strong) UIView *leftUtilityView;
+
+/**
+ *  The view that sits below the content view when the content view is swipped left. The view sits in the coordinate system
+ *	system of the cell. A common use of a utility view is a button which commits some action related to the cell, such as deleting
+ *	it from the collection view.
+ */
 @property (nonatomic, strong) UIView *rightUtilityView;
-@property (nonatomic, weak) id <PMCollectionViewSwipeCellDelegate> delegate;
+
+/**
+ *  The object that acts as the delegate of the swipe cell. The delegate must adopt
+ *	the PMCollectionViewSwipeCellDelegate protocol. The collection view maintains a weak reference to the delegate object.
+ */
+@property (nonatomic, weak) id<PMCollectionViewSwipeCellDelegate> delegate;
+
+/**
+ *  A Boolean value that controls whether the content view bounces past the right edge of the left utility view
+ *	when swiping right, or the left edge of the right utility view when swiping left. Bouncing visually indicates that
+ *	scrolling has reached an edge of the content. The default value is YES.
+ */
 @property (nonatomic) BOOL bouncesOpen;
+
+/**
+ *  The position of the content view. The content view is considered PMCellPositionCentered if its frame's
+ *	origin is at (0,0) in the cell's cordinate system. A utility view is considered visible once it is completely visible.
+ *	This property only changes once the cell is done transitioning to a new position.
+ */
 @property (nonatomic) PMCellPosition cellPosition;
 
+/**
+ *  Scrolls the content view to a position, allowing the scroll to animate.
+ *
+ *  @param position The position of the content view. The content view is considered PMCellPositionCentered if its frame's
+ *	origin is at (0,0) in the cell's cordinate system.
+ *  @param animated A flag indicating whether the transition to the new position should be animated.
+ */
 - (void) setCellPosition:(PMCellPosition)position animated:(BOOL)animated;
 
 @end

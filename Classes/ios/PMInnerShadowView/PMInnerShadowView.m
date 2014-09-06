@@ -22,27 +22,11 @@
     PMInnerShadowLayer *_innerShadowLayer;
 }
 
-- (void)commonPMInnerShadowViewInit
-{
-    NSNull *null = [NSNull null];
-    _innerShadowLayer = [PMInnerShadowLayer layer];
-    _innerShadowLayer.actions = @{@"position": null,
-                                  @"bounds": null,
-                                  @"contents": null,
-                                  @"shadowColor": null,
-                                  @"shadowOpacity": null,
-                                  @"shadowOffset": null,
-                                  @"shadowRadius": null};
-    [self.layer addSublayer:_innerShadowLayer];
-    self.layer.masksToBounds = YES;
-    self.userInteractionEnabled = NO;
-}
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self commonPMInnerShadowViewInit];
+        [self PM_commonPMInnerShadowViewInit];
     }
     return self;
 }
@@ -51,7 +35,7 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [self commonPMInnerShadowViewInit];
+        [self PM_commonPMInnerShadowViewInit];
     }
     return self;
 }
@@ -71,9 +55,9 @@
     return _innerShadowLayer.edges;
 }
 
-- (void)setShadowMask:(UIRectEdge)shadowMask
+- (void)setEdges:(UIRectEdge)edges
 {
-    _innerShadowLayer.edges = shadowMask;
+    _innerShadowLayer.edges = edges;
 }
 
 - (UIColor *)shadowColor
@@ -125,6 +109,24 @@
 {
     self.layer.cornerRadius = cornerRadius;
     _innerShadowLayer.cornerRadius = cornerRadius;
+}
+
+#pragma mark - Private Methods
+
+- (void)PM_commonPMInnerShadowViewInit
+{
+    NSNull *null = [NSNull null];
+    _innerShadowLayer = [PMInnerShadowLayer layer];
+    _innerShadowLayer.actions = @{@"position": null,
+                                  @"bounds": null,
+                                  @"contents": null,
+                                  @"shadowColor": null,
+                                  @"shadowOpacity": null,
+                                  @"shadowOffset": null,
+                                  @"shadowRadius": null};
+    [self.layer addSublayer:_innerShadowLayer];
+    self.layer.masksToBounds = YES;
+    self.userInteractionEnabled = NO;
 }
 
 @end

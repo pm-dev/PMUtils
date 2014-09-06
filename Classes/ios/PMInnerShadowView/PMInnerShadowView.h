@@ -15,11 +15,36 @@
 
 @interface PMInnerShadowView : UIView
 
+/**
+ *  The color of the view's shadow. Animatable. The default value of this property is an opaque white color.
+ */
 @property (nonatomic, strong) UIColor* shadowColor;
+
+/**
+ *  The edges of the view on which to show an inner shadow.
+ */
 @property (nonatomic) UIRectEdge edges;
+
+/**
+ *  The opacity of the layer’s shadow. Animatable. The value in this property must 
+ *	be in the range 0.0 (transparent) to 1.0 (opaque). The default value of this property is 1.0.
+ */
 @property (nonatomic) CGFloat shadowOpacity;
+
+/**
+ *  The offset (in points) of the view's inner shadow. Animatable. The default value of this property is (0.0, 0.0)
+ */
 @property (nonatomic) CGSize shadowOffset;
+
+/**
+ *  The blur radius (in points) used to render the inner shadow. Animatable. The default value of this property is 5.
+ */
 @property (nonatomic) CGFloat shadowRadius;
+
+/**
+ *  The radius to use when drawing rounded corners for the view's inner shadow. Animatable. The default value
+ *	of this property is 0.0.
+ */
 @property (nonatomic) CGFloat cornerRadius;
 
 @end
