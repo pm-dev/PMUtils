@@ -85,9 +85,7 @@
         self.preAnimation(self);
     }
     
-    NSParameterAssert(self.animation);
-    
-    if (self.duration || self.delay) {
+    if ((self.duration || self.delay) && self.animation) {
         [UIView animateWithDuration:self.duration
                               delay:self.delay
                             options:self.options
@@ -101,8 +99,10 @@
                              [self didChangeValueForKey:@"isFinished"];
                          }];
     }
-    else {
-        self.animation();
+    else {		
+		if (self.animation) {
+			self.animation();
+		}
         if (self.postAnimation) {
             self.postAnimation(YES);
         }

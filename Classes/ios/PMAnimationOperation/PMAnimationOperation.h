@@ -33,20 +33,100 @@ typedef void(^PMPostAnimationBlock)(BOOL finished);
 
 @interface PMAnimationOperation : NSOperation
 
+/**
+ *  The amount of time (measured in seconds) to wait before beginning the animations. A value of 0 
+ *	will begin the animations immediately.
+ */
 @property (nonatomic) NSTimeInterval delay;
+
+/**
+ *  The total duration of the animations, measured in seconds. If you specify a negative value 
+ *  or 0, the changes are made without animating them.
+ */
 @property (nonatomic) NSTimeInterval duration;
+
+/**
+ *  A mask of options indicating how you want to perform the animations. 
+ *	For a list of valid constants, see UIViewAnimationOptions.
+ */
 @property (nonatomic) UIViewAnimationOptions options;
+
+/**
+ *  A block object to be executed before the animation sequence begins. This block has no return value
+ *	and takes a single argument which is the object representing the current PMAnimationOperation. Because
+ *	state may have changed by the time this operation begins executing, this block gives your application a chance
+ *	to update any of its other properties.
+ */
 @property (nonatomic, copy) PMPreAnimationBlock preAnimation;
+
+/**
+ *  A block object containing the changes to commit to the views. This is where you programmatically change 
+ *	any animatable properties of the views in your view hierarchy. This block takes no parameters and has no return value.
+ *	If delay AND duration is 0 this block is performed immediately after the pre animation block is performed.
+ */
 @property (nonatomic, copy) PMAnimationBlock animation;
+
+/**
+ *  A block object to be executed when the animation sequence ends. This block has no return value
+ *	and takes a single Boolean argument that indicates whether or not the animations actually finished before
+ *	the completion handler was called. If delay AND duration is 0 this block is performed immediately after
+ *	the animation block is performed, otherwise this block is performed at the beginning of the next run loop cycle.
+ */
 @property (nonatomic, copy) PMPostAnimationBlock postAnimation;
 
+
+/**
+ *  The designated initializer for creating a PMAnimationOperation.
+ *
+ *  @param delay         The amount of time (measured in seconds) to wait before beginning the animations. A value of 0
+ *	will begin the animations immediately.
+ *  @param duration      The total duration of the animations, measured in seconds. If you specify a negative value
+ *  or 0, the changes are made without animating them.
+ *  @param options       A mask of options indicating how you want to perform the animations.
+ *	For a list of valid constants, see UIViewAnimationOptions.
+ *  @param preAnimation  A block object to be executed before the animation sequence begins. This block has no return value
+ *	and takes a single argument which is the object representing the current PMAnimationOperation. Because
+ *	state may have changed by the time this operation begins executing, this block gives your application a chance
+ *	to update any of its other properties.
+ *  @param animation     A block object containing the changes to commit to the views. This is where you programmatically change
+ *	any animatable properties of the views in your view hierarchy. This block takes no parameters and has no return value.
+ *	If delay AND duration is 0 this block is performed immediately after the pre animation block is performed.
+ *  @param postAnimation A block object to be executed when the animation sequence ends. This block has no return value
+ *	and takes a single Boolean argument that indicates whether or not the animations actually finished before
+ *	the completion handler was called. If delay AND duration is 0 this block is performed immediately after
+ *	the animation block is performed, otherwise this block is performed at the beginning of the next run loop cycle.
+ *
+ *  @return The initialized PMAnimationOperation object.
+ */
 - (instancetype) initWithDelay:(NSTimeInterval)delay
                       duration:(NSTimeInterval)duration
                        options:(UIViewAnimationOptions)options
                   preAnimation:(PMPreAnimationBlock)preAnimation
                      animation:(PMAnimationBlock)animation
                  postAnimation:(PMPostAnimationBlock)postAnimation;
-
+/**
+ *  Returns an PMAnimationOperation instance.
+ *
+ *  @param delay         The amount of time (measured in seconds) to wait before beginning the animations. A value of 0
+ *	will begin the animations immediately.
+ *  @param duration      The total duration of the animations, measured in seconds. If you specify a negative value
+ *  or 0, the changes are made without animating them.
+ *  @param options       A mask of options indicating how you want to perform the animations.
+ *	For a list of valid constants, see UIViewAnimationOptions.
+ *  @param preAnimation  A block object to be executed before the animation sequence begins. This block has no return value
+ *	and takes a single argument which is the object representing the current PMAnimationOperation. Because
+ *	state may have changed by the time this operation begins executing, this block gives your application a chance
+ *	to update any of its other properties.
+ *  @param animation     A block object containing the changes to commit to the views. This is where you programmatically change
+ *	any animatable properties of the views in your view hierarchy. This block takes no parameters and has no return value.
+ *	If delay AND duration is 0 this block is performed immediately after the pre animation block is performed.
+ *  @param postAnimation A block object to be executed when the animation sequence ends. This block has no return value
+ *	and takes a single Boolean argument that indicates whether or not the animations actually finished before
+ *	the completion handler was called. If delay AND duration is 0 this block is performed immediately after
+ *	the animation block is performed, otherwise this block is performed at the beginning of the next run loop cycle.
+ *
+ *  @return An initialized PMAnimationOperation object.
+ */
 + (instancetype) animationWithDelay:(NSTimeInterval)delay
                            duration:(NSTimeInterval)duration
                             options:(UIViewAnimationOptions)options
@@ -54,6 +134,12 @@ typedef void(^PMPostAnimationBlock)(BOOL finished);
                           animation:(PMAnimationBlock)animation
                       postAnimation:(PMPostAnimationBlock)postAnimation;
 
+/**
+ *  Adds the reciever to the operation queue associated with the main thread. Once added, the receiver remains in
+ *	the queue until it finishes executing. The receiver should only ever be added to the main queue, so use this
+ *	method to enqueue PMAnimationOperation instances. This method throws an NSInvalidArgumentException exception if
+ *	the operation is currently executing or has already finished executing.
+ */
 - (void) enqueue;
 
 @end
