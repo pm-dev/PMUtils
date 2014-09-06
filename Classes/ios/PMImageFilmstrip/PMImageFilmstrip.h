@@ -19,16 +19,32 @@
 // THE SOFTWARE.
 //
 //  PMImageFilmstrip.h
-//  Created by Peter Meyers on 4/16/14.
+//  Created by Peter Meyers on 9/6/14.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface PMImageFilmstrip : UICollectionView
+@class PMImageFilmstrip;
+@protocol PMImageFilmstripDelegate <NSObject>
 
-- (instancetype) initWithFrame:(CGRect)frame imageEntities:(NSArray *)imageEntities;
-+ (instancetype) imageFilmstripWithFrame:(CGRect)frame imageEntities:(NSArray *)imageEntities;
+@required
+- (void) imageFilmstrip:(PMImageFilmstrip *)imageFilmstrip configureFilmstripImageView:(UIImageView *)imageView atIndex:(NSUInteger)index;
 
-@property (strong, nonatomic) NSArray *imageEntities;
+@optional
+- (void) imageFilmstrip:(PMImageFilmstrip *)imageFilmstrip willScrollToImageAtIndex:(NSUInteger)index;
+
+@end
+
+@protocol PMImageFilmstripDataSource <NSObject>
+
+@required
+- (NSInteger) numberOfImagesInImageFilmstrip:(PMImageFilmstrip *)imageFilmstrip;
+
+@end
+
+@interface PMImageFilmstrip : UIView
+
+@property (nonatomic, weak) id<PMImageFilmstripDelegate> delegate;
+@property (nonatomic, weak) id<PMImageFilmstripDataSource> dataSource;
 
 @end

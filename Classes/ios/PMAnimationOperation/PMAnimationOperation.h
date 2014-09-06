@@ -25,9 +25,11 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^PMPreAnimationBlock)(id);
+@class PMAnimationOperation;
+
+typedef void(^PMPreAnimationBlock)(PMAnimationOperation *operation);
 typedef void(^PMAnimationBlock)();
-typedef void(^PMPostAnimationBlock)(BOOL);
+typedef void(^PMPostAnimationBlock)(BOOL finished);
 
 @interface PMAnimationOperation : NSOperation
 

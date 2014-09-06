@@ -19,36 +19,29 @@
 // THE SOFTWARE.
 //
 //  PMImageFilmstrip.m
-//  Created by Peter Meyers on 4/16/14.
+//  Created by Peter Meyers on 9/6/14.
 //
 
 #import "PMImageFilmstrip.h"
-#import "UIImageView+PMUtils.h"
+#import "UICollectionView+PMUtils.h"
 
 static NSString * const PMImageFilmstripCellReuseIdentifier = @"PMImageFilmstripCellReuseIdentifier";
 
-@interface PMImageFilmstrip () <UICollectionViewDataSource>
+@interface PMImageFilmstrip () <UICollectionViewDataSource, UICollectionViewDelegate>
 @end
 
 @implementation PMImageFilmstrip
-
-
-+ (instancetype) imageFilmstripWithFrame:(CGRect)frame imageEntities:(NSArray *)imageEntities
 {
-	return [[self alloc] initWithFrame:frame imageEntities:imageEntities];
+	UICollectionView *_collectionView;
+	UICollectionViewFlowLayout *_collectionViewFlowLayout;
+	BOOL _delegateRespondsToWillScrollToImageAtIndex;
 }
 
-- (instancetype) initWithFrame:(CGRect)frame imageEntities:(NSArray *)imageEntities
+
+- (instancetype) initWithFrame:(CGRect)frame
 {
-	UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-    layout.itemSize = frame.size;
-    layout.minimumLineSpacing = 0.0f;
-    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    self.collectionViewLayout = layout;
-	
-	self = [super initWithFrame:frame collectionViewLayout:layout];
+	self = [super initWithFrame:frame];
 	if (self) {
-		_imageEntities = imageEntities;
 		[self PM_commonPMImageFilmstripInit];
 	}
 	return self;
@@ -60,22 +53,38 @@ static NSString * const PMImageFilmstripCellReuseIdentifier = @"PMImageFilmstrip
     [self PM_commonPMImageFilmstripInit];
 }
 
-- (void) setImageEntities:(NSArray *)imageEntities
+- (void) setFrame:(CGRect)frame
 {
-    if (_imageEntities != imageEntities) {
-        _imageEntities = imageEntities;
-        [self reloadData];
-    }
+	_collectionViewFlowLayout.itemSize = frame.size;
+	super.frame = frame;
+	NSIndexPath *indexPath = [_collectionView indexPathNearestToBoundsCenter];
+	UICollectionViewLayoutAttributes *attributes = [_collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath];
+	[_collectionView setContentOffset:attributes.frame.origin];
+}
+
+- (void) setBounds:(CGRect)bounds
+{
+	_collectionViewFlowLayout.itemSize = bounds.size;
+	super.bounds = bounds;
+	NSIndexPath *indexPath = [_collectionView indexPathNearestToBoundsCenter];
+	UICollectionViewLayoutAttributes *attributes = [_collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath];
+	[_collectionView setContentOffset:attributes.frame.origin];
+}
+
+- (void) setDelegate:(id<PMImageFilmstripDelegate>)delegate
+{
+	_delegate = delegate;
+	_delegateRespondsToWillScrollToImageAtIndex = [_delegate respondsToSelector:@selector(imageFilmstrip:willScrollToImageAtIndex:)];
 }
 
 
-#pragma mark - UICollectionView DataSource Delegate
+#pragma mark - UICollectionView DataSource & Delegate
 
 
 - (NSInteger) collectionView: (UICollectionView *) collectionView
       numberOfItemsInSection: (NSInteger) section
 {
-    return self.imageEntities.count;
+    return [self.dataSource numberOfImagesInImageFilmstrip:self];
 }
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -91,11 +100,18 @@ static NSString * const PMImageFilmstripCellReuseIdentifier = @"PMImageFilmstrip
 		imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		[cell.contentView addSubview:imageView];
 	}
-	
-	id imageEntity = self.imageEntities[indexPath.item];
-	[imageView setImageEntity:imageEntity];
-
+	[self.delegate imageFilmstrip:self
+	  configureFilmstripImageView:imageView
+						  atIndex:indexPath.item];
 	return cell;
+}
+
+- (void) scrollViewWillEndDragging:(UICollectionView *)imageFilmstrip withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+	NSIndexPath *indexPath = [imageFilmstrip indexPathForItemAtPoint:*targetContentOffset];
+	if (_delegateRespondsToWillScrollToImageAtIndex) {
+		[_delegate imageFilmstrip:self willScrollToImageAtIndex:indexPath.item];
+	}
 }
 
 
@@ -104,13 +120,20 @@ static NSString * const PMImageFilmstripCellReuseIdentifier = @"PMImageFilmstrip
 
 - (void) PM_commonPMImageFilmstripInit
 {
-    [self registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:PMImageFilmstripCellReuseIdentifier];
-    self.dataSource = self;
-    self.allowsSelection = NO;
-    self.pagingEnabled = YES;
-    self.showsHorizontalScrollIndicator = NO;
-    self.backgroundColor = [UIColor whiteColor];
+	_collectionViewFlowLayout = [UICollectionViewFlowLayout new];
+	_collectionViewFlowLayout.minimumLineSpacing = 0.0f;
+	_collectionViewFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+	_collectionViewFlowLayout.itemSize = self.frame.size;
+	_collectionView = [[UICollectionView alloc] initWithFrame:self.frame collectionViewLayout:_collectionViewFlowLayout];
+	_collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+	[_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:PMImageFilmstripCellReuseIdentifier];
+	_collectionView.dataSource = self;
+	_collectionView.delegate = self;
+	_collectionView.allowsSelection = NO;
+	_collectionView.pagingEnabled = YES;
+	_collectionView.showsHorizontalScrollIndicator = NO;
+	_collectionView.backgroundColor = [UIColor whiteColor];
+	[self addSubview:_collectionView];
 }
-
 
 @end

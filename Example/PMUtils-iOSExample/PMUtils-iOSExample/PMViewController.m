@@ -31,14 +31,13 @@
 
 static CGFloat const PMPageControlHeight = 37.0f;
 
-@interface PMViewController () <UICollectionViewDelegate>
+@interface PMViewController () <PMImageFilmstripDataSource, PMImageFilmstripDelegate>
 @end
 
 @implementation PMViewController
 {
 	UIPageControl *_pageControl;
-	PMImageFilmstrip *_imageFilmstrip;
-    PMAnimationQueue *_animationQueue;
+	NSArray *_images;
 }
 
 - (void)viewDidLoad
@@ -65,7 +64,6 @@ static CGFloat const PMPageControlHeight = 37.0f;
 	CGRect pageControlFrame = CGRectMake(0, self.view.bounds.size.height - PMPageControlHeight , self.view.bounds.size.width, PMPageControlHeight);
 	_pageControl = [[UIPageControl alloc] initWithFrame:pageControlFrame];
 	_pageControl.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;
-	_pageControl.hidden = YES;
 	[self.view addSubview:_pageControl];
 }
 
@@ -94,55 +92,34 @@ static CGFloat const PMPageControlHeight = 37.0f;
 	duration = CACurrentMediaTime() - start;
 	NSLog(@"Blur #2: %f", duration);
 	
-	_imageFilmstrip = [PMImageFilmstrip imageFilmstripWithFrame:self.view.bounds
-                                                  imageEntities:@[imgOne, imgTwo]];
-	_imageFilmstrip.delegate = self;
-	_imageFilmstrip.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-	[self.view insertSubview:_imageFilmstrip belowSubview:_pageControl];
+	_images = @[imgOne, imgTwo];
 	
-	_pageControl.numberOfPages = _imageFilmstrip.imageEntities.count;
-	_pageControl.hidden = NO;
-    
-    
-    UIView *sq = [UIView new];
-    sq.backgroundColor = [UIColor redColor];
-    sq.frame = CGRectMake(0, 0, 10, 10);
-    [self.view addSubview:sq];
-    
-    _animationQueue = [PMAnimationQueue new];
-
-    [_animationQueue addAnimationWithDelay:0 options:0 preAnimation:^NSTimeInterval{
-        return 5;
-    } animation:^{
-        sq.frame = CGRectMake(100, 0, 10, 10);
-    } completion:^(BOOL finished) {
-        DLog(@"finished1");
-    }];
-    
-    [_animationQueue addAnimationWithDelay:0 options:0 preAnimation:^NSTimeInterval{
-        return 5;
-    } animation:^{
-        sq.frame = CGRectMake(100, 100, 10, 10);
-    } completion:^(BOOL finished) {
-        DLog(@"finished2");
-    }];
+	PMImageFilmstrip *filmstrip = [[PMImageFilmstrip alloc] initWithFrame:self.view.bounds];
+	filmstrip.delegate = self;
+	filmstrip.dataSource = self;
+	filmstrip.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+	[self.view insertSubview:filmstrip belowSubview:_pageControl];
+	
+	_pageControl.numberOfPages = _images.count;
 }
 
-- (void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+#pragma mark - PMImageFilmstripDelegate Methods
+
+- (void) imageFilmstrip:(PMImageFilmstrip *)imageFilmstrip configureFilmstripImageView:(UIImageView *)imageView atIndex:(NSUInteger)index
 {
-	((UICollectionViewFlowLayout *)_imageFilmstrip.collectionViewLayout).itemSize = self.view.bounds.size;
+	[imageView setImageEntity:_images[index]];
 }
 
-- (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+- (void) imageFilmstrip:(PMImageFilmstrip *)imageFilmstrip willScrollToImageAtIndex:(NSUInteger)index
 {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_pageControl.currentPage inSection:0];
-    [_imageFilmstrip scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+	_pageControl.currentPage = index;
 }
 
-- (void) scrollViewWillEndDragging:(PMImageFilmstrip *)imageFilmstrip withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+#pragma mark - PMImageFilmstripDataSource Methods
+
+- (NSInteger) numberOfImagesInImageFilmstrip:(PMImageFilmstrip *)imageFilmstrip
 {
-	NSIndexPath *indexPath = [imageFilmstrip indexPathForItemAtPoint:*targetContentOffset];
-	_pageControl.currentPage = indexPath.item;
+	return _images.count;
 }
 
 @end

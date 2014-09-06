@@ -29,14 +29,13 @@
 		6784D39F18CE23DD003F980D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6784D39D18CE23DD003F980D /* InfoPlist.strings */; };
 		6784D3A118CE23DD003F980D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6784D3A018CE23DD003F980D /* main.m */; };
 		6784D3A518CE23DD003F980D /* PMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6784D3A418CE23DD003F980D /* PMAppDelegate.m */; };
-		6784D3A818CE23DD003F980D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6784D3A618CE23DD003F980D /* Main_iPhone.storyboard */; };
+		6784D3A818CE23DD003F980D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6784D3A618CE23DD003F980D /* Main.storyboard */; };
 		6784D3AE18CE23DD003F980D /* PMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6784D3AD18CE23DD003F980D /* PMViewController.m */; };
 		6784D3B018CE23DD003F980D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6784D3AF18CE23DD003F980D /* Images.xcassets */; };
 		6784D3B718CE23DD003F980D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6784D3B618CE23DD003F980D /* XCTest.framework */; };
 		6784D3B818CE23DD003F980D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6784D39418CE23DD003F980D /* Foundation.framework */; };
 		6784D3B918CE23DD003F980D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6784D39818CE23DD003F980D /* UIKit.framework */; };
 		6784D3C118CE23DD003F980D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6784D3BF18CE23DD003F980D /* InfoPlist.strings */; };
-		6784D3FF18CE24A9003F980D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6784D3A918CE23DD003F980D /* Main_iPad.storyboard */; };
 		74953E8119B64480009E0AAD /* NSFileManagerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 74953E8019B64480009E0AAD /* NSFileManagerTestCase.m */; };
 		74953E8519B64E6A009E0AAD /* NSThreadTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 74953E8419B64E6A009E0AAD /* NSThreadTestCase.m */; };
 		74F84E5B19AFBBBF00D59BB7 /* lebowskiipsum.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74F84E5A19AFBBBF00D59BB7 /* lebowskiipsum.txt */; };
@@ -82,8 +81,7 @@
 		6784D3A218CE23DD003F980D /* PMUtils-iOSExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PMUtils-iOSExample-Prefix.pch"; sourceTree = "<group>"; };
 		6784D3A318CE23DD003F980D /* PMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMAppDelegate.h; sourceTree = "<group>"; };
 		6784D3A418CE23DD003F980D /* PMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMAppDelegate.m; sourceTree = "<group>"; };
-		6784D3A718CE23DD003F980D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		6784D3AA18CE23DD003F980D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		6784D3A718CE23DD003F980D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6784D3AC18CE23DD003F980D /* PMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMViewController.h; sourceTree = "<group>"; };
 		6784D3AD18CE23DD003F980D /* PMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMViewController.m; sourceTree = "<group>"; };
 		6784D3AF18CE23DD003F980D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -184,8 +182,7 @@
 			children = (
 				6784D3A318CE23DD003F980D /* PMAppDelegate.h */,
 				6784D3A418CE23DD003F980D /* PMAppDelegate.m */,
-				6784D3A618CE23DD003F980D /* Main_iPhone.storyboard */,
-				6784D3A918CE23DD003F980D /* Main_iPad.storyboard */,
+				6784D3A618CE23DD003F980D /* Main.storyboard */,
 				6784D3AC18CE23DD003F980D /* PMViewController.h */,
 				6784D3AD18CE23DD003F980D /* PMViewController.m */,
 				6784D3AF18CE23DD003F980D /* Images.xcassets */,
@@ -313,8 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6784D3FF18CE24A9003F980D /* Main_iPad.storyboard in Resources */,
-				6784D3A818CE23DD003F980D /* Main_iPhone.storyboard in Resources */,
+				6784D3A818CE23DD003F980D /* Main.storyboard in Resources */,
 				6784D3B018CE23DD003F980D /* Images.xcassets in Resources */,
 				6715D10B18CEB22500DEC92B /* Sample.JPG in Resources */,
 				6784D39F18CE23DD003F980D /* InfoPlist.strings in Resources */,
@@ -448,20 +444,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		6784D3A618CE23DD003F980D /* Main_iPhone.storyboard */ = {
+		6784D3A618CE23DD003F980D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6784D3A718CE23DD003F980D /* Base */,
 			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		6784D3A918CE23DD003F980D /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6784D3AA18CE23DD003F980D /* Base */,
-			);
-			name = Main_iPad.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		6784D3BF18CE23DD003F980D /* InfoPlist.strings */ = {
