@@ -112,7 +112,7 @@
 /**
  *  Determines if there is a directory at a path
  *
- *  @param path The path of a directory.
+ *  @param path The path of a directory. Must not be nil.
  *
  *  @return YES if a directory exists at path, otherwise NO.
  */

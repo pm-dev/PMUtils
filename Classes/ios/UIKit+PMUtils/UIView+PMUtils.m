@@ -61,7 +61,7 @@
 
 + (NSString *) defaultNibName
 {
-    return NSStringFromClass(self);;
+    return NSStringFromClass(self);
 }
 
 + (UINib *) defaultNib

@@ -40,9 +40,9 @@
 																			  template:@"$0"
 																			withString:^NSString *(NSString *match) {
 																				XCTAssertEqualObjects(match, @"1990", @"Should have matched	1990");
-																				return [NSString stringWithFormat:@"%d", currentYear];
+																				return [NSString stringWithFormat:@"%ld", (long)currentYear];
 																			}];
-	NSString *currentYearString = [NSString stringWithFormat:@"The year is %d.", currentYear];
+	NSString *currentYearString = [NSString stringWithFormat:@"The year is %ld.", (long)currentYear];
 	
 	XCTAssertEqualObjects(correctedYearString, currentYearString, @"The year in the string should have been replaced.");
 }

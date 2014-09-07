@@ -88,6 +88,7 @@
 
 - (BOOL) URLIsDirectory:(NSURL *)URL
 {
+	NSParameterAssert(URL);
     NSError *error = nil;
 	NSDictionary *attrs = [self attributesOfItemAtPath:URL.path error:&error];
     NSParameterAssert(!error);
