@@ -20,4 +20,5 @@ git add -A
 git commit -m "Release $VERSION"
 git tag -a $VERSION -m "Release $VERSION"
 git push origin master --tags
-pod repo push PMSpecs $REPO_NAME.podspec 
+
+pod trunk push
