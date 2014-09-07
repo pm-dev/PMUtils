@@ -33,10 +33,6 @@ Pod::Spec.new do |s|
   	ss.source_files = 'Classes/ios/PMOrderedDictionary/PMOrderedDictionary.{h,m}'
   end
   
-  s.subspec 'PMPair' do |ss|
-  	ss.source_files = 'Classes/ios/PMPair/PMPair.{h,m}'
-  end
-  
   s.subspec 'PMProtocolInterceptor' do |ss|
   	ss.source_files = 'Classes/ios/PMProtocolInterceptor/PMProtocolInterceptor.{h,m}'
   end
