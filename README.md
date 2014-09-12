@@ -10,7 +10,7 @@ PMUtils is a useful library that contains extensive categories on Foundation and
 
 ## How To Get Started
 
-- Check out the documentation (coming soon).
+- Check out the [documentation](http://cocoadocs.org/docsets/PMUtils).
 
 ### Installation with CocoaPods
 
