@@ -7,6 +7,7 @@
 //
 
 #import "UIViewController+PMUtils.h"
+#import "UINavigationController+PMUtils.h"
 
 @implementation UIViewController (PMUtils)
 
@@ -46,6 +47,11 @@
         return controller;
     }
     return nil;
+}
+
+- (NSArray *) popNavigationControllerToSelfAnimated:(BOOL)animate completion:(void (^)(void))completion
+{
+    return [self.navigationController popToViewController:self animated:animate completion:completion];
 }
 
 @end

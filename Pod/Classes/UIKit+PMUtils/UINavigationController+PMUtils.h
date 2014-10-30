@@ -14,6 +14,10 @@
 
 - (UIViewController *) popViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion;
 
+- (NSArray *) popToViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(void (^)(void))completion;
+
 - (NSArray *) popToRootViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion;
+
+- (UIViewController *) rootViewController;
 
 @end

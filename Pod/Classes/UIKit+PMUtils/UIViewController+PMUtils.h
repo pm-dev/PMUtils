@@ -34,5 +34,6 @@
  */
 + (instancetype) controllerFromDefaultStoryboard;
 
+- (NSArray *) popNavigationControllerToSelfAnimated:(BOOL)animate completion:(void (^)(void))completion;
 
 @end

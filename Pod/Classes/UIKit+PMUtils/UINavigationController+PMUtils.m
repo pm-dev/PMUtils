@@ -19,22 +19,64 @@
 
 - (void) pushViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(void (^)(void))completion
 {
-    [self PM_addNavigationControllerDelegate:completion];
-    [self pushViewController:viewController animated:animated];
+    if (self.viewControllers.lastObject == viewController) {
+        if (completion) {
+            completion();
+        }
+    }
+    else {
+        [self PM_addNavigationControllerDelegate:completion];
+        [self pushViewController:viewController animated:animated];
+    }
 }
 
 - (UIViewController *) popViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion
 {
-    [self PM_addNavigationControllerDelegate:completion];
-    return [self popViewControllerAnimated:animated];
+    if (self.viewControllers.count <= 1) {
+        if (completion) {
+            completion();
+        }
+        return nil;
+    }
+    else {
+        [self PM_addNavigationControllerDelegate:completion];
+        return [self popViewControllerAnimated:animated];
+    }
+}
+
+- (NSArray *) popToViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(void (^)(void))completion
+{
+    NSUInteger index = [self.viewControllers indexOfObject:viewController];
+    if (index == NSNotFound || index >= self.viewControllers.count - 1) {
+        if (completion) {
+            completion();
+        }
+        return nil;
+    }
+    else {
+        [self PM_addNavigationControllerDelegate:completion];
+        return [self popToViewController:viewController animated:animated];
+    }
 }
 
 - (NSArray *)popToRootViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion
 {
-    [self PM_addNavigationControllerDelegate:completion];
-    return [self popToRootViewControllerAnimated:animated];
+    if (self.viewControllers.count <= 1) {
+        if (completion) {
+            completion();
+        }
+        return nil;
+    }
+    else {
+        [self PM_addNavigationControllerDelegate:completion];
+        return [self popToRootViewControllerAnimated:animated];
+    }
 }
 
+- (UIViewController *) rootViewController
+{
+    return self.viewControllers.firstObject;
+}
 
 #pragma mark - Private
 
