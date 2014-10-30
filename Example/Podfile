@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'PMUtils', :exclusive => true do
+  pod "PMUtils", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "PMUtils", :path => "../"
+
+  
+end
