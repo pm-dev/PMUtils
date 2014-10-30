@@ -1,8 +1,8 @@
 //
 //  main.m
-//  PMUtils
+//  PMUtils-iOSExample
 //
-//  Created by Peter Meyers on 10/29/2014.
+//  Created by Peter Meyers on 3/10/14.
 //  Copyright (c) 2014 Peter Meyers. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 
 int main(int argc, char * argv[])
 {
-    @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([PMAppDelegate class]));
-    }
+	@autoreleasepool {
+	    return UIApplicationMain(argc, argv, nil, NSStringFromClass([PMAppDelegate class]));
+	}
 }
