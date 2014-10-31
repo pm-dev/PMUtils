@@ -96,6 +96,11 @@
     return nil;
 }
 
+- (BOOL)isVisible
+{
+    return self.hidden == NO && self.alpha > 0.0f;
+}
+
 - (void) removeSubviews
 {
     for (UIView *subview in self.subviews) {

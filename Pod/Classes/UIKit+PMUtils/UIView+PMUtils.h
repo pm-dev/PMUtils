@@ -66,6 +66,8 @@ typedef NS_OPTIONS(NSUInteger, PMDirection) {
 + (instancetype) viewFromDefaultNibWithOwner:(id)ownerOrNil;
 
 
+- (BOOL) isVisible;
+
 /**
  *  Iterates through each subview and unlinks the view from its superview and its window, and removes it from the responder chain. If the view’s superview is not nil, the superview releases the view. Calling this method removes any constraints that refer to the view you are removing, or that refer to any view in the subtree of the view you are removing. Important: Never call this method from inside your view’s drawRect: method.
  */
