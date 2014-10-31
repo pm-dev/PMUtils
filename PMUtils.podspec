@@ -21,7 +21,7 @@ end
 s.subspec 'Foundation+PMUtils' do |ss|
 ss.source_files = 'Pod/Classes/Foundation+PMUtils/*.{h,m}'
 ss.public_header_files = 'Pod/Classes/Foundation+PMUtils/*.h'
-ss.frameworks   = 'CoreData'
+ss.frameworks = 'CoreData'
 end
 
 s.subspec 'PMAnimationOperation' do |ss|
@@ -65,7 +65,6 @@ end
 s.subspec 'PMRoundedBorderView' do |ss|
 ss.source_files = 'Pod/Classes/PMRoundedBorderView/*.{h,m}'
 ss.public_header_files = 'Pod/Classes/PMRoundedBorderView/*.h'
-ss.dependency 'PMUtils/UIKit+PMUtils'
 end
 
 s.subspec 'PMKeyboardListener' do |ss|
