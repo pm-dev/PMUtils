@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name        = "PMUtils"
-s.version     = "1.0.1"
+s.version     = "1.1.1"
 s.summary     = "PMUtils contains categories on Foundation and UIKit classes as well as a few custom classes for common use cases."
 s.homepage    = "https://github.com/pm-dev/#{s.name}"
 s.license     = 'MIT'
@@ -8,12 +8,12 @@ s.author      = { "Peter Meyers" => "petermeyers1@gmail.com" }
 s.source      = { :git => "https://github.com/pm-dev/#{s.name}.git", :tag => s.version.to_s }
 s.platform    = :ios, '7.0'
 s.public_header_files = 'Pod/Classes/**/*.h'
-s.source_files = 'Pod/Classes/**/*.{h,m}'
+s.source_files = 'Pod/Classes/*.{h,m}'
 s.requires_arc = true
 
 
 s.subspec 'UIKit+PMUtils' do |ss|
-ss.source_files = 'Pod/Classes/ios/UIKit+PMUtils/*.{h,m}'
+ss.source_files = 'Pod/Classes/UIKit+PMUtils/*.{h,m}'
 ss.public_header_files = 'Pod/Classes/UIKit+PMUtils/*.h'
 ss.dependency 'PMUtils/Foundation+PMUtils'
 end
@@ -21,7 +21,7 @@ end
 s.subspec 'Foundation+PMUtils' do |ss|
 ss.source_files = 'Pod/Classes/Foundation+PMUtils/*.{h,m}'
 ss.public_header_files = 'Pod/Classes/Foundation+PMUtils/*.h'
-ss.frameworks   = 'CoreData'
+ss.frameworks = 'CoreData'
 end
 
 s.subspec 'PMAnimationOperation' do |ss|
@@ -65,7 +65,6 @@ end
 s.subspec 'PMRoundedBorderView' do |ss|
 ss.source_files = 'Pod/Classes/PMRoundedBorderView/*.{h,m}'
 ss.public_header_files = 'Pod/Classes/PMRoundedBorderView/*.h'
-ss.dependency 'PMUtils/UIKit+PMUtils'
 end
 
 s.subspec 'PMKeyboardListener' do |ss|

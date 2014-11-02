@@ -1,5 +1,5 @@
 PODS:
-  - PMUtils (1.0.1):
+  - PMUtils (1.1.1):
     - PMUtils/Foundation+PMUtils
     - PMUtils/PMAnimationOperation
     - PMUtils/PMCollectionViewSwipeCell
@@ -12,22 +12,21 @@ PODS:
     - PMUtils/PMRoundedBorderView
     - PMUtils/PMStickyHeaderFlowLayout
     - PMUtils/UIKit+PMUtils
-  - PMUtils/Foundation+PMUtils (1.0.1)
-  - PMUtils/PMAnimationOperation (1.0.1)
-  - PMUtils/PMCollectionViewSwipeCell (1.0.1):
+  - PMUtils/Foundation+PMUtils (1.1.1)
+  - PMUtils/PMAnimationOperation (1.1.1)
+  - PMUtils/PMCollectionViewSwipeCell (1.1.1):
     - PMUtils/UIKit+PMUtils
-  - PMUtils/PMImageFilmstrip (1.0.1):
+  - PMUtils/PMImageFilmstrip (1.1.1):
     - PMUtils/UIKit+PMUtils
-  - PMUtils/PMInfiniteScrollView (1.0.1):
+  - PMUtils/PMInfiniteScrollView (1.1.1):
     - PMUtils/UIKit+PMUtils
-  - PMUtils/PMInnerShadowView (1.0.1)
-  - PMUtils/PMKeyboardListener (1.0.1)
-  - PMUtils/PMOrderedDictionary (1.0.1)
-  - PMUtils/PMProtocolInterceptor (1.0.1)
-  - PMUtils/PMRoundedBorderView (1.0.1):
-    - PMUtils/UIKit+PMUtils
-  - PMUtils/PMStickyHeaderFlowLayout (1.0.1)
-  - PMUtils/UIKit+PMUtils (1.0.1):
+  - PMUtils/PMInnerShadowView (1.1.1)
+  - PMUtils/PMKeyboardListener (1.1.1)
+  - PMUtils/PMOrderedDictionary (1.1.1)
+  - PMUtils/PMProtocolInterceptor (1.1.1)
+  - PMUtils/PMRoundedBorderView (1.1.1)
+  - PMUtils/PMStickyHeaderFlowLayout (1.1.1)
+  - PMUtils/UIKit+PMUtils (1.1.1):
     - PMUtils/Foundation+PMUtils
 
 DEPENDENCIES:
@@ -38,6 +37,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  PMUtils: 21dbcd7d9dc4a86c20432513259a764a41b1683c
+  PMUtils: 7d783feb9a69d69fcad2edb2fa2721a585abaeb3
 
 COCOAPODS: 0.34.4
