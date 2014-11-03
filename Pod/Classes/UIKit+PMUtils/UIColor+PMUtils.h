@@ -27,6 +27,7 @@
 extern inline UIColor * PMColorWithRGB(uint8_t red, uint8_t green, uint8_t blue);
 extern inline UIColor * PMColorWithRGBA(uint8_t red, uint8_t green, uint8_t blue, CGFloat alpha);
 extern inline UIColor * PMColorWithHex(NSString *hexString, CGFloat alpha);
+extern inline UIColor * PMColorWithGreyscaleRGB(uint8_t greyscale);
 extern inline UIColor * PMColorWithGreyscaleRGBA(uint8_t greyscale, CGFloat alpha);
 
 @interface UIColor (PMUtils)

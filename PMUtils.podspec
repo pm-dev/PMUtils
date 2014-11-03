@@ -16,6 +16,7 @@ s.subspec 'UIKit+PMUtils' do |ss|
 ss.source_files = 'Pod/Classes/UIKit+PMUtils/*.{h,m}'
 ss.public_header_files = 'Pod/Classes/UIKit+PMUtils/*.h'
 ss.dependency 'PMUtils/Foundation+PMUtils'
+ss.dependency 'PMUtils/PMProtocolInterceptor'
 end
 
 s.subspec 'Foundation+PMUtils' do |ss|

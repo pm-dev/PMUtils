@@ -33,6 +33,10 @@ inline UIColor * PMColorWithRGBA(uint8_t red, uint8_t green, uint8_t blue, CGFlo
     return [UIColor colorWithRed:(red/255.0f) green:(green/255.0f) blue:(blue/255.0f) alpha:alpha];
 }
 
+inline UIColor * PMColorWithGreyscaleRGB(uint8_t greyscale) {
+    return PMColorWithGreyscaleRGBA(greyscale, 1.0f);
+}
+
 inline UIColor * PMColorWithGreyscaleRGBA(uint8_t greyscale, CGFloat alpha) {
     return [UIColor colorWithWhite:greyscale/255.0f alpha:alpha];
 }
