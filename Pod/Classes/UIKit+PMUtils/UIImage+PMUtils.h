@@ -157,6 +157,9 @@
  */
 + (UIImage *) cachedImageWithData:(NSData *)data;
 
+
++ (UIImage *) imageWithColor:(UIColor *)color;
+
 /**
  *  Apply scale, blur, tint and/or saturation to the UIImage or a cropped portion of the UIImage. Important: The image must not have a size of CGSizeZero.
  *
