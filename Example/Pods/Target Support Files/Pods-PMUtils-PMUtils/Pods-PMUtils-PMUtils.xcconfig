@@ -1,1 +1,1 @@
-PODS_PMUTILS_PMUTILS_OTHER_LDFLAGS = -framework "CoreData"
+PODS_PMUTILS_PMUTILS_OTHER_LDFLAGS = -framework "CoreData" -framework "MapKit"

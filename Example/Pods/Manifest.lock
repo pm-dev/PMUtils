@@ -28,6 +28,7 @@ PODS:
   - PMUtils/PMStickyHeaderFlowLayout (1.1.1)
   - PMUtils/UIKit+PMUtils (1.1.1):
     - PMUtils/Foundation+PMUtils
+    - PMUtils/PMProtocolInterceptor
 
 DEPENDENCIES:
   - PMUtils (from `../`)
@@ -37,6 +38,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  PMUtils: 7d783feb9a69d69fcad2edb2fa2721a585abaeb3
+  PMUtils: a4bebc0ecd33218e3f64a2a3939e84ff7f2fa02f
 
 COCOAPODS: 0.34.4

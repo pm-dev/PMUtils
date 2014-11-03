@@ -61,6 +61,7 @@ s.subspec 'PMInfiniteScrollView' do |ss|
 ss.source_files = 'Pod/Classes/PMInfiniteScrollView/*.{h,m}'
 ss.public_header_files = 'Pod/Classes/PMInfiniteScrollView/*.h'
 ss.dependency 'PMUtils/UIKit+PMUtils'
+ss.frameworks = 'MapKit'
 end
 
 s.subspec 'PMRoundedBorderView' do |ss|
