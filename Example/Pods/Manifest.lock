@@ -3,6 +3,7 @@ PODS:
     - PMUtils/Foundation+PMUtils
     - PMUtils/PMAnimationOperation
     - PMUtils/PMCollectionViewSwipeCell
+    - PMUtils/PMGradientView
     - PMUtils/PMImageFilmstrip
     - PMUtils/PMInfiniteScrollView
     - PMUtils/PMInnerShadowView
@@ -16,6 +17,7 @@ PODS:
   - PMUtils/PMAnimationOperation (1.1.1)
   - PMUtils/PMCollectionViewSwipeCell (1.1.1):
     - PMUtils/UIKit+PMUtils
+  - PMUtils/PMGradientView (1.1.1)
   - PMUtils/PMImageFilmstrip (1.1.1):
     - PMUtils/UIKit+PMUtils
   - PMUtils/PMInfiniteScrollView (1.1.1):
@@ -38,6 +40,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  PMUtils: a4bebc0ecd33218e3f64a2a3939e84ff7f2fa02f
+  PMUtils: ab82c870468ff4b908706cd554ced6e9a9628a46
 
 COCOAPODS: 0.34.4

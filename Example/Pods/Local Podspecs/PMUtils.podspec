@@ -57,6 +57,11 @@ ss.source_files = 'Pod/Classes/PMInnerShadowView/*.{h,m}'
 ss.public_header_files = 'Pod/Classes/PMInnerShadowView/*.h'
 end
 
+s.subspec 'PMGradientView' do |ss|
+ss.source_files = 'Pod/Classes/PMGradientView/*.{h,m}'
+ss.public_header_files = 'Pod/Classes/PMGradientView/*.h'
+end
+
 s.subspec 'PMInfiniteScrollView' do |ss|
 ss.source_files = 'Pod/Classes/PMInfiniteScrollView/*.{h,m}'
 ss.public_header_files = 'Pod/Classes/PMInfiniteScrollView/*.h'

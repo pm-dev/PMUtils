@@ -30,6 +30,12 @@
 #define COCOAPODS_VERSION_MINOR_PMUtils_PMCollectionViewSwipeCell 1
 #define COCOAPODS_VERSION_PATCH_PMUtils_PMCollectionViewSwipeCell 1
 
+// PMUtils/PMGradientView
+#define COCOAPODS_POD_AVAILABLE_PMUtils_PMGradientView
+#define COCOAPODS_VERSION_MAJOR_PMUtils_PMGradientView 1
+#define COCOAPODS_VERSION_MINOR_PMUtils_PMGradientView 1
+#define COCOAPODS_VERSION_PATCH_PMUtils_PMGradientView 1
+
 // PMUtils/PMImageFilmstrip
 #define COCOAPODS_POD_AVAILABLE_PMUtils_PMImageFilmstrip
 #define COCOAPODS_VERSION_MAJOR_PMUtils_PMImageFilmstrip 1

@@ -28,6 +28,7 @@
 #import "PMViewController.h"
 #import "PMUtils.h"
 #import "PMSampleView.h"
+#import "PMGradientView.h"
 
 static CGFloat const PMPageControlHeight = 37.0f;
 
@@ -52,6 +53,14 @@ static CGFloat const PMPageControlHeight = 37.0f;
 	 *
 	 */
 	
+    PMGradientView *gradient = [[PMGradientView alloc] initWithFrame:self.view.bounds];
+    gradient.startColor = [UIColor whiteColor];
+    gradient.endColor = [UIColor grayColor];
+    gradient.startPoint = CGPointMake(0.0f, 0.0f);
+    gradient.endPoint = CGPointMake(1.0f, 1.0f);
+    gradient.locations = @[@0.5, @0.8];
+    [self.view addSubview:gradient];
+    
 	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
 	[self.view addGestureRecognizer:tap];
 	
