@@ -9,7 +9,6 @@
 #ifndef Pods_UIKit_PMUtils_h
 #define Pods_UIKit_PMUtils_h
 
-#import "UICollectionReusableView+PMUtils.h"
 #import "UICollectionView+PMUtils.h"
 #import "UICollectionViewFlowLayout+PMUtils.h"
 #import "UIColor+PMUtils.h"

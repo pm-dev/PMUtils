@@ -59,6 +59,11 @@
 	return shared;
 }
 
++ (NSString *)defaultReuseIdentifier
+{
+    return NSStringFromClass(self);
+}
+
 + (NSString *) defaultNibName
 {
     return NSStringFromClass(self);
