@@ -47,7 +47,33 @@
 @end
 
 
+@interface PMZoomableImageFilmstripCell : PMImageFilmstripCell
+@property (nonatomic, strong) UIScrollView *scrollView;
+@end
+
+@implementation PMZoomableImageFilmstripCell
+
+- (instancetype) initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.scrollView = [[UIScrollView alloc] initWithFrame:self.contentView.bounds];
+        self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        self.scrollView.showsHorizontalScrollIndicator = NO;
+        self.scrollView.showsVerticalScrollIndicator = NO;
+        [self.scrollView addSubview:self.imageView];
+        [self.contentView addSubview:self.scrollView];
+    }
+    return self;
+}
+
+@end
+
+
+
 @interface PMImageFilmstrip () <UICollectionViewDataSource, UICollectionViewDelegate>
+- (Class) imageCellClass;
+- (NSString *) imageCellReuseIdentifier;
 @end
 
 @implementation PMImageFilmstrip
@@ -117,7 +143,7 @@
 }
 
 
-#pragma mark - UICollectionView DataSource & Delegate
+#pragma mark - UICollectionViewDataSource
 
 
 - (NSInteger) collectionView: (UICollectionView *) collectionView
@@ -128,21 +154,33 @@
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    PMImageFilmstripCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[PMImageFilmstripCell defaultReuseIdentifier] forIndexPath:indexPath];
+    PMImageFilmstripCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[self imageCellReuseIdentifier] forIndexPath:indexPath];
 	[self.delegate imageFilmstrip:self
 	  configureFilmstripImageView:cell.imageView
 						  atIndex:indexPath.item];
 	return cell;
 }
 
+
+#pragma mark - UICollectionViewDelegate
+
+
 - (void) scrollViewWillEndDragging:(UICollectionView *)imageFilmstrip withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
-	if (_delegateRespondsToWillScrollToImageAtIndex) {
+    if (imageFilmstrip == _collectionView && _delegateRespondsToWillScrollToImageAtIndex) {
         NSIndexPath *indexPath = [imageFilmstrip indexPathForItemAtPoint:*targetContentOffset];
 		[_delegate imageFilmstrip:self willScrollToImageAtIndex:indexPath.item];
 	}
+
+- (Class) imageCellClass
+{
+    return [PMImageFilmstripCell class];
 }
 
+- (NSString *) imageCellReuseIdentifier
+{
+    return [PMImageFilmstripCell defaultReuseIdentifier];
+}
 
 #pragma mark - Private Methods
 
@@ -155,7 +193,7 @@
 	_collectionViewFlowLayout.itemSize = self.frame.size;
 	_collectionView = [[UICollectionView alloc] initWithFrame:self.frame collectionViewLayout:_collectionViewFlowLayout];
 	_collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-	[_collectionView registerClass:[PMImageFilmstripCell class] forCellWithReuseIdentifier:[PMImageFilmstripCell defaultReuseIdentifier]];
+    [_collectionView registerClass:[self imageCellClass] forCellWithReuseIdentifier:[self imageCellReuseIdentifier]];
 	_collectionView.dataSource = self;
 	_collectionView.delegate = self;
 	_collectionView.allowsSelection = NO;
@@ -163,6 +201,34 @@
 	_collectionView.showsHorizontalScrollIndicator = NO;
 	_collectionView.backgroundColor = [UIColor whiteColor];
 	[self addSubview:_collectionView];
+}
+
+@end
+    
+@implementation PMZoomableImageFilmstrip
+
+- (Class)imageCellClass
+{
+    return [PMZoomableImageFilmstripCell class];
+}
+
+- (NSString *)imageCellReuseIdentifier
+{
+    return [PMZoomableImageFilmstripCell defaultReuseIdentifier];
+}
+
+- (PMImageFilmstripCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    PMZoomableImageFilmstripCell *cell = (PMZoomableImageFilmstripCell *)[super collectionView:collectionView cellForItemAtIndexPath:indexPath];
+    cell.scrollView.zoomScale = 1.0f;
+    cell.scrollView.maximumZoomScale = self.maximumZoomScale;
+    cell.scrollView.delegate = self;
+    return cell;
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return scrollView.subviews.firstObject;
 }
 
 @end

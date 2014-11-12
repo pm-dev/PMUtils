@@ -50,6 +50,7 @@
 
 @interface UIImageView (PMUtils)
 
+- (CGRect)imageFrame;
 
 /**
  *  @param delegate The object that acts as the delegate of the UIImageView class.

@@ -86,3 +86,9 @@
 - (void) scrollToImageAtIndex:(NSUInteger)index animated:(BOOL)animated;
 
 @end
+
+@interface PMZoomableImageFilmstrip : PMImageFilmstrip
+
+@property (nonatomic) CGFloat maximumZoomScale;
+
+@end

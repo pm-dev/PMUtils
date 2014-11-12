@@ -104,9 +104,10 @@ static CGFloat const PMPageControlHeight = 37.0f;
 	
 	_images = @[imgOne, imgTwo];
 	
-	PMImageFilmstrip *filmstrip = [[PMImageFilmstrip alloc] initWithFrame:self.view.bounds];
+	PMZoomableImageFilmstrip *filmstrip = [[PMZoomableImageFilmstrip alloc] initWithFrame:self.view.bounds];
 	filmstrip.delegate = self;
 	filmstrip.dataSource = self;
+    filmstrip.maximumZoomScale = 3.0f;
 	filmstrip.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 	[self.view insertSubview:filmstrip belowSubview:_pageControl];
 	

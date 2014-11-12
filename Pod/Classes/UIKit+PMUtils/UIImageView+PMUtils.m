@@ -27,6 +27,93 @@
 
 @implementation UIImageView (PMUtils)
 
+- (CGRect)imageFrame
+{
+    if (self.image) {
+        
+        CGFloat extraWidth = self.bounds.size.width - self.image.size.width;
+        CGFloat extraHeight = self.bounds.size.height - self.image.size.height;
+        
+        switch (self.contentMode) {
+                
+            case UIViewContentModeRedraw:
+            case UIViewContentModeScaleToFill:
+                return self.bounds;
+                
+            case UIViewContentModeCenter:
+                return CGRectMake(extraWidth/2.0f, extraHeight/2.0f, self.image.size.width, self.image.size.height);
+                
+            case UIViewContentModeTop:
+                return CGRectMake(extraWidth/2.0f, 0.0f, self.image.size.width, self.image.size.height);
+                
+            case UIViewContentModeBottom:
+                return CGRectMake(extraWidth/2.0f, extraHeight, self.image.size.width, self.image.size.height);
+                
+            case UIViewContentModeLeft:
+                return CGRectMake(0.0f, extraHeight/2.0f, self.image.size.width, self.image.size.height);
+                
+            case UIViewContentModeRight:
+                return CGRectMake(extraWidth, extraHeight/2.0f, self.image.size.width, self.image.size.height);
+                
+            case UIViewContentModeTopLeft:
+                return CGRectMake(0.0f, 0.0f, self.image.size.width, self.image.size.height);
+                
+            case UIViewContentModeTopRight:
+                return CGRectMake(extraWidth, 0.0f, self.image.size.width, self.image.size.height);
+                
+            case UIViewContentModeBottomLeft:
+                return CGRectMake(0.0f, extraHeight, self.image.size.width, self.image.size.height);
+                
+            case UIViewContentModeBottomRight:
+                return CGRectMake(extraWidth, extraHeight, self.image.size.width, self.image.size.height);
+                
+            case UIViewContentModeScaleAspectFill:
+            {
+                CGFloat imageRatio = self.image.size.width / self.image.size.height;
+                CGFloat viewRatio = self.bounds.size.width / self.bounds.size.height;
+                
+                if (imageRatio < viewRatio) { // Fill to width
+                    
+                    CGFloat scale = self.bounds.size.width / self.image.size.width;
+                    CGFloat height = scale * self.image.size.height;
+                    CGFloat y = (self.bounds.size.height - height) / 2.0f;
+                    return CGRectMake(0.0f, y, self.bounds.size.width, height);
+                }
+                else if (imageRatio > viewRatio) { // Fill to height
+                    
+                    CGFloat scale = self.bounds.size.height / self.image.size.height;
+                    CGFloat width = scale * self.image.size.width;
+                    CGFloat x = (self.bounds.size.width - width) / 2.0f;
+                    return CGRectMake(x, 0.0f, width, self.bounds.size.height);
+                }
+                return self.bounds;
+            }
+            case UIViewContentModeScaleAspectFit:
+            {
+                CGFloat imageRatio = self.image.size.width / self.image.size.height;
+                CGFloat viewRatio = self.bounds.size.width / self.bounds.size.height;
+                
+                if (imageRatio < viewRatio) { // Fit to height
+                    
+                    CGFloat scale = self.bounds.size.height / self.image.size.height;
+                    CGFloat width = scale * self.image.size.width;
+                    CGFloat x = (self.bounds.size.width - width) / 2.0f;
+                    return CGRectMake(x, 0.0f, width, self.bounds.size.height);
+                }
+                else if (imageRatio > viewRatio) { // Fit to width
+                    
+                    CGFloat scale = self.bounds.size.width / self.image.size.width;
+                    CGFloat height = scale * self.image.size.height;
+                    CGFloat y = (self.bounds.size.height - height) / 2.0f;
+                    return CGRectMake(0.0f, y, self.bounds.size.width, height);
+                }
+                return self.bounds;
+            }
+        }
+    }
+    return CGRectZero;
+}
+
 - (void) setImageEntity:(id)imageEntity
 {
     [self setImageEntity:imageEntity success:nil failure:nil];
