@@ -171,6 +171,7 @@
         NSIndexPath *indexPath = [imageFilmstrip indexPathForItemAtPoint:*targetContentOffset];
 		[_delegate imageFilmstrip:self willScrollToImageAtIndex:indexPath.item];
 	}
+}
 
 - (Class) imageCellClass
 {
