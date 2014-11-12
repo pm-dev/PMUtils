@@ -24,8 +24,28 @@
 
 #import "PMImageFilmstrip.h"
 #import "UICollectionView+PMUtils.h"
+#import "UIView+PMUtils.h"
 
-static NSString * const PMImageFilmstripCellReuseIdentifier = @"PMImageFilmstripCellReuseIdentifier";
+
+@interface PMImageFilmstripCell : UICollectionViewCell
+@property (nonatomic, strong) UIImageView *imageView;
+@end
+
+@implementation PMImageFilmstripCell
+
+- (instancetype) initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.imageView = [[UIImageView alloc] initWithFrame:self.contentView.bounds];
+        self.imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [self.contentView addSubview:self.imageView];
+    }
+    return self;
+}
+
+@end
+
 
 @interface PMImageFilmstrip () <UICollectionViewDataSource, UICollectionViewDelegate>
 @end
@@ -82,6 +102,20 @@ static NSString * const PMImageFilmstripCellReuseIdentifier = @"PMImageFilmstrip
     [_collectionView reloadData];
 }
 
+- (void) scrollToImageAtIndex:(NSUInteger)index animated:(BOOL)animated
+{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+    [_collectionView reloadItemsAtIndexPaths:@[indexPath]];
+    
+    if (_delegateRespondsToWillScrollToImageAtIndex) {
+        [_delegate imageFilmstrip:self willScrollToImageAtIndex:index];
+    }
+    
+    [_collectionView scrollToItemAtIndexPath:indexPath
+                            atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally
+                                    animated:animated];
+}
+
 
 #pragma mark - UICollectionView DataSource & Delegate
 
@@ -94,27 +128,17 @@ static NSString * const PMImageFilmstripCellReuseIdentifier = @"PMImageFilmstrip
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:PMImageFilmstripCellReuseIdentifier forIndexPath:indexPath];
-	
-	UIImageView *imageView = nil;
-	if (cell.contentView.subviews.count) {
-		imageView = cell.contentView.subviews.firstObject;
-	}
-	else {
-		imageView = [[UIImageView alloc] initWithFrame:cell.contentView.bounds];
-		imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-		[cell.contentView addSubview:imageView];
-	}
+    PMImageFilmstripCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[PMImageFilmstripCell defaultReuseIdentifier] forIndexPath:indexPath];
 	[self.delegate imageFilmstrip:self
-	  configureFilmstripImageView:imageView
+	  configureFilmstripImageView:cell.imageView
 						  atIndex:indexPath.item];
 	return cell;
 }
 
 - (void) scrollViewWillEndDragging:(UICollectionView *)imageFilmstrip withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
-	NSIndexPath *indexPath = [imageFilmstrip indexPathForItemAtPoint:*targetContentOffset];
 	if (_delegateRespondsToWillScrollToImageAtIndex) {
+        NSIndexPath *indexPath = [imageFilmstrip indexPathForItemAtPoint:*targetContentOffset];
 		[_delegate imageFilmstrip:self willScrollToImageAtIndex:indexPath.item];
 	}
 }
@@ -131,7 +155,7 @@ static NSString * const PMImageFilmstripCellReuseIdentifier = @"PMImageFilmstrip
 	_collectionViewFlowLayout.itemSize = self.frame.size;
 	_collectionView = [[UICollectionView alloc] initWithFrame:self.frame collectionViewLayout:_collectionViewFlowLayout];
 	_collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-	[_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:PMImageFilmstripCellReuseIdentifier];
+	[_collectionView registerClass:[PMImageFilmstripCell class] forCellWithReuseIdentifier:[PMImageFilmstripCell defaultReuseIdentifier]];
 	_collectionView.dataSource = self;
 	_collectionView.delegate = self;
 	_collectionView.allowsSelection = NO;

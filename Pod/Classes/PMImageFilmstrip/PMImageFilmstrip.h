@@ -83,4 +83,6 @@
 
 - (void) reloadImages;
 
+- (void) scrollToImageAtIndex:(NSUInteger)index animated:(BOOL)animated;
+
 @end
