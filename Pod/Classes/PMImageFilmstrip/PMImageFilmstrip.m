@@ -26,6 +26,7 @@
 #import "UICollectionView+PMUtils.h"
 #import "UIView+PMUtils.h"
 
+static CGFloat const PMPageControlHeight = 37.0f;
 
 @interface PMImageFilmstripCell : UICollectionViewCell
 @property (nonatomic, strong) UIImageView *imageView;
@@ -78,7 +79,7 @@
 @interface PMImageFilmstrip () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
-
+@property (nonatomic, strong, readwrite) UIPageControl *pageControl;
 - (Class) imageCellClass;
 - (NSString *) imageCellReuseIdentifier;
 
@@ -156,7 +157,9 @@
 - (NSInteger) collectionView: (UICollectionView *) collectionView
       numberOfItemsInSection: (NSInteger) section
 {
-    return [self.dataSource numberOfImagesInImageFilmstrip:self];
+    NSInteger imageCount = [self.dataSource numberOfImagesInImageFilmstrip:self];
+    self.pageControl.numberOfPages = imageCount;
+    return imageCount;
 }
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -173,17 +176,29 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    if (scrollView == self.collectionView && _delegateRespondsToDidScrollToImageAtIndex) {
-        NSIndexPath *indexPath = [self.collectionView indexPathsForVisibleItems].firstObject;
-        [_delegate imageFilmstrip:self didScrollToImageAtIndex:indexPath.item];
+    if (scrollView == self.collectionView) {
+        
+        NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
+        self.pageControl.currentPage = indexPath.item;
+        
+        if(_delegateRespondsToDidScrollToImageAtIndex) {
+            [_delegate imageFilmstrip:self didScrollToImageAtIndex:indexPath.item];
+        }
     }
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    if (scrollView == self.collectionView && decelerate == NO && _delegateRespondsToDidScrollToImageAtIndex) {
-        NSIndexPath *indexPath = [self.collectionView indexPathsForVisibleItems].firstObject;
-        [_delegate imageFilmstrip:self didScrollToImageAtIndex:indexPath.item];
+    if (scrollView == self.collectionView) {
+        if (decelerate == NO) {
+            
+            NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
+            self.pageControl.currentPage = indexPath.item;
+            
+            if (_delegateRespondsToDidScrollToImageAtIndex) {
+                [_delegate imageFilmstrip:self didScrollToImageAtIndex:indexPath.item];
+            }
+        }
     }
 }
 
@@ -205,8 +220,9 @@
 	_collectionViewFlowLayout = [UICollectionViewFlowLayout new];
 	_collectionViewFlowLayout.minimumLineSpacing = 0.0f;
 	_collectionViewFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-	_collectionViewFlowLayout.itemSize = self.frame.size;
-	self.collectionView = [[UICollectionView alloc] initWithFrame:self.frame collectionViewLayout:_collectionViewFlowLayout];
+	_collectionViewFlowLayout.itemSize = self.bounds.size;
+
+    self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:_collectionViewFlowLayout];
 	self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self.collectionView registerClass:[self imageCellClass] forCellWithReuseIdentifier:[self imageCellReuseIdentifier]];
 	self.collectionView.dataSource = self;
@@ -216,11 +232,28 @@
 	self.collectionView.showsHorizontalScrollIndicator = NO;
 	self.collectionView.backgroundColor = [UIColor whiteColor];
 	[self addSubview:_collectionView];
+    
+    self.pageControl = [[UIPageControl alloc] init];
+    self.pageControl.frame = CGRectMake(0, self.bounds.size.height - PMPageControlHeight, self.bounds.size.width, PMPageControlHeight);
+    self.pageControl.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
+    [self addSubview:self.pageControl];
 }
 
 @end
     
 @implementation PMZoomableImageFilmstrip
+{
+    BOOL _delegateRespondsToWillZoom;
+    BOOL _delegateRespondsToDidZoom;
+}
+
+
+- (void)setDelegate:(id<PMZoomableImageFilmstripDelegate>)delegate
+{
+    [super setDelegate:delegate];
+    _delegateRespondsToWillZoom = [delegate respondsToSelector:@selector(imageFilmstrip:willZoomImageView:)];
+    _delegateRespondsToDidZoom = [delegate respondsToSelector:@selector(imageFilmstrip:didZoomImageView:toScale:)];
+}
 
 - (Class)imageCellClass
 {
@@ -252,18 +285,27 @@
 #pragma mark - UIScrollViewDelegate
 
 
-- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIImageView *)view
 {
     self.collectionView.scrollEnabled = NO;
+    self.pageControl.hidden = YES;
+    if (_delegateRespondsToWillZoom) {
+        [self.delegate imageFilmstrip:self willZoomImageView:view];
+    }
 }
 
-- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIImageView *)view atScale:(CGFloat)scale
 {
-    self.collectionView.scrollEnabled = (scrollView.zoomScale == 1.0f);
+    self.collectionView.scrollEnabled = (scale == 1.0f);
+    self.pageControl.hidden = (scale != 1.0f);
+    if (_delegateRespondsToDidZoom) {
+        [self.delegate imageFilmstrip:self didZoomImageView:view toScale:scale];
+    }
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
+    NSParameterAssert([scrollView.subviews.firstObject isKindOfClass:[UIImageView class]]);
     return scrollView.subviews.firstObject;
 }
 

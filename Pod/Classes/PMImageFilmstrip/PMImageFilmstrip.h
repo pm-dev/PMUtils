@@ -80,6 +80,7 @@
  */
 @property (nonatomic, weak) id<PMImageFilmstripDataSource> dataSource;
 
+@property (nonatomic, strong, readonly) UIPageControl *pageControl;
 
 - (void) reloadImages;
 
@@ -87,8 +88,19 @@
 
 @end
 
+
+@protocol PMZoomableImageFilmstripDelegate <PMImageFilmstripDelegate>
+
+@optional
+
+- (void) imageFilmstrip:(PMImageFilmstrip *)imageFilmstrip willZoomImageView:(UIImageView *)imageView;
+- (void) imageFilmstrip:(PMImageFilmstrip *)imageFilmstrip didZoomImageView:(UIImageView *)imageView toScale:(CGFloat)scale;
+
+@end
+
 @interface PMZoomableImageFilmstrip : PMImageFilmstrip
 
+@property (nonatomic, weak) id<PMZoomableImageFilmstripDelegate> delegate;
 @property (nonatomic) CGFloat maximumZoomScale;
 
 @end

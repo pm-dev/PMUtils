@@ -42,14 +42,6 @@ typedef NS_OPTIONS(NSUInteger, PMDirection) {
 
 
 /**
- *  The default reuse identifier is simply the name of the class. Override this method to change the default reuse identifier.
- *
- *  @return The default reuse identifier.
- */
-+ (NSString *) defaultReuseIdentifier;
-
-
-/**
  *  The default nib name is simply the name of the class. Override this method to change the default nib name.
  *
  *  @return The default name of nib, which defaults to the name of the receiver's class.

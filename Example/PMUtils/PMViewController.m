@@ -30,14 +30,11 @@
 #import "PMSampleView.h"
 #import "PMGradientView.h"
 
-static CGFloat const PMPageControlHeight = 37.0f;
-
-@interface PMViewController () <PMImageFilmstripDataSource, PMImageFilmstripDelegate>
+@interface PMViewController () <PMImageFilmstripDataSource, PMZoomableImageFilmstripDelegate>
 @end
 
 @implementation PMViewController
 {
-	UIPageControl *_pageControl;
 	NSArray *_images;
 }
 
@@ -69,12 +66,6 @@ static CGFloat const PMPageControlHeight = 37.0f;
 	label.textAlignment = NSTextAlignmentCenter;
 	label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	[self.view addSubview:label];
-	
-    _pageControl = [[UIPageControl alloc] init];
-    [_pageControl setFrameSize:CGSizeMake(self.view.boundsWidth, PMPageControlHeight)];
-    [_pageControl setFrameY:self.view.boundsHeight - PMPageControlHeight];
-	_pageControl.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-	[self.view addSubview:_pageControl];
 }
 
 
@@ -110,9 +101,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 	filmstrip.dataSource = self;
     filmstrip.maximumZoomScale = 3.0f;
 	filmstrip.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-	[self.view insertSubview:filmstrip belowSubview:_pageControl];
-	
-	_pageControl.numberOfPages = _images.count;
+    [self.view addSubview:filmstrip];
 }
 
 #pragma mark - PMImageFilmstripDelegate Methods
@@ -120,11 +109,6 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (void) imageFilmstrip:(PMImageFilmstrip *)imageFilmstrip configureFilmstripImageView:(UIImageView *)imageView atIndex:(NSUInteger)index
 {
 	[imageView setImageEntity:_images[index]];
-}
-
-- (void) imageFilmstrip:(PMImageFilmstrip *)imageFilmstrip willScrollToImageAtIndex:(NSUInteger)index
-{
-	_pageControl.currentPage = index;
 }
 
 #pragma mark - PMImageFilmstripDataSource Methods
