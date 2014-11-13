@@ -24,6 +24,7 @@
 
 #import "PMImageFilmstrip.h"
 #import "UICollectionView+PMUtils.h"
+#import "UICollectionReusableView+PMUtils.h"
 #import "UIView+PMUtils.h"
 
 static CGFloat const PMPageControlHeight = 37.0f;
