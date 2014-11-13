@@ -142,6 +142,8 @@ static CGFloat const PMPageControlHeight = 37.0f;
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
     [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
     
+    self.pageControl.currentPage = index;
+    
     if (_delegateRespondsToDidScrollToImageAtIndex) {
         [_delegate imageFilmstrip:self didScrollToImageAtIndex:index];
     }
