@@ -73,6 +73,12 @@ static CGFloat const PMPageControlHeight = 37.0f;
     return self;
 }
 
+- (void)dealloc
+{
+    self.scrollView.delegate = nil;
+    self.doubleTap.delegate = nil;
+}
+
 @end
 
 
@@ -300,6 +306,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
         }
         case UIGestureRecognizerStateEnded:
         {
+            NSParameterAssert([pinch.view isKindOfClass:[UIScrollView class]]);
             UIScrollView *scrollView = (UIScrollView *)pinch.view;
             if (_pinchStartScale == 1.0f && scrollView.zoomScale <= 1.0f && _delegateRespondsToDidPinchToClose) {
                 NSParameterAssert([scrollView.subviews.firstObject isKindOfClass:[UIImageView class]]);
