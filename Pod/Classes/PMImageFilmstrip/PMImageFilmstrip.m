@@ -161,13 +161,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
       numberOfItemsInSection: (NSInteger) section
 {
     NSInteger imageCount = [self.dataSource numberOfImagesInImageFilmstrip:self];
-    if (imageCount > 1) {
-        [self addSubview:self.pageControl];
-        self.pageControl.numberOfPages = imageCount;
-    }
-    else {
-        [self.pageControl removeFromSuperview];
-    }
+    self.pageControl.numberOfPages = imageCount;
     return imageCount;
 }
 
@@ -245,6 +239,9 @@ static CGFloat const PMPageControlHeight = 37.0f;
     self.pageControl = [[UIPageControl alloc] init];
     self.pageControl.frame = CGRectMake(0, self.bounds.size.height - PMPageControlHeight, self.bounds.size.width, PMPageControlHeight);
     self.pageControl.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
+    self.pageControl.hidesForSinglePage = YES;
+    self.pageControl.enabled = NO;
+    [self addSubview:self.pageControl];
 }
 
 @end
