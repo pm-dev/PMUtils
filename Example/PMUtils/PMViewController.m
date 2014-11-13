@@ -80,6 +80,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 
 - (void)tap:(UITapGestureRecognizer *)sender
 {
+    sender.enabled = NO;
 	UIImage *img = [UIImage imageNamed:@"Sample.JPG"];
 
 	CFTimeInterval start = CACurrentMediaTime();

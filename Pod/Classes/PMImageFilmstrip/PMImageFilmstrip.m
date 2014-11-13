@@ -49,6 +49,7 @@
 
 @interface PMZoomableImageFilmstripCell : PMImageFilmstripCell
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UITapGestureRecognizer *doubleTap;
 @end
 
 @implementation PMZoomableImageFilmstripCell
@@ -61,6 +62,9 @@
         self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.scrollView.showsHorizontalScrollIndicator = NO;
         self.scrollView.showsVerticalScrollIndicator = NO;
+        self.doubleTap = [[UITapGestureRecognizer alloc] init];
+        self.doubleTap.numberOfTapsRequired = 2;
+        [self.scrollView addGestureRecognizer:self.doubleTap];
         [self.scrollView addSubview:self.imageView];
         [self.contentView addSubview:self.scrollView];
     }
@@ -72,15 +76,18 @@
 
 
 @interface PMImageFilmstrip () <UICollectionViewDataSource, UICollectionViewDelegate>
+
+@property (nonatomic, strong) UICollectionView *collectionView;
+
 - (Class) imageCellClass;
 - (NSString *) imageCellReuseIdentifier;
+
 @end
 
 @implementation PMImageFilmstrip
 {
-	UICollectionView *_collectionView;
 	UICollectionViewFlowLayout *_collectionViewFlowLayout;
-	BOOL _delegateRespondsToWillScrollToImageAtIndex;
+	BOOL _delegateRespondsToDidScrollToImageAtIndex;
 }
 
 
@@ -103,41 +110,41 @@
 {
 	_collectionViewFlowLayout.itemSize = frame.size;
 	super.frame = frame;
-	NSIndexPath *indexPath = [_collectionView indexPathNearestToBoundsCenter];
-	UICollectionViewLayoutAttributes *attributes = [_collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath];
-	[_collectionView setContentOffset:attributes.frame.origin];
+	NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
+	UICollectionViewLayoutAttributes *attributes = [self.collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath];
+	[self.collectionView setContentOffset:attributes.frame.origin];
 }
 
 - (void) setBounds:(CGRect)bounds
 {
 	_collectionViewFlowLayout.itemSize = bounds.size;
 	super.bounds = bounds;
-	NSIndexPath *indexPath = [_collectionView indexPathNearestToBoundsCenter];
-	UICollectionViewLayoutAttributes *attributes = [_collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath];
-	[_collectionView setContentOffset:attributes.frame.origin];
+	NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
+	UICollectionViewLayoutAttributes *attributes = [self.collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath];
+	[self.collectionView setContentOffset:attributes.frame.origin];
 }
 
 - (void) setDelegate:(id<PMImageFilmstripDelegate>)delegate
 {
 	_delegate = delegate;
-	_delegateRespondsToWillScrollToImageAtIndex = [_delegate respondsToSelector:@selector(imageFilmstrip:willScrollToImageAtIndex:)];
+	_delegateRespondsToDidScrollToImageAtIndex = [_delegate respondsToSelector:@selector(imageFilmstrip:didScrollToImageAtIndex:)];
 }
 
 - (void)reloadImages;
 {
-    [_collectionView reloadData];
+    [self.collectionView reloadData];
 }
 
 - (void) scrollToImageAtIndex:(NSUInteger)index animated:(BOOL)animated
 {
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
-    [_collectionView reloadItemsAtIndexPaths:@[indexPath]];
+    [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
     
-    if (_delegateRespondsToWillScrollToImageAtIndex) {
-        [_delegate imageFilmstrip:self willScrollToImageAtIndex:index];
+    if (_delegateRespondsToDidScrollToImageAtIndex) {
+        [_delegate imageFilmstrip:self didScrollToImageAtIndex:index];
     }
     
-    [_collectionView scrollToItemAtIndexPath:indexPath
+    [self.collectionView scrollToItemAtIndexPath:indexPath
                             atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally
                                     animated:animated];
 }
@@ -164,13 +171,20 @@
 
 #pragma mark - UICollectionViewDelegate
 
-
-- (void) scrollViewWillEndDragging:(UICollectionView *)imageFilmstrip withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    if (imageFilmstrip == _collectionView && _delegateRespondsToWillScrollToImageAtIndex) {
-        NSIndexPath *indexPath = [imageFilmstrip indexPathForItemAtPoint:*targetContentOffset];
-		[_delegate imageFilmstrip:self willScrollToImageAtIndex:indexPath.item];
-	}
+    if (scrollView == self.collectionView && _delegateRespondsToDidScrollToImageAtIndex) {
+        NSIndexPath *indexPath = [self.collectionView indexPathsForVisibleItems].firstObject;
+        [_delegate imageFilmstrip:self didScrollToImageAtIndex:indexPath.item];
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (scrollView == self.collectionView && decelerate == NO && _delegateRespondsToDidScrollToImageAtIndex) {
+        NSIndexPath *indexPath = [self.collectionView indexPathsForVisibleItems].firstObject;
+        [_delegate imageFilmstrip:self didScrollToImageAtIndex:indexPath.item];
+    }
 }
 
 - (Class) imageCellClass
@@ -192,15 +206,15 @@
 	_collectionViewFlowLayout.minimumLineSpacing = 0.0f;
 	_collectionViewFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
 	_collectionViewFlowLayout.itemSize = self.frame.size;
-	_collectionView = [[UICollectionView alloc] initWithFrame:self.frame collectionViewLayout:_collectionViewFlowLayout];
-	_collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    [_collectionView registerClass:[self imageCellClass] forCellWithReuseIdentifier:[self imageCellReuseIdentifier]];
-	_collectionView.dataSource = self;
-	_collectionView.delegate = self;
-	_collectionView.allowsSelection = NO;
-	_collectionView.pagingEnabled = YES;
-	_collectionView.showsHorizontalScrollIndicator = NO;
-	_collectionView.backgroundColor = [UIColor whiteColor];
+	self.collectionView = [[UICollectionView alloc] initWithFrame:self.frame collectionViewLayout:_collectionViewFlowLayout];
+	self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    [self.collectionView registerClass:[self imageCellClass] forCellWithReuseIdentifier:[self imageCellReuseIdentifier]];
+	self.collectionView.dataSource = self;
+	self.collectionView.delegate = self;
+	self.collectionView.allowsSelection = NO;
+	self.collectionView.pagingEnabled = YES;
+	self.collectionView.showsHorizontalScrollIndicator = NO;
+	self.collectionView.backgroundColor = [UIColor whiteColor];
 	[self addSubview:_collectionView];
 }
 
@@ -224,7 +238,28 @@
     cell.scrollView.zoomScale = 1.0f;
     cell.scrollView.maximumZoomScale = self.maximumZoomScale;
     cell.scrollView.delegate = self;
+    [cell.doubleTap addTarget:self action:@selector(didDoubleTap:)];
     return cell;
+}
+
+- (void) didDoubleTap:(UITapGestureRecognizer *)tap
+{
+    UIScrollView *scrollView = (UIScrollView *)tap.view;
+    [scrollView setZoomScale:(scrollView.zoomScale == 1.0f)? scrollView.maximumZoomScale : 1.0f animated:YES];
+}
+
+
+#pragma mark - UIScrollViewDelegate
+
+
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view
+{
+    self.collectionView.scrollEnabled = NO;
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale
+{
+    self.collectionView.scrollEnabled = (scrollView.zoomScale == 1.0f);
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
