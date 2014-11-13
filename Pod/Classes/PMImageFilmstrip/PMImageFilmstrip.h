@@ -46,6 +46,14 @@
  *  @param imageFilmstrip An object representing the image filmstrip.
  *  @param index          The index of the image that is being scrolled to.
  */
+- (void) imageFilmstrip:(PMImageFilmstrip *)imageFilmstrip willScrollToImageAtIndex:(NSUInteger)index;
+
+/**
+ *  Tells the delegate an image in the image filmstrip has been scrolled to.
+ *
+ *  @param imageFilmstrip An object representing the image filmstrip.
+ *  @param index          The index of the image that has been scrolled to.
+ */
 - (void) imageFilmstrip:(PMImageFilmstrip *)imageFilmstrip didScrollToImageAtIndex:(NSUInteger)index;
 
 @end

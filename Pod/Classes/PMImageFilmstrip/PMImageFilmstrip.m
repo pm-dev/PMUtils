@@ -95,7 +95,8 @@ static CGFloat const PMPageControlHeight = 37.0f;
 @implementation PMImageFilmstrip
 {
 	UICollectionViewFlowLayout *_collectionViewFlowLayout;
-	BOOL _delegateRespondsToDidScrollToImageAtIndex;
+    BOOL _delegateRespondsToDidScroll;
+    BOOL _delegateRespondsToWillScroll;
 }
 
 
@@ -135,7 +136,8 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (void) setDelegate:(id<PMImageFilmstripDelegate>)delegate
 {
 	_delegate = delegate;
-	_delegateRespondsToDidScrollToImageAtIndex = [_delegate respondsToSelector:@selector(imageFilmstrip:didScrollToImageAtIndex:)];
+	_delegateRespondsToDidScroll = [_delegate respondsToSelector:@selector(imageFilmstrip:didScrollToImageAtIndex:)];
+    _delegateRespondsToWillScroll = [_delegate respondsToSelector:@selector(imageFilmstrip:willScrollToImageAtIndex:)];
 }
 
 - (void)reloadImages;
@@ -150,7 +152,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
     
     self.pageControl.currentPage = index;
     
-    if (_delegateRespondsToDidScrollToImageAtIndex) {
+    if (_delegateRespondsToDidScroll) {
         [_delegate imageFilmstrip:self didScrollToImageAtIndex:index];
     }
     
@@ -183,6 +185,20 @@ static CGFloat const PMPageControlHeight = 37.0f;
 
 #pragma mark - UICollectionViewDelegate
 
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    if (scrollView == self.collectionView) {
+        
+        NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:*targetContentOffset];
+        self.pageControl.currentPage = indexPath.item;
+        
+        if (_delegateRespondsToWillScroll) {
+            [_delegate imageFilmstrip:self willScrollToImageAtIndex:indexPath.item];
+        }
+    }
+}
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     if (scrollView == self.collectionView) {
@@ -190,7 +206,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
         NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
         self.pageControl.currentPage = indexPath.item;
         
-        if(_delegateRespondsToDidScrollToImageAtIndex) {
+        if(_delegateRespondsToDidScroll) {
             [_delegate imageFilmstrip:self didScrollToImageAtIndex:indexPath.item];
         }
     }
@@ -204,7 +220,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
             NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
             self.pageControl.currentPage = indexPath.item;
             
-            if (_delegateRespondsToDidScrollToImageAtIndex) {
+            if (_delegateRespondsToDidScroll) {
                 [_delegate imageFilmstrip:self didScrollToImageAtIndex:indexPath.item];
             }
         }
