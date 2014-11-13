@@ -293,7 +293,6 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIImageView *)view
 {
     self.collectionView.scrollEnabled = NO;
-    self.pageControl.hidden = YES;
     if (_delegateRespondsToWillZoom) {
         [self.delegate imageFilmstrip:self willZoomImageView:view];
     }
@@ -302,7 +301,6 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIImageView *)view atScale:(CGFloat)scale
 {
     self.collectionView.scrollEnabled = (scale == 1.0f);
-    self.pageControl.hidden = (scale != 1.0f);
     if (_delegateRespondsToDidZoom) {
         [self.delegate imageFilmstrip:self didZoomImageView:view toScale:scale];
     }
