@@ -89,12 +89,14 @@
 @end
 
 
+@class PMZoomableImageFilmstrip;
 @protocol PMZoomableImageFilmstripDelegate <PMImageFilmstripDelegate>
 
 @optional
 
-- (void) imageFilmstrip:(PMImageFilmstrip *)imageFilmstrip willZoomImageView:(UIImageView *)imageView;
-- (void) imageFilmstrip:(PMImageFilmstrip *)imageFilmstrip didZoomImageView:(UIImageView *)imageView toScale:(CGFloat)scale;
+- (void) imageFilmstrip:(PMZoomableImageFilmstrip *)imageFilmstrip didPinchToCloseImageView:(UIImageView *)imageView;
+- (void) imageFilmstrip:(PMZoomableImageFilmstrip *)imageFilmstrip willZoomImageView:(UIImageView *)imageView;
+- (void) imageFilmstrip:(PMZoomableImageFilmstrip *)imageFilmstrip didZoomImageView:(UIImageView *)imageView toScale:(CGFloat)scale;
 
 @end
 

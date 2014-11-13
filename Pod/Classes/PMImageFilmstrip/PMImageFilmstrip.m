@@ -250,6 +250,8 @@ static CGFloat const PMPageControlHeight = 37.0f;
 {
     BOOL _delegateRespondsToWillZoom;
     BOOL _delegateRespondsToDidZoom;
+    BOOL _delegateRespondsToDidPinchToClose;
+    CGFloat _pinchStartScale;
 }
 
 
@@ -258,6 +260,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
     [super setDelegate:delegate];
     _delegateRespondsToWillZoom = [delegate respondsToSelector:@selector(imageFilmstrip:willZoomImageView:)];
     _delegateRespondsToDidZoom = [delegate respondsToSelector:@selector(imageFilmstrip:didZoomImageView:toScale:)];
+    _delegateRespondsToDidPinchToClose = [delegate respondsToSelector:@selector(imageFilmstrip:didPinchToCloseImageView:)];
 }
 
 - (Class)imageCellClass
@@ -277,6 +280,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
     cell.scrollView.maximumZoomScale = self.maximumZoomScale;
     cell.scrollView.delegate = self;
     [cell.doubleTap addTarget:self action:@selector(didDoubleTap:)];
+    [cell.scrollView.pinchGestureRecognizer addTarget:self action:@selector(handlePinch:)];
     return cell;
 }
 
@@ -286,6 +290,27 @@ static CGFloat const PMPageControlHeight = 37.0f;
     [scrollView setZoomScale:(scrollView.zoomScale == 1.0f)? scrollView.maximumZoomScale : 1.0f animated:YES];
 }
 
+- (void) handlePinch:(UIPinchGestureRecognizer *)pinch
+{
+    switch (pinch.state) {
+        case UIGestureRecognizerStateBegan:
+        {
+            _pinchStartScale = ((UIScrollView *)pinch.view).zoomScale;
+            break;
+        }
+        case UIGestureRecognizerStateEnded:
+        {
+            UIScrollView *scrollView = (UIScrollView *)pinch.view;
+            if (_pinchStartScale == 1.0f && scrollView.zoomScale <= 1.0f && _delegateRespondsToDidPinchToClose) {
+                NSParameterAssert([scrollView.subviews.firstObject isKindOfClass:[UIImageView class]]);
+                [self.delegate imageFilmstrip:self didPinchToCloseImageView:scrollView.subviews.firstObject];
+            }
+            break;
+        }
+        default:
+            break;
+    }
+}
 
 #pragma mark - UIScrollViewDelegate
 
