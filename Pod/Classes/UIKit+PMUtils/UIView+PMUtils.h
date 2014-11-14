@@ -139,7 +139,7 @@ typedef NS_OPTIONS(NSUInteger, PMDirection) {
  *  @param rect      The rect to center the receiver in.
  *  @param direction A mask of directions indicating how to center the view.
  */
-- (void) centerInRect:(CGRect *)rect forDirection:(PMDirection)direction;
+- (void) centerInRect:(CGRect)rect forDirection:(PMDirection)direction;
 
 - (BOOL) isSquare;
 
