@@ -136,10 +136,10 @@ typedef NS_OPTIONS(NSUInteger, PMDirection) {
 /**
  *  Centers the view in the given rect for one or both directions.
  *
- *  @param view      The view to center the receiver in. The view does not need to be in the same coordinate system.
+ *  @param rect      The rect to center the receiver in.
  *  @param direction A mask of directions indicating how to center the view.
  */
-- (void) centerInView:(UIView *)view forDirection:(PMDirection)direction;
+- (void) centerInRect:(CGRect *)rect forDirection:(PMDirection)direction;
 
 - (BOOL) isSquare;
 

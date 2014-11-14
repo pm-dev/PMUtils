@@ -213,12 +213,11 @@
 
 - (void) centerInSuperviewForDirection:(PMDirection)direction
 {
-    [self centerInView:self.superview forDirection:direction];
+    [self centerInRect:self.superview.bounds forDirection:direction];
 }
 
-- (void) centerInView:(UIView *)view forDirection:(PMDirection)direction
+- (void) centerInRect:(CGRect)rect forDirection:(PMDirection)direction;
 {
-    CGRect rect = [view convertFrameToCoordinateSystemOfView:self];
     CGRect frame = self.frame;
     
     if (direction & PMDirectionHorizontal) {
