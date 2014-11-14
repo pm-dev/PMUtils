@@ -162,7 +162,7 @@
     switch (direction) {
         case PMDirectionVertical:
         {
-            NSNumber *totalViewsHeight = [views valueForKeyPath:@"@sum.frameHeight"];
+            NSNumber *totalViewsHeight = [views valueForKeyPath:@"@sum.height"];
             CGFloat totalHeight = totalViewsHeight.floatValue + totalPadding;
             CGFloat yOrigin = floorf((rect.size.height - totalHeight)/2.0f);
             
@@ -176,7 +176,7 @@
         }
         case PMDirectionHorizontal:
         {
-            NSNumber *totalViewsWidth = [views valueForKeyPath:@"@sum.frameWidth"];
+            NSNumber *totalViewsWidth = [views valueForKeyPath:@"@sum.width"];
             CGFloat totalWidth = totalViewsWidth.floatValue + totalPadding;
             CGFloat xOrigin = floorf((rect.size.width - totalWidth)/2.0f);
             
