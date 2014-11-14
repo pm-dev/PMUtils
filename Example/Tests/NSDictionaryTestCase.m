@@ -28,7 +28,8 @@
     NSDictionary *dict = @{@"Object 1": @{@"fourty-three": @43,
                                         @"null": [NSNull null]}};
     NSString *JSONString = [dict JSONString];
-    XCTAssertEqualObjects(JSONString, @"{\"Object 1\":{\"fourty-three\":43,\"null\":null}}");
+    XCTAssert([JSONString isEqualToString:@"{\"Object 1\":{\"fourty-three\":43,\"null\":null}}"] ||
+              [JSONString isEqualToString:@"{\"Object 1\":{\"null\":null,\"fourty-three\":43}}"]);
 }
 
 

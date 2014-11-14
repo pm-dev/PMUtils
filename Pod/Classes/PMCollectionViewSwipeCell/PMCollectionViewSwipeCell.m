@@ -25,7 +25,6 @@
 
 #import "PMCollectionViewSwipeCell.h"
 #import "UIScrollView+PMUtils.h"
-#import "UIView+PMUtils.h"
 
 @interface PMSwipeCellScrollView : UIScrollView
 @end
@@ -188,7 +187,9 @@
     contentSize.width = self.leftUtilityView.frame.size.width + self.contentView.frame.size.width + self.rightUtilityView.frame.size.width;
     self.cellPosition = PMCellPositionCentered;
     _scrollView.contentSize = contentSize;
-    [self.contentView setFrameX:_scrollView.contentOffset.x];
+    CGRect frame = self.contentView.frame;
+    frame.origin.x = _scrollView.contentOffset.x;
+    self.contentView.frame = frame;
 }
 
 

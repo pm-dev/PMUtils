@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <UIKit/UIKit.h>
 #import "NSArray+PMUtils.h"
 
 @interface NSArrayTestCase : XCTestCase

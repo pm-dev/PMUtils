@@ -136,33 +136,14 @@
 
 #pragma mark - Layout
 
-- (BOOL) isSquare
-{
-    return (self.frameWidth == self.frameHeight);
-}
 
 - (UIEdgeInsets) edgeInsetsWithRect:(CGRect)rect
 {
-    CGFloat top = self.boundsY + rect.origin.y;
-    CGFloat left = self.boundsX + rect.origin.x;
-    CGFloat bottom = self.boundsMaxY - (rect.origin.y + rect.size.height);
-    CGFloat right = self.boundsMaxX - (rect.origin.x + rect.size.width);
+    CGFloat top = rect.origin.y;
+    CGFloat left = rect.origin.x;
+    CGFloat bottom = self.height - (rect.origin.y + rect.size.height);
+    CGFloat right = self.width - (rect.origin.x + rect.size.width);
     return UIEdgeInsetsMake(top, left, bottom, right);
-}
-
-- (CGRect) centeredRectWithSize:(CGSize)size forDirection:(PMDirection)direction
-{
-    CGRect rect = CGRectZero;
-    rect.size = size;
-    
-    if (direction & PMDirectionHorizontal) {
-        rect.origin.x = floorf((self.boundsWidth - size.width) / 2.0f + self.boundsX);
-    }
-    
-    if (direction & PMDirectionVertical) {
-        rect.origin.y = floorf((self.boundsHeight - size.height) / 2.0f + self.boundsY);
-    }
-    return rect;
 }
 
 - (CGRect) convertFrameToCoordinateSystemOfView:(UIView *)view
@@ -170,33 +151,12 @@
     return [self convertRect:self.bounds toView:view];
 }
 
-- (void) setCenterX:(CGFloat)x
-{
-    NSAssert(!fmodf(self.window.screen.scale * x, 1.0f) , @"Setting x center that does not land on a pixel boundary.");
-    self.center = CGPointMake(x, self.centerY);
-}
-
-- (CGFloat) centerX
-{
-    return self.center.x;
-}
-
-- (void) setCenterY:(CGFloat)y
-{
-    NSAssert(!fmodf(self.window.screen.scale * y, 1.0f) , @"Setting y center that does not land on a pixel boundary.");
-    self.center = CGPointMake(self.centerX, y);
-}
-
-- (CGFloat) centerY
-{
-    return self.center.y;
-}
-
-+ (void) centerViews:(NSArray *)views inRect:(CGRect)rect forDirection:(PMDirection)direction withPadding:(CGFloat)padding
+- (void) centerSubviews:(NSArray *)views forDirection:(PMDirection)direction withPadding:(CGFloat)padding
 {
     NSAssert(direction == PMDirectionVertical || direction == PMDirectionHorizontal,
              @"direction must be either PMDirectionVerticalor PMDirectionHorizontal");
     
+    CGRect rect = self.bounds;
     CGFloat totalPadding = (views.count-1) * padding;
     
     switch (direction) {
@@ -205,10 +165,12 @@
             NSNumber *totalViewsHeight = [views valueForKeyPath:@"@sum.frameHeight"];
             CGFloat totalHeight = totalViewsHeight.floatValue + totalPadding;
             CGFloat yOrigin = floorf((rect.size.height - totalHeight)/2.0f);
-
+            
             for (UIView *view in views) {
-                view.frameY = yOrigin;
-                yOrigin = view.frameMaxY + padding;
+                CGRect frame = view.frame;
+                frame.origin.y = yOrigin;
+                view.frame = frame;
+                yOrigin = view.maxY + padding;
             }
             break;
         }
@@ -219,12 +181,29 @@
             CGFloat xOrigin = floorf((rect.size.width - totalWidth)/2.0f);
             
             for (UIView *view in views) {
-                view.frameX = xOrigin;
-                xOrigin = view.frameMaxX + padding;
+                CGRect frame = view.frame;
+                frame.origin.x = xOrigin;
+                view.frame = frame;
+                xOrigin = view.maxX + padding;
             }
             break;
         }
     }
+}
+
+- (CGRect) centeredRectWithSize:(CGSize)size forDirection:(PMDirection)direction
+{
+    CGRect rect = CGRectZero;
+    rect.size = size;
+    
+    if (direction & PMDirectionHorizontal) {
+        rect.origin.x = floorf((self.width - size.width) / 2.0f);
+    }
+    
+    if (direction & PMDirectionVertical) {
+        rect.origin.y = floorf((self.height - size.height) / 2.0f);
+    }
+    return rect;
 }
 
 - (void) centerInSuperview
@@ -234,11 +213,12 @@
 
 - (void) centerInSuperviewForDirection:(PMDirection)direction
 {
-    [self centerInRect:self.superview.bounds forDirection:direction];
+    [self centerInView:self.superview forDirection:direction];
 }
 
-- (void) centerInRect:(CGRect)rect forDirection:(PMDirection)direction;
+- (void) centerInView:(UIView *)view forDirection:(PMDirection)direction
 {
+    CGRect rect = [view convertFrameToCoordinateSystemOfView:self];
     CGRect frame = self.frame;
     
     if (direction & PMDirectionHorizontal) {
@@ -252,165 +232,63 @@
     self.frame = frame;
 }
 
-- (void) setFrameX:(CGFloat)x
+- (BOOL) isSquare
 {
-    NSAssert(!fmodf(self.window.screen.scale * x, 1.0f) , @"Setting x origin that does not land on a pixel boundary.");
-    CGRect frame = self.frame;
-    frame.origin.x = x;
-    self.frame = frame;
+    return (self.width == self.height);
 }
 
-- (CGFloat) frameX
+- (CGFloat) x
 {
     return self.frame.origin.x;
 }
 
-- (void) setFrameY:(CGFloat)y
-{
-    NSAssert(!fmodf(self.window.screen.scale * y, 1.0f) , @"Setting y origin that does not land on a pixel boundary.");
-    CGRect frame = self.frame;
-    frame.origin.y = y;
-    self.frame = frame;
-}
-
-- (CGFloat) frameY
+- (CGFloat) y
 {
     return self.frame.origin.y;
 }
 
-- (void) setFrameOrigin:(CGPoint)origin
-{
-    NSAssert(!fmodf(self.window.screen.scale * origin.x, 1.0f) , @"Setting x origin that does not land on a pixel boundary.");
-    NSAssert(!fmodf(self.window.screen.scale * origin.y, 1.0f) , @"Setting y origin that does not land on a pixel boundary.");
-    CGRect frame = self.frame;
-    frame.origin = origin;
-    self.frame = frame;
-}
-
-- (CGPoint) frameOrigin
+- (CGPoint) origin
 {
     return self.frame.origin;
 }
 
-- (void) setFrameWidth:(CGFloat)width
+- (CGFloat) width
 {
-    NSAssert(!fmodf(self.window.screen.scale * width, 1.0f) , @"Setting width that does not land on a pixel boundary.");
-    CGRect frame = self.frame;
-    frame.size.width = width;
-    self.frame = frame;
-}
-
-- (CGFloat) frameWidth
-{
+    NSParameterAssert(self.frame.size.width == self.bounds.size.width);
     return self.frame.size.width;
 }
 
-- (void) setFrameHeight:(CGFloat)height
+- (CGFloat) height
 {
-    NSAssert(!fmodf(self.window.screen.scale * height, 1.0f) , @"Setting height that does not land on a pixel boundary.");
-    CGRect frame = self.frame;
-    frame.size.height = height;
-    self.frame = frame;
-}
-
-- (CGFloat) frameHeight
-{
+    NSParameterAssert(self.frame.size.height == self.bounds.size.height);
     return self.frame.size.height;
 }
 
-- (void) setFrameSize:(CGSize)size
+- (CGSize) size
 {
-    NSAssert(!fmodf(self.window.screen.scale * size.height, 1.0f) , @"Setting height that does not land on a pixel boundary.");
-    NSAssert(!fmodf(self.window.screen.scale * size.width, 1.0f) , @"Setting width that does not land on a pixel boundary.");
-    CGRect frame = self.frame;
-    frame.size = size;
-    self.frame = frame;
-}
-
-- (CGSize) frameSize
-{
+    NSParameterAssert(CGSizeEqualToSize(self.frame.size, self.bounds.size));
     return self.frame.size;
 }
 
-- (void) setFrameMaxX:(CGFloat)maxX
-{
-    CGRect frame = self.frame;
-    frame.origin.x = maxX - frame.size.width;
-    self.frame = frame;
-}
-
-- (CGFloat) frameMaxX
+- (CGFloat) maxX
 {
     return CGRectGetMaxX(self.frame);
 }
 
-- (void) setFrameMaxY:(CGFloat)maxY
-{
-    CGRect frame = self.frame;
-    frame.origin.y = maxY - frame.size.height;
-    self.frame = frame;
-}
-
-- (CGFloat) frameMaxY
+- (CGFloat) maxY
 {
     return CGRectGetMaxY(self.frame);
 }
 
-- (CGFloat) boundsX
+- (CGFloat) midX
 {
-    return self.bounds.origin.x;
+    return self.center.x;
 }
 
-- (CGFloat) boundsY
+- (CGFloat) midY
 {
-    return self.bounds.origin.y;
+    return self.center.y;
 }
-
-- (CGPoint) boundsOrigin
-{
-    return self.bounds.origin;
-}
-
-- (CGFloat) boundsWidth
-{
-    return self.bounds.size.width;
-}
-
-- (CGFloat) boundsHeight
-{
-    return self.bounds.size.height;
-}
-
-- (CGSize) boundsSize
-{
-    return self.bounds.size;
-}
-
-- (CGFloat) boundsMaxX
-{
-    return CGRectGetMaxX(self.bounds);
-}
-
-- (CGFloat) boundsMaxY
-{
-    return CGRectGetMaxY(self.bounds);
-}
-
-- (CGFloat) boundsMidX
-{
-    return CGRectGetMidX(self.bounds);
-}
-
-- (CGFloat) boundsMidY
-{
-    return CGRectGetMidY(self.bounds);
-}
-
-- (CGPoint) boundsCenter;
-{
-    return CGPointMake(self.boundsMidX, self.boundsMidY);
-}
-
 
 #pragma mark - Internal Methods
 

@@ -134,7 +134,7 @@
 - (void) testPathIsDirectory
 {
     NSURL *nonDirectoryPath = [[NSBundle mainBundle] URLForResource:@"lebowskiipsum" withExtension:@"txt"];
-    NSURL *directoryPath = [[NSBundle mainBundle] URLForResource:@"TestModel" withExtension:@"momd"];
+    NSURL *directoryPath = [[NSBundle mainBundle] URLForResource:@"Base" withExtension:@"lproj"];
 
     XCTAssert([_defaultManager URLIsDirectory:directoryPath] , @"Should be a directory.");
     XCTAssertFalse([_defaultManager URLIsDirectory:nonDirectoryPath], @"Should not be a directory.");

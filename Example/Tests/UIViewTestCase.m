@@ -68,12 +68,14 @@
 	XCTAssert(view, @"view should be initialized");
 }
 
-- (void) testCenterInRectForDirection
+- (void) testCenterInViewForDirection
 {
 	PMSampleView *view = [PMSampleView shared];
-	[view centerInRect:CGRectOffset(view.frame, -10, -20) forDirection:PMDirectionHorizontal | PMDirectionVertical];
-	XCTAssertEqual(view.frame.origin.x, -10, @"View should be centered in new frame");
-	XCTAssertEqual(view.frame.origin.y, -20, @"View should be centered in new frame");
+    UIView *subview = [[UIView alloc] initWithFrame:CGRectOffset(view.frame, 10, -20)];
+    [view addSubview:subview];
+    [view centerInView:subview forDirection:PMDirectionHorizontal | PMDirectionVertical];
+	XCTAssertEqual(view.frame.origin.x, 10, @"View should be centered around subview");
+	XCTAssertEqual(view.frame.origin.y, -20, @"View should be centered around subview");
 }
 
 @end

@@ -96,8 +96,6 @@ typedef NS_OPTIONS(NSUInteger, PMDirection) {
 
 #pragma mark - Layout
 
-- (BOOL) isSquare;
-
 - (UIEdgeInsets) edgeInsetsWithRect:(CGRect)rect;
 
 - (CGRect) centeredRectWithSize:(CGSize)size forDirection:(PMDirection)direction;
@@ -113,46 +111,6 @@ typedef NS_OPTIONS(NSUInteger, PMDirection) {
 - (CGRect) convertFrameToCoordinateSystemOfView:(UIView *)view;
 
 /**
- *  Centers the view's frame at a given x-coordinate.
- *
- *  @param x The x-coordinate to center the view's frame on.
- */
-- (void) setCenterX:(CGFloat)x;
-
-/**
- *  Returns the x-coordinate of the view's center in its superview's coordinate system.
- *
- *  @return The x-coordinate of the view's center in its superview's coordinate system.
- */
-- (CGFloat) centerX;
-
-/**
- *  Centers the view's frame at a given y-coordinate.
- *
- *  @param y The y-coordinate to center the view's frame on.
- */
-- (void) setCenterY:(CGFloat)y;
-
-/**
- *  Returns the y-coordinate of the view's center in its superview's coordinate system.
- *
- *  @return The y-coordinate of the view's center in its superview's coordinate system.
- */
-- (CGFloat) centerY;
-
-/**
- *  Centers an array of views in a rectangle for a given direction.
- *
- *  @param views     The views to center.
- *  @param rect      The rectangle that the views are centered in.
- *  @param direction The direction to center the views in. You must specify one direction, but not both.
- *  If PMDirectionVertical is specified, the views' yOrigins will be modified, if PMDirectionHorizontal is specified,
- *  the views' xOrigins will be modified.
- *  @param padding  The spacing between each view in the specified direction.
- */
-+ (void) centerViews:(NSArray *)views inRect:(CGRect)rect forDirection:(PMDirection)direction withPadding:(CGFloat)padding;
-
-/**
  *  Centers the reciever in its superview.
  */
 - (void) centerInSuperview;
@@ -165,202 +123,95 @@ typedef NS_OPTIONS(NSUInteger, PMDirection) {
 - (void) centerInSuperviewForDirection:(PMDirection)direction;
 
 /**
- *  Centers the view in the given rect for one or both directions.
+ *  Centers an array of views in the receivers' bounds for a given direction.
  *
- *  @param rect      The rect to center the view on. Frequently, this will be a superview's bounds.
- *  @param direction A mask of directions indicating how to center the view.
+ *  @param views     The views to center.
+ *  @param direction The direction to center the views in. You must specify one direction, but not both.
+ *  If PMDirectionVertical is specified, the views' yOrigins will be modified, if PMDirectionHorizontal is specified,
+ *  the views' xOrigins will be modified.
+ *  @param padding  The spacing between each view in the specified direction.
  */
-- (void) centerInRect:(CGRect)rect forDirection:(PMDirection)direction;
+- (void) centerSubviews:(NSArray *)views forDirection:(PMDirection)direction withPadding:(CGFloat)padding;
 
 /**
- *  Sets the view's frame x-origin.
+ *  Centers the view in the given rect for one or both directions.
  *
- *  @param x The x-coordinate to assign to the frame's origin.
+ *  @param view      The view to center the receiver in. The view does not need to be in the same coordinate system.
+ *  @param direction A mask of directions indicating how to center the view.
  */
-- (void) setFrameX:(CGFloat)x;
+- (void) centerInView:(UIView *)view forDirection:(PMDirection)direction;
+
+- (BOOL) isSquare;
 
 /**
  *  Returns the x-coordinate of the view's frame's origin.
  *
  *  @return The x-coordinate of the view's frame's origin.
  */
-- (CGFloat) frameX;
-
-/**
- *  Sets the view's frame's y-origin.
- *
- *  @param y The y-coordinate to assign to the frame's origin.
- */
-- (void) setFrameY:(CGFloat)y;
+- (CGFloat) x;
 
 /**
  *  Returns the y-coordinate of the view's frame's origin.
  *
  *  @return The y-coordinate of the view's frame's origin.
  */
-- (CGFloat) frameY;
-
-/**
- *  Sets the origin of the view's frame.
- *
- *  @param origin The origin of the view's frame.
- */
-- (void) setFrameOrigin:(CGPoint)origin;
+- (CGFloat) y;
 
 /**
  *  Returns the view's frame's origin.
  *
  *  @return The the view's frame's origin.
  */
-- (CGPoint) frameOrigin;
-
-/**
- *  Sets the view's frame width.
- *
- *  @param width The width to assign to the frame's size.
- */
-- (void) setFrameWidth:(CGFloat)width;
+- (CGPoint) origin;
 
 /**
  *  Returns the width of the view's frame.
  *
  *  @return The width of the view's frame.
  */
-- (CGFloat) frameWidth;
-
-/**
- *  Sets the view's frame height
- *
- *  @param height The height to assign to the frame's size.
- */
-- (void) setFrameHeight:(CGFloat)height;
+- (CGFloat) width;
 
 /**
  *  Returns the height of the view's frame.
  *
  *  @return The height of the view's frame.
  */
-- (CGFloat) frameHeight;
-
-/**
- *  Set's the view's frame size
- *
- *  @param size The size to assign to the frame.
- */
-- (void) setFrameSize:(CGSize)size;
+- (CGFloat) height;
 
 /**
  *  Returns the size of the view's frame.
  *
  *  @return The size of the view's frame.
  */
-- (CGSize) frameSize;
-
-/**
- *  Sets the view's frame's maximum x-coordinate. The maximum x is calculated from the frame's x-origin plus its width.
- *  When setting the maximum x coordinate, this method adjusts the frame's x-origin; the width does not change.
- *
- *  @param maxX The x-coordinate to set as the new maximum x-coordinate.
- */
-- (void) setFrameMaxX:(CGFloat)maxX;
+- (CGSize) size;
 
 /**
  *  Returns the x-coordinate of the view's right edge in its superview's coordinate system.
  *
  *  @return The x-coordinate of the view's right edge in its superview's coordinate system.
  */
-- (CGFloat) frameMaxX;
-
-/**
- *  Sets the view's frame's maximum y-coordinate. The maximum y is calculated from the frame's y-origin plus its height.
- *  When setting the maximum y coordinate, this method adjusts the frame's y-origin; the height does not change.
- *
- *  @param maxY The y-coordinate to set as the new maximum y-coordinate.
- */
-- (void) setFrameMaxY:(CGFloat)maxY;
+- (CGFloat) maxX;
 
 /**
  *  Returns the y-coordinate of the view's bottom edge in its superview's coordinate system.
  *
  *  @return The y-coordinate of the view's bottom edge in its superview's coordinate system.
  */
-- (CGFloat) frameMaxY;
+- (CGFloat) maxY;
 
 /**
- *  Returns the x-coordinate of the view's bound's origin.
+ *  Returns the x-coordinate of the view's center in its superview's coordinate system.
  *
- *  @return The x-coordinate of the view's bound's origin.
+ *  @return The x-coordinate of the view's center in its superview's coordinate system.
  */
-- (CGFloat) boundsX;
+- (CGFloat) midX;
 
 /**
- *  Returns the y-coordinate of the view's bound's origin.
+ *  Returns the y-coordinate of the view's center in its superview's coordinate system.
  *
- *  @return The y-coordinate of the view's bound's origin.
+ *  @return The y-coordinate of the view's center in its superview's coordinate system.
  */
-- (CGFloat) boundsY;
+- (CGFloat) midY;
 
-/**
- *  Returns the view's bound's origin.
- *
- *  @return The the view's bound's origin.
- */
-- (CGPoint) boundsOrigin;
-
-/**
- *  Returns the width of the view's bounds.
- *
- *  @return The width of the view's bounds.
- */
-- (CGFloat) boundsWidth;
-
-/**
- *  Returns the height of the view's bounds.
- *
- *  @return The height of the view's bounds.
- */
-- (CGFloat) boundsHeight;
-
-/**
- *  Returns the size of the view's bounds.
- *
- *  @return The size of the view's bounds.
- */
-- (CGSize) boundsSize;
-
-/**
- *  Returns the x-coordinate of the right edge in its own coordinate system.
- *
- *  @return The x-coordinate of the right edge in its own coordinate system.
- */
-- (CGFloat) boundsMaxX;
-
-/**
- *  Returns the y-coordinate of the right edge in its own coordinate system.
- *
- *  @return The y-coordinate of the right edge in its own coordinate system.
- */
-- (CGFloat) boundsMaxY;
-
-/**
- *  Returns the x-coordinate that establishes the center of the view's bounds.
- *
- *  @return The x-coordinate that establishes the center of the view's bounds.
- */
-- (CGFloat) boundsMidX;
-
-/**
- *  Returns the y-coordinate that establishes the center of the view's bounds.
- *
- *  @return The y-coordinate that establishes the center of the view's bounds.
- */
-- (CGFloat) boundsMidY;
-
-/**
- *  Returns the point that establishes the center of the view's bounds.
- *
- *  @return The point that establishes the center of the view's bounds.
- */
-- (CGPoint) boundsCenter;
 
 @end

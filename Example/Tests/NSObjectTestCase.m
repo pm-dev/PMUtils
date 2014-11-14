@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "NSObject+PMUtils.h"
+#import <UIKit/UIKit.h>
 
 @interface NSObjectTestCase : XCTestCase
 
