@@ -17,4 +17,6 @@
  */
 + (NSString *) defaultReuseIdentifier;
 
+- (CGSize) sizeThatFitsConfiguredCell;
+
 @end

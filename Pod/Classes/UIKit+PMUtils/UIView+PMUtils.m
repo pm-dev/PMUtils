@@ -76,7 +76,9 @@
     NSString *nibName = [self defaultNibName];
     UINib *nib = [nibs objectForKey:nibName];
     if (!nib) {
-        nib = [UINib nibWithNibName:nibName bundle:[NSBundle mainBundle]];
+        if ([[NSBundle mainBundle] URLForResource:nibName withExtension:@"nib"]) {
+            nib = [UINib nibWithNibName:nibName bundle:[NSBundle mainBundle]];
+        }
         [nibs setObject:nib?:[NSNull null]  forKey:nibName];
     }
     else if ([nib isEqual:[NSNull null]]) {
