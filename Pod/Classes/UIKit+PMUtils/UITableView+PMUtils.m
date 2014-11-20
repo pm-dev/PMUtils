@@ -26,10 +26,36 @@
 
 @implementation UITableView (PMUtils)
 
+
 - (void) reloadVisibleRowsWithRowAnimation:(UITableViewRowAnimation)animation
 {
 	NSArray *visibleRows = [self indexPathsForVisibleRows];
 	[self reloadRowsAtIndexPaths:visibleRows withRowAnimation:animation];
 }
+
+- (UITableViewCell *) sizingCellWithReuseIdentifier:(NSString *)reuseIdentifier
+{
+    NSMutableDictionary *sharedDictionary = [[self class] PM_sharedSizingCellsByReuseIdentifier];
+    UITableViewCell *cell = sharedDictionary[reuseIdentifier];
+    if (!cell) {
+        cell = [self dequeueReusableCellWithIdentifier:reuseIdentifier];
+        sharedDictionary[reuseIdentifier] = cell;
+    }
+    return cell;
+}
+
+#pragma mark - Internal Methods
+
+
++ (NSMutableDictionary *) PM_sharedSizingCellsByReuseIdentifier
+{
+    static dispatch_once_t cacheToken;
+    static NSMutableDictionary *sharedSizingCellsByReuseIdentifier = nil;
+    dispatch_once(&cacheToken, ^{
+        sharedSizingCellsByReuseIdentifier = [@{} mutableCopy];
+    });
+    return sharedSizingCellsByReuseIdentifier;
+}
+
 
 @end
