@@ -87,6 +87,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong, readwrite) UIPageControl *pageControl;
+@property (nonatomic, strong) NSIndexPath *currentIndexPath;
 - (Class) imageCellClass;
 - (NSString *) imageCellReuseIdentifier;
 
@@ -94,7 +95,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 
 @implementation PMImageFilmstrip
 {
-	UICollectionViewFlowLayout *_collectionViewFlowLayout;
+    UICollectionViewFlowLayout *_collectionViewFlowLayout;
     BOOL _delegateRespondsToDidScroll;
     BOOL _delegateRespondsToWillScroll;
 }
@@ -102,11 +103,11 @@ static CGFloat const PMPageControlHeight = 37.0f;
 
 - (instancetype) initWithFrame:(CGRect)frame
 {
-	self = [super initWithFrame:frame];
-	if (self) {
-		[self PM_commonPMImageFilmstripInit];
-	}
-	return self;
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self PM_commonPMImageFilmstripInit];
+    }
+    return self;
 }
 
 - (void) awakeFromNib
@@ -117,27 +118,38 @@ static CGFloat const PMPageControlHeight = 37.0f;
 
 - (void) setFrame:(CGRect)frame
 {
-	_collectionViewFlowLayout.itemSize = frame.size;
-	super.frame = frame;
-	NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
-	UICollectionViewLayoutAttributes *attributes = [self.collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath];
-	[self.collectionView setContentOffset:attributes.frame.origin];
+    _collectionViewFlowLayout.itemSize = frame.size;
+    super.frame = frame;
+    NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
+    UICollectionViewLayoutAttributes *attributes = [self.collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath];
+    [self.collectionView setContentOffset:attributes.frame.origin];
 }
 
 - (void) setBounds:(CGRect)bounds
 {
-	_collectionViewFlowLayout.itemSize = bounds.size;
-	super.bounds = bounds;
-	NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
-	UICollectionViewLayoutAttributes *attributes = [self.collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath];
-	[self.collectionView setContentOffset:attributes.frame.origin];
+    _collectionViewFlowLayout.itemSize = bounds.size;
+    super.bounds = bounds;
+    NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
+    UICollectionViewLayoutAttributes *attributes = [self.collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath];
+    [self.collectionView setContentOffset:attributes.frame.origin];
 }
 
 - (void) setDelegate:(id<PMImageFilmstripDelegate>)delegate
 {
-	_delegate = delegate;
-	_delegateRespondsToDidScroll = [_delegate respondsToSelector:@selector(imageFilmstrip:didScrollToImageAtIndex:)];
+    _delegate = delegate;
+    _delegateRespondsToDidScroll = [_delegate respondsToSelector:@selector(imageFilmstrip:didScrollToImageAtIndex:)];
     _delegateRespondsToWillScroll = [_delegate respondsToSelector:@selector(imageFilmstrip:willScrollToImageAtIndex:)];
+}
+
+- (void)setCurrentIndexPath:(NSIndexPath *)currentIndexPath
+{
+    if ([_currentIndexPath isEqual:currentIndexPath] == NO) {
+        _currentIndexPath = currentIndexPath;
+        self.pageControl.currentPage = currentIndexPath.item;
+        if (_delegateRespondsToDidScroll) {
+            [_delegate imageFilmstrip:self didScrollToImageAtIndex:currentIndexPath.item];
+        }
+    }
 }
 
 - (void)reloadImages;
@@ -145,20 +157,25 @@ static CGFloat const PMPageControlHeight = 37.0f;
     [self.collectionView reloadData];
 }
 
+- (void) layoutSubviews
+{
+    [super layoutSubviews];
+    NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
+    if ([self.currentIndexPath isEqual:indexPath] == NO) {
+        [self.collectionView scrollToItemAtIndexPath:self.currentIndexPath
+                                    atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally
+                                            animated:NO];
+    }
+    self.pageControl.currentPage = self.currentIndexPath.item;
+}
+
 - (void) scrollToImageAtIndex:(NSUInteger)index animated:(BOOL)animated
 {
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
-    [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
-    
-    self.pageControl.currentPage = index;
-    
-    if (_delegateRespondsToDidScroll) {
-        [_delegate imageFilmstrip:self didScrollToImageAtIndex:index];
-    }
-    
+    self.currentIndexPath = indexPath;
     [self.collectionView scrollToItemAtIndexPath:indexPath
-                            atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally
-                                    animated:animated];
+                                atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally
+                                        animated:animated];
 }
 
 
@@ -176,10 +193,10 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     PMImageFilmstripCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[self imageCellReuseIdentifier] forIndexPath:indexPath];
-	[self.delegate imageFilmstrip:self
-	  configureFilmstripImageView:cell.imageView
-						  atIndex:indexPath.item];
-	return cell;
+    [self.delegate imageFilmstrip:self
+      configureFilmstripImageView:cell.imageView
+                          atIndex:indexPath.item];
+    return cell;
 }
 
 
@@ -242,21 +259,21 @@ static CGFloat const PMPageControlHeight = 37.0f;
 
 - (void) PM_commonPMImageFilmstripInit
 {
-	_collectionViewFlowLayout = [UICollectionViewFlowLayout new];
-	_collectionViewFlowLayout.minimumLineSpacing = 0.0f;
-	_collectionViewFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-	_collectionViewFlowLayout.itemSize = self.bounds.size;
-
+    _collectionViewFlowLayout = [UICollectionViewFlowLayout new];
+    _collectionViewFlowLayout.minimumLineSpacing = 0.0f;
+    _collectionViewFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    _collectionViewFlowLayout.itemSize = self.bounds.size;
+    
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:_collectionViewFlowLayout];
-	self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self.collectionView registerClass:[self imageCellClass] forCellWithReuseIdentifier:[self imageCellReuseIdentifier]];
-	self.collectionView.dataSource = self;
-	self.collectionView.delegate = self;
-	self.collectionView.allowsSelection = NO;
-	self.collectionView.pagingEnabled = YES;
-	self.collectionView.showsHorizontalScrollIndicator = NO;
-	self.collectionView.backgroundColor = [UIColor whiteColor];
-	[self addSubview:_collectionView];
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
+    self.collectionView.allowsSelection = NO;
+    self.collectionView.pagingEnabled = YES;
+    self.collectionView.showsHorizontalScrollIndicator = NO;
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    [self addSubview:_collectionView];
     
     self.pageControl = [[UIPageControl alloc] init];
     self.pageControl.frame = CGRectMake(0, self.bounds.size.height - PMPageControlHeight, self.bounds.size.width, PMPageControlHeight);
@@ -267,7 +284,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 }
 
 @end
-    
+
 @implementation PMZoomableImageFilmstrip
 {
     BOOL _delegateRespondsToWillZoom;

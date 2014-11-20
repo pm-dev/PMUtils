@@ -25,6 +25,25 @@
     return shared;
 }
 
+- (instancetype) init
+{
+    self = [super init];
+    if (self) {
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        [center addObserver:self selector:@selector(willShow:) name:UIKeyboardWillShowNotification object:nil];
+        [center addObserver:self selector:@selector(didShow:) name:UIKeyboardDidShowNotification object:nil];
+        [center addObserver:self selector:@selector(willChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+        [center addObserver:self selector:@selector(willHide:) name:UIKeyboardWillHideNotification object:nil];
+        [center addObserver:self selector:@selector(didHide:) name:UIKeyboardDidHideNotification object:nil];
+    }
+    return self;
+}
+
++ (void) startListening
+{
+    [self shared];
+}
+
 + (PMKeyboardState) keyboardState
 {
     return [self shared].keyboardState;
@@ -35,44 +54,34 @@
     return [self shared].keyboardFrame;
 }
 
-+ (void)willChangeFrame:(NSNotification *)notification
+- (void)willChangeFrame:(NSNotification *)notification
 {
     NSValue *endFrame = [notification userInfo][UIKeyboardFrameEndUserInfoKey];
-    [self shared].keyboardFrame = endFrame.CGRectValue;
+    self.keyboardFrame = endFrame.CGRectValue;
 }
 
-+ (void)willShow:(NSNotification *)notification
+- (void)willShow:(NSNotification *)notification
 {
     NSValue *endFrame = [notification userInfo][UIKeyboardFrameEndUserInfoKey];
-    [self shared].keyboardFrame = endFrame.CGRectValue;
-    [self shared].keyboardState = PMKeyboardStateAppearing;
+    self.keyboardFrame = endFrame.CGRectValue;
+    self.keyboardState = PMKeyboardStateAppearing;
 }
 
-+ (void)didShow:(NSNotification *)notification
+- (void)didShow:(NSNotification *)notification
 {
-    [self shared].keyboardState = PMKeyboardStateVisible;
+    self.keyboardState = PMKeyboardStateVisible;
 }
 
-+ (void)willHide:(NSNotification *)notification
+- (void)willHide:(NSNotification *)notification
 {
     NSValue *endFrame = [notification userInfo][UIKeyboardFrameEndUserInfoKey];
-    [self shared].keyboardFrame = endFrame.CGRectValue;
-    [self shared].keyboardState = PMKeyboardStateDisappearing;
+    self.keyboardFrame = endFrame.CGRectValue;
+    self.keyboardState = PMKeyboardStateDisappearing;
 }
 
-+ (void)didHide:(NSNotification *)notification
+- (void)didHide:(NSNotification *)notification
 {
-    [self shared].keyboardState = PMKeyboardStateHidden;
-}
-
-+ (void) load
-{
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(willShow:) name:UIKeyboardWillShowNotification object:nil];
-    [center addObserver:self selector:@selector(didShow:) name:UIKeyboardDidShowNotification object:nil];
-    [center addObserver:self selector:@selector(willChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
-    [center addObserver:self selector:@selector(willHide:) name:UIKeyboardWillHideNotification object:nil];
-    [center addObserver:self selector:@selector(didHide:) name:UIKeyboardDidHideNotification object:nil];
+    self.keyboardState = PMKeyboardStateHidden;
 }
 
 @end

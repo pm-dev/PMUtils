@@ -19,6 +19,7 @@ typedef NS_ENUM(NSUInteger, PMKeyboardState)
 
 @interface PMKeyboardListener : NSObject
 
++ (void) startListening;
 + (PMKeyboardState) keyboardState;
 + (CGRect) keyboardFrame;
 
