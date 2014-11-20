@@ -33,7 +33,7 @@
 	[self reloadRowsAtIndexPaths:visibleRows withRowAnimation:animation];
 }
 
-- (UITableViewCell *) sizingCellWithReuseIdentifier:(NSString *)reuseIdentifier
+- (id) sizingCellWithReuseIdentifier:(NSString *)reuseIdentifier
 {
     NSMutableDictionary *sharedDictionary = [[self class] PM_sharedSizingCellsByReuseIdentifier];
     UITableViewCell *cell = sharedDictionary[reuseIdentifier];

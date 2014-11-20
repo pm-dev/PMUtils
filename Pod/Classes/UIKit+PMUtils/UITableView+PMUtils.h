@@ -34,6 +34,6 @@
 - (void) reloadVisibleRowsWithRowAnimation:(UITableViewRowAnimation)animation;
 
 
-- (UITableViewCell *) sizingCellWithReuseIdentifier:(NSString *)reuseIdentifier;
+- (id) sizingCellWithReuseIdentifier:(NSString *)reuseIdentifier;
 
 @end
