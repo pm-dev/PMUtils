@@ -29,8 +29,7 @@
 
 - (void) killScroll
 {
-	self.scrollEnabled = NO;
-	self.scrollEnabled = YES;
+	[self setContentOffset:self.contentOffset animated:NO];
 }
 
 - (CGPoint) contentCenter
