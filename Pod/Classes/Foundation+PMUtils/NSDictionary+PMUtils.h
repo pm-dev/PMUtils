@@ -17,4 +17,6 @@
  */
 - (NSString *) JSONString;
 
+- (NSDictionary *) dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary;
+
 @end

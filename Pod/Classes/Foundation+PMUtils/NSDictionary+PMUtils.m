@@ -21,4 +21,11 @@
     return @"{}";
 }
 
+- (NSDictionary *) dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary
+{
+    NSMutableDictionary *mutableSelf = [NSMutableDictionary dictionaryWithDictionary:self];
+    [mutableSelf addEntriesFromDictionary:dictionary];
+    return [mutableSelf copy];
+}
+
 @end
