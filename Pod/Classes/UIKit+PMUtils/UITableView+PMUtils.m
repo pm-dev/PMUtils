@@ -60,6 +60,12 @@
     }
 }
 
+- (NSInteger) lastRowOfSection:(NSInteger)section
+{
+    return [self numberOfRowsInSection:section] - 1;
+}
+
+
 #pragma mark - Internal Methods
 
 
