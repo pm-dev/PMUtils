@@ -1,36 +1,19 @@
-// Copyright (c) 2013-2014 Peter Meyers
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
+//  PMTableViewSwipeCell.m
+//  Pods
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
-//
-//  PMCollectionViewSwipeCell.m
-//  Created by Peter Meyers on 8/21/14.
+//  Created by Peter Meyers on 11/28/14.
 //
 //
 
-#import "PMCollectionViewSwipeCell.h"
+#import "PMTableViewSwipeCell.h"
 #import "UIScrollView+PMUtils.h"
 #import "PMSwipeCellScrollView.h"
 
-@interface PMCollectionViewSwipeCell () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
+@interface PMTableViewSwipeCell() <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 @end
 
-@implementation PMCollectionViewSwipeCell
+@implementation PMTableViewSwipeCell
 {
     UIScrollView *_scrollView;
     BOOL _delegateRespondsToDidMoveToPosition;
@@ -40,15 +23,15 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self commonPMSwipeCollectionViewCellInit];
+        [self commonPMTableViewSwipeCellInit];
     }
     return self;
 }
 
 - (void)awakeFromNib
 {
-	[super awakeFromNib];
-    [self commonPMSwipeCollectionViewCellInit];
+    [super awakeFromNib];
+    [self commonPMTableViewSwipeCellInit];
 }
 
 
@@ -191,14 +174,13 @@
 }
 
 
-- (void) commonPMSwipeCollectionViewCellInit
+- (void) commonPMTableViewSwipeCellInit
 {
     _scrollView = [[PMSwipeCellScrollView alloc] initWithFrame:self.bounds];
-    _scrollView.delegate = self;    
+    _scrollView.delegate = self;
     [_scrollView addSubview:self.contentView];
     [self addSubview:_scrollView];
     _cellPosition = -1;
 }
 
 @end
-
