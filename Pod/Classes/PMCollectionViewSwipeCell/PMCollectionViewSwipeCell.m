@@ -103,6 +103,22 @@
     CGPoint offset = [self contentOffsetForPosition:position];
     [_scrollView setContentOffset:offset animated:animated];
     self.editing = (position != PMCellPositionCentered);
+    if (!animated) {
+        switch (position) {
+            case PMCellPositionCentered:
+                self.leftUtilityView.hidden = YES;
+                self.rightUtilityView.hidden = YES;
+                break;
+            case PMCellPositionLeftUtilityViewVisible:
+                self.leftUtilityView.hidden = NO;
+                self.rightUtilityView.hidden = YES;
+                break;
+            case PMCellPositionRightUtilityViewVisible:
+                self.leftUtilityView.hidden = YES;
+                self.rightUtilityView.hidden = NO;
+                break;
+        }
+    }
 }
 
 - (void) setCellPosition:(PMCellPosition)cellPosition
@@ -172,8 +188,10 @@
 
 - (void)scrollViewDidScroll:(PMCollectionViewSwipeCellScrollView *)scrollView
 {
-    if ((!self.leftUtilityView.hidden && scrollView.contentOffset.x >= 0.0f) ||
-        (!self.rightUtilityView.hidden && scrollView.contentOffset.x <= 0.0f)) {
+    if ((self.leftUtilityView && !self.leftUtilityView.hidden && scrollView.contentOffset.x > 0.0f) ||
+        (self.rightUtilityView && !self.rightUtilityView.hidden && scrollView.contentOffset.x < 0.0f) ||
+        (!self.leftUtilityView && scrollView.contentOffset.x < 0.0f) ||
+        (!self.rightUtilityView && scrollView.contentOffset.x > 0.0f)) {
         [self setCellPosition:PMCellPositionCentered animated:NO];
     }
 }
@@ -219,6 +237,18 @@
         else {
             self.editing = YES;
         }
+    }
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.x == 0.0f) {
+        self.leftUtilityView.hidden = YES;
+        self.rightUtilityView.hidden = YES;
+        self.editing = NO;
+    }
+    else {
+        self.editing = YES;
     }
 }
 
@@ -314,13 +344,11 @@
     return view;
 }
 
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesBegan:touches withEvent:event];
-    if (_cell.isEditing) {
-        [_cell setCellPosition:PMCellPositionCentered animated:YES];
-    }
-    else {
+    if (!_cell.isEditing) {
         [self.nextResponder touchesBegan:touches withEvent:event];
     }
 }
@@ -336,13 +364,23 @@
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesCancelled:touches withEvent:event];
-    [self.nextResponder touchesCancelled:touches withEvent:event];
+    if (_cell.isEditing) {
+        [_cell setCellPosition:PMCellPositionCentered animated:YES];
+    }
+    else {
+        [self.nextResponder touchesCancelled:touches withEvent:event];
+    }
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesEnded: touches withEvent:event];
-    [self.nextResponder touchesEnded:touches withEvent:event];
+    if (_cell.isEditing) {
+        [_cell setCellPosition:PMCellPositionCentered animated:YES];
+    }
+    else {
+        [self.nextResponder touchesEnded:touches withEvent:event];
+    }
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
