@@ -25,7 +25,7 @@
 
 #import "PMCollectionViewSwipeCell.h"
 
-@interface PMSwipeCellScrollView : UIScrollView
+@interface PMCollectionViewSwipeCellScrollView : UIScrollView
 
 + (instancetype) scrollViewWithCell:(UICollectionViewCell *)cell;
 
@@ -38,7 +38,7 @@
 
 @implementation PMCollectionViewSwipeCell
 {
-    PMSwipeCellScrollView *_scrollView;
+    PMCollectionViewSwipeCellScrollView *_scrollView;
     BOOL _delegateRespondsToDidMoveToPosition;
 }
 
@@ -175,7 +175,7 @@
 #pragma mark - UIScrollViewDelegate Methods
 
 
-- (void)scrollViewDidScroll:(PMSwipeCellScrollView *)scrollView
+- (void)scrollViewDidScroll:(PMCollectionViewSwipeCellScrollView *)scrollView
 {
     if ((!self.leftUtilityView.hidden && scrollView.contentOffset.x <= 0.0f) ||
         (!self.rightUtilityView.hidden && scrollView.contentOffset.x <= 0.0f)) {
@@ -236,7 +236,7 @@
 
 - (void) commonPMCollectionViewSwipeCellInit
 {
-    _scrollView = [PMSwipeCellScrollView scrollViewWithCell:self];
+    _scrollView = [PMCollectionViewSwipeCellScrollView scrollViewWithCell:self];
     _scrollView.delegate = self;
     self.cellPosition = PMCellPositionCentered;
     self.swipeEnabled = YES;
@@ -248,7 +248,7 @@
 #pragma mark - PMSwipeCellScrollView
 
 
-@implementation PMSwipeCellScrollView
+@implementation PMCollectionViewSwipeCellScrollView
 {
     __weak PMCollectionViewSwipeCell *_cell;
 }
