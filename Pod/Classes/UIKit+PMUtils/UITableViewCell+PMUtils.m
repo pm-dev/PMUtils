@@ -22,4 +22,16 @@
     return [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
 }
 
+- (UITableView *) tableView
+{
+    UIView *view = self.superview;
+    while (view != nil) {
+        if ([view isKindOfClass:[UITableView class]]) {
+            break;
+        }
+        view = view.superview;
+    }
+    return (UITableView *)view;
+}
+
 @end

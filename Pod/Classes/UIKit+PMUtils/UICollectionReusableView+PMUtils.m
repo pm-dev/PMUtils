@@ -15,4 +15,16 @@
     return NSStringFromClass(self);
 }
 
+- (UICollectionView *) collectionView
+{
+    UIView *view = self.superview;
+    while (view != nil) {
+        if ([view isKindOfClass:[UICollectionView class]]) {
+            break;
+        }
+        view = view.superview;
+    }
+    return (UICollectionView *)view;
+}
+
 @end

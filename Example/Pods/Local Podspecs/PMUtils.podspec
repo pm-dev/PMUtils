@@ -49,7 +49,6 @@ end
 s.subspec 'PMCollectionViewSwipeCell' do |ss|
 ss.source_files = 'Pod/Classes/PMCollectionViewSwipeCell/*.{h,m}'
 ss.public_header_files = 'Pod/Classes/PMCollectionViewSwipeCell/*.h'
-ss.dependency 'PMUtils/UIKit+PMUtils'
 end
 
 s.subspec 'PMInnerShadowView' do |ss|

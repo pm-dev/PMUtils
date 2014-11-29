@@ -7,15 +7,21 @@
 //
 
 #import "PMTableViewSwipeCell.h"
-#import "UIScrollView+PMUtils.h"
-#import "PMSwipeCellScrollView.h"
+
+
+@interface PMSwipeCellScrollView : UIScrollView
+
++ (instancetype) scrollViewWithCell:(UITableViewCell *)cell;
+
+@end
+
 
 @interface PMTableViewSwipeCell() <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 @end
 
 @implementation PMTableViewSwipeCell
 {
-    UIScrollView *_scrollView;
+    PMSwipeCellScrollView *_scrollView;
     BOOL _delegateRespondsToDidMoveToPosition;
 }
 
@@ -37,10 +43,21 @@
 
 #pragma mark - Public Methods
 
+
 - (void) setDelegate:(id<PMSwipeCellDelegate>)delegate
 {
     _delegate = delegate;
     _delegateRespondsToDidMoveToPosition = [_delegate respondsToSelector:@selector(swipeCell:didMoveToPosition:)];
+}
+
+- (void) setSwipeEnabled:(BOOL)swipeEnabled
+{
+    _scrollView.scrollEnabled = swipeEnabled;
+}
+
+- (BOOL) swipeEnabled
+{
+    return _scrollView.scrollEnabled;
 }
 
 - (void) setBouncesOpen:(BOOL)bounces
@@ -53,134 +70,249 @@
     return _scrollView.bounces;
 }
 
-- (void) setCellPosition:(PMCellPosition)position animated:(BOOL)animated
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
 {
-    CGPoint offset = [self contentOffsetForPosition:position];
-    [_scrollView setContentOffset:offset animated:animated];
+    if (self.editing != editing) {
+        [super setEditing:editing animated:animated];
+        if (_delegateRespondsToDidMoveToPosition) {
+            [self.delegate swipeCell:self didMoveToPosition:self.cellPosition];
+        }
+    }
 }
 
-
-#pragma mark Accessor Methods
-
+- (void) setCellPosition:(PMCellPosition)position animated:(BOOL)animated
+{
+    switch (position) {
+        case PMCellPositionCentered:
+            self.editing = NO;
+            break;
+        case PMCellPositionLeftUtilityViewVisible:
+        case PMCellPositionRightUtilityViewVisible:
+            self.editing = YES;
+            break;
+    }
+    UIEdgeInsets inset = [self contentInsetForPosition:position];
+    [_scrollView setContentInset:inset];
+    [_scrollView setContentOffset:CGPointZero animated:animated];
+}
 
 - (void) setCellPosition:(PMCellPosition)cellPosition
 {
     [self setCellPosition:cellPosition animated:NO];
 }
 
+- (PMCellPosition) cellPosition
+{
+    UIEdgeInsets inset = _scrollView.contentInset;
+    if (UIEdgeInsetsEqualToEdgeInsets(inset, [self contentInsetForPosition:PMCellPositionCentered])) {
+        return PMCellPositionCentered;
+    }
+    else if (UIEdgeInsetsEqualToEdgeInsets(inset, [self contentInsetForPosition:PMCellPositionRightUtilityViewVisible])) {
+        return PMCellPositionRightUtilityViewVisible;
+    }
+    else if (UIEdgeInsetsEqualToEdgeInsets(inset, [self contentInsetForPosition:PMCellPositionLeftUtilityViewVisible])){
+        return PMCellPositionLeftUtilityViewVisible;
+    }
+    else {
+        return PMCellPositionCentered;
+    }
+}
+
 - (void) setLeftUtilityView:(UIView *)leftUtilityView
 {
-    [_leftUtilityView removeFromSuperview];
-    _leftUtilityView = leftUtilityView;
-    _leftUtilityView.hidden = YES;
-    [self insertSubview:_leftUtilityView belowSubview:_scrollView];
-    [self resetScrollViewContentSizeAndOffset];
+    if (_leftUtilityView != leftUtilityView) {
+        [_leftUtilityView removeFromSuperview];
+        _leftUtilityView = leftUtilityView;
+        _leftUtilityView.hidden = YES;
+        [self insertSubview:_leftUtilityView belowSubview:_scrollView];
+    }
 }
 
 - (void) setRightUtilityView:(UIView *)rightUtilityView
 {
-    [_rightUtilityView removeFromSuperview];
-    _rightUtilityView = rightUtilityView;
-    _rightUtilityView.hidden = YES;
-    [self insertSubview:_rightUtilityView belowSubview:_scrollView];
-    [self resetScrollViewContentSizeAndOffset];
+    if (_rightUtilityView != rightUtilityView) {
+        [_rightUtilityView removeFromSuperview];
+        _rightUtilityView = rightUtilityView;
+        _rightUtilityView.hidden = YES;
+        [self insertSubview:_rightUtilityView belowSubview:_scrollView];
+    }
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    _scrollView.contentSize = self.bounds.size;
+}
+
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+    self.bouncesOpen = YES;
+    self.delegate = nil;
+    self.leftUtilityView = nil;
+    self.rightUtilityView = nil;
+    self.cellPosition = PMCellPositionCentered;
+    self.swipeEnabled = YES;
 }
 
 
 #pragma mark - UIScrollViewDelegate Methods
 
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+- (void)scrollViewDidScroll:(PMSwipeCellScrollView *)scrollView
 {
-    PMCellPosition toCellPosition = _cellPosition;
-    CGPoint centeredContentOffset = [self contentOffsetForPosition:PMCellPositionCentered];
-    
-    if (scrollView.contentOffset.x == centeredContentOffset.x) {
-        toCellPosition = PMCellPositionCentered;
-    }
-    else if (scrollView.contentOffset.x <= [self contentOffsetForPosition:PMCellPositionLeftUtilityViewVisible].x) {
-        toCellPosition = PMCellPositionLeftUtilityViewVisible;
-        
-    }
-    else if (scrollView.contentOffset.x >= [self contentOffsetForPosition:PMCellPositionRightUtilityViewVisible].x) {
-        toCellPosition = PMCellPositionRightUtilityViewVisible;
+    if ((!self.leftUtilityView.hidden && scrollView.contentOffset.x <= 0.0f) ||
+        (!self.rightUtilityView.hidden && scrollView.contentOffset.x <= 0.0f)) {
+        [self setCellPosition:PMCellPositionCentered animated:NO];
     }
     
-    if (toCellPosition != _cellPosition) {
-        _cellPosition = toCellPosition;
-        if (_delegateRespondsToDidMoveToPosition) {
-            [self.delegate swipeCell:self didMoveToPosition:_cellPosition];
-        }
-    }
-    
-    BOOL leftWasHidden = self.leftUtilityView.hidden;
-    BOOL rightWasHidden = self.rightUtilityView.hidden;
-    self.leftUtilityView.hidden = (scrollView.contentOffset.x >  centeredContentOffset.x);
-    self.rightUtilityView.hidden = (scrollView.contentOffset.x < centeredContentOffset.x);
-    
-    if (leftWasHidden != self.leftUtilityView.hidden &&
-        rightWasHidden != self.rightUtilityView.hidden) {
-        
-        [scrollView killScroll];
-        scrollView.contentOffset = centeredContentOffset;
+    if (CGPointEqualToPoint(scrollView.contentOffset, CGPointZero) &&
+        UIEdgeInsetsEqualToEdgeInsets(scrollView.contentInset, UIEdgeInsetsZero)) {
+        self.leftUtilityView.hidden = YES;
+        self.rightUtilityView.hidden = YES;
     }
 }
 
-
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    *targetContentOffset = [self contentOffsetForPosition:PMCellPositionCentered];
-    
-    if (!self.rightUtilityView.hidden && velocity.x > 0.0f) {
-        *targetContentOffset = [self contentOffsetForPosition:PMCellPositionRightUtilityViewVisible];
+    CGPoint velocity = [scrollView.panGestureRecognizer velocityInView:scrollView.panGestureRecognizer.view];
+    if (scrollView.contentOffset.x >= 0.0f && velocity.x < 0.0f) {
+        self.rightUtilityView.hidden = NO;
+        scrollView.contentInset = [self contentInsetForPosition:PMCellPositionRightUtilityViewVisible];
     }
-    else if (!self.leftUtilityView.hidden && velocity.x < 0.0f) {
-        *targetContentOffset = [self contentOffsetForPosition:PMCellPositionLeftUtilityViewVisible];
+    else if (scrollView.contentOffset.x <= 0.0f && velocity.x > 0.0f) {
+        self.leftUtilityView.hidden = NO;
+        scrollView.contentInset = [self contentInsetForPosition:PMCellPositionLeftUtilityViewVisible];
     }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (decelerate == NO) {
+        self.editing = !UIEdgeInsetsEqualToEdgeInsets(scrollView.contentInset, UIEdgeInsetsZero);
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    self.editing = !UIEdgeInsetsEqualToEdgeInsets(scrollView.contentInset, UIEdgeInsetsZero);
 }
 
 
 #pragma mark - Internal Methods
 
 
-- (CGPoint) contentOffsetForPosition:(PMCellPosition)position
+- (UIEdgeInsets) contentInsetForPosition:(PMCellPosition)position
 {
-    CGPoint offset = CGPointZero;
-    switch (position)
-    {
+    UIEdgeInsets insets = UIEdgeInsetsZero;
+    switch (position) {
         case PMCellPositionCentered:
-            offset.x = self.leftUtilityView.frame.size.width;
             break;
         case PMCellPositionRightUtilityViewVisible:
-            offset.x = self.leftUtilityView.frame.size.width + self.rightUtilityView.frame.size.width;
+            insets.right = self.rightUtilityView.frame.size.width;
             break;
         case PMCellPositionLeftUtilityViewVisible:
-            offset.x = 0.0f;
+            insets.left = self.leftUtilityView.frame.size.width;
             break;
     }
-    return offset;
+    return insets;
 }
-
-
-- (void) resetScrollViewContentSizeAndOffset
-{
-    CGSize contentSize = _scrollView.contentSize;
-    contentSize.width = self.leftUtilityView.frame.size.width + self.contentView.frame.size.width + self.rightUtilityView.frame.size.width;
-    self.cellPosition = PMCellPositionCentered;
-    _scrollView.contentSize = contentSize;
-    CGRect frame = self.contentView.frame;
-    frame.origin.x = _scrollView.contentOffset.x;
-    self.contentView.frame = frame;
-}
-
 
 - (void) commonPMTableViewSwipeCellInit
 {
-    _scrollView = [[PMSwipeCellScrollView alloc] initWithFrame:self.bounds];
+    _scrollView = [PMSwipeCellScrollView scrollViewWithCell:self];
     _scrollView.delegate = self;
-    [_scrollView addSubview:self.contentView];
-    [self addSubview:_scrollView];
-    _cellPosition = -1;
+    self.cellPosition = PMCellPositionCentered;
+    self.swipeEnabled = YES;
 }
+
+@end
+
+
+#pragma mark - PMSwipeCellScrollView
+
+
+@implementation PMSwipeCellScrollView
+{
+    __weak UITableViewCell *_cell;
+}
+
++ (instancetype)scrollViewWithCell:(UITableViewCell *)cell
+{
+    return [[self alloc] initWithCell:cell];
+}
+
+- (instancetype) initWithCell:(UITableViewCell *)cell
+{
+    
+    self = [self initWithFrame:cell.bounds];
+    if (self) {
+        [self addSubview:cell.contentView];
+        [cell addSubview:self];
+        _cell = cell;
+    }
+    return self;
+}
+
+- (instancetype) initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.showsHorizontalScrollIndicator = NO;
+        self.scrollsToTop = NO;
+        self.scrollEnabled = YES;
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        self.alwaysBounceHorizontal = YES;
+        self.backgroundColor = [UIColor clearColor];
+    }
+    return self;
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+{
+    UIView *view = [super hitTest:point withEvent:event];
+    if (view == self) {
+        return nil;
+    }
+    return view;
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesBegan:touches withEvent:event];
+    if (!_cell.isEditing) {
+        [self.nextResponder touchesBegan:touches withEvent:event];
+    }
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesMoved:touches withEvent:event];
+    if (self.canCancelContentTouches) {
+        [self.nextResponder touchesCancelled:touches withEvent:event];
+    }
+}
+
+- (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesCancelled:touches withEvent:event];
+    [self.nextResponder touchesCancelled:touches withEvent:event];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesEnded: touches withEvent:event];
+    [self.nextResponder touchesEnded:touches withEvent:event];
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer == self.panGestureRecognizer) {
+        CGPoint velocity = [self.panGestureRecognizer velocityInView:self.panGestureRecognizer.view];
+        return (fabsf(velocity.y) < fabsf(velocity.x));
+    }
+    return [super gestureRecognizerShouldBegin:gestureRecognizer];
+}
+
 
 @end

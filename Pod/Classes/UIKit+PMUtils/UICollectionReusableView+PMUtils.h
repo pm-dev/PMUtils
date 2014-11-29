@@ -17,5 +17,6 @@
  */
 + (NSString *) defaultReuseIdentifier;
 
+- (UICollectionView *) collectionView;
 
 @end

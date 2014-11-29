@@ -15,8 +15,7 @@ PODS:
     - PMUtils/UIKit+PMUtils (= 1.1.1)
   - PMUtils/Foundation+PMUtils (1.1.1)
   - PMUtils/PMAnimationOperation (1.1.1)
-  - PMUtils/PMCollectionViewSwipeCell (1.1.1):
-    - PMUtils/UIKit+PMUtils
+  - PMUtils/PMCollectionViewSwipeCell (1.1.1)
   - PMUtils/PMGradientView (1.1.1)
   - PMUtils/PMImageFilmstrip (1.1.1):
     - PMUtils/UIKit+PMUtils
@@ -40,6 +39,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  PMUtils: ab82c870468ff4b908706cd554ced6e9a9628a46
+  PMUtils: a39b2566b0de323a22d12d4c16ea1bc5bed8420e
 
 COCOAPODS: 0.35.0

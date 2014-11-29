@@ -19,4 +19,6 @@
 
 - (CGSize) sizeThatFitsConfiguredCell;
 
+- (UITableView *) tableView;
+
 @end

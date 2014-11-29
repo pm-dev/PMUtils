@@ -11,6 +11,8 @@
 
 @interface PMTableViewSwipeCell : UITableViewCell
 
+@property (nonatomic) BOOL swipeEnabled;
+
 /**
  *  The view that sits below the content view when the content view is swipped right. The view sits in the coordinate system
  *	system of the cell. A common use of a utility view is a button which commits some action related to the cell, such as deleting

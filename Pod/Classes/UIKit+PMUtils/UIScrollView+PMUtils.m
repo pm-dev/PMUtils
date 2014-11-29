@@ -29,6 +29,9 @@
 
 - (void) killScroll
 {
+    BOOL isEnabled = self.scrollEnabled;
+    self.scrollEnabled = !isEnabled;
+    self.scrollEnabled = isEnabled;    
 	[self setContentOffset:self.contentOffset animated:NO];
 }
 
