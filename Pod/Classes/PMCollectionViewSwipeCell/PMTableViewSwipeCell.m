@@ -11,7 +11,7 @@
 
 @interface PMTableViewSwipeCellScrollView : UIScrollView
 
-+ (instancetype) scrollViewWithCell:(UITableViewCell *)cell;
++ (instancetype) scrollViewWithCell:(PMTableViewSwipeCell *)cell;
 
 @end
 
@@ -82,18 +82,9 @@
 
 - (void) setCellPosition:(PMCellPosition)position animated:(BOOL)animated
 {
-    switch (position) {
-        case PMCellPositionCentered:
-            self.editing = NO;
-            break;
-        case PMCellPositionLeftUtilityViewVisible:
-        case PMCellPositionRightUtilityViewVisible:
-            self.editing = YES;
-            break;
-    }
-    UIEdgeInsets inset = [self contentInsetForPosition:position];
-    [_scrollView setContentInset:inset];
-    [_scrollView setContentOffset:CGPointZero animated:animated];
+    CGPoint offset = [self contentOffsetForPosition:position];
+    [_scrollView setContentOffset:offset animated:animated];
+    self.editing = (position != PMCellPositionCentered);
 }
 
 - (void) setCellPosition:(PMCellPosition)cellPosition
@@ -103,15 +94,13 @@
 
 - (PMCellPosition) cellPosition
 {
-    UIEdgeInsets inset = _scrollView.contentInset;
-    if (UIEdgeInsetsEqualToEdgeInsets(inset, [self contentInsetForPosition:PMCellPositionCentered])) {
-        return PMCellPositionCentered;
-    }
-    else if (UIEdgeInsetsEqualToEdgeInsets(inset, [self contentInsetForPosition:PMCellPositionRightUtilityViewVisible])) {
-        return PMCellPositionRightUtilityViewVisible;
-    }
-    else if (UIEdgeInsetsEqualToEdgeInsets(inset, [self contentInsetForPosition:PMCellPositionLeftUtilityViewVisible])){
+    CGPoint offset = _scrollView.contentOffset;
+    
+    if (offset.x >= [self contentOffsetForPosition:PMCellPositionLeftUtilityViewVisible].x) {
         return PMCellPositionLeftUtilityViewVisible;
+    }
+    else if (offset.x <= [self contentOffsetForPosition:PMCellPositionRightUtilityViewVisible].x) {
+        return PMCellPositionRightUtilityViewVisible;
     }
     else {
         return PMCellPositionCentered;
@@ -142,6 +131,10 @@
 {
     [super layoutSubviews];
     _scrollView.contentSize = self.bounds.size;
+    _scrollView.contentInset = UIEdgeInsetsMake(0.0f,
+                                                self.leftUtilityView.frame.size.width,
+                                                0.0f,
+                                                self.rightUtilityView.frame.size.width);
 }
 
 - (void)prepareForReuse
@@ -161,61 +154,86 @@
 
 - (void)scrollViewDidScroll:(PMTableViewSwipeCellScrollView *)scrollView
 {
-    if ((!self.leftUtilityView.hidden && scrollView.contentOffset.x <= 0.0f) ||
+    if ((!self.leftUtilityView.hidden && scrollView.contentOffset.x >= 0.0f) ||
         (!self.rightUtilityView.hidden && scrollView.contentOffset.x <= 0.0f)) {
         [self setCellPosition:PMCellPositionCentered animated:NO];
     }
-    
-    if (CGPointEqualToPoint(scrollView.contentOffset, CGPointZero) &&
-        UIEdgeInsetsEqualToEdgeInsets(scrollView.contentInset, UIEdgeInsetsZero)) {
-        self.leftUtilityView.hidden = YES;
-        self.rightUtilityView.hidden = YES;
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView
+                     withVelocity:(CGPoint)velocity
+              targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    if (scrollView.contentOffset.x < 0.0f  && velocity.x < 0.0f) {
+        *targetContentOffset = [self contentOffsetForPosition:PMCellPositionLeftUtilityViewVisible];
+    }
+    else if (scrollView.contentOffset.x > 0.0f && velocity.x > 0.0f) {
+        *targetContentOffset = [self contentOffsetForPosition:PMCellPositionRightUtilityViewVisible];
+    }
+    else {
+        *targetContentOffset = [self contentOffsetForPosition:PMCellPositionCentered];
     }
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     CGPoint velocity = [scrollView.panGestureRecognizer velocityInView:scrollView.panGestureRecognizer.view];
-    if (scrollView.contentOffset.x >= 0.0f && velocity.x < 0.0f) {
-        self.rightUtilityView.hidden = NO;
-        scrollView.contentInset = [self contentInsetForPosition:PMCellPositionRightUtilityViewVisible];
-    }
-    else if (scrollView.contentOffset.x <= 0.0f && velocity.x > 0.0f) {
-        self.leftUtilityView.hidden = NO;
-        scrollView.contentInset = [self contentInsetForPosition:PMCellPositionLeftUtilityViewVisible];
+    CGPoint centeredOffset = [self contentOffsetForPosition:PMCellPositionCentered];
+    
+    if (scrollView.contentOffset.x == centeredOffset.x) {
+        if (velocity.x < 0.0f) {
+            self.rightUtilityView.hidden = NO;
+        }
+        else if (velocity.x > 0.0f) {
+            self.leftUtilityView.hidden = NO;
+        }
     }
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     if (decelerate == NO) {
-        self.editing = !UIEdgeInsetsEqualToEdgeInsets(scrollView.contentInset, UIEdgeInsetsZero);
+        if (scrollView.contentOffset.x == 0.0f) {
+            self.leftUtilityView.hidden = YES;
+            self.rightUtilityView.hidden = YES;
+            self.editing = NO;
+        }
+        else {
+            self.editing = YES;
+        }
     }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    self.editing = !UIEdgeInsetsEqualToEdgeInsets(scrollView.contentInset, UIEdgeInsetsZero);
+    if (scrollView.contentOffset.x == 0.0f) {
+        self.leftUtilityView.hidden = YES;
+        self.rightUtilityView.hidden = YES;
+        self.editing = NO;
+    }
+    else {
+        self.editing = YES;
+    }
 }
 
 
 #pragma mark - Internal Methods
 
 
-- (UIEdgeInsets) contentInsetForPosition:(PMCellPosition)position
+- (CGPoint) contentOffsetForPosition:(PMCellPosition)position
 {
-    UIEdgeInsets insets = UIEdgeInsetsZero;
+    CGPoint offset = CGPointZero;
     switch (position) {
         case PMCellPositionCentered:
             break;
         case PMCellPositionRightUtilityViewVisible:
-            insets.right = self.rightUtilityView.frame.size.width;
+            offset.x = _scrollView.contentInset.right;
             break;
         case PMCellPositionLeftUtilityViewVisible:
-            insets.left = self.leftUtilityView.frame.size.width;
+            offset.x = -_scrollView.contentInset.left;
             break;
     }
-    return insets;
+    return offset;
 }
 
 - (void) commonPMTableViewSwipeCellInit
@@ -226,6 +244,7 @@
     self.swipeEnabled = YES;
 }
 
+
 @end
 
 
@@ -234,15 +253,15 @@
 
 @implementation PMTableViewSwipeCellScrollView
 {
-    __weak UITableViewCell *_cell;
+    __weak PMTableViewSwipeCell *_cell;
 }
 
-+ (instancetype)scrollViewWithCell:(UITableViewCell *)cell
++ (instancetype)scrollViewWithCell:(PMTableViewSwipeCell *)cell
 {
     return [[self alloc] initWithCell:cell];
 }
 
-- (instancetype) initWithCell:(UITableViewCell *)cell
+- (instancetype) initWithCell:(PMTableViewSwipeCell *)cell
 {
     
     self = [self initWithFrame:cell.bounds];
@@ -280,7 +299,10 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesBegan:touches withEvent:event];
-    if (!_cell.isEditing) {
+    if (_cell.isEditing) {
+        [_cell setCellPosition:PMCellPositionCentered animated:YES];
+    }
+    else {
         [self.nextResponder touchesBegan:touches withEvent:event];
     }
 }
