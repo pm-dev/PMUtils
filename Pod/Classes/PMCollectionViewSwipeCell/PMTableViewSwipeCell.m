@@ -174,7 +174,7 @@
         (self.rightUtilityView && !self.rightUtilityView.hidden && scrollView.contentOffset.x < 0.0f) ||
         (!self.leftUtilityView && scrollView.contentOffset.x < 0.0f) ||
         (!self.rightUtilityView && scrollView.contentOffset.x > 0.0f)) {
-        [self setCellPosition:PMCellPositionCentered animated:NO];
+            [self setCellPosition:PMCellPositionCentered animated:NO];
     }
 }
 
@@ -200,10 +200,16 @@
     
     if (scrollView.contentOffset.x == centeredOffset.x) {
         if (velocity.x < 0.0f) {
-            self.rightUtilityView.hidden = NO;
-        }
-        else if (velocity.x > 0.0f) {
-            self.leftUtilityView.hidden = NO;
+            if (velocity.x < 0.0f && self.rightUtilityView) {
+                self.rightUtilityView.hidden = NO;
+            }
+            else if (velocity.x > 0.0f && self.leftUtilityView) {
+                self.leftUtilityView.hidden = NO;
+            }
+            else {
+                scrollView.scrollEnabled = NO;
+                scrollView.scrollEnabled = YES;
+            }
         }
     }
 }
