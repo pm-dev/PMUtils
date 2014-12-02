@@ -199,17 +199,15 @@
     CGPoint centeredOffset = [self contentOffsetForPosition:PMCellPositionCentered];
     
     if (scrollView.contentOffset.x == centeredOffset.x) {
-        if (velocity.x < 0.0f) {
-            if (velocity.x < 0.0f && self.rightUtilityView) {
-                self.rightUtilityView.hidden = NO;
-            }
-            else if (velocity.x > 0.0f && self.leftUtilityView) {
-                self.leftUtilityView.hidden = NO;
-            }
-            else {
-                scrollView.scrollEnabled = NO;
-                scrollView.scrollEnabled = YES;
-            }
+        if (velocity.x < 0.0f && self.rightUtilityView) {
+            self.rightUtilityView.hidden = NO;
+        }
+        else if (velocity.x > 0.0f && self.leftUtilityView) {
+            self.leftUtilityView.hidden = NO;
+        }
+        else {
+            scrollView.scrollEnabled = NO;
+            scrollView.scrollEnabled = YES;
         }
     }
 }
