@@ -12,65 +12,76 @@
 
 
 @interface PMNavigationControllerCompletionDelegate : NSObject <UINavigationControllerDelegate>
-+ (PMNavigationControllerCompletionDelegate *) delegateForController:(UINavigationController *)controller withCompletion:(void (^)(void))completion;
+@property (nonatomic, copy) dispatch_block_t completion;
+@property (nonatomic, strong, readonly) PMProtocolInterceptor *interceptor;
 @end
 
 @implementation UINavigationController (PMUtils)
 
-- (void) pushViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(void (^)(void))completion
+
+- (void) setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated completion:(void (^)(void))completion
 {
-    if (self.viewControllers.lastObject == viewController) {
-        if (completion) {
-            completion();
-        }
+    if (self.viewControllers.lastObject == viewControllers.lastObject && completion) {
+        [self setViewControllers:viewControllers animated:animated];
+        completion();
     }
     else {
-        [self PM_addNavigationControllerDelegate:completion];
-        [self pushViewController:viewController animated:animated];
+        if (completion) {
+            [self PM_addNavigationControllerDelegate:completion];
+        }
+        [self setViewControllers:viewControllers animated:animated];
     }
+}
+
+- (void) pushViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(void (^)(void))completion
+{
+    if (completion) {
+        [self PM_addNavigationControllerDelegate:completion];
+    }
+    [self pushViewController:viewController animated:animated];
 }
 
 - (UIViewController *) popViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion
 {
-    if (self.viewControllers.count <= 1) {
+    if (self.viewControllers.count > 1) {
         if (completion) {
-            completion();
+            [self PM_addNavigationControllerDelegate:completion];
         }
-        return nil;
-    }
-    else {
-        [self PM_addNavigationControllerDelegate:completion];
         return [self popViewControllerAnimated:animated];
     }
+    else if (completion) {
+        completion();
+    }
+    return nil;
 }
 
 - (NSArray *) popToViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(void (^)(void))completion
 {
     NSUInteger index = [self.viewControllers indexOfObject:viewController];
-    if (index == NSNotFound || index >= self.viewControllers.count - 1) {
+    if (index != NSNotFound && index < self.viewControllers.count - 1) {
         if (completion) {
-            completion();
+            [self PM_addNavigationControllerDelegate:completion]; completion();
         }
-        return nil;
-    }
-    else {
-        [self PM_addNavigationControllerDelegate:completion];
         return [self popToViewController:viewController animated:animated];
     }
+    else if (completion) {
+        completion();
+    }
+    return nil;
 }
 
 - (NSArray *)popToRootViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion
 {
-    if (self.viewControllers.count <= 1) {
+    if (self.viewControllers.count > 1) {
         if (completion) {
-            completion();
+            [self PM_addNavigationControllerDelegate:completion];
         }
-        return nil;
-    }
-    else {
-        [self PM_addNavigationControllerDelegate:completion];
         return [self popToRootViewControllerAnimated:animated];
     }
+    else if (completion) {
+        completion();
+    }
+    return nil;
 }
 
 - (UIViewController *) rootViewController
@@ -78,48 +89,40 @@
     return self.viewControllers.firstObject;
 }
 
+
 #pragma mark - Private
 
 - (void) PM_addNavigationControllerDelegate:(void (^)(void))completion
 {
-    PMNavigationControllerCompletionDelegate *delegate = [PMNavigationControllerCompletionDelegate delegateForController:self withCompletion:completion];
-    [[UINavigationController PM_navigationControllerDelegates] addObject:delegate];
+    PMNavigationControllerCompletionDelegate *existingDelegate = [self PM_navigationControllerCompletionDelegate];
+    if (existingDelegate.completion) {
+        existingDelegate.completion();
+    }
+    PMNavigationControllerCompletionDelegate *delegate = [[PMNavigationControllerCompletionDelegate alloc] init];
+    delegate.interceptor.receiver = existingDelegate.interceptor.receiver?: self.delegate;
+    self.delegate = (id)delegate.interceptor;
+    delegate.completion = completion;
+    [self PM_setNavigationControllerCompletionDelegate:delegate];
 }
 
-+ (NSMutableSet *) PM_navigationControllerDelegates
-{
-    static NSMutableSet *navigationControllerDelegates = nil;
-    static dispatch_once_t cacheToken = 0;
-    dispatch_once(&cacheToken, ^{
-        navigationControllerDelegates = [NSMutableSet set];
-    });
-    return navigationControllerDelegates;
+- (PMNavigationControllerCompletionDelegate *)PM_navigationControllerCompletionDelegate {
+    return (PMNavigationControllerCompletionDelegate *)objc_getAssociatedObject(self, @selector(PM_navigationControllerCompletionDelegate));
+}
+
+- (void)PM_setNavigationControllerCompletionDelegate:(PMNavigationControllerCompletionDelegate *)completionDelegate {
+    objc_setAssociatedObject(self, @selector(PM_navigationControllerCompletionDelegate), completionDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
 
 
 @implementation PMNavigationControllerCompletionDelegate
-{
-    PMProtocolInterceptor *_interceptor;
-    dispatch_block_t _completion;
-    UINavigationController *_navigationController;
-}
 
-+ (PMNavigationControllerCompletionDelegate *) delegateForController:(UINavigationController *)controller withCompletion:(void (^)(void))completion
-{
-    return [[self alloc] initForController:controller withCompletion:completion];
-}
-
-- (instancetype) initForController:(UINavigationController *)controller withCompletion:(void (^)(void))completion
+- (instancetype) init
 {
     self = [super init];
     if (self) {
         _interceptor = [PMProtocolInterceptor interceptorWithMiddleMan:self forProtocol:@protocol(UINavigationControllerDelegate)];
-        _completion = [completion copy];
-        _navigationController = controller;
-        _interceptor.receiver = controller.delegate;
-        controller.delegate = (id)_interceptor;
     }
     return self;
 }
@@ -128,14 +131,15 @@
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    if (_completion) {
-        _completion();
+    if (self.completion) {
+        self.completion();
     }
-    _navigationController.delegate = _interceptor.receiver;
-    if ([_navigationController.delegate respondsToSelector:@selector(navigationController:didShowViewController:animated:)]) {
-        [_navigationController.delegate navigationController:navigationController didShowViewController:viewController animated:animated];
+    navigationController.delegate = self.interceptor.receiver;
+    if ([navigationController.delegate respondsToSelector:@selector(navigationController:didShowViewController:animated:)]) {
+        [navigationController.delegate navigationController:navigationController didShowViewController:viewController animated:animated];
     }
-    [[UINavigationController PM_navigationControllerDelegates] removeObject:self];
+    
+    [navigationController PM_setNavigationControllerCompletionDelegate:nil];
 }
 
 @end

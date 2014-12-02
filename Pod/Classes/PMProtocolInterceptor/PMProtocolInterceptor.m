@@ -76,8 +76,9 @@ static inline BOOL selector_belongsToProtocol(SEL selector, Protocol * protocol)
 
 - (void) setReceiver:(id)receiver
 {
-    NSAssert(![receiver isKindOfClass:[PMProtocolInterceptor class]],
-             @"Setting a PMProtocolInterceptor as another PMProtocolInterceptor's receiver is not supported");
+    if ([receiver isKindOfClass:[PMProtocolInterceptor class]]) {
+        NSLog(@"Caution! Setting a PMProtocolInterceptor as another PMProtocolInterceptor's receiver can be unpredictable.");
+    }
     _receiver = receiver;
 }
 
