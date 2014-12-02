@@ -37,6 +37,7 @@
 #import "PMCollectionViewSwipeCell.h"
 #import "PMInnerShadowView.h"
 #import "PMRoundedBorderView.h"
+#import "PMGradientView.h"
 #import "PMKeyboardListener.h"
 #import "PMStickyHeaderFlowLayout.h"
 

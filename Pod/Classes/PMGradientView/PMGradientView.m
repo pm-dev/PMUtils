@@ -29,6 +29,12 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.userInteractionEnabled = NO;
+}
+
 - (void)setStartColor:(UIColor *)startColor
 {
     _startColor = startColor;
