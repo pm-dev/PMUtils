@@ -85,21 +85,19 @@
     CGPoint offset = [self contentOffsetForPosition:position];
     [_scrollView setContentOffset:offset animated:animated];
     self.editing = (position != PMCellPositionCentered);
-    if (!animated) {
-        switch (position) {
-            case PMCellPositionCentered:
-                self.leftUtilityView.hidden = YES;
-                self.rightUtilityView.hidden = YES;
-                break;
-            case PMCellPositionLeftUtilityViewVisible:
-                self.leftUtilityView.hidden = NO;
-                self.rightUtilityView.hidden = YES;
-                break;
-            case PMCellPositionRightUtilityViewVisible:
-                self.leftUtilityView.hidden = YES;
-                self.rightUtilityView.hidden = NO;
-                break;
-        }
+    switch (position) {
+        case PMCellPositionCentered:
+            self.leftUtilityView.hidden = !animated;
+            self.rightUtilityView.hidden = !animated;
+            break;
+        case PMCellPositionLeftUtilityViewVisible:
+            self.leftUtilityView.hidden = NO;
+            self.rightUtilityView.hidden = YES;
+            break;
+        case PMCellPositionRightUtilityViewVisible:
+            self.leftUtilityView.hidden = YES;
+            self.rightUtilityView.hidden = NO;
+            break;
     }
 }
 
@@ -146,6 +144,9 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    [self bringSubviewToFront:self.leftUtilityView];
+    [self bringSubviewToFront:self.rightUtilityView];
+    [self bringSubviewToFront:_scrollView];
     _scrollView.contentSize = self.bounds.size;
     _scrollView.contentInset = UIEdgeInsetsMake(0.0f,
                                                 self.leftUtilityView.frame.size.width,
