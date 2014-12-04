@@ -175,7 +175,9 @@
         (self.rightUtilityView && !self.rightUtilityView.hidden && scrollView.contentOffset.x < 0.0f) ||
         (!self.leftUtilityView && scrollView.contentOffset.x < 0.0f) ||
         (!self.rightUtilityView && scrollView.contentOffset.x > 0.0f)) {
-            [self setCellPosition:PMCellPositionCentered animated:NO];
+        [self setCellPosition:PMCellPositionCentered animated:NO];
+        scrollView.scrollEnabled = NO;
+        scrollView.scrollEnabled = YES;
     }
 }
 
