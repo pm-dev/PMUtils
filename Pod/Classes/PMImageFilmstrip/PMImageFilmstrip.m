@@ -272,7 +272,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
     self.collectionView.allowsSelection = NO;
     self.collectionView.pagingEnabled = YES;
     self.collectionView.showsHorizontalScrollIndicator = NO;
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor clearColor];
     [self addSubview:_collectionView];
     
     self.pageControl = [[UIPageControl alloc] init];
