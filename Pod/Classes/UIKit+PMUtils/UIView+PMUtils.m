@@ -117,6 +117,10 @@
 						  tintColor:(UIColor *)tintColor
 							   crop:(CGRect)crop
 {
+    if (CGRectIsEmpty(crop)) {
+        crop = self.bounds;
+    }
+    
 	UIGraphicsBeginImageContextWithOptions(crop.size, YES, 1.0f);
 
 	CGRect rect = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
