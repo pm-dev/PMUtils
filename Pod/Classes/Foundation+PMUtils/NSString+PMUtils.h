@@ -27,6 +27,8 @@
 
 @interface NSString (PMUtils)
 
+- (NSNumber *) number;
+
 /**
  *  Returns a new string made from the receiver by replacing all characters not in the specified set 
  *  with percent encoded characters allowed in a query URL component. UTF-8 encoding is used to determine the correct percent encoded characters. 

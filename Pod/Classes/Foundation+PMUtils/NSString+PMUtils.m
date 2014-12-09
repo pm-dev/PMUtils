@@ -29,6 +29,17 @@
 
 @implementation NSString (PMUtils)
 
+- (NSNumber *) number
+{
+    static NSNumberFormatter *formatter = nil;
+    static dispatch_once_t cacheToken = 0;
+    dispatch_once(&cacheToken, ^{
+        formatter = [[NSNumberFormatter alloc] init];
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    });
+    return [formatter numberFromString:self];
+}
+
 - (NSString *) encodedURLQuery
 {
 	return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
