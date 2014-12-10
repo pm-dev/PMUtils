@@ -74,6 +74,8 @@ typedef NS_OPTIONS(NSUInteger, PMDirection) {
  */
 - (void) removeSubviews;
 
+- (void) cancelInteraction;
+
 /**
  *  Apply scale, blur, tint and/or saturation to a snapshot of the UIView or a cropped portion of the UIView.
  *

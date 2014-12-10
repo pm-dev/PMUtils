@@ -26,6 +26,7 @@
 
 #import "UIView+PMUtils.h"
 #import "UIImage+PMUtils.h"
+#import "UIGestureRecognizer+PMUtils.h"
 
 @implementation UIView (PMUtils)
 
@@ -108,6 +109,16 @@
 {
     for (UIView *subview in self.subviews) {
         [subview removeFromSuperview];
+    }
+}
+
+- (void) cancelInteraction
+{
+    for (UIView *subview in self.subviews) {
+        [subview cancelInteraction];
+    }
+    for (UIGestureRecognizer *gestureRecognizer in self.gestureRecognizers) {
+        [gestureRecognizer cancel];
     }
 }
 

@@ -12,9 +12,10 @@
 
 - (void) cancel
 {
-    BOOL isEnabled = self.enabled;
-    self.enabled = !isEnabled;
-    self.enabled = isEnabled;
+    if (self.enabled) {
+        self.enabled = NO;
+        self.enabled = YES;
+    }
 }
 
 @end
