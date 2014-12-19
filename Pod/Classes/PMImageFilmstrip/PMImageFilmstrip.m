@@ -31,6 +31,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 
 @interface PMImageFilmstripCell : UICollectionViewCell
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UITapGestureRecognizer *singleTap;
 @end
 
 @implementation PMImageFilmstripCell
@@ -64,8 +65,11 @@ static CGFloat const PMPageControlHeight = 37.0f;
         self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.scrollView.showsHorizontalScrollIndicator = NO;
         self.scrollView.showsVerticalScrollIndicator = NO;
+        self.singleTap = [[UITapGestureRecognizer alloc] init];
+        self.singleTap.numberOfTapsRequired = 1;
         self.doubleTap = [[UITapGestureRecognizer alloc] init];
         self.doubleTap.numberOfTapsRequired = 2;
+        [self.scrollView addGestureRecognizer:self.singleTap];
         [self.scrollView addGestureRecognizer:self.doubleTap];
         [self.scrollView addSubview:self.imageView];
         [self.contentView addSubview:self.scrollView];
@@ -76,6 +80,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (void)dealloc
 {
     self.scrollView.delegate = nil;
+    self.singleTap.delegate = nil;
     self.doubleTap.delegate = nil;
 }
 
@@ -98,6 +103,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
     UICollectionViewFlowLayout *_collectionViewFlowLayout;
     BOOL _delegateRespondsToDidScroll;
     BOOL _delegateRespondsToWillScroll;
+    BOOL _delegateRespondsToTap;
 }
 
 
@@ -139,6 +145,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
     _delegate = delegate;
     _delegateRespondsToDidScroll = [_delegate respondsToSelector:@selector(imageFilmstrip:didScrollToImageAtIndex:)];
     _delegateRespondsToWillScroll = [_delegate respondsToSelector:@selector(imageFilmstrip:willScrollToImageAtIndex:)];
+    _delegateRespondsToTap = [delegate respondsToSelector:@selector(imageFilmstrip:didTapImageAtIndex:)];
 }
 
 - (void)setCurrentIndexPath:(NSIndexPath *)currentIndexPath
@@ -161,7 +168,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 {
     [super layoutSubviews];
     NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
-    if ([self.currentIndexPath isEqual:indexPath] == NO) {
+    if (self.currentIndexPath && [self.currentIndexPath isEqual:indexPath] == NO) {
         [self.collectionView scrollToItemAtIndexPath:self.currentIndexPath
                                     atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally
                                             animated:NO];
@@ -176,6 +183,14 @@ static CGFloat const PMPageControlHeight = 37.0f;
     [self.collectionView scrollToItemAtIndexPath:indexPath
                                 atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally
                                         animated:animated];
+}
+
+- (void) didSingleTap:(UITapGestureRecognizer *)tap
+{
+    if (_delegateRespondsToTap) {
+        NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
+        [self.delegate imageFilmstrip:self didTapImageAtIndex:indexPath.item];
+    }
 }
 
 
@@ -193,15 +208,14 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     PMImageFilmstripCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[self imageCellReuseIdentifier] forIndexPath:indexPath];
+    [cell.singleTap addTarget:self action:@selector(didSingleTap:)];
     [self.delegate imageFilmstrip:self
       configureFilmstripImageView:cell.imageView
                           atIndex:indexPath.item];
     return cell;
 }
 
-
 #pragma mark - UICollectionViewDelegate
-
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
@@ -293,7 +307,6 @@ static CGFloat const PMPageControlHeight = 37.0f;
     CGFloat _pinchStartScale;
 }
 
-
 - (void)setDelegate:(id<PMZoomableImageFilmstripDelegate>)delegate
 {
     [super setDelegate:delegate];
@@ -351,6 +364,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
             break;
     }
 }
+
 
 #pragma mark - UIScrollViewDelegate
 

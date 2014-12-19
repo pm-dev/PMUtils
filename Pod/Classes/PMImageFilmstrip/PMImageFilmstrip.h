@@ -56,6 +56,14 @@
  */
 - (void) imageFilmstrip:(PMImageFilmstrip *)imageFilmstrip didScrollToImageAtIndex:(NSUInteger)index;
 
+/**
+ *  Tells the delegate an image in the image filmstrip has been selected/tapped.
+ *
+ *  @param imageFilmstrip An object representing the image filmstrip.
+ *  @param index          The index of the image that has been selected/tapped.
+ */
+- (void) imageFilmstrip:(PMImageFilmstrip *)imageFilmstrip didTapImageAtIndex:(NSUInteger)index;
+
 @end
 
 @protocol PMImageFilmstripDataSource <NSObject>
