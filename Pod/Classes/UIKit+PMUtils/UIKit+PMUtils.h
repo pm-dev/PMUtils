@@ -22,6 +22,7 @@
 #import "UITableView+PMUtils.h"
 #import "UITableViewCell+PMUtils.h"
 #import "UITableViewHeaderFooterView+PMUtils.h"
+#import "UITextField+PMUtils.h"
 #import "UIView+PMUtils.h"
 #import "UIViewController+PMUtils.h"
 
