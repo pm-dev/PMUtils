@@ -27,6 +27,8 @@
 
 @interface NSString (PMUtils)
 
+- (NSString *) stringByRemovingCharactersInSet:(NSCharacterSet *)characterSet;
+
 - (NSNumber *) number;
 
 /**

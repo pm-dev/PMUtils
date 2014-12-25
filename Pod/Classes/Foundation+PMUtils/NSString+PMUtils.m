@@ -29,6 +29,12 @@
 
 @implementation NSString (PMUtils)
 
+
+- (NSString *) stringByRemovingCharactersInSet:(NSCharacterSet *)characterSet
+{
+    return [[self componentsSeparatedByCharactersInSet:characterSet] componentsJoinedByString:@""];
+}
+
 - (NSNumber *) number
 {
     static NSNumberFormatter *formatter = nil;
