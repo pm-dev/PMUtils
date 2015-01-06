@@ -68,8 +68,4 @@ extern NSUInteger const PMBytesPerGigabyte;
 extern double const PMMetersPerMile;
 extern double const PMMilesPerMeter;
 
-extern inline NSInteger PMShortestCircularDistance(NSInteger fromIndex, NSInteger toIndex, NSRange inRange);
-extern inline NSInteger PMReverseCircularDistance(NSInteger fromIndex, NSInteger toIndex, NSRange inRange);
-extern inline NSInteger PMForwardCircularDistance(NSInteger fromIndex, NSInteger toIndex, NSRange inRange);
-
 #endif

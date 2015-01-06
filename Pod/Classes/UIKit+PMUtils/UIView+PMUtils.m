@@ -28,7 +28,92 @@
 #import "UIImage+PMUtils.h"
 #import "UIGestureRecognizer+PMUtils.h"
 
+CGRect PMRectOfContentInBounds(CGRect bounds, UIViewContentMode mode, CGSize contentSize)
+{
+    CGFloat extraWidth = bounds.size.width - contentSize.width;
+    CGFloat extraHeight = bounds.size.height - contentSize.height;
+    
+    switch (mode) {
+        case UIViewContentModeRedraw:
+        case UIViewContentModeScaleToFill:
+            return bounds;
+            
+        case UIViewContentModeCenter:
+            return CGRectMake(extraWidth/2.0f, extraHeight/2.0f, contentSize.width, contentSize.height);
+            
+        case UIViewContentModeTop:
+            return CGRectMake(extraWidth/2.0f, 0.0f, contentSize.width, contentSize.height);
+            
+        case UIViewContentModeBottom:
+            return CGRectMake(extraWidth/2.0f, extraHeight, contentSize.width, contentSize.height);
+            
+        case UIViewContentModeLeft:
+            return CGRectMake(0.0f, extraHeight/2.0f, contentSize.width, contentSize.height);
+            
+        case UIViewContentModeRight:
+            return CGRectMake(extraWidth, extraHeight/2.0f, contentSize.width, contentSize.height);
+            
+        case UIViewContentModeTopLeft:
+            return CGRectMake(0.0f, 0.0f, contentSize.width, contentSize.height);
+            
+        case UIViewContentModeTopRight:
+            return CGRectMake(extraWidth, 0.0f, contentSize.width, contentSize.height);
+            
+        case UIViewContentModeBottomLeft:
+            return CGRectMake(0.0f, extraHeight, contentSize.width, contentSize.height);
+            
+        case UIViewContentModeBottomRight:
+            return CGRectMake(extraWidth, extraHeight, contentSize.width, contentSize.height);
+            
+        case UIViewContentModeScaleAspectFill:
+        {
+            CGFloat contentRatio = contentSize.width / contentSize.height;
+            CGFloat boundsRatio = bounds.size.width / bounds.size.height;
+            
+            if (contentRatio < boundsRatio) { // Fill to width
+                
+                CGFloat scale = bounds.size.width / contentSize.width;
+                CGFloat height = scale * contentSize.height;
+                CGFloat y = (bounds.size.height - height) / 2.0f;
+                return CGRectMake(0.0f, y, bounds.size.width, height);
+            }
+            else if (contentRatio > boundsRatio) { // Fill to height
+                
+                CGFloat scale = bounds.size.height / contentSize.height;
+                CGFloat width = scale * contentSize.width;
+                CGFloat x = (bounds.size.width - width) / 2.0f;
+                return CGRectMake(x, 0.0f, width, contentSize.height);
+            }
+            return bounds;
+        }
+        case UIViewContentModeScaleAspectFit:
+        {
+            CGFloat imageRatio = contentSize.width / contentSize.height;
+            CGFloat viewRatio = bounds.size.width / bounds.size.height;
+            
+            if (imageRatio < viewRatio) { // Fit to height
+                
+                CGFloat scale = bounds.size.height / contentSize.height;
+                CGFloat width = scale * contentSize.width;
+                CGFloat x = (bounds.size.width - width) / 2.0f;
+                return CGRectMake(x, 0.0f, width, bounds.size.height);
+            }
+            else if (imageRatio > viewRatio) { // Fit to width
+                
+                CGFloat scale = bounds.size.width / contentSize.width;
+                CGFloat height = scale * contentSize.height;
+                CGFloat y = (bounds.size.height - height) / 2.0f;
+                return CGRectMake(0.0f, y, bounds.size.width, height);
+            }
+            return bounds;
+        }
+    }
+    return CGRectZero;
+}
+
+
 @implementation UIView (PMUtils)
+
 
 + (void) setShared:(id)shared
 {

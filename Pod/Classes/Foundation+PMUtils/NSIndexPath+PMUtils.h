@@ -24,6 +24,11 @@
 
 #import <Foundation/Foundation.h>
 
+
+extern NSInteger PMShortestCircularDistance(NSInteger fromIndex, NSInteger toIndex, NSRange inRange);
+extern NSInteger PMReverseCircularDistance(NSInteger fromIndex, NSInteger toIndex, NSRange inRange);
+extern NSInteger PMForwardCircularDistance(NSInteger fromIndex, NSInteger toIndex, NSRange inRange);
+
 @interface NSIndexPath (PMUtils)
 
 /**

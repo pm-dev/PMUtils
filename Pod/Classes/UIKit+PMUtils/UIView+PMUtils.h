@@ -30,6 +30,8 @@ typedef NS_OPTIONS(NSUInteger, PMDirection) {
     PMDirectionHorizontal = 1 << 1
 };
 
+extern CGRect PMRectOfContentInBounds(CGRect bounds, UIViewContentMode mode, CGSize contentSize);
+
 @interface UIView (PMUtils)
 
 /**

@@ -142,6 +142,25 @@ static NSUInteger const bytesPerPixel = 4;
 	return [self resizableImageWithCapInsets:capInsets];
 }
 
+- (UIImage *) resizeWithPoints:(CGSize)sizeInPoints
+{
+    return [self PM_resize:sizeInPoints points:YES];
+}
+
+- (UIImage *) resizeWithPixels:(CGSize)sizeInPixels
+{
+    return [self PM_resize:sizeInPixels points:NO];
+}
+
+- (UIImage *) PM_resize:(CGSize)newSize points:(BOOL)points
+{
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, points? 0.0f : 1.0f);
+    [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 - (UIImage *) crop:(CGRect)rect
 {
     NSAssert(self.CGImage, @"-[UIImage crop:] only works on UIImages backed by a CGImage");
@@ -227,7 +246,7 @@ static NSUInteger const bytesPerPixel = 4;
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContextWithOptions(rect.size, CGColorGetAlpha(color.CGColor) == 1.0f , 0.0f);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextSetFillColorWithColor(context, color.CGColor);
     CGContextFillRect(context, rect);
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

@@ -124,6 +124,17 @@
 - (UIImage *) makeResizable:(PMDirection)direction;
 
 /**
+ *  Scales the receiver to a new size.
+ *
+ *  @param sizeInPoints Size to scale the image to. The dimensions are in points (not pixels) on the main screen.
+ *
+ *  @return A scaled copy of the recieving image.
+ */
+- (UIImage *) resizeWithPoints:(CGSize)sizeInPoints;
+
+- (UIImage *) resizeWithPixels:(CGSize)sizeInPixels;
+
+/**
  *  Creates a new UIImage image using the data contained within a subregion of the reciever's CGImage image. Note, the UIImage must be backed by a CGImage, not a CIImage.
  *
  *  @param rect The rectangle to crop the current UIImage to.
