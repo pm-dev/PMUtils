@@ -45,7 +45,7 @@
 	/*
 	 * This example app only illustrates how to use PMImageFilmstrip, UIImageView's image entity delegate, and
 	 * [UIImage blurredImageWithRadius:iterations:scaleDownFactor:saturation:tintColor].
-	 * You may use this view controller as a blank canvas to experment with other category methods
+	 * You may use this view controller as a blank canvas to experment with other classes and category methods
 	 * provided by PMUtils.
 	 *
 	 */

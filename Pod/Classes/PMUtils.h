@@ -30,6 +30,7 @@
 #import "Foundation+PMUtils.h"
 #import "PMOrderedDictionary.h"
 #import "PMFloatTextField.h"
+#import "PMPlaceholderTextView.h"
 #import "PMProtocolInterceptor.h"
 #import "PMImageFilmstrip.h"
 #import "PMInfiniteScrollView.h"
