@@ -46,6 +46,12 @@ ss.public_header_files = 'Pod/Classes/PMImageFilmstrip/*.h'
 ss.dependency 'PMUtils/UIKit+PMUtils'
 end
 
+s.subspec 'PMFloatLabel' do |ss|
+ss.source_files = 'Pod/Classes/PMFloatLabel/*.{h,m}'
+ss.public_header_files = 'Pod/Classes/PMFloatLabel/*.h'
+ss.dependency 'PMUtils/PMProtocolInterceptor'
+end
+
 s.subspec 'PMCollectionViewSwipeCell' do |ss|
 ss.source_files = 'Pod/Classes/PMCollectionViewSwipeCell/*.{h,m}'
 ss.public_header_files = 'Pod/Classes/PMCollectionViewSwipeCell/*.h'

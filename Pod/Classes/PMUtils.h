@@ -29,6 +29,7 @@
 #import "UIKit+PMUtils.h"
 #import "Foundation+PMUtils.h"
 #import "PMOrderedDictionary.h"
+#import "PMFloatTextField.h"
 #import "PMProtocolInterceptor.h"
 #import "PMImageFilmstrip.h"
 #import "PMInfiniteScrollView.h"
@@ -49,8 +50,6 @@
 
 #define DEF_weak(var, weakName)    __weak __typeof(var) weakName = var;
 #define DEF_strong(var, strongName) __strong __typeof(var) strongName = var;
-
-//#define AppDelegate [[UIApplication sharedApplication] delegate]
 
 // Units
 extern NSTimeInterval const PMOneMilisecond;
