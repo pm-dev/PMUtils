@@ -78,6 +78,8 @@ extern CGRect PMRectOfContentInBounds(CGRect bounds, UIViewContentMode mode, CGS
 
 - (void) cancelInteraction;
 
+- (UIImage *) snapshot;
+
 /**
  *  Apply scale, blur, tint and/or saturation to a snapshot of the UIView or a cropped portion of the UIView.
  *

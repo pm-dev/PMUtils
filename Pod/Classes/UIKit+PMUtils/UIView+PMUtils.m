@@ -207,35 +207,26 @@ CGRect PMRectOfContentInBounds(CGRect bounds, UIViewContentMode mode, CGSize con
     }
 }
 
-- (UIImage *)blurredViewWithRadius:(CGFloat)radius
-						 iterations:(NSUInteger)iterations
-					scaleDownFactor:(NSUInteger)scaleDownFactor
-						 saturation:(CGFloat)saturation
-						  tintColor:(UIColor *)tintColor
-							   crop:(CGRect)crop
+- (UIImage *) snapshot
 {
-    if (CGRectIsEmpty(crop)) {
-        crop = self.bounds;
-    }
-    
-	UIGraphicsBeginImageContextWithOptions(crop.size, YES, 1.0f);
-
-	CGRect rect = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
-	
-	[self drawViewHierarchyInRect:rect afterScreenUpdates:NO];
-	
-	UIImage *snapshot = UIGraphicsGetImageFromCurrentImageContext();
-	
-	UIGraphicsEndImageContext();
-	
-	return 	[snapshot blurredImageWithRadius:radius
-								  iterations:iterations
-							 scaleDownFactor:scaleDownFactor
-								  saturation:saturation
-								   tintColor:tintColor
-										crop:crop];
+    return [self PM_croppedSnapshot:CGRectZero];
 }
 
+- (UIImage *)blurredViewWithRadius:(CGFloat)radius
+                        iterations:(NSUInteger)iterations
+                   scaleDownFactor:(NSUInteger)scaleDownFactor
+                        saturation:(CGFloat)saturation
+                         tintColor:(UIColor *)tintColor
+                              crop:(CGRect)crop
+{
+    UIImage *snapshot = [self PM_croppedSnapshot:crop];
+    return 	[snapshot blurredImageWithRadius:radius
+                                  iterations:iterations
+                             scaleDownFactor:scaleDownFactor
+                                  saturation:saturation
+                                   tintColor:tintColor
+                                        crop:crop];
+}
 
 #pragma mark - Layout
 
@@ -405,5 +396,17 @@ CGRect PMRectOfContentInBounds(CGRect bounds, UIViewContentMode mode, CGSize con
 	return initializedSharedViewClasses;
 }
 
+- (UIImage *) PM_croppedSnapshot:(CGRect)crop
+{
+    if (CGRectIsEmpty(crop)) {
+        crop = self.bounds;
+    }
+    UIGraphicsBeginImageContextWithOptions(crop.size, YES, 1.0f);
+    CGRect rect = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+    [self drawViewHierarchyInRect:rect afterScreenUpdates:NO];
+    UIImage *snapshot = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return snapshot;
+}
 
 @end
