@@ -52,6 +52,15 @@ ss.public_header_files = 'Pod/Classes/PMFloatLabel/*.h'
 ss.dependency 'PMUtils/PMProtocolInterceptor'
 end
 
+s.subspec 'PMProgressHUD' do |ss|
+ss.source_files = 'Pod/Classes/PMProgressHUD/*.{h,m}'
+ss.public_header_files = 'Pod/Classes/PMProgressHUD/*.h'
+ss.dependency 'PMUtils/UIKit+PMUtils'
+ss.resource_bundles = {
+'PMProgressHUD' => ['Pod/Classes/PMProgressHUD/*.{xib,png}']
+}
+end
+
 s.subspec 'PMCollectionViewSwipeCell' do |ss|
 ss.source_files = 'Pod/Classes/PMCollectionViewSwipeCell/*.{h,m}'
 ss.public_header_files = 'Pod/Classes/PMCollectionViewSwipeCell/*.h'

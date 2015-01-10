@@ -10,6 +10,7 @@ PODS:
     - PMUtils/PMInnerShadowView (= 1.1.1)
     - PMUtils/PMKeyboardListener (= 1.1.1)
     - PMUtils/PMOrderedDictionary (= 1.1.1)
+    - PMUtils/PMProgressHUD (= 1.1.1)
     - PMUtils/PMProtocolInterceptor (= 1.1.1)
     - PMUtils/PMRoundedBorderView (= 1.1.1)
     - PMUtils/PMStickyHeaderFlowLayout (= 1.1.1)
@@ -27,6 +28,8 @@ PODS:
   - PMUtils/PMInnerShadowView (1.1.1)
   - PMUtils/PMKeyboardListener (1.1.1)
   - PMUtils/PMOrderedDictionary (1.1.1)
+  - PMUtils/PMProgressHUD (1.1.1):
+    - PMUtils/UIKit+PMUtils
   - PMUtils/PMProtocolInterceptor (1.1.1)
   - PMUtils/PMRoundedBorderView (1.1.1)
   - PMUtils/PMStickyHeaderFlowLayout (1.1.1)
@@ -42,6 +45,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  PMUtils: 6137404a71c388ae0b17157fbe315e3793db9271
+  PMUtils: a454e8c1a9d542d941bc489e10068e2327fc75cc
 
 COCOAPODS: 0.35.0

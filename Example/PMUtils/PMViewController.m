@@ -29,6 +29,7 @@
 #import "PMUtils.h"
 #import "PMSampleView.h"
 #import "PMGradientView.h"
+#import "PMProgressHUD.h"
 
 @interface PMViewController () <PMImageFilmstripDataSource, PMZoomableImageFilmstripDelegate>
 @end
@@ -68,6 +69,19 @@
 	[self.view addSubview:label];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    PMProgressHUD *hud = [PMProgressHUD progressHUD];
+    hud.message = @"Loading...";
+    [hud presentAfterDelay:0.0 completion:nil];
+    
+    [NSThread dispatchMainThreadAfterDelay:3.0 block:^{
+        hud.message = @"Finished Loading";
+        hud.progressHUDState = PMProgressHUDStateComplete;
+        [hud dismissAfterDelay:2.0 completion:nil];
+    }];
+}
 
 - (void)tap:(UITapGestureRecognizer *)sender
 {

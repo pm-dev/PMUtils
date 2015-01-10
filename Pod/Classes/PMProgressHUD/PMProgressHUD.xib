@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="BentonSans-Regular.otf">
+            <string>BentonSans-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="a11-rx-0hF" userLabel="Progress HUD" customClass="PMProgressHUD">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="kCU-Q4-4Ic">
+                    <rect key="frame" x="104" y="268" width="113" height="32"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="80N-h9-GOe">
+                            <rect key="frame" x="6" y="6" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="6j7-C8-ulY"/>
+                                <constraint firstAttribute="width" constant="20" id="BFh-mI-y3g"/>
+                            </constraints>
+                        </activityIndicatorView>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="Kcv-m7-h4x">
+                            <rect key="frame" x="5" y="5" width="22" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="22" id="5td-mj-zuh"/>
+                                <constraint firstAttribute="height" constant="22" id="CRw-Ae-KFU"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sent!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfi-IJ-82U">
+                            <rect key="frame" x="34" y="7" width="71" height="17"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="71" id="iMM-50-A4e"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="BentonSans-Regular" family="BentonSans" pointSize="14"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="wfi-IJ-82U" secondAttribute="bottom" constant="8" id="1K9-Tf-VqL"/>
+                        <constraint firstItem="wfi-IJ-82U" firstAttribute="leading" secondItem="80N-h9-GOe" secondAttribute="trailing" constant="8" id="2um-bd-uQ7"/>
+                        <constraint firstAttribute="trailing" secondItem="wfi-IJ-82U" secondAttribute="trailing" constant="8" id="Icb-20-NJI"/>
+                        <constraint firstItem="wfi-IJ-82U" firstAttribute="top" secondItem="kCU-Q4-4Ic" secondAttribute="top" constant="7" id="RNm-Az-Qjs"/>
+                        <constraint firstItem="80N-h9-GOe" firstAttribute="leading" secondItem="kCU-Q4-4Ic" secondAttribute="leading" constant="6" id="Rrd-lU-bVO"/>
+                        <constraint firstItem="Kcv-m7-h4x" firstAttribute="leading" secondItem="kCU-Q4-4Ic" secondAttribute="leading" constant="5" id="pfx-uY-1aH"/>
+                        <constraint firstAttribute="centerY" secondItem="80N-h9-GOe" secondAttribute="centerY" id="qdQ-Z3-haZ"/>
+                        <constraint firstAttribute="centerY" secondItem="Kcv-m7-h4x" secondAttribute="centerY" id="y4h-L8-IHs"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="kCU-Q4-4Ic" secondAttribute="centerY" id="OKx-u3-Wx4"/>
+                <constraint firstAttribute="centerX" secondItem="kCU-Q4-4Ic" secondAttribute="centerX" id="xuc-qq-fuE"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outlet property="activityIndicator" destination="80N-h9-GOe" id="6Ef-gt-qMh"/>
+                <outlet property="contentView" destination="kCU-Q4-4Ic" id="dN9-YQ-fGc"/>
+                <outlet property="labelWidth" destination="iMM-50-A4e" id="TrX-R5-qcQ"/>
+                <outlet property="messageLabel" destination="wfi-IJ-82U" id="A4a-7c-546"/>
+                <outlet property="spinnerOverlayImageView" destination="Kcv-m7-h4x" id="hMH-Qq-ssf"/>
+            </connections>
+            <point key="canvasLocation" x="461" y="428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="check" width="22" height="22"/>
+    </resources>
+</document>

@@ -72,6 +72,12 @@
 #define COCOAPODS_VERSION_MINOR_PMUtils_PMOrderedDictionary 1
 #define COCOAPODS_VERSION_PATCH_PMUtils_PMOrderedDictionary 1
 
+// PMUtils/PMProgressHUD
+#define COCOAPODS_POD_AVAILABLE_PMUtils_PMProgressHUD
+#define COCOAPODS_VERSION_MAJOR_PMUtils_PMProgressHUD 1
+#define COCOAPODS_VERSION_MINOR_PMUtils_PMProgressHUD 1
+#define COCOAPODS_VERSION_PATCH_PMUtils_PMProgressHUD 1
+
 // PMUtils/PMProtocolInterceptor
 #define COCOAPODS_POD_AVAILABLE_PMUtils_PMProtocolInterceptor
 #define COCOAPODS_VERSION_MAJOR_PMUtils_PMProtocolInterceptor 1
