@@ -143,6 +143,9 @@
     BOOL change = _delegateRespondsToShouldChangeTextInRange? [_delegateInterceptor.receiver textView:textView shouldChangeTextInRange:range replacementText:text] : YES;
     if (change && text.length && [textView.attributedText isEqualToAttributedString:textView.attributedPlaceholder]) {
         super.attributedText = [[NSAttributedString alloc] initWithString:text attributes:_textAttributes];
+        if (_delegateRespondsToDidChange) {
+            [_delegateInterceptor.receiver textViewDidChange:textView];
+        }
         return NO;
     }
     return change;
