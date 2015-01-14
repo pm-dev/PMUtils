@@ -31,6 +31,15 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self PM_commonPMPlaceholderTextViewInit];
+    }
+    return self;
+}
+
 - (void) PM_commonPMPlaceholderTextViewInit
 {
     _delegateInterceptor = [PMProtocolInterceptor interceptorWithMiddleMan:self
