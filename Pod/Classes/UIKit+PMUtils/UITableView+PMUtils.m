@@ -24,6 +24,15 @@
 
 #import "UITableView+PMUtils.h"
 
+static inline NSMutableDictionary *PMSharedSizingCellsByReuseIdentifier() {
+    static NSMutableDictionary *_sharedSizingCellsByReuseIdentifier = nil;
+    static dispatch_once_t cacheToken;
+    dispatch_once(&cacheToken, ^{
+        _sharedSizingCellsByReuseIdentifier = [@{} mutableCopy];
+    });
+    return _sharedSizingCellsByReuseIdentifier;
+}
+
 @implementation UITableView (PMUtils)
 
 
@@ -35,7 +44,7 @@
 
 - (id) sizingCellWithReuseIdentifier:(NSString *)reuseIdentifier
 {
-    NSMutableDictionary *sharedDictionary = [[self class] PM_sharedSizingCellsByReuseIdentifier];
+    NSMutableDictionary *sharedDictionary = PMSharedSizingCellsByReuseIdentifier();
     UITableViewCell *cell = sharedDictionary[reuseIdentifier];
     if (!cell) {
         cell = [self dequeueReusableCellWithIdentifier:reuseIdentifier];
@@ -64,20 +73,5 @@
 {
     return [self numberOfRowsInSection:section] - 1;
 }
-
-
-#pragma mark - Internal Methods
-
-
-+ (NSMutableDictionary *) PM_sharedSizingCellsByReuseIdentifier
-{
-    static dispatch_once_t cacheToken;
-    static NSMutableDictionary *sharedSizingCellsByReuseIdentifier = nil;
-    dispatch_once(&cacheToken, ^{
-        sharedSizingCellsByReuseIdentifier = [@{} mutableCopy];
-    });
-    return sharedSizingCellsByReuseIdentifier;
-}
-
 
 @end

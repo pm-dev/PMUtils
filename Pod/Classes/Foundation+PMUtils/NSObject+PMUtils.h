@@ -55,4 +55,6 @@
 
 - (NSDictionary *) propertiesByName;
 
++ (Class) classOfProperty:(NSString *)propertyName;
+
 @end

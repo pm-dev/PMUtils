@@ -111,39 +111,56 @@ CGRect PMRectOfContentInBounds(CGRect bounds, UIViewContentMode mode, CGSize con
     return CGRectZero;
 }
 
+static inline NSMutableSet *PMInitializedSharedViewClasses() {
+    static NSMutableSet *_initializedSharedViewClasses = nil;
+    static dispatch_once_t cacheToken;
+    dispatch_once(&cacheToken, ^{
+        _initializedSharedViewClasses = [NSMutableSet set];
+    });
+    return _initializedSharedViewClasses;
+}
+
+static inline NSLock *PMSharedViewLock() {
+    static NSLock *_sharedInstanceLock = nil;
+    static dispatch_once_t cacheToken = 0;
+    dispatch_once(&cacheToken, ^{
+        _sharedInstanceLock = [[NSLock alloc] init];
+    });
+    return _sharedInstanceLock;
+}
 
 @implementation UIView (PMUtils)
 
 
 + (void) setShared:(id)shared
 {
-	NSMutableSet *classes = [self PM_initializedSharedViewClasses];
-	if (shared) {
-		[classes addObject:self];
-	}
-	else {
-		[classes removeObject:self];
-	}
-	[super setShared:shared];
+    NSMutableSet *classes = PMInitializedSharedViewClasses();
+    
+    [PMSharedViewLock() lock];
+    if (shared) {
+        [classes addObject:self];
+    }
+    else {
+        [classes removeObject:self];
+    }
+    [PMSharedViewLock() unlock];
+    
+    [super setShared:shared];
 }
 
 + (instancetype)shared
 {
-	NSMutableSet *classes = [self PM_initializedSharedViewClasses];
-
-	id shared = nil;
-	
-	if ([classes containsObject:self] == NO) {
-		[classes addObject:self];
-		shared = [self viewFromDefaultNibWithOwner:nil];
-		[self setShared:shared];
-	}
-	
-	if (!shared) {
-		shared = [super shared];
-	}
-	
-	return shared;
+    NSMutableSet *classes = PMInitializedSharedViewClasses();
+    
+    [PMSharedViewLock() lock];
+    if ([classes containsObject:self] == NO) {
+        [classes addObject:self];
+        UIView *shared = [self viewFromDefaultNibWithOwner:nil];
+        [super setShared:shared];
+    }
+    [PMSharedViewLock() unlock];
+    
+    return [super shared];
 }
 
 + (NSString *) defaultNibName
@@ -383,18 +400,9 @@ CGRect PMRectOfContentInBounds(CGRect bounds, UIViewContentMode mode, CGSize con
     return self.center.y;
 }
 
+
 #pragma mark - Internal Methods
 
-
-+ (NSMutableSet *) PM_initializedSharedViewClasses
-{
-	static dispatch_once_t cacheToken;
-	static NSMutableSet *initializedSharedViewClasses = nil;
-    dispatch_once(&cacheToken, ^{
-		initializedSharedViewClasses = [NSMutableSet set];
-    });
-	return initializedSharedViewClasses;
-}
 
 - (UIImage *) PM_croppedSnapshot:(CGRect)crop
 {

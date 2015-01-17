@@ -10,31 +10,54 @@
 #import "objc/runtime.h"
 
 
+static inline NSMutableDictionary * PMSharedInstancesByClassName() {
+    static NSMutableDictionary *_sharedInstancesByClassName = nil;
+    static dispatch_once_t cacheToken = 0;
+    dispatch_once(&cacheToken, ^{
+        _sharedInstancesByClassName = [NSMutableDictionary dictionary];
+    });
+    return _sharedInstancesByClassName;
+}
+
+static inline NSLock *PMSharedInstanceLock() {
+    static NSLock *_sharedInstanceLock = nil;
+    static dispatch_once_t cacheToken = 0;
+    dispatch_once(&cacheToken, ^{
+        _sharedInstanceLock = [[NSLock alloc] init];
+    });
+    return _sharedInstanceLock;
+}
+
+
 @implementation NSObject (PMUtils)
+
 
 + (void) setShared:(id)shared
 {
-	NSMutableDictionary *sharedDictionary = [self PM_sharedInstancesDictionary];
-	NSString *className = [self PM_className];
-	if (shared) {
-		NSAssert([shared isKindOfClass:self], @"Parameter shared - %@ - must be an instance of the receiving class %@", shared, self);
-		sharedDictionary[className] = shared;
-	}
-	else {
-		[sharedDictionary removeObjectForKey:className];
-	}
+    NSMutableDictionary *sharedDictionary = PMSharedInstancesByClassName();
+    NSString *className = NSStringFromClass(self);
+    [PMSharedInstanceLock() lock];
+    if (shared) {
+        NSAssert([shared isKindOfClass:self], @"Parameter shared - %@ - must be an instance of the receiving class %@", shared, self);
+        sharedDictionary[className] = shared;
+    }
+    else {
+        [sharedDictionary removeObjectForKey:className];
+    }
+    [PMSharedInstanceLock() unlock];
 }
 
 + (instancetype)shared
 {
-	NSMutableDictionary *sharedDictionary = [self PM_sharedInstancesDictionary];
-	NSString *className = [self PM_className];
+    NSMutableDictionary *sharedDictionary = PMSharedInstancesByClassName();
+    NSString *className = NSStringFromClass(self);
+    [PMSharedInstanceLock() lock];
     id shared = sharedDictionary[className];
-	
-	if (!shared) {
-		shared = [self new];
-		sharedDictionary[className] = shared;
-	}
+    if (!shared) {
+        shared = [self new];
+        sharedDictionary[className] = shared;
+    }
+    [PMSharedInstanceLock() unlock];
     return shared;
 }
 
@@ -73,22 +96,19 @@
     return propertiesByName;
 }
 
-
-#pragma mark - Internal Methods
-
-+ (NSMutableDictionary *) PM_sharedInstancesDictionary
++ (Class) classOfProperty:(NSString *)propertyName
 {
-	static NSMutableDictionary *sharedDictionary = nil;
-	static dispatch_once_t cacheToken = 0;
-	dispatch_once(&cacheToken, ^{
-        sharedDictionary = [NSMutableDictionary dictionary];
-    });
-	return sharedDictionary;
-}
-
-+ (NSString *) PM_className
-{
-	return NSStringFromClass(self);
+    NSAssert([[self propertyNames] containsObject:propertyName],
+             @"Property name <%@> is not a property of class %@", propertyName, NSStringFromClass(self));
+    
+    objc_property_t theProperty = class_getProperty(self, propertyName.UTF8String);
+    NSParameterAssert(theProperty);
+    const char * propertyAttrs = property_getAttributes(theProperty);
+    NSArray *attributeComponents = [[NSString stringWithUTF8String:propertyAttrs] componentsSeparatedByString:@"\""];
+    if (attributeComponents.count == 3) {
+        return NSClassFromString(attributeComponents[1]);
+    }
+    return nil;
 }
 
 @end
