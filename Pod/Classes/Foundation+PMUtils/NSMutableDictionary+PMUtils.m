@@ -30,11 +30,10 @@
 
 - (void) replaceKey:(id<NSCopying>)currentKey withKey:(id<NSCopying>)newKey
 {
-    [self objectForKey:currentKey];
     id value = self[currentKey];
     if (value) {
-        self[newKey] = value;
         [self removeObjectForKey:currentKey];
+        self[newKey] = value;
     }
 }
 
