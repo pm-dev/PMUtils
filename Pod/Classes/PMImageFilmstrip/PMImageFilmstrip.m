@@ -29,9 +29,27 @@
 
 static CGFloat const PMPageControlHeight = 37.0f;
 
+
+@interface PMImageFilmstripCollectionView : UICollectionView
+@end
+
+@implementation PMImageFilmstripCollectionView
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer == self.panGestureRecognizer &&
+        [self hasAncestorOfClass:[UIScrollView class]]) {
+        CGPoint velocity = [self.panGestureRecognizer velocityInView:self.panGestureRecognizer.view];
+        return (3.0f * fabsf(velocity.y) < fabsf(velocity.x));
+    }
+    return [super gestureRecognizerShouldBegin:gestureRecognizer];
+}
+
+@end
+
+
 @interface PMImageFilmstripCell : UICollectionViewCell
 @property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) UITapGestureRecognizer *singleTap;
 @end
 
 @implementation PMImageFilmstripCell
@@ -52,7 +70,6 @@ static CGFloat const PMPageControlHeight = 37.0f;
 
 @interface PMZoomableImageFilmstripCell : PMImageFilmstripCell
 @property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, strong) UITapGestureRecognizer *doubleTap;
 @end
 
 @implementation PMZoomableImageFilmstripCell
@@ -65,14 +82,10 @@ static CGFloat const PMPageControlHeight = 37.0f;
         self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.scrollView.showsHorizontalScrollIndicator = NO;
         self.scrollView.showsVerticalScrollIndicator = NO;
-        self.singleTap = [[UITapGestureRecognizer alloc] init];
-        self.singleTap.numberOfTapsRequired = 1;
-        self.doubleTap = [[UITapGestureRecognizer alloc] init];
-        self.doubleTap.numberOfTapsRequired = 2;
-        [self.scrollView addGestureRecognizer:self.singleTap];
-        [self.scrollView addGestureRecognizer:self.doubleTap];
         [self.scrollView addSubview:self.imageView];
         [self.contentView addSubview:self.scrollView];
+        
+        [self gestureRecognizerShouldBegin:nil];
     }
     return self;
 }
@@ -80,8 +93,6 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (void)dealloc
 {
     self.scrollView.delegate = nil;
-    self.singleTap.delegate = nil;
-    self.doubleTap.delegate = nil;
 }
 
 @end
@@ -90,9 +101,11 @@ static CGFloat const PMPageControlHeight = 37.0f;
 
 @interface PMImageFilmstrip () <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) PMImageFilmstripCollectionView *collectionView;
 @property (nonatomic, strong, readwrite) UIPageControl *pageControl;
 @property (nonatomic, strong) NSIndexPath *currentIndexPath;
+@property (nonatomic, strong, readwrite) UITapGestureRecognizer *singleTap;
+
 - (Class) imageCellClass;
 - (NSString *) imageCellReuseIdentifier;
 
@@ -116,10 +129,13 @@ static CGFloat const PMPageControlHeight = 37.0f;
     return self;
 }
 
-- (void) awakeFromNib
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    [super awakeFromNib];
-    [self PM_commonPMImageFilmstripInit];
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self PM_commonPMImageFilmstripInit];
+    }
+    return self;
 }
 
 - (void) setFrame:(CGRect)frame
@@ -200,22 +216,23 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (NSInteger) collectionView: (UICollectionView *) collectionView
       numberOfItemsInSection: (NSInteger) section
 {
-    NSInteger imageCount = [self.dataSource numberOfImagesInImageFilmstrip:self];
-    self.pageControl.numberOfPages = imageCount;
-    return imageCount;
+    NSInteger images = [self.delegate numberOfImagesInImageFilmstrip:self];
+    self.pageControl.numberOfPages = images;
+    return images;
 }
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     PMImageFilmstripCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[self imageCellReuseIdentifier] forIndexPath:indexPath];
-    [cell.singleTap addTarget:self action:@selector(didSingleTap:)];
     [self.delegate imageFilmstrip:self
       configureFilmstripImageView:cell.imageView
                           atIndex:indexPath.item];
     return cell;
 }
 
+
 #pragma mark - UICollectionViewDelegate
+
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
@@ -268,6 +285,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
     return [PMImageFilmstripCell defaultReuseIdentifier];
 }
 
+
 #pragma mark - Private Methods
 
 
@@ -278,7 +296,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
     _collectionViewFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     _collectionViewFlowLayout.itemSize = self.bounds.size;
     
-    self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:_collectionViewFlowLayout];
+    self.collectionView = [[PMImageFilmstripCollectionView alloc] initWithFrame:self.bounds collectionViewLayout:_collectionViewFlowLayout];
     self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self.collectionView registerClass:[self imageCellClass] forCellWithReuseIdentifier:[self imageCellReuseIdentifier]];
     self.collectionView.dataSource = self;
@@ -295,16 +313,49 @@ static CGFloat const PMPageControlHeight = 37.0f;
     self.pageControl.hidesForSinglePage = YES;
     self.pageControl.enabled = NO;
     [self addSubview:self.pageControl];
+    
+    self.singleTap = [[UITapGestureRecognizer alloc] init];
+    self.singleTap.numberOfTapsRequired = 1;
+    [_singleTap addTarget:self action:@selector(didSingleTap:)];
+    [self addGestureRecognizer:self.singleTap];
 }
 
 @end
 
+
 @implementation PMZoomableImageFilmstrip
 {
+    UITapGestureRecognizer *_doubleTap;
     BOOL _delegateRespondsToWillZoom;
     BOOL _delegateRespondsToDidZoom;
     BOOL _delegateRespondsToDidPinchToClose;
     CGFloat _pinchStartScale;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self PM_commonZoomableImageFilmstripInit];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self PM_commonZoomableImageFilmstripInit];
+    }
+    return self;
+}
+
+- (void) PM_commonZoomableImageFilmstripInit
+{
+    _doubleTap = [[UITapGestureRecognizer alloc] init];
+    _doubleTap.numberOfTapsRequired = 2;
+    [_doubleTap addTarget:self action:@selector(didDoubleTap:)];
+    [self addGestureRecognizer:_doubleTap];
 }
 
 - (void)setDelegate:(id<PMZoomableImageFilmstripDelegate>)delegate
@@ -314,6 +365,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
     _delegateRespondsToDidZoom = [delegate respondsToSelector:@selector(imageFilmstrip:didZoomImageView:toScale:)];
     _delegateRespondsToDidPinchToClose = [delegate respondsToSelector:@selector(imageFilmstrip:didPinchToCloseImageView:)];
 }
+
 
 - (Class)imageCellClass
 {
@@ -331,15 +383,16 @@ static CGFloat const PMPageControlHeight = 37.0f;
     cell.scrollView.zoomScale = 1.0f;
     cell.scrollView.maximumZoomScale = self.maximumZoomScale;
     cell.scrollView.delegate = self;
-    [cell.doubleTap addTarget:self action:@selector(didDoubleTap:)];
     [cell.scrollView.pinchGestureRecognizer addTarget:self action:@selector(handlePinch:)];
     return cell;
 }
 
 - (void) didDoubleTap:(UITapGestureRecognizer *)tap
 {
-    UIScrollView *scrollView = (UIScrollView *)tap.view;
-    [scrollView setZoomScale:(scrollView.zoomScale == 1.0f)? scrollView.maximumZoomScale : 1.0f animated:YES];
+    UICollectionView *collectionView = (UICollectionView *)tap.view;
+    NSIndexPath *indexPath = [collectionView indexPathNearestToBoundsCenter];
+    PMZoomableImageFilmstripCell *cell = (PMZoomableImageFilmstripCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    [cell.scrollView setZoomScale:(cell.scrollView.zoomScale == 1.0f)? cell.scrollView.maximumZoomScale : 1.0f animated:YES];
 }
 
 - (void) handlePinch:(UIPinchGestureRecognizer *)pinch

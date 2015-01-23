@@ -118,6 +118,8 @@
  */
 - (BOOL) containsEmoji;
 
+- (NSString *) stringByCapitalizingFirstLetter;
+
 /**
  *  If the receiver contains one or more sequential underscores, the first character following the underscore(s)
  *  is capitalized and the underscores are removed.

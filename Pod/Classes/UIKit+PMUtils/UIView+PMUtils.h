@@ -23,7 +23,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NSObject+PMUtils.h"
+
 
 typedef NS_OPTIONS(NSUInteger, PMDirection) {
     PMDirectionVertical = 1 << 0,
@@ -77,6 +77,8 @@ extern CGRect PMRectOfContentInBounds(CGRect bounds, UIViewContentMode mode, CGS
 - (void) removeSubviews;
 
 - (void) cancelInteraction;
+
+- (BOOL) hasAncestorOfClass:(Class)ancestorClass;
 
 - (UIImage *) snapshot;
 

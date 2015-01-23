@@ -115,6 +115,15 @@
     return numberOfMatches != 0;
 }
 
+- (NSString *) stringByCapitalizingFirstLetter
+{
+    if (self.length) {
+        NSString *firstLetter = [self substringToIndex:1];
+        return [self stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[firstLetter uppercaseString]];
+    }
+    return self;
+}
+
 - (NSString *) camelCaseFromUnderscores
 {
     NSArray *components = [self componentsSeparatedByString:@"_"];

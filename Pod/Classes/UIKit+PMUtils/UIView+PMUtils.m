@@ -27,6 +27,7 @@
 #import "UIView+PMUtils.h"
 #import "UIImage+PMUtils.h"
 #import "UIGestureRecognizer+PMUtils.h"
+#import "NSObject+PMUtils.h"
 
 CGRect PMRectOfContentInBounds(CGRect bounds, UIViewContentMode mode, CGSize contentSize)
 {
@@ -222,6 +223,18 @@ static inline NSLock *PMSharedViewLock() {
     for (UIGestureRecognizer *gestureRecognizer in self.gestureRecognizers) {
         [gestureRecognizer cancel];
     }
+}
+
+- (BOOL) hasAncestorOfClass:(Class)ancestorClass
+{
+    NSParameterAssert([ancestorClass isSubclassOfClass:[UIView class]]);
+    if (self.superview) {
+        if ([self.superview isKindOfClass:ancestorClass]) {
+            return YES;
+        }
+        return [self.superview hasAncestorOfClass:ancestorClass];
+    }
+    return NO;
 }
 
 - (UIImage *) snapshot

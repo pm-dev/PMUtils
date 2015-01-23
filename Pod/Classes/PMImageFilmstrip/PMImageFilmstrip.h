@@ -30,6 +30,15 @@
 @required
 
 /**
+ *  Asks the data source for the number of images in the image filmstrip. (required)
+ *
+ *  @param imageFilmstrip An object representing the image filmpstrip requesting this information.
+ *
+ *  @return The number of images in the image filmstrip.
+ */
+- (NSInteger) numberOfImagesInImageFilmstrip:(PMImageFilmstrip *)imageFilmstrip;
+
+/**
  *  Tells the delegate to configure the UIImageView at a given index. (required)
  *
  *  @param imageFilmstrip An object representing the image filmstrip.
@@ -66,20 +75,6 @@
 
 @end
 
-@protocol PMImageFilmstripDataSource <NSObject>
-
-@required
-
-/**
- *  Asks the data source for the number of images in the image filmstrip. (required)
- *
- *  @param imageFilmstrip An object representing the image filmpstrip requesting this information.
- *
- *  @return The number of images in the image filmstrip.
- */
-- (NSInteger) numberOfImagesInImageFilmstrip:(PMImageFilmstrip *)imageFilmstrip;
-
-@end
 
 @interface PMImageFilmstrip : UIView
 
@@ -90,13 +85,9 @@
  */
 @property (nonatomic, weak) id<PMImageFilmstripDelegate> delegate;
 
-/**
- *  The object that provides the data for the image filmstrip. The data source must adopt
- *	the PMImageFilmstripDataSource protocol. The image filmstrip maintains a weak reference to the data source object.
- */
-@property (nonatomic, weak) id<PMImageFilmstripDataSource> dataSource;
-
 @property (nonatomic, strong, readonly) UIPageControl *pageControl;
+
+@property (nonatomic, strong, readonly) UITapGestureRecognizer *singleTap;
 
 - (void) reloadImages;
 
