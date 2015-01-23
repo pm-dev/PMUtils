@@ -31,7 +31,7 @@
 #import "PMGradientView.h"
 #import "PMProgressHUD.h"
 
-@interface PMViewController () <PMImageFilmstripDataSource, PMZoomableImageFilmstripDelegate>
+@interface PMViewController () <PMZoomableImageFilmstripDelegate>
 @end
 
 @implementation PMViewController
@@ -112,7 +112,6 @@
 	
 	PMZoomableImageFilmstrip *filmstrip = [[PMZoomableImageFilmstrip alloc] initWithFrame:self.view.bounds];
 	filmstrip.delegate = self;
-	filmstrip.dataSource = self;
     filmstrip.maximumZoomScale = 3.0f;
 	filmstrip.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:filmstrip];
