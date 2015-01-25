@@ -40,6 +40,8 @@
 
 - (void) scrollToBottomAnimated:(BOOL)animated;
 
-- (NSInteger) lastRowOfSection:(NSInteger)section;
+- (BOOL) isLastRowInSection:(NSIndexPath *)indexPath;
+
+- (BOOL) isLastSection:(NSInteger)index;
 
 @end

@@ -69,9 +69,15 @@ static inline NSMutableDictionary *PMSharedSizingCellsByReuseIdentifier() {
     }
 }
 
-- (NSInteger) lastRowOfSection:(NSInteger)section
+- (BOOL) isLastRowInSection:(NSIndexPath *)indexPath
 {
-    return [self numberOfRowsInSection:section] - 1;
+    return [self numberOfRowsInSection:indexPath.section] == indexPath.row + 1;
 }
+
+- (BOOL) isLastSection:(NSInteger)index
+{
+    return self.numberOfSections == index + 1;
+}
+
 
 @end
