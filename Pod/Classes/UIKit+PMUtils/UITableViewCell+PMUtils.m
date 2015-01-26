@@ -17,7 +17,6 @@
 
 - (CGSize) sizeThatFitsConfiguredCell
 {
-    [self setNeedsLayout];
     [self layoutIfNeeded];
     return [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
 }
