@@ -15,10 +15,11 @@
     return NSStringFromClass(self);
 }
 
-- (CGSize) sizeThatFitsConfiguredCell
+- (CGFloat) heightFittinghWidth:(CGFloat)width
 {
+    self.bounds = CGRectMake(0.0f, 0.0f, width, UILayoutFittingExpandedSize.height);
     [self layoutIfNeeded];
-    return [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
 }
 
 - (UITableView *) tableView
