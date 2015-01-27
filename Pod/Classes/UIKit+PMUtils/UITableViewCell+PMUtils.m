@@ -15,9 +15,10 @@
     return NSStringFromClass(self);
 }
 
-- (CGFloat) heightFittinghWidth:(CGFloat)width
+- (CGFloat) heightFittingWidth:(CGFloat)width
 {
-    self.bounds = CGRectMake(0.0f, 0.0f, width, UILayoutFittingExpandedSize.height);
+    self.bounds = CGRectMake(0.0f, 0.0f, width, CGRectGetHeight(self.bounds));
+    [self updateConstraintsIfNeeded];
     [self layoutIfNeeded];
     return [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
 }

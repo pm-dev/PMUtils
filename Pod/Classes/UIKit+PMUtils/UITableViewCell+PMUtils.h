@@ -17,7 +17,7 @@
  */
 + (NSString *) defaultReuseIdentifier;
 
-- (CGFloat) heightFittinghWidth:(CGFloat)width;
+- (CGFloat) heightFittingWidth:(CGFloat)width;
 
 - (UITableView *) tableView;
 
