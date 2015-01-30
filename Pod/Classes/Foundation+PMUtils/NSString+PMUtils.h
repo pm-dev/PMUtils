@@ -29,15 +29,17 @@
 
 - (NSString *) stringByRemovingCharactersInSet:(NSCharacterSet *)characterSet;
 
-- (NSNumber *) number;
+- (NSNumber *) currencyNumber;
+
+- (NSNumber *) decimalNumber;
 
 /**
- *  Returns a new string made from the receiver by replacing all characters not in the specified set 
- *  with percent encoded characters allowed in a query URL component. UTF-8 encoding is used to determine the correct percent encoded characters. 
+ *  Returns a new string made from the receiver by replacing all characters not in the specified set
+ *  with percent encoded characters allowed in a query URL component. UTF-8 encoding is used to determine the correct percent encoded characters.
  *  Entire URL strings cannot be percent-encoded. This method is intended to percent-encode an URL query, NOT the entire URL string.
- *  The query component of a URL is the component immediately following a question mark (?). 
+ *  The query component of a URL is the component immediately following a question mark (?).
  *  For example, in the URL http://www.example.com/index.php?key1=value1#jumpLink, the query component is key1=value1.
- *  
+ *
  *  @return The encoded string or nil if the transformation is not possible.
  */
 - (NSString *) encodedURLQuery;
@@ -57,8 +59,8 @@
 - (NSString *)md5Hash;
 
 /**
- *  Create a Base-64 encoded NSString from the receiver's contents using the given options. By default, no line endings are inserted. 
- *  If you specify one of the line length options (NSDataBase64Encoding64CharacterLineLength or NSDataBase64Encoding76CharacterLineLength) 
+ *  Create a Base-64 encoded NSString from the receiver's contents using the given options. By default, no line endings are inserted.
+ *  If you specify one of the line length options (NSDataBase64Encoding64CharacterLineLength or NSDataBase64Encoding76CharacterLineLength)
  *  but don’t specify the kind of line ending to insert, the default line ending is Carriage Return + Line Feed.
  *
  *  @param options A mask that specifies options for Base-64 encoding the data. Possible values are given in “NSDataBase64EncodingOptions”.
@@ -91,7 +93,7 @@
  *
  *  @param otherVersion A string of dot separated integers to compare with the receiver. Must not be nil.
  *
- *  @return Returns an NSComparisonResult value that indicates the lexical ordering of the receiver and otherVersion. 
+ *  @return Returns an NSComparisonResult value that indicates the lexical ordering of the receiver and otherVersion.
  *  NSOrderedAscending if the receiver precedes otherVersion, NSOrderedSame if the receiver and otherVersion are equivalent in lexical value,
  *  and NSOrderedDescending if the receiver follows otherVersion.
  */
@@ -120,6 +122,8 @@
 
 - (NSString *) stringByCapitalizingFirstLetter;
 
+- (NSString *) stringByLowercasingFirstLetter;
+
 /**
  *  If the receiver contains one or more sequential underscores, the first character following the underscore(s)
  *  is capitalized and the underscores are removed.
@@ -142,7 +146,7 @@
 - (NSString *) underscoresFromCamelCase;
 
 
- /**
+/**
  *  Returns a Foundation object from the receiver. The string must be formatted as valid JSON.
  *
  *  @param options  Options for reading the JSON data and creating the Foundation objects.

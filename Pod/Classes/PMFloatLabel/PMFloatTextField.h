@@ -11,9 +11,12 @@
 @class PMFloatTextField;
 @protocol PMFloatTextFieldDelegate <UITextFieldDelegate>
 
+- (BOOL) floatTextField:(PMFloatTextField *)floatTextField shouldShowFloatLabelWithText:(BOOL)isText editing:(BOOL)isEditing;
+
 @optional
-- (NSDictionary *) floatTextField:(PMFloatTextField *)floatTextField
-     attributesForEditingFloatLabel:(BOOL)editing;
+
+- (CGFloat) floatTextField:(PMFloatTextField *)floatTextField floatLabelVerticalSpacing:(BOOL)isEditing;
+- (NSAttributedString *) floatTextField:(PMFloatTextField *)floatTextField floatLabelAttributedString:(BOOL)isEditing;
 
 @end
 

@@ -142,18 +142,14 @@ static CGFloat const PMPageControlHeight = 37.0f;
 {
     _collectionViewFlowLayout.itemSize = frame.size;
     super.frame = frame;
-    NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
-    UICollectionViewLayoutAttributes *attributes = [self.collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath];
-    [self.collectionView setContentOffset:attributes.frame.origin];
+    [self PM_updateContentOffset];
 }
 
 - (void) setBounds:(CGRect)bounds
 {
     _collectionViewFlowLayout.itemSize = bounds.size;
     super.bounds = bounds;
-    NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
-    UICollectionViewLayoutAttributes *attributes = [self.collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath];
-    [self.collectionView setContentOffset:attributes.frame.origin];
+    [self PM_updateContentOffset];
 }
 
 - (void) setDelegate:(id<PMImageFilmstripDelegate>)delegate
@@ -320,6 +316,15 @@ static CGFloat const PMPageControlHeight = 37.0f;
     [self addGestureRecognizer:self.singleTap];
 }
 
+- (void) PM_updateContentOffset
+{
+    NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
+    if (indexPath) {
+        UICollectionViewLayoutAttributes *attributes = [self.collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath];
+        [self.collectionView setContentOffset:attributes.frame.origin];
+    }
+}
+
 @end
 
 
@@ -389,9 +394,8 @@ static CGFloat const PMPageControlHeight = 37.0f;
 
 - (void) didDoubleTap:(UITapGestureRecognizer *)tap
 {
-    UICollectionView *collectionView = (UICollectionView *)tap.view;
-    NSIndexPath *indexPath = [collectionView indexPathNearestToBoundsCenter];
-    PMZoomableImageFilmstripCell *cell = (PMZoomableImageFilmstripCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
+    PMZoomableImageFilmstripCell *cell = (PMZoomableImageFilmstripCell*)[self.collectionView cellForItemAtIndexPath:indexPath];
     [cell.scrollView setZoomScale:(cell.scrollView.zoomScale == 1.0f)? cell.scrollView.maximumZoomScale : 1.0f animated:YES];
 }
 
