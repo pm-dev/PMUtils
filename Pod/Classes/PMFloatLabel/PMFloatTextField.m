@@ -49,7 +49,6 @@
     [self setDelegate:self.delegate];
     self.floatingLabel = [[UILabel alloc] init];
     self.floatingLabel.alpha = 0.0f;
-    self.floatingLabel.hidden = YES;
     [self addSubview:self.floatingLabel];
     self.clipsToBounds = NO;
 }
@@ -80,14 +79,25 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    if (self.floatingLabel.hidden == NO) {
-        [self.floatingLabel sizeToFit];
-        CGFloat lineHeight = [self.font lineHeight];
-        CGFloat textYOrigin = floorf((self.bounds.size.height - lineHeight) / 2.0f);
-        CGRect frame = self.floatingLabel.frame;
-        frame.origin.y = textYOrigin - _verticalSpacing - frame.size.height;
-        self.floatingLabel.frame = frame;
+    [self.floatingLabel sizeToFit];
+    CGFloat lineHeight = [self.font lineHeight];
+    CGFloat textYOrigin = floorf((self.bounds.size.height - lineHeight) / 2.0f);
+    CGRect frame = self.floatingLabel.frame;
+    switch (self.textAlignment) {
+        case NSTextAlignmentRight:
+            frame.origin.x = self.bounds.size.width - frame.size.width;
+            break;
+        case NSTextAlignmentCenter:
+            frame.origin.x = floorf((self.bounds.size.width - frame.size.width) / 2.0f);
+            break;
+        case NSTextAlignmentLeft:
+        case NSTextAlignmentJustified:
+        case NSTextAlignmentNatural:
+            frame.origin.x = 0.0f;
+            break;
     }
+    frame.origin.y = textYOrigin - _verticalSpacing - frame.size.height;
+    self.floatingLabel.frame = frame;
 }
 
 
@@ -144,8 +154,10 @@
         else {
             self.floatingLabel.text = self.attributedPlaceholder.string?: self.placeholder;
         }
-        if (self.floatingLabel.hidden) {
-            self.floatingLabel.hidden = NO;
+        
+        if (self.floatingLabel.alpha != 1.0f) {
+            [self setNeedsLayout];
+            [self layoutIfNeeded]; // Make sure floatLabel has the correct frame.
             self.floatingLabel.transform = CGAffineTransformMakeTranslation(0.0, self.floatingLabel.frame.size.height/3.0f);
             [UIView animateWithDuration:0.4
                                   delay:0.0
@@ -157,15 +169,13 @@
         }
     }
     else {
-        if (self.floatingLabel.hidden == NO) {
+        if (self.floatingLabel.alpha != 0.0f) {
             [UIView animateWithDuration:0.4
                                   delay:0.0
                                 options:UIViewAnimationOptionCurveEaseOut
                              animations:^{
                                  self.floatingLabel.alpha = 0.0f;
-                             } completion:^(BOOL finished) {
-                                 self.floatingLabel.hidden = YES;
-                             }];
+                             } completion:nil];
         }
     }
 }

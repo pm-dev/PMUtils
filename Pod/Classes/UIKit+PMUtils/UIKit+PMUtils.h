@@ -17,6 +17,7 @@
 #import "UIImage+PMUtils.h"
 #import "UIImageView+PMUtils.h"
 #import "UINavigationController+PMUtils.h"
+#import "UIResponder+PMUtils.h"
 #import "UIScreen+PMUtils.h"
 #import "UIScrollView+PMUtils.h"
 #import "UITableView+PMUtils.h"
