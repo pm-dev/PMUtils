@@ -29,9 +29,6 @@
 
 - (NSString *) stringByRemovingCharactersInSet:(NSCharacterSet *)characterSet;
 
-- (NSNumber *) currencyNumber;
-
-- (NSNumber *) decimalNumber;
 
 /**
  *  Returns a new string made from the receiver by replacing all characters not in the specified set
