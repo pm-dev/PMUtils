@@ -83,6 +83,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
         self.scrollView.showsHorizontalScrollIndicator = NO;
         self.scrollView.showsVerticalScrollIndicator = NO;
         [self.scrollView addSubview:self.imageView];
+        self.scrollView.scrollsToTop = NO;
         [self.contentView addSubview:self.scrollView];
     }
     return self;
