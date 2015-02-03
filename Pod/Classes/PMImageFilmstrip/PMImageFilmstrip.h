@@ -101,9 +101,9 @@
 
 @optional
 
-- (void) imageFilmstrip:(PMZoomableImageFilmstrip *)imageFilmstrip didPinchToCloseImageView:(UIImageView *)imageView;
-- (void) imageFilmstrip:(PMZoomableImageFilmstrip *)imageFilmstrip willZoomImageView:(UIImageView *)imageView;
-- (void) imageFilmstrip:(PMZoomableImageFilmstrip *)imageFilmstrip didZoomImageView:(UIImageView *)imageView toScale:(CGFloat)scale;
+- (void) imageFilmstrip:(PMZoomableImageFilmstrip *)imageFilmstrip didPinchToCloseImageView:(UIImageView *)imageView atIndex:(NSUInteger)index;
+- (void) imageFilmstrip:(PMZoomableImageFilmstrip *)imageFilmstrip willZoomImageView:(UIImageView *)imageView atIndex:(NSUInteger)index;
+- (void) imageFilmstrip:(PMZoomableImageFilmstrip *)imageFilmstrip didZoomImageView:(UIImageView *)imageView atIndex:(NSUInteger)index toScale:(CGFloat)scale;
 
 @end
 

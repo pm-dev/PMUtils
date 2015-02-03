@@ -84,8 +84,6 @@ static CGFloat const PMPageControlHeight = 37.0f;
         self.scrollView.showsVerticalScrollIndicator = NO;
         [self.scrollView addSubview:self.imageView];
         [self.contentView addSubview:self.scrollView];
-        
-        [self gestureRecognizerShouldBegin:nil];
     }
     return self;
 }
@@ -362,14 +360,15 @@ static CGFloat const PMPageControlHeight = 37.0f;
     _doubleTap.numberOfTapsRequired = 2;
     [_doubleTap addTarget:self action:@selector(didDoubleTap:)];
     [self addGestureRecognizer:_doubleTap];
+    [self.singleTap requireGestureRecognizerToFail:_doubleTap];
 }
 
 - (void)setDelegate:(id<PMZoomableImageFilmstripDelegate>)delegate
 {
     [super setDelegate:delegate];
-    _delegateRespondsToWillZoom = [delegate respondsToSelector:@selector(imageFilmstrip:willZoomImageView:)];
-    _delegateRespondsToDidZoom = [delegate respondsToSelector:@selector(imageFilmstrip:didZoomImageView:toScale:)];
-    _delegateRespondsToDidPinchToClose = [delegate respondsToSelector:@selector(imageFilmstrip:didPinchToCloseImageView:)];
+    _delegateRespondsToWillZoom = [delegate respondsToSelector:@selector(imageFilmstrip:willZoomImageView:atIndex:)];
+    _delegateRespondsToDidZoom = [delegate respondsToSelector:@selector(imageFilmstrip:didZoomImageView:atIndex:toScale:)];
+    _delegateRespondsToDidPinchToClose = [delegate respondsToSelector:@selector(imageFilmstrip:didPinchToCloseImageView:atIndex:)];
 }
 
 
@@ -386,9 +385,9 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (PMImageFilmstripCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     PMZoomableImageFilmstripCell *cell = (PMZoomableImageFilmstripCell *)[super collectionView:collectionView cellForItemAtIndexPath:indexPath];
+    cell.scrollView.delegate = self;
     cell.scrollView.zoomScale = 1.0f;
     cell.scrollView.maximumZoomScale = self.maximumZoomScale;
-    cell.scrollView.delegate = self;
     [cell.scrollView.pinchGestureRecognizer addTarget:self action:@selector(handlePinch:)];
     return cell;
 }
@@ -414,7 +413,8 @@ static CGFloat const PMPageControlHeight = 37.0f;
             UIScrollView *scrollView = (UIScrollView *)pinch.view;
             if (_pinchStartScale == 1.0f && scrollView.zoomScale <= 1.0f && _delegateRespondsToDidPinchToClose) {
                 NSParameterAssert([scrollView.subviews.firstObject isKindOfClass:[UIImageView class]]);
-                [self.delegate imageFilmstrip:self didPinchToCloseImageView:scrollView.subviews.firstObject];
+                NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
+                [self.delegate imageFilmstrip:self didPinchToCloseImageView:scrollView.subviews.firstObject atIndex:indexPath.item];
             }
             break;
         }
@@ -431,7 +431,8 @@ static CGFloat const PMPageControlHeight = 37.0f;
 {
     self.collectionView.scrollEnabled = NO;
     if (_delegateRespondsToWillZoom) {
-        [self.delegate imageFilmstrip:self willZoomImageView:view];
+        NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
+        [self.delegate imageFilmstrip:self willZoomImageView:view atIndex:indexPath.item];
     }
 }
 
@@ -439,7 +440,8 @@ static CGFloat const PMPageControlHeight = 37.0f;
 {
     self.collectionView.scrollEnabled = (scale == 1.0f);
     if (_delegateRespondsToDidZoom) {
-        [self.delegate imageFilmstrip:self didZoomImageView:view toScale:scale];
+        NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
+        [self.delegate imageFilmstrip:self didZoomImageView:view atIndex:indexPath.item toScale:scale];
     }
 }
 
