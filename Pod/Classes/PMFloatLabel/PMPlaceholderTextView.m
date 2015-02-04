@@ -72,7 +72,12 @@
 
 - (void)setText:(NSString *)text
 {
-    super.attributedText = [[NSAttributedString alloc] initWithString:text attributes:_textAttributes];
+    if (text.length) {
+        super.attributedText = [[NSAttributedString alloc] initWithString:text attributes:_textAttributes];
+    }
+    else {
+        super.attributedText = _attributedPlaceholder;
+    }
 }
 
 - (void)setTextAlignment:(NSTextAlignment)textAlignment
