@@ -36,6 +36,14 @@ static inline NSMutableDictionary *PMSharedSizingCellsByReuseIdentifier() {
 @implementation UITableView (PMUtils)
 
 
+- (void) reloadCell:(UITableViewCell *)cell withRowAnimation:(UITableViewRowAnimation)animation
+{
+    NSIndexPath *indexPath = [self indexPathForCell:cell];
+    if (indexPath) {
+        [self reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:animation];
+    }
+}
+
 - (void) reloadVisibleRowsWithRowAnimation:(UITableViewRowAnimation)animation
 {
 	NSArray *visibleRows = [self indexPathsForVisibleRows];
