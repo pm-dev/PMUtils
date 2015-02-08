@@ -24,15 +24,6 @@
 
 #import "UITableView+PMUtils.h"
 
-static inline NSMutableDictionary *PMSharedSizingCellsByReuseIdentifier() {
-    static NSMutableDictionary *_sharedSizingCellsByReuseIdentifier = nil;
-    static dispatch_once_t cacheToken;
-    dispatch_once(&cacheToken, ^{
-        _sharedSizingCellsByReuseIdentifier = [@{} mutableCopy];
-    });
-    return _sharedSizingCellsByReuseIdentifier;
-}
-
 @implementation UITableView (PMUtils)
 
 
@@ -50,16 +41,6 @@ static inline NSMutableDictionary *PMSharedSizingCellsByReuseIdentifier() {
 	[self reloadRowsAtIndexPaths:visibleRows withRowAnimation:animation];
 }
 
-- (id) sizingCellWithReuseIdentifier:(NSString *)reuseIdentifier
-{
-    NSMutableDictionary *sharedDictionary = PMSharedSizingCellsByReuseIdentifier();
-    UITableViewCell *cell = sharedDictionary[reuseIdentifier];
-    if (!cell) {
-        cell = [self dequeueReusableCellWithIdentifier:reuseIdentifier];
-        sharedDictionary[reuseIdentifier] = cell;
-    }
-    return cell;
-}
 
 - (void) scrollToTopAnimated:(BOOL)animated
 {

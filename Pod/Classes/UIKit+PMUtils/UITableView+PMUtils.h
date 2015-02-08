@@ -35,9 +35,6 @@
  */
 - (void) reloadVisibleRowsWithRowAnimation:(UITableViewRowAnimation)animation;
 
-
-- (id) sizingCellWithReuseIdentifier:(NSString *)reuseIdentifier;
-
 - (void) scrollToTopAnimated:(BOOL)animated;
 
 - (void) scrollToBottomAnimated:(BOOL)animated;

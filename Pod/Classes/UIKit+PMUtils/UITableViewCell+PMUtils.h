@@ -17,6 +17,8 @@
  */
 + (NSString *) defaultReuseIdentifier;
 
++ (instancetype) sizingCellWithReuseIdentifier:(NSString *)reuseIdentifier;
+
 - (CGFloat) heightFittingWidth:(CGFloat)width;
 
 - (UITableView *) tableView;

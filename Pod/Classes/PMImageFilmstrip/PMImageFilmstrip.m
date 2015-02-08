@@ -151,6 +151,11 @@ static CGFloat const PMPageControlHeight = 37.0f;
     [self PM_updateContentOffset];
 }
 
+- (CGSize)intrinsicContentSize
+{
+    return _collectionViewFlowLayout.itemSize;
+}
+
 - (void) setDelegate:(id<PMImageFilmstripDelegate>)delegate
 {
     _delegate = delegate;
