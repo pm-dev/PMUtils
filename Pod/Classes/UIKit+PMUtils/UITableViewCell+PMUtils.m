@@ -27,6 +27,9 @@ static inline NSMutableDictionary *PMSharedSizingCellsByReuseIdentifier() {
     UITableViewCell *cell = sharedDictionary[reuseIdentifier];
     if (!cell) {
         cell = [self viewFromDefaultNibWithOwner:nil];
+        if (!cell) {
+            cell = [self new];
+        }
         sharedDictionary[reuseIdentifier] = cell;
     }
     return cell;
