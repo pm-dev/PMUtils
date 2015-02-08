@@ -7,6 +7,7 @@
 //
 
 #import "UITableViewCell+PMUtils.h"
+#import "UIView+PMUtils.h"
 
 @implementation UITableViewCell (PMUtils)
 
@@ -25,7 +26,7 @@ static inline NSMutableDictionary *PMSharedSizingCellsByReuseIdentifier() {
     NSMutableDictionary *sharedDictionary = PMSharedSizingCellsByReuseIdentifier();
     UITableViewCell *cell = sharedDictionary[reuseIdentifier];
     if (!cell) {
-        cell = [[self new] dequeueReusableCellWithIdentifier:reuseIdentifier];
+        cell = [self viewFromDefaultNibWithOwner:nil];
         sharedDictionary[reuseIdentifier] = cell;
     }
     return cell;
