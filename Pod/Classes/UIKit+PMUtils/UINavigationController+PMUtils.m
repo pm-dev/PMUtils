@@ -60,7 +60,7 @@
     NSUInteger index = [self.viewControllers indexOfObject:viewController];
     if (index != NSNotFound && index < self.viewControllers.count - 1) {
         if (completion) {
-            [self PM_addNavigationControllerDelegate:completion]; completion();
+            [self PM_addNavigationControllerDelegate:completion];
         }
         return [self popToViewController:viewController animated:animated];
     }
