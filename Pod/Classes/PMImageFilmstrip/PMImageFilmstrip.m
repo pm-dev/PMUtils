@@ -140,6 +140,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (void) setFrame:(CGRect)frame
 {
     _collectionViewFlowLayout.itemSize = frame.size;
+    [self invalidateIntrinsicContentSize];
     super.frame = frame;
     [self PM_updateContentOffset];
 }
@@ -147,6 +148,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (void) setBounds:(CGRect)bounds
 {
     _collectionViewFlowLayout.itemSize = bounds.size;
+    [self invalidateIntrinsicContentSize];
     super.bounds = bounds;
     [self PM_updateContentOffset];
 }
