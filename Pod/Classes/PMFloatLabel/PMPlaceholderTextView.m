@@ -64,7 +64,7 @@
 
 - (void)setAttributedText:(NSAttributedString *)attributedText
 {
-    super.attributedText = attributedText;
+    super.attributedText = attributedText?: self.attributedPlaceholder;
     if (attributedText.length) {
         _textAttributes = [[attributedText attributesAtIndex:0 effectiveRange:NULL] mutableCopy];
     }
