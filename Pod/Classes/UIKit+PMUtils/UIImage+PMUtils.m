@@ -164,25 +164,7 @@ static NSUInteger const bytesPerPixel = 4;
 - (UIImage *) crop:(CGRect)rect
 {
     NSAssert(self.CGImage, @"-[UIImage crop:] only works on UIImages backed by a CGImage");
-    CGAffineTransform rectTransform;
-    switch (self.imageOrientation)
-    {
-        case UIImageOrientationLeft:
-            rectTransform = CGAffineTransformTranslate(CGAffineTransformMakeRotation(M_PI_2), 0, -self.size.height);
-            break;
-        case UIImageOrientationRight:
-            rectTransform = CGAffineTransformTranslate(CGAffineTransformMakeRotation(-M_PI_2), -self.size.width, 0);
-            break;
-        case UIImageOrientationDown:
-            rectTransform = CGAffineTransformTranslate(CGAffineTransformMakeRotation(-M_PI), -self.size.width, -self.size.height);
-            break;
-        default:
-            rectTransform = CGAffineTransformIdentity;
-            break;
-    }
-    rectTransform = CGAffineTransformScale(rectTransform, self.scale, self.scale);
-    
-    CGImageRef imageRef = CGImageCreateWithImageInRect(self.CGImage, CGRectApplyAffineTransform(rect, rectTransform));
+    CGImageRef imageRef = CGImageCreateWithImageInRect(self.CGImage, rect);
     UIImage *result = [UIImage imageWithCGImage:imageRef scale:self.scale orientation:self.imageOrientation];
     CGImageRelease(imageRef);
     return result;
@@ -191,34 +173,25 @@ static NSUInteger const bytesPerPixel = 4;
 - (UIImage *) drawnImage
 {
 	UIGraphicsBeginImageContextWithOptions(self.size, YES, self.scale);
-	
 	[self drawAtPoint:CGPointZero];
 	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-	
 	UIGraphicsEndImageContext();
-	
 	return image;
 }
 
 + (UIImage *) cachedImageWithData:(NSData *)data
 {
 	CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef) data, NULL);
-
 	UIImage *image = [self imageFromSource:source];
-		
 	CFRelease(source);
-	
 	return image? : [UIImage imageWithData:data];
 }
 
 + (UIImage *) cachedImageWithFile:(NSURL *)URL
 {
 	CGImageSourceRef source = CGImageSourceCreateWithURL((__bridge CFURLRef) URL, NULL);
-	
 	UIImage *image = [self imageFromSource:source];
-
 	CFRelease(source);
-	
 	return image? : [UIImage imageWithContentsOfFile:URL.path];
 }
 
@@ -228,10 +201,9 @@ static NSUInteger const bytesPerPixel = 4;
 		static NSDictionary *cacheOptionsDict = nil;
 		static dispatch_once_t cacheOptionsToken = 0;
 		dispatch_once(&cacheOptionsToken, ^{
-			cacheOptionsDict = [NSDictionary dictionaryWithObject:@(YES)
-														   forKey:(id)kCGImageSourceShouldCache];
+            cacheOptionsDict = @{(id)kCGImageSourceShouldCache: @(YES)};
 		});
-		
+        
 		CGImageRef cgImage = CGImageSourceCreateImageAtIndex(source, 0, (__bridge CFDictionaryRef)cacheOptionsDict);
 		UIImage *image = [UIImage imageWithCGImage:cgImage scale:[[UIScreen mainScreen] scale] orientation:UIImageOrientationUp];
 		CGImageRelease(cgImage);

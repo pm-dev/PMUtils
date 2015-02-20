@@ -68,49 +68,46 @@ CGRect PMRectOfContentInBounds(CGRect bounds, UIViewContentMode mode, CGSize con
             
         case UIViewContentModeScaleAspectFill:
         {
-            CGFloat contentRatio = contentSize.width / contentSize.height;
-            CGFloat boundsRatio = bounds.size.width / bounds.size.height;
+            CGFloat widthScale = bounds.size.width / contentSize.width;
+            CGFloat heightScale = bounds.size.height / contentSize.height;
             
-            if (contentRatio < boundsRatio) { // Fill to width
+            if (widthScale > heightScale) { // Fill to width
                 
-                CGFloat scale = bounds.size.width / contentSize.width;
-                CGFloat height = scale * contentSize.height;
+                CGFloat height = widthScale * contentSize.height;
                 CGFloat y = (bounds.size.height - height) / 2.0f;
                 return CGRectMake(0.0f, y, bounds.size.width, height);
             }
-            else if (contentRatio > boundsRatio) { // Fill to height
+            else { // Fill to height
                 
-                CGFloat scale = bounds.size.height / contentSize.height;
-                CGFloat width = scale * contentSize.width;
+                CGFloat width = heightScale * contentSize.width;
                 CGFloat x = (bounds.size.width - width) / 2.0f;
-                return CGRectMake(x, 0.0f, width, contentSize.height);
+                return CGRectMake(x, 0.0f, width, bounds.size.height);
             }
             return bounds;
         }
         case UIViewContentModeScaleAspectFit:
         {
-            CGFloat imageRatio = contentSize.width / contentSize.height;
-            CGFloat viewRatio = bounds.size.width / bounds.size.height;
+            CGFloat widthScale = bounds.size.width / contentSize.width;
+            CGFloat heightScale = bounds.size.height / contentSize.height;
             
-            if (imageRatio < viewRatio) { // Fit to height
+            if (widthScale > heightScale) { // Fit to height
                 
-                CGFloat scale = bounds.size.height / contentSize.height;
-                CGFloat width = scale * contentSize.width;
-                CGFloat x = (bounds.size.width - width) / 2.0f;
-                return CGRectMake(x, 0.0f, width, bounds.size.height);
+                CGFloat width = heightScale * contentSize.width;
+                CGFloat y = (bounds.size.height - width) / 2.0f;
+                return CGRectMake(0.0f, y, width, bounds.size.height);
             }
-            else if (imageRatio > viewRatio) { // Fit to width
+            else { // Fit to width
                 
-                CGFloat scale = bounds.size.width / contentSize.width;
-                CGFloat height = scale * contentSize.height;
-                CGFloat y = (bounds.size.height - height) / 2.0f;
-                return CGRectMake(0.0f, y, bounds.size.width, height);
+                CGFloat height = widthScale * contentSize.height;
+                CGFloat x = (bounds.size.width - height) / 2.0f;
+                return CGRectMake(x, 0.0f, bounds.size.width, height);
             }
             return bounds;
         }
     }
     return CGRectZero;
 }
+
 
 static inline NSMutableSet *PMInitializedSharedViewClasses() {
     static NSMutableSet *_initializedSharedViewClasses = nil;
