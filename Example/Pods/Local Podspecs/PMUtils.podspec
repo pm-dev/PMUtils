@@ -40,10 +40,16 @@ ss.source_files = 'Pod/Classes/PMProtocolInterceptor/*.{h,m}'
 ss.public_header_files = 'Classes/PMProtocolInterceptor/*.h'
 end
 
+s.subspec 'PMCircularCollectionView' do |ss|
+ss.source_files = 'Pod/Classes/PMCircularCollectionView/*.{h,m}'
+ss.public_header_files = 'Pod/Classes/PMCircularCollectionView/*.h'
+ss.dependency 'PMUtils/UIKit+PMUtils'
+end
+
 s.subspec 'PMImageFilmstrip' do |ss|
 ss.source_files = 'Pod/Classes/PMImageFilmstrip/*.{h,m}'
 ss.public_header_files = 'Pod/Classes/PMImageFilmstrip/*.h'
-ss.dependency 'PMUtils/UIKit+PMUtils'
+ss.dependency 'PMUtils/PMCircularCollectionView'
 end
 
 s.subspec 'PMFloatLabel' do |ss|

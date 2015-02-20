@@ -89,6 +89,8 @@
 
 @property (nonatomic, strong, readonly) UITapGestureRecognizer *singleTap;
 
+@property (nonatomic) BOOL circularDisabled;
+
 - (void) reloadImages;
 
 - (void) scrollToImageAtIndex:(NSUInteger)index animated:(BOOL)animated;

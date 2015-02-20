@@ -26,11 +26,12 @@
 #import "UICollectionView+PMUtils.h"
 #import "UICollectionReusableView+PMUtils.h"
 #import "UIView+PMUtils.h"
+#import "PMCircularCollectionView.h"
 
 static CGFloat const PMPageControlHeight = 37.0f;
 
 
-@interface PMImageFilmstripCollectionView : UICollectionView
+@interface PMImageFilmstripCollectionView : PMCircularCollectionView
 @end
 
 @implementation PMImageFilmstripCollectionView
@@ -98,7 +99,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 
 
 
-@interface PMImageFilmstrip () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface PMImageFilmstrip () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) PMImageFilmstripCollectionView *collectionView;
 @property (nonatomic, strong, readwrite) UIPageControl *pageControl;
@@ -170,11 +171,22 @@ static CGFloat const PMPageControlHeight = 37.0f;
 {
     if ([_currentIndexPath isEqual:currentIndexPath] == NO) {
         _currentIndexPath = currentIndexPath;
-        self.pageControl.currentPage = currentIndexPath.item;
+        NSIndexPath *normalizedIndexPath = [self.collectionView normalizedIndexPath:currentIndexPath];
+        self.pageControl.currentPage = normalizedIndexPath.item;
         if (_delegateRespondsToDidScroll) {
-            [_delegate imageFilmstrip:self didScrollToImageAtIndex:currentIndexPath.item];
+            [_delegate imageFilmstrip:self didScrollToImageAtIndex:normalizedIndexPath.item];
         }
     }
+}
+
+- (void)setCircularDisabled:(BOOL)circularDisabled
+{
+    self.collectionView.circularDisabled = circularDisabled;
+}
+
+- (BOOL)circularDisabled
+{
+    return self.collectionView.circularDisabled;
 }
 
 - (void)reloadImages;
@@ -191,23 +203,25 @@ static CGFloat const PMPageControlHeight = 37.0f;
                                     atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally
                                             animated:NO];
     }
-    self.pageControl.currentPage = self.currentIndexPath.item;
+    NSIndexPath *normalizedIndexPath = [self.collectionView normalizedIndexPath:self.currentIndexPath];
+    self.pageControl.currentPage = normalizedIndexPath.item;
 }
 
 - (void) scrollToImageAtIndex:(NSUInteger)index animated:(BOOL)animated
 {
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
-    self.currentIndexPath = indexPath;
     [self.collectionView scrollToItemAtIndexPath:indexPath
                                 atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally
                                         animated:animated];
+    self.currentIndexPath = indexPath;
 }
 
 - (void) didSingleTap:(UITapGestureRecognizer *)tap
 {
     if (_delegateRespondsToTap) {
         NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
-        [self.delegate imageFilmstrip:self didTapImageAtIndex:indexPath.item];
+        NSIndexPath *normalizedIndexPath = [self.collectionView normalizedIndexPath:indexPath];
+        [self.delegate imageFilmstrip:self didTapImageAtIndex:normalizedIndexPath.item];
     }
 }
 
@@ -223,12 +237,14 @@ static CGFloat const PMPageControlHeight = 37.0f;
     return images;
 }
 
-- (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+- (UICollectionViewCell *) collectionView:(PMImageFilmstripCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    NSIndexPath *normalizedIndexPath = [collectionView normalizedIndexPath:indexPath];
     PMImageFilmstripCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[self imageCellReuseIdentifier] forIndexPath:indexPath];
     [self.delegate imageFilmstrip:self
       configureFilmstripImageView:cell.imageView
-                          atIndex:indexPath.item];
+                          atIndex:normalizedIndexPath.item];
     return cell;
 }
 
@@ -241,10 +257,11 @@ static CGFloat const PMPageControlHeight = 37.0f;
     if (scrollView == self.collectionView) {
         
         NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:*targetContentOffset];
-        self.pageControl.currentPage = indexPath.item;
+        NSIndexPath *normalizedIndexPath = [self.collectionView normalizedIndexPath:indexPath];
+        self.pageControl.currentPage = normalizedIndexPath.item;
         
         if (_delegateRespondsToWillScroll) {
-            [_delegate imageFilmstrip:self willScrollToImageAtIndex:indexPath.item];
+            [_delegate imageFilmstrip:self willScrollToImageAtIndex:normalizedIndexPath.item];
         }
     }
 }
@@ -254,10 +271,11 @@ static CGFloat const PMPageControlHeight = 37.0f;
     if (scrollView == self.collectionView) {
         
         NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
-        self.pageControl.currentPage = indexPath.item;
+        NSIndexPath *normalizedIndexPath = [self.collectionView normalizedIndexPath:indexPath];
+        self.pageControl.currentPage = normalizedIndexPath.item;
         
         if(_delegateRespondsToDidScroll) {
-            [_delegate imageFilmstrip:self didScrollToImageAtIndex:indexPath.item];
+            [_delegate imageFilmstrip:self didScrollToImageAtIndex:normalizedIndexPath.item];
         }
     }
 }
@@ -268,10 +286,11 @@ static CGFloat const PMPageControlHeight = 37.0f;
         if (decelerate == NO) {
             
             NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
-            self.pageControl.currentPage = indexPath.item;
+            NSIndexPath *normalizedIndexPath = [self.collectionView normalizedIndexPath:indexPath];
+            self.pageControl.currentPage = normalizedIndexPath.item;
             
             if (_delegateRespondsToDidScroll) {
-                [_delegate imageFilmstrip:self didScrollToImageAtIndex:indexPath.item];
+                [_delegate imageFilmstrip:self didScrollToImageAtIndex:normalizedIndexPath.item];
             }
         }
     }
@@ -422,7 +441,8 @@ static CGFloat const PMPageControlHeight = 37.0f;
             if (_pinchStartScale == 1.0f && scrollView.zoomScale <= 1.0f && _delegateRespondsToDidPinchToClose) {
                 NSParameterAssert([scrollView.subviews.firstObject isKindOfClass:[UIImageView class]]);
                 NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
-                [self.delegate imageFilmstrip:self didPinchToCloseImageView:scrollView.subviews.firstObject atIndex:indexPath.item];
+                NSIndexPath *normalizedIndexPath = [self.collectionView normalizedIndexPath:indexPath];
+                [self.delegate imageFilmstrip:self didPinchToCloseImageView:scrollView.subviews.firstObject atIndex:normalizedIndexPath.item];
             }
             break;
         }
@@ -440,7 +460,8 @@ static CGFloat const PMPageControlHeight = 37.0f;
     self.collectionView.scrollEnabled = NO;
     if (_delegateRespondsToWillZoom) {
         NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
-        [self.delegate imageFilmstrip:self willZoomImageView:view atIndex:indexPath.item];
+        NSIndexPath *normalizedIndexPath = [self.collectionView normalizedIndexPath:indexPath];
+        [self.delegate imageFilmstrip:self willZoomImageView:view atIndex:normalizedIndexPath.item];
     }
 }
 
@@ -449,7 +470,8 @@ static CGFloat const PMPageControlHeight = 37.0f;
     self.collectionView.scrollEnabled = (scale == 1.0f);
     if (_delegateRespondsToDidZoom) {
         NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
-        [self.delegate imageFilmstrip:self didZoomImageView:view atIndex:indexPath.item toScale:scale];
+        NSIndexPath *normalizedIndexPath = [self.collectionView normalizedIndexPath:indexPath];
+        [self.delegate imageFilmstrip:self didZoomImageView:view atIndex:normalizedIndexPath.item toScale:scale];
     }
 }
 
