@@ -24,7 +24,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class FXPageControl;
 @class PMImageFilmstrip;
+
 @protocol PMImageFilmstripDelegate <NSObject>
 
 @required
@@ -85,7 +87,7 @@
  */
 @property (nonatomic, weak) id<PMImageFilmstripDelegate> delegate;
 
-@property (nonatomic, strong, readonly) UIPageControl *pageControl;
+@property (nonatomic, strong, readonly) FXPageControl *pageControl;
 
 @property (nonatomic, strong, readonly) UITapGestureRecognizer *singleTap;
 

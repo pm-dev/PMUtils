@@ -27,6 +27,8 @@
 #import "UICollectionReusableView+PMUtils.h"
 #import "UIView+PMUtils.h"
 #import "PMCircularCollectionView.h"
+#import "NSIndexPath+PMUtils.h"
+#import "FXPageControl.h"
 
 static CGFloat const PMPageControlHeight = 37.0f;
 
@@ -102,8 +104,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 @interface PMImageFilmstrip () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) PMImageFilmstripCollectionView *collectionView;
-@property (nonatomic, strong, readwrite) UIPageControl *pageControl;
-@property (nonatomic, strong) NSIndexPath *currentIndexPath;
+@property (nonatomic, strong, readwrite) FXPageControl *pageControl;
 @property (nonatomic, strong, readwrite) UITapGestureRecognizer *singleTap;
 
 - (Class) imageCellClass;
@@ -167,18 +168,6 @@ static CGFloat const PMPageControlHeight = 37.0f;
     _delegateRespondsToTap = [delegate respondsToSelector:@selector(imageFilmstrip:didTapImageAtIndex:)];
 }
 
-- (void)setCurrentIndexPath:(NSIndexPath *)currentIndexPath
-{
-    if ([_currentIndexPath isEqual:currentIndexPath] == NO) {
-        _currentIndexPath = currentIndexPath;
-        NSIndexPath *normalizedIndexPath = [self.collectionView normalizedIndexPath:currentIndexPath];
-        self.pageControl.currentPage = normalizedIndexPath.item;
-        if (_delegateRespondsToDidScroll) {
-            [_delegate imageFilmstrip:self didScrollToImageAtIndex:normalizedIndexPath.item];
-        }
-    }
-}
-
 - (void)setCircularDisabled:(BOOL)circularDisabled
 {
     self.collectionView.circularDisabled = circularDisabled;
@@ -192,28 +181,33 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (void)reloadImages;
 {
     [self.collectionView reloadData];
+    [self layoutIfNeeded];
 }
 
 - (void) layoutSubviews
 {
     [super layoutSubviews];
     NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
-    if (self.currentIndexPath && [self.currentIndexPath isEqual:indexPath] == NO) {
-        [self.collectionView scrollToItemAtIndexPath:self.currentIndexPath
+    NSIndexPath *normalizedIndexPath = [self.collectionView normalizedIndexPath:indexPath];
+    if (self.pageControl.currentPage != normalizedIndexPath.item) {
+        self.pageControl.currentPage = normalizedIndexPath.item;
+        [self.collectionView scrollToItemAtIndexPath:indexPath
                                     atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally
                                             animated:NO];
     }
-    NSIndexPath *normalizedIndexPath = [self.collectionView normalizedIndexPath:self.currentIndexPath];
-    self.pageControl.currentPage = normalizedIndexPath.item;
 }
 
 - (void) scrollToImageAtIndex:(NSUInteger)index animated:(BOOL)animated
 {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
-    [self.collectionView scrollToItemAtIndexPath:indexPath
-                                atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally
-                                        animated:animated];
-    self.currentIndexPath = indexPath;
+    NSUInteger items = self.pageControl.numberOfPages;
+    if (index < items) {
+        NSInteger distanceToIndex = PMShortestCircularDistance(self.pageControl.currentPage, index, NSMakeRange(0, items));
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.pageControl.currentPage+distanceToIndex inSection:0];
+        self.pageControl.currentPage = [self.collectionView normalizedIndexPath:indexPath].item;
+        [self.collectionView scrollToItemAtIndexPath:indexPath
+                                    atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally
+                                            animated:animated];
+    }
 }
 
 - (void) didSingleTap:(UITapGestureRecognizer *)tap
@@ -329,11 +323,12 @@ static CGFloat const PMPageControlHeight = 37.0f;
     self.collectionView.scrollsToTop = NO;
     [self addSubview:_collectionView];
     
-    self.pageControl = [[UIPageControl alloc] init];
+    self.pageControl = [[FXPageControl alloc] init];
     self.pageControl.frame = CGRectMake(0, self.bounds.size.height - PMPageControlHeight, self.bounds.size.width, PMPageControlHeight);
     self.pageControl.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
     self.pageControl.hidesForSinglePage = YES;
     self.pageControl.enabled = NO;
+    self.pageControl.backgroundColor = [UIColor clearColor];
     [self addSubview:self.pageControl];
     
     self.singleTap = [[UITapGestureRecognizer alloc] init];
