@@ -181,19 +181,20 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (void)reloadImages;
 {
     [self.collectionView reloadData];
-    [self layoutIfNeeded];
 }
 
 - (void) layoutSubviews
 {
     [super layoutSubviews];
     NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
-    NSIndexPath *normalizedIndexPath = [self.collectionView normalizedIndexPath:indexPath];
-    if (self.pageControl.currentPage != normalizedIndexPath.item) {
-        self.pageControl.currentPage = normalizedIndexPath.item;
-        [self.collectionView scrollToItemAtIndexPath:indexPath
-                                    atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally
-                                            animated:NO];
+    if (indexPath) {
+        NSIndexPath *normalizedIndexPath = [self.collectionView normalizedIndexPath:indexPath];
+        if (self.pageControl.currentPage != normalizedIndexPath.item) {
+            self.pageControl.currentPage = normalizedIndexPath.item;
+            [self.collectionView scrollToItemAtIndexPath:indexPath
+                                        atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally
+                                                animated:NO];
+        }
     }
 }
 
@@ -201,10 +202,12 @@ static CGFloat const PMPageControlHeight = 37.0f;
 {
     NSUInteger items = self.pageControl.numberOfPages;
     if (index < items) {
-        NSInteger distanceToIndex = PMShortestCircularDistance(self.pageControl.currentPage, index, NSMakeRange(0, items));
-        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.pageControl.currentPage+distanceToIndex inSection:0];
-        self.pageControl.currentPage = [self.collectionView normalizedIndexPath:indexPath].item;
-        [self.collectionView scrollToItemAtIndexPath:indexPath
+        NSIndexPath *currentIndexPath = [self.collectionView indexPathNearestToBoundsCenter];
+        NSIndexPath *currentNormalizedIndexPath = [self.collectionView normalizedIndexPath:currentIndexPath];
+        NSInteger distanceToIndex = PMShortestCircularDistance(currentNormalizedIndexPath.item, index, NSMakeRange(0, items));
+        NSIndexPath *toIndexPath = [NSIndexPath indexPathForItem:currentIndexPath.item+distanceToIndex inSection:0];
+        self.pageControl.currentPage = [self.collectionView normalizedIndexPath:toIndexPath].item;
+        [self.collectionView scrollToItemAtIndexPath:toIndexPath
                                     atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally
                                             animated:animated];
     }
