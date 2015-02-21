@@ -222,16 +222,16 @@ static inline NSLock *PMSharedViewLock() {
     }
 }
 
-- (BOOL) hasAncestorOfClass:(Class)ancestorClass
+- (UIView *) ancestorOfClass:(Class)ancestorClass
 {
     NSParameterAssert([ancestorClass isSubclassOfClass:[UIView class]]);
     if (self.superview) {
         if ([self.superview isKindOfClass:ancestorClass]) {
-            return YES;
+            return self.superview;
         }
-        return [self.superview hasAncestorOfClass:ancestorClass];
+        return [self.superview ancestorOfClass:ancestorClass];
     }
-    return NO;
+    return nil;
 }
 
 - (UIImage *) snapshot

@@ -78,7 +78,7 @@ extern CGRect PMRectOfContentInBounds(CGRect bounds, UIViewContentMode mode, CGS
 
 - (void) cancelInteraction;
 
-- (BOOL) hasAncestorOfClass:(Class)ancestorClass;
+- (UIView *) ancestorOfClass:(Class)ancestorClass;
 
 - (UIImage *) snapshot;
 

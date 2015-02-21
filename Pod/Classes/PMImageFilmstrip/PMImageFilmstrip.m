@@ -41,7 +41,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
     if (gestureRecognizer == self.panGestureRecognizer &&
-        [self hasAncestorOfClass:[UIScrollView class]]) {
+        [self ancestorOfClass:[UIScrollView class]]) {
         CGPoint velocity = [self.panGestureRecognizer velocityInView:self.panGestureRecognizer.view];
         return (3.0f * fabsf(velocity.y) < fabsf(velocity.x));
     }
