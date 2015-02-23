@@ -164,7 +164,26 @@ static NSUInteger const bytesPerPixel = 4;
 - (UIImage *) crop:(CGRect)rect
 {
     NSAssert(self.CGImage, @"-[UIImage crop:] only works on UIImages backed by a CGImage");
-    CGImageRef imageRef = CGImageCreateWithImageInRect(self.CGImage, rect);
+    CGAffineTransform rectTransform = CGAffineTransformIdentity;
+    switch (self.imageOrientation) {
+        case UIImageOrientationLeftMirrored:
+        case UIImageOrientationLeft:
+            rectTransform = CGAffineTransformTranslate(CGAffineTransformMakeRotation(M_PI_2), 0, -self.size.height);
+            break;
+        case UIImageOrientationRightMirrored:
+        case UIImageOrientationRight:
+            rectTransform = CGAffineTransformTranslate(CGAffineTransformMakeRotation(-M_PI_2), -self.size.width, 0);
+            break;
+        case UIImageOrientationDownMirrored:
+        case UIImageOrientationDown:
+            rectTransform = CGAffineTransformTranslate(CGAffineTransformMakeRotation(-M_PI), -self.size.width, -self.size.height);
+            break;
+        case UIImageOrientationUpMirrored:
+        case UIImageOrientationUp:
+            break;
+    }
+    rectTransform = CGAffineTransformScale(rectTransform, self.scale, self.scale);
+    CGImageRef imageRef = CGImageCreateWithImageInRect(self.CGImage, CGRectApplyAffineTransform(rect, rectTransform));
     UIImage *result = [UIImage imageWithCGImage:imageRef scale:self.scale orientation:self.imageOrientation];
     CGImageRelease(imageRef);
     return result;
