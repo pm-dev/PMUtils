@@ -15,6 +15,7 @@
 #import "NSFileManager+PMUtils.h"
 #import "NSIndexPath+PMUtils.h"
 #import "NSManagedObject+PMUtils.h"
+#import "NSEntityDescription+PMUtils.h"
 #import "NSMutableDictionary+PMUtils.h"
 #import "NSObject+PMUtils.h"
 #import "NSRegularExpression+PMUtils.h"

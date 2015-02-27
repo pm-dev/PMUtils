@@ -24,6 +24,7 @@
 //
 
 #import "NSManagedObject+PMUtils.h"
+#import "NSEntityDescription+PMUtils.h"
 #import <objc/runtime.h>
 
 @implementation NSManagedObject (PMUtils)
@@ -34,33 +35,47 @@
     objc_setAssociatedObject(self, @selector(context), context, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-
 + (NSManagedObjectContext *)context
 {
     NSManagedObjectContext *context = objc_getAssociatedObject(self, @selector(context));
-	Class superclass = self.superclass;
-    if (!context && [superclass isSubclassOfClass:[NSManagedObject class]]) {
-        context = [superclass context];
+    if (!context && [self.superclass isSubclassOfClass:[NSManagedObject class]]) {
+        context = [self.superclass context];
     }
     return context;
 }
 
-
-+ (NSString *) entityName
++ (void) setClassNamePrefix:(NSString *)prefix
 {
-    return NSStringFromClass(self);
+    objc_setAssociatedObject(self, @selector(classNamePrefix), prefix, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
++ (NSString *) classNamePrefix
+{
+    return objc_getAssociatedObject(self, @selector(classNamePrefix));
+}
+
++ (NSEntityDescription *) entityDescription;
+{
+    NSManagedObjectContext *context = [self context];
+    if (context) {
+        NSString *entityName = NSStringFromClass(self);
+        NSString *classNamePrefix = [self classNamePrefix];
+        if (classNamePrefix && [entityName hasPrefix:classNamePrefix]) {
+            entityName = [entityName substringFromIndex:classNamePrefix.length];
+        }
+        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName
+                                                             inManagedObjectContext:context];
+        return entityDescription;
+    }
+    return nil;
 }
 
 
 + (instancetype) create
 {
     NSManagedObjectContext *context = [self context];
-    NSParameterAssert(context.persistentStoreCoordinator.managedObjectModel);
-	
     if (context) {
-        NSEntityDescription *entity = [NSEntityDescription entityForName:[self entityName]
-                                                  inManagedObjectContext:context];
-        NSManagedObject *managedObject = [[NSManagedObject alloc] initWithEntity:entity
+        NSManagedObject *managedObject = [[NSManagedObject alloc] initWithEntity:[self entityDescription]
                                                   insertIntoManagedObjectContext:context];
         return managedObject;
     }
@@ -69,21 +84,50 @@
 }
 
 
-+ (instancetype) createAndSave
++ (instancetype) retrieveWithId:(id)identifier
 {
-    NSManagedObject *object = [self create];
-    BOOL succeeded = [object save];
-    return succeeded? object : nil;
+    if (identifier) {
+        NSManagedObjectContext *context = [self context];
+        if (context) {
+            NSFetchRequest *request = [NSFetchRequest new];
+            request.entity = [self entityDescription];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", request.entity.idAttributeName, identifier];
+            request.predicate = predicate;
+            request.fetchLimit = 1;
+            NSError *error = nil;
+            NSArray *results = [context executeFetchRequest:request error:&error];
+            NSParameterAssert(results && !error);
+            return results.lastObject;
+        }
+    }
+    return nil;
+}
+
++ (NSArray *) retrieveWithPredicate:(NSPredicate *)predicate
+{
+    if (predicate) {
+        NSManagedObjectContext *context = [self context];
+        if (context) {
+            NSFetchRequest *request = [NSFetchRequest new];
+            request.entity = [self entityDescription];
+            request.predicate = predicate;
+            NSError *error = nil;
+            NSArray *results = [context executeFetchRequest:request error:&error];
+            NSParameterAssert(results && !error);
+            return results;
+        }
+    }
+    return nil;
 }
 
 - (BOOL) destroy
 {
     [self.managedObjectContext deleteObject:self];
-    return [self save];
+    return [self update];
 }
 
 
-- (BOOL) save
+- (BOOL) update
 {
     NSError *error = nil;
     BOOL succeeded = [self.managedObjectContext save:&error];

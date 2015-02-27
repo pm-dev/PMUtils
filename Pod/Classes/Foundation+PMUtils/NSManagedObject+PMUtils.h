@@ -45,13 +45,12 @@
  */
 + (NSManagedObjectContext *)context;
 
-/**
- *  The entity name for this managed object. By default, this method returns NSStringFromClass(self).
- *  If the entity name is not equal to the name of the class, you must override this method and return the correct name.
- *
- *  @return The name of the entity.
- */
-+ (NSString *) entityName;
++ (void) setClassNamePrefix:(NSString *)prefix;
+
++ (NSString *) classNamePrefix;
+
++ (NSEntityDescription *) entityDescription;
+
 
 /**
  *  Creates a new instance of the managed object. This method uses +[NSManagedObject entityName] to create the object
@@ -61,12 +60,9 @@
  */
 + (instancetype) create;
 
-/**
- *  The equivalent of calling [[NSManagedObject create] save]
- *
- *  @return An instantiated NSManagedObject or nil if no context has been associated with the calling class.
- */
-+ (instancetype) createAndSave;
++ (instancetype) retrieveWithId:(id)identifier;
+
++ (NSArray *) retrieveWithPredicate:(NSPredicate *)predicate;
 
 /**
  *  Removes receiver from its managed object context's persistent store. If the receiver has not yet
@@ -84,6 +80,6 @@
  *
  *  @return YES if the save succeeds, otherwise NO.
  */
-- (BOOL) save;
+- (BOOL) update;
 
 @end
