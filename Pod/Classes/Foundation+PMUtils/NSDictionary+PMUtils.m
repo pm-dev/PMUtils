@@ -7,6 +7,7 @@
 //
 
 #import "NSDictionary+PMUtils.h"
+#import "NSMutableDictionary+PMUtils.h"
 
 @implementation NSDictionary (PMUtils)
 
@@ -25,6 +26,20 @@
 {
     NSMutableDictionary *mutableSelf = [NSMutableDictionary dictionaryWithDictionary:self];
     [mutableSelf addEntriesFromDictionary:dictionary];
+    return [mutableSelf copy];
+}
+
+- (NSDictionary *) dictionaryByConvertingUnderscoredStringKeysToCamelCase:(BOOL)deep
+{
+    NSMutableDictionary *mutableSelf = [self mutableCopy];
+    [mutableSelf convertUnderscoredStringKeysToCamelCase:deep];
+    return [mutableSelf copy];
+}
+
+- (NSDictionary *) dictionaryByConvertingCamelCaseStringKeysToUnderscored:(BOOL)deep
+{
+    NSMutableDictionary *mutableSelf = [self mutableCopy];
+    [mutableSelf convertCamelCaseStringKeysToUnderscored:deep];
     return [mutableSelf copy];
 }
 

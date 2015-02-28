@@ -24,6 +24,7 @@
 //
 
 #import "NSMutableDictionary+PMUtils.h"
+#import "NSDictionary+PMUtils.h"
 #import "NSString+PMUtils.h"
 
 @implementation NSMutableDictionary (PMUtils)
@@ -38,20 +39,54 @@
 }
 
 
-- (void) convertUnderscoredStringKeysToCamelCase
+- (void) convertUnderscoredStringKeysToCamelCase:(BOOL)deep
 {
     for (id key in self.allKeys) {
+        if (deep) {
+            id value = self[key];
+            if ([value isKindOfClass:[NSDictionary class]]) {
+                value = [value dictionaryByConvertingUnderscoredStringKeysToCamelCase:deep];
+                self[key] = value;
+            }
+            else if ([value isKindOfClass:[NSArray class]]) {
+                NSMutableArray *mutableArray = [(NSArray *)value mutableCopy];
+                for (NSUInteger i = 0; i < mutableArray.count; i++) {
+                    if ([mutableArray[i] isKindOfClass:[NSDictionary class]]) {
+                        NSDictionary *dict = mutableArray[i];
+                        mutableArray[i] = [dict dictionaryByConvertingUnderscoredStringKeysToCamelCase:YES];
+                    }
+                }
+                self[key] = [mutableArray copy];
+            }
+        }
         if ([key isKindOfClass:[NSString class]]) {
             [self replaceKey:key withKey:[(NSString *)key camelCaseFromUnderscores]];
         }
     }
 }
 
-- (void) convertCamelCaseStringKeysToUnderscored
+- (void) convertCamelCaseStringKeysToUnderscored:(BOOL)deep
 {
     for (id key in self.allKeys) {
+        if (deep) {
+            id value = self[key];
+            if ([value isKindOfClass:[NSDictionary class]]) {
+                value = [value dictionaryByConvertingCamelCaseStringKeysToUnderscored:deep];
+                self[key] = value;
+            }
+            else if ([value isKindOfClass:[NSArray class]]) {
+                NSMutableArray *mutableArray = [(NSArray *)value mutableCopy];
+                for (NSUInteger i = 0; i < mutableArray.count; i++) {
+                    if ([mutableArray[i] isKindOfClass:[NSDictionary class]]) {
+                        NSDictionary *dict = mutableArray[i];
+                        mutableArray[i] = [dict dictionaryByConvertingCamelCaseStringKeysToUnderscored:YES];
+                    }
+                }
+                self[key] = [mutableArray copy];
+            }
+        }
         if ([key isKindOfClass:[NSString class]]) {
-            [self replaceKey:key withKey:[(NSString *)key underscoresFromCamelCase]];
+            [self replaceKey:key withKey:[key underscoresFromCamelCase]];
         }
     }
 }

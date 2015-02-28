@@ -19,4 +19,8 @@
 
 - (NSDictionary *) dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary;
 
+- (NSDictionary *) dictionaryByConvertingUnderscoredStringKeysToCamelCase:(BOOL)deep;
+
+- (NSDictionary *) dictionaryByConvertingCamelCaseStringKeysToUnderscored:(BOOL)deep;
+
 @end

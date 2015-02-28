@@ -41,13 +41,13 @@
  *  Keys that are not strings or do not contain underscores are not affected.
  *  e.g. @"this_is_underscored" becomes @"thisIsUnderscored"
  */
-- (void) convertUnderscoredStringKeysToCamelCase;
+- (void) convertUnderscoredStringKeysToCamelCase:(BOOL)deep;
 
 /**
  *  All keys in the receiver of type NSString and formatted in camelCase are converted to underscores.
  *  Keys that are not strings or are not camelCase are not affected.
  *  e.g. @"thisIsCamelCase" becomes @"this_is_camel_case"
  */
-- (void) convertCamelCaseStringKeysToUnderscored;
+- (void) convertCamelCaseStringKeysToUnderscored:(BOOL)deep;
 
 @end
