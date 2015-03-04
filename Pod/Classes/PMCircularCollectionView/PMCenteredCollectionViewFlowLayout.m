@@ -25,7 +25,8 @@
 
 #import "PMCenteredCollectionViewFlowLayout.h"
 #import "PMCenteredCircularCollectionView.h"
-#import "PMUtils.h"
+#import "UICollectionView+PMUtils.h"
+#import "UIScrollView+PMUtils.h"
 
 @implementation PMCenteredCollectionViewFlowLayout
 

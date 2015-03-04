@@ -24,7 +24,8 @@
 //
 
 #import "PMCenteredCircularCollectionView.h"
-#import "PMUtils.h"
+#import "UICollectionView+PMUtils.h"
+#import "NSIndexPath+PMUtils.h"
 
 @implementation PMCenteredCircularCollectionView
 {

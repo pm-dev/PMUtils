@@ -44,6 +44,7 @@ s.subspec 'PMCircularCollectionView' do |ss|
 ss.source_files = 'Pod/Classes/PMCircularCollectionView/*.{h,m}'
 ss.public_header_files = 'Pod/Classes/PMCircularCollectionView/*.h'
 ss.dependency 'PMUtils/UIKit+PMUtils'
+ss.dependency 'PMUtils/PMProtocolInterceptor'
 end
 
 s.subspec 'PMImageFilmstrip' do |ss|

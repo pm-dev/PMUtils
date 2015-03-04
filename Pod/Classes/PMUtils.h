@@ -37,6 +37,7 @@
 #import "PMMapView.h"
 #import "PMAnimationOperation.h"
 #import "PMCollectionViewSwipeCell.h"
+#import "PMCircularCollectionView.h"
 #import "PMInnerShadowView.h"
 #import "PMRoundedBorderView.h"
 #import "PMGradientView.h"

@@ -24,7 +24,7 @@
 //
 
 #import "PMCircularCollectionView.h"
-#import "PMUtils.h"
+#import "PMProtocolInterceptor.h"
 
 static NSUInteger const ContentMultiplier = 4;
 
