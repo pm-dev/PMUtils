@@ -169,9 +169,9 @@ static CGFloat const PMPageControlHeight = 37.0f;
 - (void) setDelegate:(id<PMImageFilmstripDelegate>)delegate
 {
     _delegate = delegate;
-    _delegateRespondsToDidScroll = [_delegate respondsToSelector:@selector(imageFilmstrip:didScrollToImageAtIndex:)];
-    _delegateRespondsToWillScroll = [_delegate respondsToSelector:@selector(imageFilmstrip:willScrollToImageAtIndex:)];
-    _delegateRespondsToTap = [delegate respondsToSelector:@selector(imageFilmstrip:didTapImageAtIndex:)];
+    _delegateRespondsToDidScroll = [_delegate respondsToSelector:@selector(imageFilmstrip:didScrollToImageView:atIndex:)];
+    _delegateRespondsToWillScroll = [_delegate respondsToSelector:@selector(imageFilmstrip:willScrollToImageView:atIndex:)];
+    _delegateRespondsToTap = [delegate respondsToSelector:@selector(imageFilmstrip:didTapImageView:atIndex:)];
 }
 
 - (void)setCircularDisabled:(BOOL)circularDisabled
@@ -202,6 +202,8 @@ static CGFloat const PMPageControlHeight = 37.0f;
                                                 animated:NO];
         }
     }
+    self.collectionView.frame = self.bounds;
+    
 }
 
 - (void) scrollToImageAtIndex:(NSUInteger)index animated:(BOOL)animated
@@ -223,8 +225,9 @@ static CGFloat const PMPageControlHeight = 37.0f;
 {
     if (_delegateRespondsToTap) {
         NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
+        PMImageFilmstripCell *cell = (PMImageFilmstripCell*)[self.collectionView cellForItemAtIndexPath:indexPath];
         NSIndexPath *normalizedIndexPath = [self.collectionView normalizedIndexPath:indexPath];
-        [self.delegate imageFilmstrip:self didTapImageAtIndex:normalizedIndexPath.item];
+        [self.delegate imageFilmstrip:self didTapImageView:cell.imageView atIndex:normalizedIndexPath.item];
     }
 }
 
@@ -264,7 +267,8 @@ static CGFloat const PMPageControlHeight = 37.0f;
         self.pageControl.currentPage = normalizedIndexPath.item;
         
         if (_delegateRespondsToWillScroll) {
-            [_delegate imageFilmstrip:self willScrollToImageAtIndex:normalizedIndexPath.item];
+            PMImageFilmstripCell *cell = (PMImageFilmstripCell*)[self.collectionView cellForItemAtIndexPath:indexPath];
+            [_delegate imageFilmstrip:self willScrollToImageView:cell.imageView atIndex:normalizedIndexPath.item];
         }
     }
 }
@@ -278,7 +282,8 @@ static CGFloat const PMPageControlHeight = 37.0f;
         self.pageControl.currentPage = normalizedIndexPath.item;
         
         if(_delegateRespondsToDidScroll) {
-            [_delegate imageFilmstrip:self didScrollToImageAtIndex:normalizedIndexPath.item];
+            PMImageFilmstripCell *cell = (PMImageFilmstripCell*)[self.collectionView cellForItemAtIndexPath:indexPath];
+            [_delegate imageFilmstrip:self didScrollToImageView:cell.imageView atIndex:normalizedIndexPath.item];
         }
     }
 }
@@ -293,7 +298,8 @@ static CGFloat const PMPageControlHeight = 37.0f;
             self.pageControl.currentPage = normalizedIndexPath.item;
             
             if (_delegateRespondsToDidScroll) {
-                [_delegate imageFilmstrip:self didScrollToImageAtIndex:normalizedIndexPath.item];
+                PMImageFilmstripCell *cell = (PMImageFilmstripCell*)[self.collectionView cellForItemAtIndexPath:indexPath];
+                [_delegate imageFilmstrip:self didScrollToImageView:cell.imageView atIndex:normalizedIndexPath.item];
             }
         }
     }
