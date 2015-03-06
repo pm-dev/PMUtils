@@ -1,0 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'PMCircularCollectionView', :exclusive => true do
+  pod "PMUtils/PMCircularCollectionView", :path => "../../"
+end
+

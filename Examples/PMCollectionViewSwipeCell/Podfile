@@ -1,0 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'PMCollectionViewSwipeCell', :exclusive => true do
+  pod "PMUtils/PMCollectionViewSwipeCell", :path => "../../"
+end
+

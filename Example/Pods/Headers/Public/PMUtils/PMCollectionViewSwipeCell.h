@@ -1,1 +1,0 @@
-../../../../../Pod/Classes/PMCollectionViewSwipeCell/PMCollectionViewSwipeCell.h

@@ -1,0 +1,5 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'PMAnimationOperation', :exclusive => true do
+  pod "PMUtils/PMAnimationOperation", :path => "../../"
+end
