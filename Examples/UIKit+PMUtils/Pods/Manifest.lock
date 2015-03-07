@@ -1,0 +1,18 @@
+PODS:
+  - PMUtils/Foundation+PMUtils (1.1.2)
+  - PMUtils/PMProtocolInterceptor (1.1.2)
+  - PMUtils/UIKit+PMUtils (1.1.2):
+    - PMUtils/Foundation+PMUtils
+    - PMUtils/PMProtocolInterceptor
+
+DEPENDENCIES:
+  - PMUtils/UIKit+PMUtils (from `../../`)
+
+EXTERNAL SOURCES:
+  PMUtils:
+    :path: ../../
+
+SPEC CHECKSUMS:
+  PMUtils: 5b4962f6daecfb61053450403ec580f06924770c
+
+COCOAPODS: 0.35.0

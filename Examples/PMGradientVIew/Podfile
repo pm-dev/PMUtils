@@ -1,0 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'PMGradientView', :exclusive => true do
+  pod "PMUtils/PMGradientView", :path => "../../"
+end
+

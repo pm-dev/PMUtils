@@ -1,0 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'PMInfiniteScrollView', :exclusive => true do
+  pod "PMUtils/PMInfiniteScrollView", :path => "../../"
+end
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrW-ee-4O6" customClass="PMRoundedBorderView">
+                                <rect key="frame" x="36" y="50" width="528" height="100"/>
+                                <color key="backgroundColor" red="0.35294117650000001" green="0.68627450980000004" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="7aB-HG-HIR"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HxN-2t-Ssy" customClass="PMRoundedBorderView">
+                                <rect key="frame" x="36" y="170" width="528" height="100"/>
+                                <color key="backgroundColor" red="0.35294117650000001" green="0.68627450980000004" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="vix-l0-N7Q"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QrW-ee-4O6" firstAttribute="leading" secondItem="HxN-2t-Ssy" secondAttribute="leading" id="0Vd-Zs-yMF"/>
+                            <constraint firstItem="QrW-ee-4O6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="50" id="5Rm-Sx-Yin"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QrW-ee-4O6" secondAttribute="trailing" constant="20" id="GAT-fk-Z7D"/>
+                            <constraint firstItem="HxN-2t-Ssy" firstAttribute="top" secondItem="QrW-ee-4O6" secondAttribute="bottom" constant="20" id="YnA-4j-nlp"/>
+                            <constraint firstItem="QrW-ee-4O6" firstAttribute="trailing" secondItem="HxN-2t-Ssy" secondAttribute="trailing" id="hW8-GP-rYw"/>
+                            <constraint firstItem="QrW-ee-4O6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="pPy-vi-yJ4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomView" destination="HxN-2t-Ssy" id="wl9-rY-VBM"/>
+                        <outlet property="topView" destination="QrW-ee-4O6" id="paK-Go-UT8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

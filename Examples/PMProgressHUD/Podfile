@@ -1,0 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'PMProgressHUD', :exclusive => true do
+  pod "PMUtils/PMProgressHUD", :path => "../../"
+end
+

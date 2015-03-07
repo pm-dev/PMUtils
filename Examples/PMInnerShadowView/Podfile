@@ -1,0 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'PMInnerShadowView', :exclusive => true do
+  pod "PMUtils/PMInnerShadowView", :path => "../../"
+end
+

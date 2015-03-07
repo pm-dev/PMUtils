@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04B51FF5968219643B7E719F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F22AD44415C0DDBD927EF5 /* Foundation.framework */; };
+		1016BB446D8FDE0C9AA0DCFE /* Pods-PMKeyboardListener-PMUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 322E5F260A6DE93EA3011ED2 /* Pods-PMKeyboardListener-PMUtils-dummy.m */; };
+		457DFEAB6CE39314B9070539 /* PMKeyboardListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EEDA5B6486A3936783E64BC /* PMKeyboardListener.m */; };
+		6E7E94ADF2D51EE1761E0A13 /* Pods-PMKeyboardListener-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0488176FD80A17B658824F44 /* Pods-PMKeyboardListener-dummy.m */; };
+		E4A3E0B84CF349953460CACF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F22AD44415C0DDBD927EF5 /* Foundation.framework */; };
+		FCC8791985EF3ECEC7C6800E /* PMKeyboardListener.h in Headers */ = {isa = PBXBuildFile; fileRef = D63549CCACB9272BE4E06FF0 /* PMKeyboardListener.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1684089D13A6D58A83EF0AE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6950FCA7B5B599399E4AB819 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE416F35CBE7C7A8D81A9F2C;
+			remoteInfo = "Pods-PMKeyboardListener-PMUtils";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0488176FD80A17B658824F44 /* Pods-PMKeyboardListener-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMKeyboardListener-dummy.m"; sourceTree = "<group>"; };
+		322E5F260A6DE93EA3011ED2 /* Pods-PMKeyboardListener-PMUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMKeyboardListener-PMUtils-dummy.m"; sourceTree = "<group>"; };
+		3BFCBB48740E81F19FE8ED2C /* Pods-PMKeyboardListener-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PMKeyboardListener-resources.sh"; sourceTree = "<group>"; };
+		49D99F32D7BD0216ED913FCB /* Pods-PMKeyboardListener-PMUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMKeyboardListener-PMUtils.xcconfig"; sourceTree = "<group>"; };
+		4B14FA91D08FF916FA0EC512 /* Pods-PMKeyboardListener-PMUtils-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMKeyboardListener-PMUtils-Private.xcconfig"; sourceTree = "<group>"; };
+		4EEDA5B6486A3936783E64BC /* PMKeyboardListener.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMKeyboardListener.m; path = Pod/Classes/PMKeyboardListener/PMKeyboardListener.m; sourceTree = "<group>"; };
+		4F8523526A4BAF84F4625DFB /* Pods-PMKeyboardListener-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PMKeyboardListener-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6B32B5F60A86961B52638C24 /* Pods-PMKeyboardListener.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMKeyboardListener.release.xcconfig"; sourceTree = "<group>"; };
+		75575E05541A09418B6B1A71 /* Pods-PMKeyboardListener-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMKeyboardListener-environment.h"; sourceTree = "<group>"; };
+		7C7910CA4AEFB227C408BC78 /* Pods-PMKeyboardListener-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PMKeyboardListener-acknowledgements.plist"; sourceTree = "<group>"; };
+		7D84DB1706D0F2F94FEDD367 /* libPods-PMKeyboardListener-PMUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMKeyboardListener-PMUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5BA6F08699261D09BFBEA76 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A7F22AD44415C0DDBD927EF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D63549CCACB9272BE4E06FF0 /* PMKeyboardListener.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKeyboardListener.h; path = Pod/Classes/PMKeyboardListener/PMKeyboardListener.h; sourceTree = "<group>"; };
+		DD9D298292B726B153224D90 /* libPods-PMKeyboardListener.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMKeyboardListener.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E573AFDBF2E79E0BF1C608C3 /* Pods-PMKeyboardListener.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMKeyboardListener.debug.xcconfig"; sourceTree = "<group>"; };
+		F082238B5E20D2F9BB8C275C /* Pods-PMKeyboardListener-PMUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMKeyboardListener-PMUtils-prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		902A00F18299753250AEA841 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B51FF5968219643B7E719F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1F2EDB4BD218E4D80846848 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4A3E0B84CF349953460CACF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08EF3F44A4DD1EE6386BF816 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A7F22AD44415C0DDBD927EF5 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		2DE96A15EE0D41A61B08D0C1 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A867BA0E5EE3BE9A4A34DC2 /* Pods-PMKeyboardListener */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		3A867BA0E5EE3BE9A4A34DC2 /* Pods-PMKeyboardListener */ = {
+			isa = PBXGroup;
+			children = (
+				4F8523526A4BAF84F4625DFB /* Pods-PMKeyboardListener-acknowledgements.markdown */,
+				7C7910CA4AEFB227C408BC78 /* Pods-PMKeyboardListener-acknowledgements.plist */,
+				0488176FD80A17B658824F44 /* Pods-PMKeyboardListener-dummy.m */,
+				75575E05541A09418B6B1A71 /* Pods-PMKeyboardListener-environment.h */,
+				3BFCBB48740E81F19FE8ED2C /* Pods-PMKeyboardListener-resources.sh */,
+				E573AFDBF2E79E0BF1C608C3 /* Pods-PMKeyboardListener.debug.xcconfig */,
+				6B32B5F60A86961B52638C24 /* Pods-PMKeyboardListener.release.xcconfig */,
+			);
+			name = "Pods-PMKeyboardListener";
+			path = "Target Support Files/Pods-PMKeyboardListener";
+			sourceTree = "<group>";
+		};
+		68F3B59C60048876CB18AF90 /* PMUtils */ = {
+			isa = PBXGroup;
+			children = (
+				B6F3FFDAB932FA5049E2AE81 /* PMKeyboardListener */,
+				93532F2C0A658D2C4DC6DA9C /* Support Files */,
+			);
+			name = PMUtils;
+			path = ../../..;
+			sourceTree = "<group>";
+		};
+		7AD01DFF3B38731B30132861 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68F3B59C60048876CB18AF90 /* PMUtils */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		903369E7297420BE0EFD717E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD9D298292B726B153224D90 /* libPods-PMKeyboardListener.a */,
+				7D84DB1706D0F2F94FEDD367 /* libPods-PMKeyboardListener-PMUtils.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93532F2C0A658D2C4DC6DA9C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				49D99F32D7BD0216ED913FCB /* Pods-PMKeyboardListener-PMUtils.xcconfig */,
+				4B14FA91D08FF916FA0EC512 /* Pods-PMKeyboardListener-PMUtils-Private.xcconfig */,
+				322E5F260A6DE93EA3011ED2 /* Pods-PMKeyboardListener-PMUtils-dummy.m */,
+				F082238B5E20D2F9BB8C275C /* Pods-PMKeyboardListener-PMUtils-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "Examples/PMKeyboardListener/Pods/Target Support Files/Pods-PMKeyboardListener-PMUtils";
+			sourceTree = "<group>";
+		};
+		9D3DF13E6F9BCA0E9FC35541 = {
+			isa = PBXGroup;
+			children = (
+				A5BA6F08699261D09BFBEA76 /* Podfile */,
+				7AD01DFF3B38731B30132861 /* Development Pods */,
+				E85F62501F29DD5A9DC2F69E /* Frameworks */,
+				903369E7297420BE0EFD717E /* Products */,
+				2DE96A15EE0D41A61B08D0C1 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		B6F3FFDAB932FA5049E2AE81 /* PMKeyboardListener */ = {
+			isa = PBXGroup;
+			children = (
+				D63549CCACB9272BE4E06FF0 /* PMKeyboardListener.h */,
+				4EEDA5B6486A3936783E64BC /* PMKeyboardListener.m */,
+			);
+			name = PMKeyboardListener;
+			sourceTree = "<group>";
+		};
+		E85F62501F29DD5A9DC2F69E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08EF3F44A4DD1EE6386BF816 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E43AF01A4C178E02C38ECDF0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCC8791985EF3ECEC7C6800E /* PMKeyboardListener.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7FFE0D2E46F0398A8E2AA685 /* Pods-PMKeyboardListener */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99FAC0711F0AEB9AB35201C0 /* Build configuration list for PBXNativeTarget "Pods-PMKeyboardListener" */;
+			buildPhases = (
+				76150F28E46DB7D0E06B090B /* Sources */,
+				902A00F18299753250AEA841 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2CBD2F6328F75A30E72B8D39 /* PBXTargetDependency */,
+			);
+			name = "Pods-PMKeyboardListener";
+			productName = "Pods-PMKeyboardListener";
+			productReference = DD9D298292B726B153224D90 /* libPods-PMKeyboardListener.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		BE416F35CBE7C7A8D81A9F2C /* Pods-PMKeyboardListener-PMUtils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E25EA8641FF8F8561B2F2EB1 /* Build configuration list for PBXNativeTarget "Pods-PMKeyboardListener-PMUtils" */;
+			buildPhases = (
+				3F66E3BAA97068BEA4906F99 /* Sources */,
+				B1F2EDB4BD218E4D80846848 /* Frameworks */,
+				E43AF01A4C178E02C38ECDF0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PMKeyboardListener-PMUtils";
+			productName = "Pods-PMKeyboardListener-PMUtils";
+			productReference = 7D84DB1706D0F2F94FEDD367 /* libPods-PMKeyboardListener-PMUtils.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6950FCA7B5B599399E4AB819 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = D64A42AA21A178400B5F095D /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9D3DF13E6F9BCA0E9FC35541;
+			productRefGroup = 903369E7297420BE0EFD717E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7FFE0D2E46F0398A8E2AA685 /* Pods-PMKeyboardListener */,
+				BE416F35CBE7C7A8D81A9F2C /* Pods-PMKeyboardListener-PMUtils */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F66E3BAA97068BEA4906F99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				457DFEAB6CE39314B9070539 /* PMKeyboardListener.m in Sources */,
+				1016BB446D8FDE0C9AA0DCFE /* Pods-PMKeyboardListener-PMUtils-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76150F28E46DB7D0E06B090B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E7E94ADF2D51EE1761E0A13 /* Pods-PMKeyboardListener-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2CBD2F6328F75A30E72B8D39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-PMKeyboardListener-PMUtils";
+			target = BE416F35CBE7C7A8D81A9F2C /* Pods-PMKeyboardListener-PMUtils */;
+			targetProxy = 1684089D13A6D58A83EF0AE4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		42933A14E2E5C8F5435F60A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E573AFDBF2E79E0BF1C608C3 /* Pods-PMKeyboardListener.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		435DCEADF806908A59EC1B31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B32B5F60A86961B52638C24 /* Pods-PMKeyboardListener.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5F3BAC89D0BA4B58998EEEAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B14FA91D08FF916FA0EC512 /* Pods-PMKeyboardListener-PMUtils-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PMKeyboardListener-PMUtils/Pods-PMKeyboardListener-PMUtils-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9E17DF8E41ED965BE3EB3FEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B14FA91D08FF916FA0EC512 /* Pods-PMKeyboardListener-PMUtils-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PMKeyboardListener-PMUtils/Pods-PMKeyboardListener-PMUtils-prefix.pch";
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D1B33D70E63F321C150A65DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		DFD59B63059F69300160932D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		99FAC0711F0AEB9AB35201C0 /* Build configuration list for PBXNativeTarget "Pods-PMKeyboardListener" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42933A14E2E5C8F5435F60A8 /* Debug */,
+				435DCEADF806908A59EC1B31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D64A42AA21A178400B5F095D /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1B33D70E63F321C150A65DD /* Debug */,
+				DFD59B63059F69300160932D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E25EA8641FF8F8561B2F2EB1 /* Build configuration list for PBXNativeTarget "Pods-PMKeyboardListener-PMUtils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F3BAC89D0BA4B58998EEEAC /* Debug */,
+				9E17DF8E41ED965BE3EB3FEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6950FCA7B5B599399E4AB819 /* Project object */;
+}

@@ -7,7 +7,6 @@
 //
 
 #import "PMProgressHUD.h"
-#import "UIView+PMUtils.h"
 
 @interface PMProgressHUD ()
 

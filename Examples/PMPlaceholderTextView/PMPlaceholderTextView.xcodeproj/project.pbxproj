@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		051F2FE7646E5BC550A2CA37 /* libPods-PMPlaceholderTextView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 930AEE25F836F134E86F40DC /* libPods-PMPlaceholderTextView.a */; };
+		DB843CF31AAAE0060076FF59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB843CF21AAAE0060076FF59 /* main.m */; };
+		DB843CF61AAAE0060076FF59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB843CF51AAAE0060076FF59 /* AppDelegate.m */; };
+		DB843CF91AAAE0060076FF59 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB843CF81AAAE0060076FF59 /* ViewController.m */; };
+		DB843CFC1AAAE0060076FF59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB843CFA1AAAE0060076FF59 /* Main.storyboard */; };
+		DB843CFE1AAAE0060076FF59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB843CFD1AAAE0060076FF59 /* Images.xcassets */; };
+		DB843D011AAAE0060076FF59 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB843CFF1AAAE0060076FF59 /* LaunchScreen.xib */; };
+		DB843D0D1AAAE0060076FF59 /* PMPlaceholderTextViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB843D0C1AAAE0060076FF59 /* PMPlaceholderTextViewTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB843D071AAAE0060076FF59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB843CE51AAAE0060076FF59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB843CEC1AAAE0060076FF59;
+			remoteInfo = PMPlaceholderTextView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B1C78AF9F0DC13734161932 /* Pods-PMPlaceholderTextView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMPlaceholderTextView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PMPlaceholderTextView/Pods-PMPlaceholderTextView.debug.xcconfig"; sourceTree = "<group>"; };
+		1044F144064DEDC9801C231C /* Pods-PMPlaceholderTextView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMPlaceholderTextView.release.xcconfig"; path = "Pods/Target Support Files/Pods-PMPlaceholderTextView/Pods-PMPlaceholderTextView.release.xcconfig"; sourceTree = "<group>"; };
+		930AEE25F836F134E86F40DC /* libPods-PMPlaceholderTextView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMPlaceholderTextView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB843CED1AAAE0060076FF59 /* PMPlaceholderTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PMPlaceholderTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB843CF11AAAE0060076FF59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB843CF21AAAE0060076FF59 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB843CF41AAAE0060076FF59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DB843CF51AAAE0060076FF59 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DB843CF71AAAE0060076FF59 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DB843CF81AAAE0060076FF59 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DB843CFB1AAAE0060076FF59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB843CFD1AAAE0060076FF59 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DB843D001AAAE0060076FF59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DB843D061AAAE0060076FF59 /* PMPlaceholderTextViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PMPlaceholderTextViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB843D0B1AAAE0060076FF59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB843D0C1AAAE0060076FF59 /* PMPlaceholderTextViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMPlaceholderTextViewTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB843CEA1AAAE0060076FF59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				051F2FE7646E5BC550A2CA37 /* libPods-PMPlaceholderTextView.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB843D031AAAE0060076FF59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47DF00AFE0AD98588523128D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0B1C78AF9F0DC13734161932 /* Pods-PMPlaceholderTextView.debug.xcconfig */,
+				1044F144064DEDC9801C231C /* Pods-PMPlaceholderTextView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7EDBD9A779CB5B8F17258A72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				930AEE25F836F134E86F40DC /* libPods-PMPlaceholderTextView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB843CE41AAAE0060076FF59 = {
+			isa = PBXGroup;
+			children = (
+				DB843CEF1AAAE0060076FF59 /* PMPlaceholderTextView */,
+				DB843D091AAAE0060076FF59 /* PMPlaceholderTextViewTests */,
+				DB843CEE1AAAE0060076FF59 /* Products */,
+				47DF00AFE0AD98588523128D /* Pods */,
+				7EDBD9A779CB5B8F17258A72 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DB843CEE1AAAE0060076FF59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB843CED1AAAE0060076FF59 /* PMPlaceholderTextView.app */,
+				DB843D061AAAE0060076FF59 /* PMPlaceholderTextViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB843CEF1AAAE0060076FF59 /* PMPlaceholderTextView */ = {
+			isa = PBXGroup;
+			children = (
+				DB843CF41AAAE0060076FF59 /* AppDelegate.h */,
+				DB843CF51AAAE0060076FF59 /* AppDelegate.m */,
+				DB843CF71AAAE0060076FF59 /* ViewController.h */,
+				DB843CF81AAAE0060076FF59 /* ViewController.m */,
+				DB843CFA1AAAE0060076FF59 /* Main.storyboard */,
+				DB843CFD1AAAE0060076FF59 /* Images.xcassets */,
+				DB843CFF1AAAE0060076FF59 /* LaunchScreen.xib */,
+				DB843CF01AAAE0060076FF59 /* Supporting Files */,
+			);
+			path = PMPlaceholderTextView;
+			sourceTree = "<group>";
+		};
+		DB843CF01AAAE0060076FF59 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB843CF11AAAE0060076FF59 /* Info.plist */,
+				DB843CF21AAAE0060076FF59 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB843D091AAAE0060076FF59 /* PMPlaceholderTextViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB843D0C1AAAE0060076FF59 /* PMPlaceholderTextViewTests.m */,
+				DB843D0A1AAAE0060076FF59 /* Supporting Files */,
+			);
+			path = PMPlaceholderTextViewTests;
+			sourceTree = "<group>";
+		};
+		DB843D0A1AAAE0060076FF59 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB843D0B1AAAE0060076FF59 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB843CEC1AAAE0060076FF59 /* PMPlaceholderTextView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB843D101AAAE0060076FF59 /* Build configuration list for PBXNativeTarget "PMPlaceholderTextView" */;
+			buildPhases = (
+				B4C28A4FF17BFFC3B37F3724 /* Check Pods Manifest.lock */,
+				DB843CE91AAAE0060076FF59 /* Sources */,
+				DB843CEA1AAAE0060076FF59 /* Frameworks */,
+				DB843CEB1AAAE0060076FF59 /* Resources */,
+				70B1FFD167827D80172948BE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PMPlaceholderTextView;
+			productName = PMPlaceholderTextView;
+			productReference = DB843CED1AAAE0060076FF59 /* PMPlaceholderTextView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB843D051AAAE0060076FF59 /* PMPlaceholderTextViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB843D131AAAE0060076FF59 /* Build configuration list for PBXNativeTarget "PMPlaceholderTextViewTests" */;
+			buildPhases = (
+				DB843D021AAAE0060076FF59 /* Sources */,
+				DB843D031AAAE0060076FF59 /* Frameworks */,
+				DB843D041AAAE0060076FF59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB843D081AAAE0060076FF59 /* PBXTargetDependency */,
+			);
+			name = PMPlaceholderTextViewTests;
+			productName = PMPlaceholderTextViewTests;
+			productReference = DB843D061AAAE0060076FF59 /* PMPlaceholderTextViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB843CE51AAAE0060076FF59 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Peter Meyers";
+				TargetAttributes = {
+					DB843CEC1AAAE0060076FF59 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					DB843D051AAAE0060076FF59 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = DB843CEC1AAAE0060076FF59;
+					};
+				};
+			};
+			buildConfigurationList = DB843CE81AAAE0060076FF59 /* Build configuration list for PBXProject "PMPlaceholderTextView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB843CE41AAAE0060076FF59;
+			productRefGroup = DB843CEE1AAAE0060076FF59 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB843CEC1AAAE0060076FF59 /* PMPlaceholderTextView */,
+				DB843D051AAAE0060076FF59 /* PMPlaceholderTextViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB843CEB1AAAE0060076FF59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB843CFC1AAAE0060076FF59 /* Main.storyboard in Resources */,
+				DB843D011AAAE0060076FF59 /* LaunchScreen.xib in Resources */,
+				DB843CFE1AAAE0060076FF59 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB843D041AAAE0060076FF59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		70B1FFD167827D80172948BE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PMPlaceholderTextView/Pods-PMPlaceholderTextView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4C28A4FF17BFFC3B37F3724 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB843CE91AAAE0060076FF59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB843CF91AAAE0060076FF59 /* ViewController.m in Sources */,
+				DB843CF61AAAE0060076FF59 /* AppDelegate.m in Sources */,
+				DB843CF31AAAE0060076FF59 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB843D021AAAE0060076FF59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB843D0D1AAAE0060076FF59 /* PMPlaceholderTextViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB843D081AAAE0060076FF59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB843CEC1AAAE0060076FF59 /* PMPlaceholderTextView */;
+			targetProxy = DB843D071AAAE0060076FF59 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB843CFA1AAAE0060076FF59 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB843CFB1AAAE0060076FF59 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB843CFF1AAAE0060076FF59 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB843D001AAAE0060076FF59 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB843D0E1AAAE0060076FF59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB843D0F1AAAE0060076FF59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB843D111AAAE0060076FF59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B1C78AF9F0DC13734161932 /* Pods-PMPlaceholderTextView.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PMPlaceholderTextView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DB843D121AAAE0060076FF59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1044F144064DEDC9801C231C /* Pods-PMPlaceholderTextView.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PMPlaceholderTextView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DB843D141AAAE0060076FF59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PMPlaceholderTextViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PMPlaceholderTextView.app/PMPlaceholderTextView";
+			};
+			name = Debug;
+		};
+		DB843D151AAAE0060076FF59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PMPlaceholderTextViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PMPlaceholderTextView.app/PMPlaceholderTextView";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB843CE81AAAE0060076FF59 /* Build configuration list for PBXProject "PMPlaceholderTextView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB843D0E1AAAE0060076FF59 /* Debug */,
+				DB843D0F1AAAE0060076FF59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB843D101AAAE0060076FF59 /* Build configuration list for PBXNativeTarget "PMPlaceholderTextView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB843D111AAAE0060076FF59 /* Debug */,
+				DB843D121AAAE0060076FF59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB843D131AAAE0060076FF59 /* Build configuration list for PBXNativeTarget "PMPlaceholderTextViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB843D141AAAE0060076FF59 /* Debug */,
+				DB843D151AAAE0060076FF59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB843CE51AAAE0060076FF59 /* Project object */;
+}

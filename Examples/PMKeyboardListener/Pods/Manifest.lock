@@ -1,0 +1,14 @@
+PODS:
+  - PMUtils/PMKeyboardListener (1.1.2)
+
+DEPENDENCIES:
+  - PMUtils/PMKeyboardListener (from `../../`)
+
+EXTERNAL SOURCES:
+  PMUtils:
+    :path: ../../
+
+SPEC CHECKSUMS:
+  PMUtils: 17f08b4c5e695360cd7777f2b7430a9ca7d5d969
+
+COCOAPODS: 0.35.0

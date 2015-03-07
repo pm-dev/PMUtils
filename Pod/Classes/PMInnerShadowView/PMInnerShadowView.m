@@ -160,7 +160,7 @@
     CGFloat right = (self.edges & UIRectEdgeRight)? self.shadowRadius : 0.0f;
     CGRect largerRect = self.bounds;
     largerRect.origin.x -= left;
-    largerRect.origin.y -= right;
+    largerRect.origin.y -= top;
     largerRect.size.width += left + right;
     largerRect.size.height += top + bottom;
     

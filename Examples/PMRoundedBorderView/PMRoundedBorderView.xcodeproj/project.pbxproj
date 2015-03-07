@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D13198B90F80398374499D10 /* libPods-PMRoundedBorderView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75559821648ECE2A1CF7A0FD /* libPods-PMRoundedBorderView.a */; };
+		DB22C1811AAAFB4E00DE76BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB22C1801AAAFB4E00DE76BC /* main.m */; };
+		DB22C1841AAAFB4E00DE76BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB22C1831AAAFB4E00DE76BC /* AppDelegate.m */; };
+		DB22C1871AAAFB4E00DE76BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB22C1861AAAFB4E00DE76BC /* ViewController.m */; };
+		DB22C18A1AAAFB4E00DE76BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB22C1881AAAFB4E00DE76BC /* Main.storyboard */; };
+		DB22C18C1AAAFB4E00DE76BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB22C18B1AAAFB4E00DE76BC /* Images.xcassets */; };
+		DB22C18F1AAAFB4E00DE76BC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB22C18D1AAAFB4E00DE76BC /* LaunchScreen.xib */; };
+		DB22C19B1AAAFB4E00DE76BC /* PMRoundedBorderViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB22C19A1AAAFB4E00DE76BC /* PMRoundedBorderViewTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB22C1951AAAFB4E00DE76BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB22C1731AAAFB4E00DE76BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB22C17A1AAAFB4E00DE76BC;
+			remoteInfo = PMRoundedBorderView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		75559821648ECE2A1CF7A0FD /* libPods-PMRoundedBorderView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMRoundedBorderView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A81098A0A433A8BD3B1EB007 /* Pods-PMRoundedBorderView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMRoundedBorderView.release.xcconfig"; path = "Pods/Target Support Files/Pods-PMRoundedBorderView/Pods-PMRoundedBorderView.release.xcconfig"; sourceTree = "<group>"; };
+		DB22C17B1AAAFB4E00DE76BC /* PMRoundedBorderView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PMRoundedBorderView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB22C17F1AAAFB4E00DE76BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB22C1801AAAFB4E00DE76BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB22C1821AAAFB4E00DE76BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DB22C1831AAAFB4E00DE76BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DB22C1851AAAFB4E00DE76BC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DB22C1861AAAFB4E00DE76BC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DB22C1891AAAFB4E00DE76BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB22C18B1AAAFB4E00DE76BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DB22C18E1AAAFB4E00DE76BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DB22C1941AAAFB4E00DE76BC /* PMRoundedBorderViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PMRoundedBorderViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB22C1991AAAFB4E00DE76BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB22C19A1AAAFB4E00DE76BC /* PMRoundedBorderViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMRoundedBorderViewTests.m; sourceTree = "<group>"; };
+		DB6770A7E0A3C2E9ACF15541 /* Pods-PMRoundedBorderView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMRoundedBorderView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PMRoundedBorderView/Pods-PMRoundedBorderView.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB22C1781AAAFB4E00DE76BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D13198B90F80398374499D10 /* libPods-PMRoundedBorderView.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB22C1911AAAFB4E00DE76BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		59E1B43E94B7D12A323F0824 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75559821648ECE2A1CF7A0FD /* libPods-PMRoundedBorderView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69707F24764223A971B9BCAE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB6770A7E0A3C2E9ACF15541 /* Pods-PMRoundedBorderView.debug.xcconfig */,
+				A81098A0A433A8BD3B1EB007 /* Pods-PMRoundedBorderView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DB22C1721AAAFB4E00DE76BC = {
+			isa = PBXGroup;
+			children = (
+				DB22C17D1AAAFB4E00DE76BC /* PMRoundedBorderView */,
+				DB22C1971AAAFB4E00DE76BC /* PMRoundedBorderViewTests */,
+				DB22C17C1AAAFB4E00DE76BC /* Products */,
+				69707F24764223A971B9BCAE /* Pods */,
+				59E1B43E94B7D12A323F0824 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DB22C17C1AAAFB4E00DE76BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB22C17B1AAAFB4E00DE76BC /* PMRoundedBorderView.app */,
+				DB22C1941AAAFB4E00DE76BC /* PMRoundedBorderViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB22C17D1AAAFB4E00DE76BC /* PMRoundedBorderView */ = {
+			isa = PBXGroup;
+			children = (
+				DB22C1821AAAFB4E00DE76BC /* AppDelegate.h */,
+				DB22C1831AAAFB4E00DE76BC /* AppDelegate.m */,
+				DB22C1851AAAFB4E00DE76BC /* ViewController.h */,
+				DB22C1861AAAFB4E00DE76BC /* ViewController.m */,
+				DB22C1881AAAFB4E00DE76BC /* Main.storyboard */,
+				DB22C18B1AAAFB4E00DE76BC /* Images.xcassets */,
+				DB22C18D1AAAFB4E00DE76BC /* LaunchScreen.xib */,
+				DB22C17E1AAAFB4E00DE76BC /* Supporting Files */,
+			);
+			path = PMRoundedBorderView;
+			sourceTree = "<group>";
+		};
+		DB22C17E1AAAFB4E00DE76BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB22C17F1AAAFB4E00DE76BC /* Info.plist */,
+				DB22C1801AAAFB4E00DE76BC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB22C1971AAAFB4E00DE76BC /* PMRoundedBorderViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB22C19A1AAAFB4E00DE76BC /* PMRoundedBorderViewTests.m */,
+				DB22C1981AAAFB4E00DE76BC /* Supporting Files */,
+			);
+			path = PMRoundedBorderViewTests;
+			sourceTree = "<group>";
+		};
+		DB22C1981AAAFB4E00DE76BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB22C1991AAAFB4E00DE76BC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB22C17A1AAAFB4E00DE76BC /* PMRoundedBorderView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB22C19E1AAAFB4E00DE76BC /* Build configuration list for PBXNativeTarget "PMRoundedBorderView" */;
+			buildPhases = (
+				C47C4E9C9412D4435DF1B40F /* Check Pods Manifest.lock */,
+				DB22C1771AAAFB4E00DE76BC /* Sources */,
+				DB22C1781AAAFB4E00DE76BC /* Frameworks */,
+				DB22C1791AAAFB4E00DE76BC /* Resources */,
+				829E5DE3CB8E0224FFB7F9E3 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PMRoundedBorderView;
+			productName = PMRoundedBorderView;
+			productReference = DB22C17B1AAAFB4E00DE76BC /* PMRoundedBorderView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB22C1931AAAFB4E00DE76BC /* PMRoundedBorderViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB22C1A11AAAFB4E00DE76BC /* Build configuration list for PBXNativeTarget "PMRoundedBorderViewTests" */;
+			buildPhases = (
+				DB22C1901AAAFB4E00DE76BC /* Sources */,
+				DB22C1911AAAFB4E00DE76BC /* Frameworks */,
+				DB22C1921AAAFB4E00DE76BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB22C1961AAAFB4E00DE76BC /* PBXTargetDependency */,
+			);
+			name = PMRoundedBorderViewTests;
+			productName = PMRoundedBorderViewTests;
+			productReference = DB22C1941AAAFB4E00DE76BC /* PMRoundedBorderViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB22C1731AAAFB4E00DE76BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Peter Meyers";
+				TargetAttributes = {
+					DB22C17A1AAAFB4E00DE76BC = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					DB22C1931AAAFB4E00DE76BC = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = DB22C17A1AAAFB4E00DE76BC;
+					};
+				};
+			};
+			buildConfigurationList = DB22C1761AAAFB4E00DE76BC /* Build configuration list for PBXProject "PMRoundedBorderView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB22C1721AAAFB4E00DE76BC;
+			productRefGroup = DB22C17C1AAAFB4E00DE76BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB22C17A1AAAFB4E00DE76BC /* PMRoundedBorderView */,
+				DB22C1931AAAFB4E00DE76BC /* PMRoundedBorderViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB22C1791AAAFB4E00DE76BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB22C18A1AAAFB4E00DE76BC /* Main.storyboard in Resources */,
+				DB22C18F1AAAFB4E00DE76BC /* LaunchScreen.xib in Resources */,
+				DB22C18C1AAAFB4E00DE76BC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB22C1921AAAFB4E00DE76BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		829E5DE3CB8E0224FFB7F9E3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PMRoundedBorderView/Pods-PMRoundedBorderView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C47C4E9C9412D4435DF1B40F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB22C1771AAAFB4E00DE76BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB22C1871AAAFB4E00DE76BC /* ViewController.m in Sources */,
+				DB22C1841AAAFB4E00DE76BC /* AppDelegate.m in Sources */,
+				DB22C1811AAAFB4E00DE76BC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB22C1901AAAFB4E00DE76BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB22C19B1AAAFB4E00DE76BC /* PMRoundedBorderViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB22C1961AAAFB4E00DE76BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB22C17A1AAAFB4E00DE76BC /* PMRoundedBorderView */;
+			targetProxy = DB22C1951AAAFB4E00DE76BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB22C1881AAAFB4E00DE76BC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB22C1891AAAFB4E00DE76BC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB22C18D1AAAFB4E00DE76BC /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB22C18E1AAAFB4E00DE76BC /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB22C19C1AAAFB4E00DE76BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB22C19D1AAAFB4E00DE76BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB22C19F1AAAFB4E00DE76BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB6770A7E0A3C2E9ACF15541 /* Pods-PMRoundedBorderView.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PMRoundedBorderView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DB22C1A01AAAFB4E00DE76BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A81098A0A433A8BD3B1EB007 /* Pods-PMRoundedBorderView.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PMRoundedBorderView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DB22C1A21AAAFB4E00DE76BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PMRoundedBorderViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PMRoundedBorderView.app/PMRoundedBorderView";
+			};
+			name = Debug;
+		};
+		DB22C1A31AAAFB4E00DE76BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PMRoundedBorderViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PMRoundedBorderView.app/PMRoundedBorderView";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB22C1761AAAFB4E00DE76BC /* Build configuration list for PBXProject "PMRoundedBorderView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB22C19C1AAAFB4E00DE76BC /* Debug */,
+				DB22C19D1AAAFB4E00DE76BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB22C19E1AAAFB4E00DE76BC /* Build configuration list for PBXNativeTarget "PMRoundedBorderView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB22C19F1AAAFB4E00DE76BC /* Debug */,
+				DB22C1A01AAAFB4E00DE76BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB22C1A11AAAFB4E00DE76BC /* Build configuration list for PBXNativeTarget "PMRoundedBorderViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB22C1A21AAAFB4E00DE76BC /* Debug */,
+				DB22C1A31AAAFB4E00DE76BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB22C1731AAAFB4E00DE76BC /* Project object */;
+}

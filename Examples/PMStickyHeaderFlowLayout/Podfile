@@ -1,0 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'PMStickyHeaderFlowLayout', :exclusive => true do
+  pod "PMUtils/PMStickyHeaderFlowLayout", :path => "../../"
+end
+

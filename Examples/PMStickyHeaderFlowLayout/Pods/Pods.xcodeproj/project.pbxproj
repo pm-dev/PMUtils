@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06E94EE7C882775305B4432A /* PMStickyHeaderFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B73C703457651BD8762CC436 /* PMStickyHeaderFlowLayout.m */; };
+		0C98A946DC16EF833DA22063 /* PMStickyHeaderFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = EA9683766BE6F106CD6FF7AB /* PMStickyHeaderFlowLayout.h */; };
+		4C70CEBD196796B26AD8BC52 /* Pods-PMStickyHeaderFlowLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 70ABFA46B87E9EE3B02D15EC /* Pods-PMStickyHeaderFlowLayout-dummy.m */; };
+		65C6C588EE486967CC0C078C /* Pods-PMStickyHeaderFlowLayout-PMUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5965FEDE04BDC03D238F48 /* Pods-PMStickyHeaderFlowLayout-PMUtils-dummy.m */; };
+		6DABE9535D0908F8F6E7A6B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0326C064CDB06987F670D0A3 /* Foundation.framework */; };
+		749A040F50C4A1020389DC7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0326C064CDB06987F670D0A3 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AB89F828F2826E58CE8D028C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 629F159E1D187AE1608B34AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B453FE3CACBAA0140E349D21;
+			remoteInfo = "Pods-PMStickyHeaderFlowLayout-PMUtils";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0326C064CDB06987F670D0A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		0AAA1E493720D6C93F57D509 /* Pods-PMStickyHeaderFlowLayout-PMUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMStickyHeaderFlowLayout-PMUtils.xcconfig"; sourceTree = "<group>"; };
+		10F575CC0507E16C3E169835 /* Pods-PMStickyHeaderFlowLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMStickyHeaderFlowLayout.debug.xcconfig"; sourceTree = "<group>"; };
+		29AF86E19D3859445898260F /* Pods-PMStickyHeaderFlowLayout-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PMStickyHeaderFlowLayout-resources.sh"; sourceTree = "<group>"; };
+		2FA9DA3B27AC76186B6107B4 /* Pods-PMStickyHeaderFlowLayout-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMStickyHeaderFlowLayout-environment.h"; sourceTree = "<group>"; };
+		3430869E780B9E2AF41105D2 /* Pods-PMStickyHeaderFlowLayout-PMUtils-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMStickyHeaderFlowLayout-PMUtils-Private.xcconfig"; sourceTree = "<group>"; };
+		6D69C0539C2EF4648130658A /* Pods-PMStickyHeaderFlowLayout-PMUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMStickyHeaderFlowLayout-PMUtils-prefix.pch"; sourceTree = "<group>"; };
+		70ABFA46B87E9EE3B02D15EC /* Pods-PMStickyHeaderFlowLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMStickyHeaderFlowLayout-dummy.m"; sourceTree = "<group>"; };
+		804EC0FD3AB45DD56EC0A06F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B73C703457651BD8762CC436 /* PMStickyHeaderFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMStickyHeaderFlowLayout.m; path = Pod/Classes/PMStickyHeaderFlowLayout/PMStickyHeaderFlowLayout.m; sourceTree = "<group>"; };
+		B871CAD2384EA4D20427B50A /* Pods-PMStickyHeaderFlowLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMStickyHeaderFlowLayout.release.xcconfig"; sourceTree = "<group>"; };
+		B9DF9C081549EBF815EC780D /* Pods-PMStickyHeaderFlowLayout-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PMStickyHeaderFlowLayout-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D55A35F29566978654FD56F7 /* libPods-PMStickyHeaderFlowLayout-PMUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMStickyHeaderFlowLayout-PMUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB541C0AE4B517E6172C5312 /* libPods-PMStickyHeaderFlowLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMStickyHeaderFlowLayout.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA9683766BE6F106CD6FF7AB /* PMStickyHeaderFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMStickyHeaderFlowLayout.h; path = Pod/Classes/PMStickyHeaderFlowLayout/PMStickyHeaderFlowLayout.h; sourceTree = "<group>"; };
+		FAA271ACEC617FA52A916192 /* Pods-PMStickyHeaderFlowLayout-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PMStickyHeaderFlowLayout-acknowledgements.plist"; sourceTree = "<group>"; };
+		FC5965FEDE04BDC03D238F48 /* Pods-PMStickyHeaderFlowLayout-PMUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMStickyHeaderFlowLayout-PMUtils-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1543168D94B20D917DFF38E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				749A040F50C4A1020389DC7E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E02F9877E6065FEE253DA5C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DABE9535D0908F8F6E7A6B5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0CDCDE965F964CC2A7D753E6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCF334CE72EEF3316FDB536B /* Pods-PMStickyHeaderFlowLayout */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		1C76EB0FFED26106C4B77448 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0326C064CDB06987F670D0A3 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5C6F7256E3CB256163C009A2 /* PMStickyHeaderFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				EA9683766BE6F106CD6FF7AB /* PMStickyHeaderFlowLayout.h */,
+				B73C703457651BD8762CC436 /* PMStickyHeaderFlowLayout.m */,
+			);
+			name = PMStickyHeaderFlowLayout;
+			sourceTree = "<group>";
+		};
+		67F6147C8A48D8BF9D198DAB /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DAF9F5785A148BF674F93472 /* PMUtils */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		690F7F3E2479048B7EDFEA40 = {
+			isa = PBXGroup;
+			children = (
+				804EC0FD3AB45DD56EC0A06F /* Podfile */,
+				67F6147C8A48D8BF9D198DAB /* Development Pods */,
+				6B850ECA44CAFF8BF939DD7B /* Frameworks */,
+				A0017C763E3BECEFC2770237 /* Products */,
+				0CDCDE965F964CC2A7D753E6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		6B850ECA44CAFF8BF939DD7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C76EB0FFED26106C4B77448 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A0017C763E3BECEFC2770237 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB541C0AE4B517E6172C5312 /* libPods-PMStickyHeaderFlowLayout.a */,
+				D55A35F29566978654FD56F7 /* libPods-PMStickyHeaderFlowLayout-PMUtils.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A23BBC5FBAFBBD470133D0FB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0AAA1E493720D6C93F57D509 /* Pods-PMStickyHeaderFlowLayout-PMUtils.xcconfig */,
+				3430869E780B9E2AF41105D2 /* Pods-PMStickyHeaderFlowLayout-PMUtils-Private.xcconfig */,
+				FC5965FEDE04BDC03D238F48 /* Pods-PMStickyHeaderFlowLayout-PMUtils-dummy.m */,
+				6D69C0539C2EF4648130658A /* Pods-PMStickyHeaderFlowLayout-PMUtils-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "Examples/PMStickyHeaderFlowLayout/Pods/Target Support Files/Pods-PMStickyHeaderFlowLayout-PMUtils";
+			sourceTree = "<group>";
+		};
+		DAF9F5785A148BF674F93472 /* PMUtils */ = {
+			isa = PBXGroup;
+			children = (
+				5C6F7256E3CB256163C009A2 /* PMStickyHeaderFlowLayout */,
+				A23BBC5FBAFBBD470133D0FB /* Support Files */,
+			);
+			name = PMUtils;
+			path = ../../..;
+			sourceTree = "<group>";
+		};
+		FCF334CE72EEF3316FDB536B /* Pods-PMStickyHeaderFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				B9DF9C081549EBF815EC780D /* Pods-PMStickyHeaderFlowLayout-acknowledgements.markdown */,
+				FAA271ACEC617FA52A916192 /* Pods-PMStickyHeaderFlowLayout-acknowledgements.plist */,
+				70ABFA46B87E9EE3B02D15EC /* Pods-PMStickyHeaderFlowLayout-dummy.m */,
+				2FA9DA3B27AC76186B6107B4 /* Pods-PMStickyHeaderFlowLayout-environment.h */,
+				29AF86E19D3859445898260F /* Pods-PMStickyHeaderFlowLayout-resources.sh */,
+				10F575CC0507E16C3E169835 /* Pods-PMStickyHeaderFlowLayout.debug.xcconfig */,
+				B871CAD2384EA4D20427B50A /* Pods-PMStickyHeaderFlowLayout.release.xcconfig */,
+			);
+			name = "Pods-PMStickyHeaderFlowLayout";
+			path = "Target Support Files/Pods-PMStickyHeaderFlowLayout";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A7B19A98F3D7356B8F2BD3EF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C98A946DC16EF833DA22063 /* PMStickyHeaderFlowLayout.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		28CF45E9220E41B4B0940858 /* Pods-PMStickyHeaderFlowLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A51A93A412832934227BFC51 /* Build configuration list for PBXNativeTarget "Pods-PMStickyHeaderFlowLayout" */;
+			buildPhases = (
+				D7D4D3D4D1F43E88869136BB /* Sources */,
+				1543168D94B20D917DFF38E2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				613F65717D51AE283A5FF016 /* PBXTargetDependency */,
+			);
+			name = "Pods-PMStickyHeaderFlowLayout";
+			productName = "Pods-PMStickyHeaderFlowLayout";
+			productReference = DB541C0AE4B517E6172C5312 /* libPods-PMStickyHeaderFlowLayout.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B453FE3CACBAA0140E349D21 /* Pods-PMStickyHeaderFlowLayout-PMUtils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E28CD51C4EA97B0E40BB9011 /* Build configuration list for PBXNativeTarget "Pods-PMStickyHeaderFlowLayout-PMUtils" */;
+			buildPhases = (
+				BFD7D9A34D95A08F93544D0F /* Sources */,
+				E02F9877E6065FEE253DA5C3 /* Frameworks */,
+				A7B19A98F3D7356B8F2BD3EF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PMStickyHeaderFlowLayout-PMUtils";
+			productName = "Pods-PMStickyHeaderFlowLayout-PMUtils";
+			productReference = D55A35F29566978654FD56F7 /* libPods-PMStickyHeaderFlowLayout-PMUtils.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		629F159E1D187AE1608B34AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 91163C27894FD70CD379A9D7 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 690F7F3E2479048B7EDFEA40;
+			productRefGroup = A0017C763E3BECEFC2770237 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				28CF45E9220E41B4B0940858 /* Pods-PMStickyHeaderFlowLayout */,
+				B453FE3CACBAA0140E349D21 /* Pods-PMStickyHeaderFlowLayout-PMUtils */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFD7D9A34D95A08F93544D0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06E94EE7C882775305B4432A /* PMStickyHeaderFlowLayout.m in Sources */,
+				65C6C588EE486967CC0C078C /* Pods-PMStickyHeaderFlowLayout-PMUtils-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7D4D3D4D1F43E88869136BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C70CEBD196796B26AD8BC52 /* Pods-PMStickyHeaderFlowLayout-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		613F65717D51AE283A5FF016 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-PMStickyHeaderFlowLayout-PMUtils";
+			target = B453FE3CACBAA0140E349D21 /* Pods-PMStickyHeaderFlowLayout-PMUtils */;
+			targetProxy = AB89F828F2826E58CE8D028C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		12148FAD26773C8CE80DE475 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3430869E780B9E2AF41105D2 /* Pods-PMStickyHeaderFlowLayout-PMUtils-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PMStickyHeaderFlowLayout-PMUtils/Pods-PMStickyHeaderFlowLayout-PMUtils-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1ABA2DEF1630116B1D8632E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B871CAD2384EA4D20427B50A /* Pods-PMStickyHeaderFlowLayout.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1E9227B007FAA766627BD306 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42B32E596C5B9C63E1CF0CD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10F575CC0507E16C3E169835 /* Pods-PMStickyHeaderFlowLayout.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D3F1D27D1A6BCE75E596D71B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3430869E780B9E2AF41105D2 /* Pods-PMStickyHeaderFlowLayout-PMUtils-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PMStickyHeaderFlowLayout-PMUtils/Pods-PMStickyHeaderFlowLayout-PMUtils-prefix.pch";
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF9B21C9051DA6205EC9FCCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		91163C27894FD70CD379A9D7 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF9B21C9051DA6205EC9FCCF /* Debug */,
+				1E9227B007FAA766627BD306 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A51A93A412832934227BFC51 /* Build configuration list for PBXNativeTarget "Pods-PMStickyHeaderFlowLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42B32E596C5B9C63E1CF0CD1 /* Debug */,
+				1ABA2DEF1630116B1D8632E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E28CD51C4EA97B0E40BB9011 /* Build configuration list for PBXNativeTarget "Pods-PMStickyHeaderFlowLayout-PMUtils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12148FAD26773C8CE80DE475 /* Debug */,
+				D3F1D27D1A6BCE75E596D71B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 629F159E1D187AE1608B34AA /* Project object */;
+}

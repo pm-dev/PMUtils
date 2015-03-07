@@ -17,6 +17,7 @@
 {
     PMProtocolInterceptor *_delegateInterceptor;
     CGFloat _verticalSpacing;
+    BOOL _hasContent;
     BOOL _delegateRespondsToShouldChangeCharacters;
     BOOL _delegateRespondsToDidBeginEditing;
     BOOL _delegateRespondsToDidEndEditing;
@@ -49,6 +50,7 @@
     [self setDelegate:self.delegate];
     self.floatingLabel = [[UILabel alloc] init];
     self.floatingLabel.alpha = 0.0f;
+    [self addTarget:self action:@selector(editingDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self addSubview:self.floatingLabel];
     self.clipsToBounds = NO;
 }
@@ -104,22 +106,6 @@
 #pragma mark - UITextFieldDelegate Methods
 
 
-- (BOOL)textField:(PMFloatTextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-    if (textField.text.length == 0 && string.length) {
-        [self refreshFloatLabelWithText:YES];
-    }
-    else if (textField.text.length == range.length && string.length == 0) {
-        [self refreshFloatLabelWithText:NO];
-    }
-    if (_delegateRespondsToShouldChangeCharacters) {
-        return [_delegateInterceptor.receiver textField:textField
-                          shouldChangeCharactersInRange:range
-                                      replacementString:string];
-    }
-    return YES;
-}
-
 - (void)textFieldDidBeginEditing:(PMFloatTextField *)textField
 {
     [self refreshFloatLabelWithText:self.text.length];
@@ -133,6 +119,14 @@
     [self refreshFloatLabelWithText:self.text.length];
     if (_delegateRespondsToDidEndEditing) {
         [_delegateInterceptor.receiver textFieldDidEndEditing:textField];
+    }
+}
+
+- (void) editingDidChange:(PMFloatTextField *)textField
+{
+    if ((textField.text.length > 0) != _hasContent) {
+        _hasContent = !_hasContent;
+        [self refreshFloatLabelWithText:_hasContent];
     }
 }
 

@@ -1,1 +1,0 @@
-PODS_TESTS_PMUTILS_OTHER_LDFLAGS = -framework "CoreData" -framework "MapKit"

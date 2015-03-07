@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A6019FA96FFBFA94AC39803 /* libPods-PMStickyHeaderFlowLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB66184B06183828165B84E /* libPods-PMStickyHeaderFlowLayout.a */; };
+		DB22C1B31AAAFE2D00DE76BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB22C1B21AAAFE2D00DE76BC /* main.m */; };
+		DB22C1B61AAAFE2D00DE76BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB22C1B51AAAFE2D00DE76BC /* AppDelegate.m */; };
+		DB22C1B91AAAFE2D00DE76BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB22C1B81AAAFE2D00DE76BC /* ViewController.m */; };
+		DB22C1BC1AAAFE2D00DE76BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB22C1BA1AAAFE2D00DE76BC /* Main.storyboard */; };
+		DB22C1BE1AAAFE2D00DE76BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB22C1BD1AAAFE2D00DE76BC /* Images.xcassets */; };
+		DB22C1C11AAAFE2D00DE76BC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB22C1BF1AAAFE2D00DE76BC /* LaunchScreen.xib */; };
+		DB22C1CD1AAAFE2D00DE76BC /* PMStickyHeaderFlowLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB22C1CC1AAAFE2D00DE76BC /* PMStickyHeaderFlowLayoutTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB22C1C71AAAFE2D00DE76BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB22C1A51AAAFE2D00DE76BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB22C1AC1AAAFE2D00DE76BC;
+			remoteInfo = PMStickyHeaderFlowLayout;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		366C2738BF896A5416E0CC80 /* Pods-PMStickyHeaderFlowLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMStickyHeaderFlowLayout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PMStickyHeaderFlowLayout/Pods-PMStickyHeaderFlowLayout.debug.xcconfig"; sourceTree = "<group>"; };
+		3CB66184B06183828165B84E /* libPods-PMStickyHeaderFlowLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMStickyHeaderFlowLayout.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		75AAA1B745BBF251BD75F567 /* Pods-PMStickyHeaderFlowLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMStickyHeaderFlowLayout.release.xcconfig"; path = "Pods/Target Support Files/Pods-PMStickyHeaderFlowLayout/Pods-PMStickyHeaderFlowLayout.release.xcconfig"; sourceTree = "<group>"; };
+		DB22C1AD1AAAFE2D00DE76BC /* PMStickyHeaderFlowLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PMStickyHeaderFlowLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB22C1B11AAAFE2D00DE76BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB22C1B21AAAFE2D00DE76BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB22C1B41AAAFE2D00DE76BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DB22C1B51AAAFE2D00DE76BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DB22C1B71AAAFE2D00DE76BC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DB22C1B81AAAFE2D00DE76BC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DB22C1BB1AAAFE2D00DE76BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB22C1BD1AAAFE2D00DE76BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DB22C1C01AAAFE2D00DE76BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DB22C1C61AAAFE2D00DE76BC /* PMStickyHeaderFlowLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PMStickyHeaderFlowLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB22C1CB1AAAFE2D00DE76BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB22C1CC1AAAFE2D00DE76BC /* PMStickyHeaderFlowLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMStickyHeaderFlowLayoutTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB22C1AA1AAAFE2D00DE76BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A6019FA96FFBFA94AC39803 /* libPods-PMStickyHeaderFlowLayout.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB22C1C31AAAFE2D00DE76BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		93AFFACCB63876FCD3815CEA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				366C2738BF896A5416E0CC80 /* Pods-PMStickyHeaderFlowLayout.debug.xcconfig */,
+				75AAA1B745BBF251BD75F567 /* Pods-PMStickyHeaderFlowLayout.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D9DCFCC85A8969D23163EB0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CB66184B06183828165B84E /* libPods-PMStickyHeaderFlowLayout.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB22C1A41AAAFE2D00DE76BC = {
+			isa = PBXGroup;
+			children = (
+				DB22C1AF1AAAFE2D00DE76BC /* PMStickyHeaderFlowLayout */,
+				DB22C1C91AAAFE2D00DE76BC /* PMStickyHeaderFlowLayoutTests */,
+				DB22C1AE1AAAFE2D00DE76BC /* Products */,
+				93AFFACCB63876FCD3815CEA /* Pods */,
+				D9DCFCC85A8969D23163EB0A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DB22C1AE1AAAFE2D00DE76BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB22C1AD1AAAFE2D00DE76BC /* PMStickyHeaderFlowLayout.app */,
+				DB22C1C61AAAFE2D00DE76BC /* PMStickyHeaderFlowLayoutTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB22C1AF1AAAFE2D00DE76BC /* PMStickyHeaderFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				DB22C1B41AAAFE2D00DE76BC /* AppDelegate.h */,
+				DB22C1B51AAAFE2D00DE76BC /* AppDelegate.m */,
+				DB22C1B71AAAFE2D00DE76BC /* ViewController.h */,
+				DB22C1B81AAAFE2D00DE76BC /* ViewController.m */,
+				DB22C1BA1AAAFE2D00DE76BC /* Main.storyboard */,
+				DB22C1BD1AAAFE2D00DE76BC /* Images.xcassets */,
+				DB22C1BF1AAAFE2D00DE76BC /* LaunchScreen.xib */,
+				DB22C1B01AAAFE2D00DE76BC /* Supporting Files */,
+			);
+			path = PMStickyHeaderFlowLayout;
+			sourceTree = "<group>";
+		};
+		DB22C1B01AAAFE2D00DE76BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB22C1B11AAAFE2D00DE76BC /* Info.plist */,
+				DB22C1B21AAAFE2D00DE76BC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB22C1C91AAAFE2D00DE76BC /* PMStickyHeaderFlowLayoutTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB22C1CC1AAAFE2D00DE76BC /* PMStickyHeaderFlowLayoutTests.m */,
+				DB22C1CA1AAAFE2D00DE76BC /* Supporting Files */,
+			);
+			path = PMStickyHeaderFlowLayoutTests;
+			sourceTree = "<group>";
+		};
+		DB22C1CA1AAAFE2D00DE76BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB22C1CB1AAAFE2D00DE76BC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB22C1AC1AAAFE2D00DE76BC /* PMStickyHeaderFlowLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB22C1D01AAAFE2D00DE76BC /* Build configuration list for PBXNativeTarget "PMStickyHeaderFlowLayout" */;
+			buildPhases = (
+				448820FB86FCA1CFFD6DA6F4 /* Check Pods Manifest.lock */,
+				DB22C1A91AAAFE2D00DE76BC /* Sources */,
+				DB22C1AA1AAAFE2D00DE76BC /* Frameworks */,
+				DB22C1AB1AAAFE2D00DE76BC /* Resources */,
+				C2AC132EEC5F8D4E786913EB /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PMStickyHeaderFlowLayout;
+			productName = PMStickyHeaderFlowLayout;
+			productReference = DB22C1AD1AAAFE2D00DE76BC /* PMStickyHeaderFlowLayout.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB22C1C51AAAFE2D00DE76BC /* PMStickyHeaderFlowLayoutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB22C1D31AAAFE2D00DE76BC /* Build configuration list for PBXNativeTarget "PMStickyHeaderFlowLayoutTests" */;
+			buildPhases = (
+				DB22C1C21AAAFE2D00DE76BC /* Sources */,
+				DB22C1C31AAAFE2D00DE76BC /* Frameworks */,
+				DB22C1C41AAAFE2D00DE76BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB22C1C81AAAFE2D00DE76BC /* PBXTargetDependency */,
+			);
+			name = PMStickyHeaderFlowLayoutTests;
+			productName = PMStickyHeaderFlowLayoutTests;
+			productReference = DB22C1C61AAAFE2D00DE76BC /* PMStickyHeaderFlowLayoutTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB22C1A51AAAFE2D00DE76BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Peter Meyers";
+				TargetAttributes = {
+					DB22C1AC1AAAFE2D00DE76BC = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					DB22C1C51AAAFE2D00DE76BC = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = DB22C1AC1AAAFE2D00DE76BC;
+					};
+				};
+			};
+			buildConfigurationList = DB22C1A81AAAFE2D00DE76BC /* Build configuration list for PBXProject "PMStickyHeaderFlowLayout" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB22C1A41AAAFE2D00DE76BC;
+			productRefGroup = DB22C1AE1AAAFE2D00DE76BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB22C1AC1AAAFE2D00DE76BC /* PMStickyHeaderFlowLayout */,
+				DB22C1C51AAAFE2D00DE76BC /* PMStickyHeaderFlowLayoutTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB22C1AB1AAAFE2D00DE76BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB22C1BC1AAAFE2D00DE76BC /* Main.storyboard in Resources */,
+				DB22C1C11AAAFE2D00DE76BC /* LaunchScreen.xib in Resources */,
+				DB22C1BE1AAAFE2D00DE76BC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB22C1C41AAAFE2D00DE76BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		448820FB86FCA1CFFD6DA6F4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C2AC132EEC5F8D4E786913EB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PMStickyHeaderFlowLayout/Pods-PMStickyHeaderFlowLayout-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB22C1A91AAAFE2D00DE76BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB22C1B91AAAFE2D00DE76BC /* ViewController.m in Sources */,
+				DB22C1B61AAAFE2D00DE76BC /* AppDelegate.m in Sources */,
+				DB22C1B31AAAFE2D00DE76BC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB22C1C21AAAFE2D00DE76BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB22C1CD1AAAFE2D00DE76BC /* PMStickyHeaderFlowLayoutTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB22C1C81AAAFE2D00DE76BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB22C1AC1AAAFE2D00DE76BC /* PMStickyHeaderFlowLayout */;
+			targetProxy = DB22C1C71AAAFE2D00DE76BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB22C1BA1AAAFE2D00DE76BC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB22C1BB1AAAFE2D00DE76BC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB22C1BF1AAAFE2D00DE76BC /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB22C1C01AAAFE2D00DE76BC /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB22C1CE1AAAFE2D00DE76BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB22C1CF1AAAFE2D00DE76BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB22C1D11AAAFE2D00DE76BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 366C2738BF896A5416E0CC80 /* Pods-PMStickyHeaderFlowLayout.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PMStickyHeaderFlowLayout/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DB22C1D21AAAFE2D00DE76BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75AAA1B745BBF251BD75F567 /* Pods-PMStickyHeaderFlowLayout.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PMStickyHeaderFlowLayout/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DB22C1D41AAAFE2D00DE76BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PMStickyHeaderFlowLayoutTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PMStickyHeaderFlowLayout.app/PMStickyHeaderFlowLayout";
+			};
+			name = Debug;
+		};
+		DB22C1D51AAAFE2D00DE76BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PMStickyHeaderFlowLayoutTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PMStickyHeaderFlowLayout.app/PMStickyHeaderFlowLayout";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB22C1A81AAAFE2D00DE76BC /* Build configuration list for PBXProject "PMStickyHeaderFlowLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB22C1CE1AAAFE2D00DE76BC /* Debug */,
+				DB22C1CF1AAAFE2D00DE76BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB22C1D01AAAFE2D00DE76BC /* Build configuration list for PBXNativeTarget "PMStickyHeaderFlowLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB22C1D11AAAFE2D00DE76BC /* Debug */,
+				DB22C1D21AAAFE2D00DE76BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB22C1D31AAAFE2D00DE76BC /* Build configuration list for PBXNativeTarget "PMStickyHeaderFlowLayoutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB22C1D41AAAFE2D00DE76BC /* Debug */,
+				DB22C1D51AAAFE2D00DE76BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB22C1A51AAAFE2D00DE76BC /* Project object */;
+}

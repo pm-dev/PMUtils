@@ -1,0 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'PMImageFilmstrip', :exclusive => true do
+  pod "PMUtils/PMImageFilmstrip", :path => "../../"
+end
+

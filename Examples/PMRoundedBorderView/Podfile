@@ -1,0 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'PMRoundedBorderView', :exclusive => true do
+  pod "PMUtils/PMRoundedBorderView", :path => "../../"
+end
+
