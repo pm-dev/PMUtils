@@ -84,6 +84,8 @@
 {
     CGPoint offset = [self contentOffsetForPosition:position];
     [_scrollView setContentOffset:offset animated:animated];
+    _scrollView.scrollEnabled = NO;
+    _scrollView.scrollEnabled = YES;
     self.editing = (position != PMCellPositionCentered);
     switch (position) {
         case PMCellPositionCentered:
@@ -176,8 +178,6 @@
         (!self.leftUtilityView && scrollView.contentOffset.x < 0.0f) ||
         (!self.rightUtilityView && scrollView.contentOffset.x > 0.0f)) {
         [self setCellPosition:PMCellPositionCentered animated:NO];
-        scrollView.scrollEnabled = NO;
-        scrollView.scrollEnabled = YES;
     }
 }
 
@@ -352,12 +352,7 @@
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesCancelled:touches withEvent:event];
-    if (_cell.isEditing) {
-        [_cell setCellPosition:PMCellPositionCentered animated:YES];
-    }
-    else {
-        [self.nextResponder touchesCancelled:touches withEvent:event];
-    }
+    [self.nextResponder touchesCancelled:touches withEvent:event];
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

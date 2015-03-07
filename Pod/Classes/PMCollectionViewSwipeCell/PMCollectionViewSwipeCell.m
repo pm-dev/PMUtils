@@ -102,6 +102,8 @@
 {
     CGPoint offset = [self contentOffsetForPosition:position];
     [_scrollView setContentOffset:offset animated:animated];
+    _scrollView.panGestureRecognizer.enabled = NO;
+    _scrollView.panGestureRecognizer.enabled = YES;
     self.editing = (position != PMCellPositionCentered);
     if (!animated) {
         switch (position) {
@@ -368,12 +370,7 @@
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesCancelled:touches withEvent:event];
-    if (_cell.isEditing) {
-        [_cell setCellPosition:PMCellPositionCentered animated:YES];
-    }
-    else {
-        [self.nextResponder touchesCancelled:touches withEvent:event];
-    }
+    [self.nextResponder touchesCancelled:touches withEvent:event];
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
