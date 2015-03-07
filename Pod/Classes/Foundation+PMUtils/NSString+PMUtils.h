@@ -27,6 +27,10 @@
 
 @interface NSString (PMUtils)
 
+
+- (BOOL) isNonEmpty;
+
+
 - (NSString *) stringByRemovingCharactersInSet:(NSCharacterSet *)characterSet;
 
 

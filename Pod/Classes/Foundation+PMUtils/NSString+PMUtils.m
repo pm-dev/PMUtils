@@ -29,6 +29,10 @@
 
 @implementation NSString (PMUtils)
 
+- (BOOL) isNonEmpty
+{
+    return ![[NSNull null] isEqual:self] && self.length;
+}
 
 - (NSString *) stringByRemovingCharactersInSet:(NSCharacterSet *)characterSet
 {
