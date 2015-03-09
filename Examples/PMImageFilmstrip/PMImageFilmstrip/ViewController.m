@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "PMImageFilmstrip.h"
+#import "FXPageControl.h"
 
 @interface ViewController () <PMZoomableImageFilmstripDelegate>
 @property (weak, nonatomic) IBOutlet PMZoomableImageFilmstrip *imageFilmstrip;
@@ -20,6 +21,8 @@
     [super viewDidLoad];
     self.imageFilmstrip.delegate = self;
     self.imageFilmstrip.maximumZoomScale = 3.0f;
+    self.imageFilmstrip.pageControl.dotImage = [UIImage imageNamed:@"dot_hidden.png"];
+    self.imageFilmstrip.pageControl.selectedDotImage = [UIImage imageNamed:@"dot_visible.png"];
 }
 
 - (void)didReceiveMemoryWarning {

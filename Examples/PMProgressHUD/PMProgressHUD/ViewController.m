@@ -27,6 +27,7 @@
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    sleep(4.0);
     [self connect];
 }
 
@@ -56,7 +57,7 @@
 - (void) complete {
     _HUD.message = @"Complete!";
     _HUD.progressHUDState = PMProgressHUDStateComplete;
-    [_HUD dismissAfterDelay:3.0 completion:nil];
+    [_HUD dismissAfterDelay:2.0 completion:nil];
 }
 
 @end
