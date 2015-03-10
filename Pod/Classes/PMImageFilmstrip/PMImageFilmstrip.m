@@ -208,6 +208,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
 
 - (void) scrollToImageAtIndex:(NSUInteger)index animated:(BOOL)animated
 {
+    [self layoutIfNeeded];
     NSUInteger items = self.pageControl.numberOfPages;
     if (index < items) {
         NSIndexPath *currentIndexPath = [self.collectionView indexPathNearestToBoundsCenter];
