@@ -28,12 +28,10 @@
 /* Begin PBXFileReference section */
 		35A8274951941838756D6E1D /* Pods-PMCircularCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMCircularCollectionView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PMCircularCollectionView/Pods-PMCircularCollectionView.debug.xcconfig"; sourceTree = "<group>"; };
 		62249F11EF67ABF79ED2627E /* Pods-PMCircularCollectionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMCircularCollectionView.release.xcconfig"; path = "Pods/Target Support Files/Pods-PMCircularCollectionView/Pods-PMCircularCollectionView.release.xcconfig"; sourceTree = "<group>"; };
-		6841CB31DB5B4C3E8E9B4858 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A36A9418DAC895001013CD /* PMCircularCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PMCircularCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A36A9718DAC895001013CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		74A36A9918DAC895001013CD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		74A36A9B18DAC895001013CD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		74A36AB918DAC895001013CD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CD444F37BC1B3C27519D2DE0 /* libPods-PMCircularCollectionView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMCircularCollectionView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB64E69A1AB00BA900EAF6AA /* stock_photo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = stock_photo1.jpg; path = PMCircularCollectionView/stock_photo1.jpg; sourceTree = SOURCE_ROOT; };
 		DB64E69B1AB00BA900EAF6AA /* stock_photo2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = stock_photo2.jpg; path = PMCircularCollectionView/stock_photo2.jpg; sourceTree = SOURCE_ROOT; };
@@ -92,8 +90,6 @@
 				74A36A9718DAC895001013CD /* Foundation.framework */,
 				74A36A9918DAC895001013CD /* CoreGraphics.framework */,
 				74A36A9B18DAC895001013CD /* UIKit.framework */,
-				74A36AB918DAC895001013CD /* XCTest.framework */,
-				6841CB31DB5B4C3E8E9B4858 /* libPods.a */,
 				CD444F37BC1B3C27519D2DE0 /* libPods-PMCircularCollectionView.a */,
 			);
 			name = Frameworks;

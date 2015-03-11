@@ -28,7 +28,15 @@
 @class PMCenteredCircularCollectionView;
 @interface PMCenteredCollectionViewFlowLayout : UICollectionViewFlowLayout
 
+/**
+ *  A BOOL that determines if the flow layout will ensure an item is centered in the collection
+ *  view after scrolling ends.
+ */
 @property (nonatomic) BOOL centeringDisabled;
+
+/**
+ *  The UICollectionView class manages an ordered collection of data items and presents them using customizable layouts. Collection views provide the same general function as table views except that a collection view is able to support more than just single-column layouts. Collection views support customizable layouts that can be used to implement multi-column grids, tiled layouts, circular layouts, and many more. You can even change the layout of a collection view dynamically if you want.
+ */
 @property (nonatomic, readonly) PMCenteredCircularCollectionView *collectionView;
 
 @end

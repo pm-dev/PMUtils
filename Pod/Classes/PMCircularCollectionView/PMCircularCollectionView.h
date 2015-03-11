@@ -25,9 +25,10 @@
 
 #import <UIKit/UIKit.h>
 
-//  **NOTE** This class currently only supports one section.
+//  **NOTE** This class currently only supports one section. This class will not call
+//  -numberOfSectionsInCollectionView: on its dataSource.
 
-@interface PMCircularCollectionView : UICollectionView <UICollectionViewDelegateFlowLayout>
+@interface PMCircularCollectionView : UICollectionView
 
 /**
  *  An optional CGFloat defining the radius of the shadow on both of the 
@@ -70,7 +71,7 @@
 
 /**
  *  The object that acts as the delegate of the collection view. The delegate
- *  must adopt the UICollectionViewDelegate protocol. The collection view maintains a weak
+ *  must adopt the UICollectionViewDelegateFlowLayout protocol. The collection view maintains a weak
  *  reference to the delegate object. The delegate object is responsible for managing selection 
  *  behavior and interactions with individual items.
  */
