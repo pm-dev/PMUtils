@@ -10,6 +10,9 @@
 
 @interface PMPlaceholderTextView : UITextView
 
+/**
+ *  The attributed string displayed in the text view when -text and -attributedText has no content.
+ */
 @property (nonatomic, copy) NSAttributedString *attributedPlaceholder;
 
 @end
