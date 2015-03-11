@@ -28,6 +28,9 @@
 
 @interface PMCollectionViewSwipeCell : UICollectionViewCell
 
+/**
+ *  A boolean value that controls whether the swiping functionality provided by this class is enabled.
+ */
 @property (nonatomic) BOOL swipeEnabled;
 
 /**
