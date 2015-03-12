@@ -25,7 +25,7 @@ PMUtils is a collection of useful generic classes and categories on Foundation a
 
 ### Installation with CocoaPods
 
-[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like PMCircularCollectionView in your projects. See the ["Getting Started" guide for more information](http://guides.cocoapods.org/using/getting-started.html).
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like PMUtils in your projects. See the ["Getting Started" guide for more information](http://guides.cocoapods.org/using/getting-started.html).
 
 #### Podfile
 
