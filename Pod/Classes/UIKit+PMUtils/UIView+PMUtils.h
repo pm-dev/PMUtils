@@ -206,7 +206,7 @@ extern CGRect PMRectOfContentInBounds(CGRect bounds, UIViewContentMode mode, CGS
  *
  *  @return The the view's frame's origin.
  */
-@property (nonatomic, readonly) CGFloat origin;
+@property (nonatomic, readonly) CGPoint origin;
 
 /**
  *  Returns the width of the view's frame.

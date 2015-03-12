@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name        = "PMUtils"
-s.version     = "1.1.2"
+s.version     = "1.2.0"
 s.summary     = "PMUtils contains categories on Foundation and UIKit classes as well as a few custom classes for common use cases."
 s.homepage    = "https://github.com/pm-dev/#{s.name}"
 s.license     = 'MIT'
@@ -68,7 +68,6 @@ end
 s.subspec 'PMProgressHUD' do |ss|
 ss.source_files = 'Pod/Classes/PMProgressHUD/*.{h,m}'
 ss.public_header_files = 'Pod/Classes/PMProgressHUD/*.h'
-ss.dependency 'PMUtils/UIKit+PMUtils'
 ss.resource_bundles = {
 'PMProgressHUD' => ['Pod/Classes/PMProgressHUD/*.{xib,png}']
 }

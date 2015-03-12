@@ -9,6 +9,6 @@
 // PMUtils/PMGradientView
 #define COCOAPODS_POD_AVAILABLE_PMUtils_PMGradientView
 #define COCOAPODS_VERSION_MAJOR_PMUtils_PMGradientView 1
-#define COCOAPODS_VERSION_MINOR_PMUtils_PMGradientView 1
-#define COCOAPODS_VERSION_PATCH_PMUtils_PMGradientView 2
+#define COCOAPODS_VERSION_MINOR_PMUtils_PMGradientView 2
+#define COCOAPODS_VERSION_PATCH_PMUtils_PMGradientView 0
 

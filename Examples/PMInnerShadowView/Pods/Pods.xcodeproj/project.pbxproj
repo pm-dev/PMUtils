@@ -7,183 +7,183 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		035DEABDF9009C7C2E59F85B /* PMInnerShadowView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1293D6A3FBB196156D7179C5 /* PMInnerShadowView.h */; };
-		3F36D54FC7DEDFAD1482FA3E /* Pods-PMInnerShadowView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F73FE7BB323781B118C853E /* Pods-PMInnerShadowView-dummy.m */; };
-		D406610293766A2D11B746F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A0170D2A905E3CC822AEBB7 /* Foundation.framework */; };
-		DBC46CDB2B5522959D1BC95F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A0170D2A905E3CC822AEBB7 /* Foundation.framework */; };
-		DEAB4D404552AB05D905EC99 /* Pods-PMInnerShadowView-PMUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FA9AEA33EBE6AAF35DAFAB /* Pods-PMInnerShadowView-PMUtils-dummy.m */; };
-		F5D79332AD7898B2FAC85B59 /* PMInnerShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87373A9AB179EE10176F4131 /* PMInnerShadowView.m */; };
+		2586C71A4EF78583EB73BE23 /* Pods-PMInnerShadowView-PMUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1D53C736D0679584A3FA06 /* Pods-PMInnerShadowView-PMUtils-dummy.m */; };
+		7D9FCACF662913A0F2155082 /* PMInnerShadowView.h in Headers */ = {isa = PBXBuildFile; fileRef = D3DDA89985E32C0A9302D517 /* PMInnerShadowView.h */; };
+		9893D0B930EFD95254D65FB2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20384858A005C08E9627ACB3 /* Foundation.framework */; };
+		B098B6188D4B6E3E34987FBA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20384858A005C08E9627ACB3 /* Foundation.framework */; };
+		C338401DF660FFB8069EC1DE /* Pods-PMInnerShadowView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F10B8F8DC26DF7507A732 /* Pods-PMInnerShadowView-dummy.m */; };
+		C3B8ADEF07818C1AB017703C /* PMInnerShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A8613AB399D416EB0F2F0 /* PMInnerShadowView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1148BBF31378F38087B4E870 /* PBXContainerItemProxy */ = {
+		8751820AA0EFFE07CBD4424F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D9267DE2AD73D96C21C11D3E /* Project object */;
+			containerPortal = 869D9BE69F6880D690B6B305 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DC7A062DD5971B5318BA169F;
+			remoteGlobalIDString = 27A2D74986B10BC63FDB6AAF;
 			remoteInfo = "Pods-PMInnerShadowView-PMUtils";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		076DEA79FA3AD134641E05DF /* libPods-PMInnerShadowView-PMUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMInnerShadowView-PMUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A0170D2A905E3CC822AEBB7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		1293D6A3FBB196156D7179C5 /* PMInnerShadowView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMInnerShadowView.h; path = Pod/Classes/PMInnerShadowView/PMInnerShadowView.h; sourceTree = "<group>"; };
-		34B2486A7358251DD691A311 /* Pods-PMInnerShadowView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMInnerShadowView.debug.xcconfig"; sourceTree = "<group>"; };
-		4BDCF9A1700867731F35C123 /* libPods-PMInnerShadowView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMInnerShadowView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		60CD5990597DBD5CE7462DFE /* Pods-PMInnerShadowView-PMUtils-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMInnerShadowView-PMUtils-Private.xcconfig"; sourceTree = "<group>"; };
-		60FA9AEA33EBE6AAF35DAFAB /* Pods-PMInnerShadowView-PMUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMInnerShadowView-PMUtils-dummy.m"; sourceTree = "<group>"; };
-		6AE0F17EC634CE31DE91C987 /* Pods-PMInnerShadowView-PMUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMInnerShadowView-PMUtils-prefix.pch"; sourceTree = "<group>"; };
-		7F73FE7BB323781B118C853E /* Pods-PMInnerShadowView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMInnerShadowView-dummy.m"; sourceTree = "<group>"; };
-		8521B1AFB1A3962912F63EFE /* Pods-PMInnerShadowView-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PMInnerShadowView-resources.sh"; sourceTree = "<group>"; };
-		87373A9AB179EE10176F4131 /* PMInnerShadowView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMInnerShadowView.m; path = Pod/Classes/PMInnerShadowView/PMInnerShadowView.m; sourceTree = "<group>"; };
-		8BD42174463637C552C9CE4E /* Pods-PMInnerShadowView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMInnerShadowView.release.xcconfig"; sourceTree = "<group>"; };
-		ADB67DBB64F138279FF0C888 /* Pods-PMInnerShadowView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PMInnerShadowView-acknowledgements.plist"; sourceTree = "<group>"; };
-		B8FEDD2439294D2B072EDEF3 /* Pods-PMInnerShadowView-PMUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMInnerShadowView-PMUtils.xcconfig"; sourceTree = "<group>"; };
-		BC6D1E7A058880CC9337878D /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C96B78DFAA97F2C282AA9AF5 /* Pods-PMInnerShadowView-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMInnerShadowView-environment.h"; sourceTree = "<group>"; };
-		F954202104ECCD7C479B7023 /* Pods-PMInnerShadowView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PMInnerShadowView-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0FD14E2746CB49576D3E6FD8 /* libPods-PMInnerShadowView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMInnerShadowView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D16AE3F3F686E6190CA37F0 /* Pods-PMInnerShadowView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMInnerShadowView.release.xcconfig"; sourceTree = "<group>"; };
+		1FA5761A7C57E33DBD688A9E /* Pods-PMInnerShadowView-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMInnerShadowView-environment.h"; sourceTree = "<group>"; };
+		20384858A005C08E9627ACB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		216F10B8F8DC26DF7507A732 /* Pods-PMInnerShadowView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMInnerShadowView-dummy.m"; sourceTree = "<group>"; };
+		2AFAC1A8E3AC43FA7ED386BF /* Pods-PMInnerShadowView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PMInnerShadowView-acknowledgements.markdown"; sourceTree = "<group>"; };
+		36662B6D6D9A4AF6D9778A00 /* Pods-PMInnerShadowView-PMUtils-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMInnerShadowView-PMUtils-Private.xcconfig"; sourceTree = "<group>"; };
+		4C1A8613AB399D416EB0F2F0 /* PMInnerShadowView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMInnerShadowView.m; path = Pod/Classes/PMInnerShadowView/PMInnerShadowView.m; sourceTree = "<group>"; };
+		4D7C3BC6FC33FD09FB8E65AD /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		691EF85B30CCC1C95D75073E /* Pods-PMInnerShadowView-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PMInnerShadowView-resources.sh"; sourceTree = "<group>"; };
+		733A7DFB5CAB18182CDC8CB5 /* Pods-PMInnerShadowView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PMInnerShadowView-acknowledgements.plist"; sourceTree = "<group>"; };
+		7ED4A34143A175EA9BA771F9 /* Pods-PMInnerShadowView-PMUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMInnerShadowView-PMUtils.xcconfig"; sourceTree = "<group>"; };
+		BA1D53C736D0679584A3FA06 /* Pods-PMInnerShadowView-PMUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMInnerShadowView-PMUtils-dummy.m"; sourceTree = "<group>"; };
+		C1EFA6787C789DDB11D4FB22 /* Pods-PMInnerShadowView-PMUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMInnerShadowView-PMUtils-prefix.pch"; sourceTree = "<group>"; };
+		C42363EADF385ECCC67BDEA4 /* Pods-PMInnerShadowView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMInnerShadowView.debug.xcconfig"; sourceTree = "<group>"; };
+		D3DDA89985E32C0A9302D517 /* PMInnerShadowView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMInnerShadowView.h; path = Pod/Classes/PMInnerShadowView/PMInnerShadowView.h; sourceTree = "<group>"; };
+		D847A2ED8EB30B8ADBF5AF02 /* libPods-PMInnerShadowView-PMUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMInnerShadowView-PMUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5732CF9A3E8461DDF846C343 /* Frameworks */ = {
+		AA8487ACAF6A93684BD98F04 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D406610293766A2D11B746F9 /* Foundation.framework in Frameworks */,
+				9893D0B930EFD95254D65FB2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B41442A9F2381D9A83071FB2 /* Frameworks */ = {
+		B178D2578CDDE43FF35718C7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBC46CDB2B5522959D1BC95F /* Foundation.framework in Frameworks */,
+				B098B6188D4B6E3E34987FBA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		08DB4847D77FE505B8D97E16 /* Targets Support Files */ = {
+		19FE8C507F199BF87674BB60 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AD9D294877365E0A003B6007 /* Pods-PMInnerShadowView */,
+				F8860F339A31198E97CF2754 /* Pods-PMInnerShadowView */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		0ACE638035F9434882975CC2 /* Support Files */ = {
+		2057E2250EB6E85939900727 /* PMUtils */ = {
 			isa = PBXGroup;
 			children = (
-				B8FEDD2439294D2B072EDEF3 /* Pods-PMInnerShadowView-PMUtils.xcconfig */,
-				60CD5990597DBD5CE7462DFE /* Pods-PMInnerShadowView-PMUtils-Private.xcconfig */,
-				60FA9AEA33EBE6AAF35DAFAB /* Pods-PMInnerShadowView-PMUtils-dummy.m */,
-				6AE0F17EC634CE31DE91C987 /* Pods-PMInnerShadowView-PMUtils-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "Examples/PMInnerShadowView/Pods/Target Support Files/Pods-PMInnerShadowView-PMUtils";
-			sourceTree = "<group>";
-		};
-		11AD497DB038D3DD99E94E41 /* PMUtils */ = {
-			isa = PBXGroup;
-			children = (
-				A41A753CFD83E348B9AF6631 /* PMInnerShadowView */,
-				0ACE638035F9434882975CC2 /* Support Files */,
+				FB180AFCEB2453A5A42B483E /* PMInnerShadowView */,
+				D3246819572E22DAE6A979CA /* Support Files */,
 			);
 			name = PMUtils;
 			path = ../../..;
 			sourceTree = "<group>";
 		};
-		98F47B94EC71487054A47FA4 /* Products */ = {
+		2E451268D48A85CEADC75E79 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4BDCF9A1700867731F35C123 /* libPods-PMInnerShadowView.a */,
-				076DEA79FA3AD134641E05DF /* libPods-PMInnerShadowView-PMUtils.a */,
+				0FD14E2746CB49576D3E6FD8 /* libPods-PMInnerShadowView.a */,
+				D847A2ED8EB30B8ADBF5AF02 /* libPods-PMInnerShadowView-PMUtils.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A41A753CFD83E348B9AF6631 /* PMInnerShadowView */ = {
+		2F960A868919BAF1B051F50D /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				1293D6A3FBB196156D7179C5 /* PMInnerShadowView.h */,
-				87373A9AB179EE10176F4131 /* PMInnerShadowView.m */,
+				20384858A005C08E9627ACB3 /* Foundation.framework */,
 			);
-			name = PMInnerShadowView;
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		AD9D294877365E0A003B6007 /* Pods-PMInnerShadowView */ = {
+		9E2C3681298E8A311D493CD9 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F954202104ECCD7C479B7023 /* Pods-PMInnerShadowView-acknowledgements.markdown */,
-				ADB67DBB64F138279FF0C888 /* Pods-PMInnerShadowView-acknowledgements.plist */,
-				7F73FE7BB323781B118C853E /* Pods-PMInnerShadowView-dummy.m */,
-				C96B78DFAA97F2C282AA9AF5 /* Pods-PMInnerShadowView-environment.h */,
-				8521B1AFB1A3962912F63EFE /* Pods-PMInnerShadowView-resources.sh */,
-				34B2486A7358251DD691A311 /* Pods-PMInnerShadowView.debug.xcconfig */,
-				8BD42174463637C552C9CE4E /* Pods-PMInnerShadowView.release.xcconfig */,
+				2057E2250EB6E85939900727 /* PMUtils */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		BC9A306228F91A49C32CEE00 = {
+			isa = PBXGroup;
+			children = (
+				4D7C3BC6FC33FD09FB8E65AD /* Podfile */,
+				9E2C3681298E8A311D493CD9 /* Development Pods */,
+				D11D323AE6506C146A15657D /* Frameworks */,
+				2E451268D48A85CEADC75E79 /* Products */,
+				19FE8C507F199BF87674BB60 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D11D323AE6506C146A15657D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F960A868919BAF1B051F50D /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3246819572E22DAE6A979CA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7ED4A34143A175EA9BA771F9 /* Pods-PMInnerShadowView-PMUtils.xcconfig */,
+				36662B6D6D9A4AF6D9778A00 /* Pods-PMInnerShadowView-PMUtils-Private.xcconfig */,
+				BA1D53C736D0679584A3FA06 /* Pods-PMInnerShadowView-PMUtils-dummy.m */,
+				C1EFA6787C789DDB11D4FB22 /* Pods-PMInnerShadowView-PMUtils-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "Examples/PMInnerShadowView/Pods/Target Support Files/Pods-PMInnerShadowView-PMUtils";
+			sourceTree = "<group>";
+		};
+		F8860F339A31198E97CF2754 /* Pods-PMInnerShadowView */ = {
+			isa = PBXGroup;
+			children = (
+				2AFAC1A8E3AC43FA7ED386BF /* Pods-PMInnerShadowView-acknowledgements.markdown */,
+				733A7DFB5CAB18182CDC8CB5 /* Pods-PMInnerShadowView-acknowledgements.plist */,
+				216F10B8F8DC26DF7507A732 /* Pods-PMInnerShadowView-dummy.m */,
+				1FA5761A7C57E33DBD688A9E /* Pods-PMInnerShadowView-environment.h */,
+				691EF85B30CCC1C95D75073E /* Pods-PMInnerShadowView-resources.sh */,
+				C42363EADF385ECCC67BDEA4 /* Pods-PMInnerShadowView.debug.xcconfig */,
+				1D16AE3F3F686E6190CA37F0 /* Pods-PMInnerShadowView.release.xcconfig */,
 			);
 			name = "Pods-PMInnerShadowView";
 			path = "Target Support Files/Pods-PMInnerShadowView";
 			sourceTree = "<group>";
 		};
-		C1B23B7C75736873E1B78668 /* iOS */ = {
+		FB180AFCEB2453A5A42B483E /* PMInnerShadowView */ = {
 			isa = PBXGroup;
 			children = (
-				0A0170D2A905E3CC822AEBB7 /* Foundation.framework */,
+				D3DDA89985E32C0A9302D517 /* PMInnerShadowView.h */,
+				4C1A8613AB399D416EB0F2F0 /* PMInnerShadowView.m */,
 			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		CFF4730A976D1D3A975CC67D /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				11AD497DB038D3DD99E94E41 /* PMUtils */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		D2B30FF69C78E1655D2D3FC6 = {
-			isa = PBXGroup;
-			children = (
-				BC6D1E7A058880CC9337878D /* Podfile */,
-				CFF4730A976D1D3A975CC67D /* Development Pods */,
-				D859B6D9837111A451AE5AFD /* Frameworks */,
-				98F47B94EC71487054A47FA4 /* Products */,
-				08DB4847D77FE505B8D97E16 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		D859B6D9837111A451AE5AFD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C1B23B7C75736873E1B78668 /* iOS */,
-			);
-			name = Frameworks;
+			name = PMInnerShadowView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		68F85348BA6833012CD4AAAD /* Headers */ = {
+		F428C6B9E818813825662A7C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				035DEABDF9009C7C2E59F85B /* PMInnerShadowView.h in Headers */,
+				7D9FCACF662913A0F2155082 /* PMInnerShadowView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		DC7A062DD5971B5318BA169F /* Pods-PMInnerShadowView-PMUtils */ = {
+		27A2D74986B10BC63FDB6AAF /* Pods-PMInnerShadowView-PMUtils */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C46B72A3304932208DEE6F28 /* Build configuration list for PBXNativeTarget "Pods-PMInnerShadowView-PMUtils" */;
+			buildConfigurationList = 0131F16B3C5398654DA8CD85 /* Build configuration list for PBXNativeTarget "Pods-PMInnerShadowView-PMUtils" */;
 			buildPhases = (
-				DDF66D8CD8D0D576DC816280 /* Sources */,
-				B41442A9F2381D9A83071FB2 /* Frameworks */,
-				68F85348BA6833012CD4AAAD /* Headers */,
+				377F8EE9F5FB210006DE75D0 /* Sources */,
+				AA8487ACAF6A93684BD98F04 /* Frameworks */,
+				F428C6B9E818813825662A7C /* Headers */,
 			);
 			buildRules = (
 			);
@@ -191,85 +191,111 @@
 			);
 			name = "Pods-PMInnerShadowView-PMUtils";
 			productName = "Pods-PMInnerShadowView-PMUtils";
-			productReference = 076DEA79FA3AD134641E05DF /* libPods-PMInnerShadowView-PMUtils.a */;
+			productReference = D847A2ED8EB30B8ADBF5AF02 /* libPods-PMInnerShadowView-PMUtils.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		FB83D649023B3FD7F5E9DF92 /* Pods-PMInnerShadowView */ = {
+		2D4085563CBEECB435298AAC /* Pods-PMInnerShadowView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E82D6C10C8C1D80AE33987D1 /* Build configuration list for PBXNativeTarget "Pods-PMInnerShadowView" */;
+			buildConfigurationList = 668DD0D7E627F201144D60AC /* Build configuration list for PBXNativeTarget "Pods-PMInnerShadowView" */;
 			buildPhases = (
-				1640E9B38EB56B13765A9565 /* Sources */,
-				5732CF9A3E8461DDF846C343 /* Frameworks */,
+				BA8CC39E4552C7BE9C690A0C /* Sources */,
+				B178D2578CDDE43FF35718C7 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				94CCA5D348DC0DCAA5682E8E /* PBXTargetDependency */,
+				FA924BB73E0BACE9EE77C0AE /* PBXTargetDependency */,
 			);
 			name = "Pods-PMInnerShadowView";
 			productName = "Pods-PMInnerShadowView";
-			productReference = 4BDCF9A1700867731F35C123 /* libPods-PMInnerShadowView.a */;
+			productReference = 0FD14E2746CB49576D3E6FD8 /* libPods-PMInnerShadowView.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D9267DE2AD73D96C21C11D3E /* Project object */ = {
+		869D9BE69F6880D690B6B305 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = 701A9B7216A023CF15FCDC66 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = FE931DAB8E9CCB668A9B5096 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = D2B30FF69C78E1655D2D3FC6;
-			productRefGroup = 98F47B94EC71487054A47FA4 /* Products */;
+			mainGroup = BC9A306228F91A49C32CEE00;
+			productRefGroup = 2E451268D48A85CEADC75E79 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FB83D649023B3FD7F5E9DF92 /* Pods-PMInnerShadowView */,
-				DC7A062DD5971B5318BA169F /* Pods-PMInnerShadowView-PMUtils */,
+				2D4085563CBEECB435298AAC /* Pods-PMInnerShadowView */,
+				27A2D74986B10BC63FDB6AAF /* Pods-PMInnerShadowView-PMUtils */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1640E9B38EB56B13765A9565 /* Sources */ = {
+		377F8EE9F5FB210006DE75D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F36D54FC7DEDFAD1482FA3E /* Pods-PMInnerShadowView-dummy.m in Sources */,
+				C3B8ADEF07818C1AB017703C /* PMInnerShadowView.m in Sources */,
+				2586C71A4EF78583EB73BE23 /* Pods-PMInnerShadowView-PMUtils-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DDF66D8CD8D0D576DC816280 /* Sources */ = {
+		BA8CC39E4552C7BE9C690A0C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5D79332AD7898B2FAC85B59 /* PMInnerShadowView.m in Sources */,
-				DEAB4D404552AB05D905EC99 /* Pods-PMInnerShadowView-PMUtils-dummy.m in Sources */,
+				C338401DF660FFB8069EC1DE /* Pods-PMInnerShadowView-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		94CCA5D348DC0DCAA5682E8E /* PBXTargetDependency */ = {
+		FA924BB73E0BACE9EE77C0AE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-PMInnerShadowView-PMUtils";
-			target = DC7A062DD5971B5318BA169F /* Pods-PMInnerShadowView-PMUtils */;
-			targetProxy = 1148BBF31378F38087B4E870 /* PBXContainerItemProxy */;
+			target = 27A2D74986B10BC63FDB6AAF /* Pods-PMInnerShadowView-PMUtils */;
+			targetProxy = 8751820AA0EFFE07CBD4424F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		12E0A26AC8E0B0C086AB27FF /* Debug */ = {
+		08A11C47695096E42EACCF48 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60CD5990597DBD5CE7462DFE /* Pods-PMInnerShadowView-PMUtils-Private.xcconfig */;
+			baseConfigurationReference = C42363EADF385ECCC67BDEA4 /* Pods-PMInnerShadowView.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0D1EEC887463ED61D5FF6595 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36662B6D6D9A4AF6D9778A00 /* Pods-PMInnerShadowView-PMUtils-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
@@ -294,35 +320,7 @@
 			};
 			name = Debug;
 		};
-		39399126FD52E025C37AA5FA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BD42174463637C552C9CE4E /* Pods-PMInnerShadowView.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		5016CE216672ECF5E73FB6B6 /* Debug */ = {
+		1F4E326DA9EC6D6687DEC172 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -358,9 +356,37 @@
 			};
 			name = Debug;
 		};
-		84215E010FA530945C58AB26 /* Release */ = {
+		1FDED5CEBBDC053D04AA227B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60CD5990597DBD5CE7462DFE /* Pods-PMInnerShadowView-PMUtils-Private.xcconfig */;
+			baseConfigurationReference = 1D16AE3F3F686E6190CA37F0 /* Pods-PMInnerShadowView.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C230D25CECA35B3CDCB7BFE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36662B6D6D9A4AF6D9778A00 /* Pods-PMInnerShadowView-PMUtils-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
@@ -387,33 +413,7 @@
 			};
 			name = Release;
 		};
-		B57B5296F14A90A6E95DE062 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34B2486A7358251DD691A311 /* Pods-PMInnerShadowView.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		B5AD5CF84B7ADB87BAC0A747 /* Release */ = {
+		E08362543CB822666B64A68D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -447,34 +447,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		701A9B7216A023CF15FCDC66 /* Build configuration list for PBXProject "Pods" */ = {
+		0131F16B3C5398654DA8CD85 /* Build configuration list for PBXNativeTarget "Pods-PMInnerShadowView-PMUtils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5016CE216672ECF5E73FB6B6 /* Debug */,
-				B5AD5CF84B7ADB87BAC0A747 /* Release */,
+				0D1EEC887463ED61D5FF6595 /* Debug */,
+				C230D25CECA35B3CDCB7BFE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C46B72A3304932208DEE6F28 /* Build configuration list for PBXNativeTarget "Pods-PMInnerShadowView-PMUtils" */ = {
+		668DD0D7E627F201144D60AC /* Build configuration list for PBXNativeTarget "Pods-PMInnerShadowView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				12E0A26AC8E0B0C086AB27FF /* Debug */,
-				84215E010FA530945C58AB26 /* Release */,
+				08A11C47695096E42EACCF48 /* Debug */,
+				1FDED5CEBBDC053D04AA227B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E82D6C10C8C1D80AE33987D1 /* Build configuration list for PBXNativeTarget "Pods-PMInnerShadowView" */ = {
+		FE931DAB8E9CCB668A9B5096 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B57B5296F14A90A6E95DE062 /* Debug */,
-				39399126FD52E025C37AA5FA /* Release */,
+				1F4E326DA9EC6D6687DEC172 /* Debug */,
+				E08362543CB822666B64A68D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D9267DE2AD73D96C21C11D3E /* Project object */;
+	rootObject = 869D9BE69F6880D690B6B305 /* Project object */;
 }

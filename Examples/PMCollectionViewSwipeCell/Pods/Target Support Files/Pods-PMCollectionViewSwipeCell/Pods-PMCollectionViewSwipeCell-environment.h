@@ -9,6 +9,6 @@
 // PMUtils/PMCollectionViewSwipeCell
 #define COCOAPODS_POD_AVAILABLE_PMUtils_PMCollectionViewSwipeCell
 #define COCOAPODS_VERSION_MAJOR_PMUtils_PMCollectionViewSwipeCell 1
-#define COCOAPODS_VERSION_MINOR_PMUtils_PMCollectionViewSwipeCell 1
-#define COCOAPODS_VERSION_PATCH_PMUtils_PMCollectionViewSwipeCell 2
+#define COCOAPODS_VERSION_MINOR_PMUtils_PMCollectionViewSwipeCell 2
+#define COCOAPODS_VERSION_PATCH_PMUtils_PMCollectionViewSwipeCell 0
 

@@ -9,6 +9,6 @@
 // PMUtils/PMRoundedBorderView
 #define COCOAPODS_POD_AVAILABLE_PMUtils_PMRoundedBorderView
 #define COCOAPODS_VERSION_MAJOR_PMUtils_PMRoundedBorderView 1
-#define COCOAPODS_VERSION_MINOR_PMUtils_PMRoundedBorderView 1
-#define COCOAPODS_VERSION_PATCH_PMUtils_PMRoundedBorderView 2
+#define COCOAPODS_VERSION_MINOR_PMUtils_PMRoundedBorderView 2
+#define COCOAPODS_VERSION_PATCH_PMUtils_PMRoundedBorderView 0
 

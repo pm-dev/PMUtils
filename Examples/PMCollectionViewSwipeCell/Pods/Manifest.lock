@@ -1,5 +1,5 @@
 PODS:
-  - PMUtils/PMCollectionViewSwipeCell (1.1.2)
+  - PMUtils/PMCollectionViewSwipeCell (1.2.0)
 
 DEPENDENCIES:
   - PMUtils/PMCollectionViewSwipeCell (from `../../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../../
 
 SPEC CHECKSUMS:
-  PMUtils: 375001074194f1e3890599ff095c3abbc38e092c
+  PMUtils: 2217f846d25e3177c418bc0f27476d733d4144aa
 
 COCOAPODS: 0.35.0

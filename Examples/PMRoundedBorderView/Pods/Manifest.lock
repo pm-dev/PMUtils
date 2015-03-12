@@ -1,5 +1,5 @@
 PODS:
-  - PMUtils/PMRoundedBorderView (1.1.2)
+  - PMUtils/PMRoundedBorderView (1.2.0)
 
 DEPENDENCIES:
   - PMUtils/PMRoundedBorderView (from `../../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../../
 
 SPEC CHECKSUMS:
-  PMUtils: 5b4962f6daecfb61053450403ec580f06924770c
+  PMUtils: 2217f846d25e3177c418bc0f27476d733d4144aa
 
 COCOAPODS: 0.35.0

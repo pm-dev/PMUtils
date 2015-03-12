@@ -7,476 +7,476 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03CF198177E603F40DCF5CE6 /* UIView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B42751CF839FE38B9D2F0 /* UIView+PMUtils.m */; };
-		03F38AE8DD8AA688C75B3B14 /* UIScreen+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29E0325CD9573FF86D1C02 /* UIScreen+PMUtils.m */; };
-		04B4E735ACC461EDD5B544DD /* NSNumber+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BC4FECEC2E0713FEAFF717 /* NSNumber+PMUtils.m */; };
-		0549CCA78FFEB16A9CB86C98 /* NSIndexPath+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9F1BC733B38CB00CF28055 /* NSIndexPath+PMUtils.m */; };
-		0581370A9240D664A6C43597 /* NSString+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AA04C087DB771DF09CFA6358 /* NSString+PMUtils.m */; };
-		0621C6ACB63034E3F8193EDC /* UIResponder+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C6626EDF0FEF0F60134BE0 /* UIResponder+PMUtils.h */; };
-		08CA88585DE5326BCF56F56E /* NSRegularExpression+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AB137F3F7A150EDD9C79ABEC /* NSRegularExpression+PMUtils.m */; };
-		09259E720AD17C4C644AE5B8 /* NSIndexPath+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9F1BC733B38CB00CF28055 /* NSIndexPath+PMUtils.m */; };
-		0930D9B5FCF345A0D72F66D9 /* UIResponder+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E79A035DDDA25552677BBED /* UIResponder+PMUtils.m */; };
-		09CB3C1E21783CABB894FA9B /* UITableViewHeaderFooterView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D5D20D83C2A282D4EDCF026B /* UITableViewHeaderFooterView+PMUtils.h */; };
-		0D81DC2391EA83C6A6916AA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B32F552BCA9C98EBD857834 /* Foundation.framework */; };
-		0ECCF8736E70D5B74DA10AAB /* UIGestureRecognizer+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B731A0D20204669BDA4B6B9 /* UIGestureRecognizer+PMUtils.m */; };
-		0F731E5D708A02647CF23F46 /* NSFileManager+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8F72F288453F0C790F6860 /* NSFileManager+PMUtils.m */; };
-		128B2C52B345FE9FCE32B340 /* UIViewController+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFD0ACFE893D6A1C06B6622 /* UIViewController+PMUtils.m */; };
-		1666656B0FE9E1E74DF794D1 /* UIImageView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 78BA00F9A0D62B2666DF9925 /* UIImageView+PMUtils.h */; };
-		18A3C34BD5FF020E355E7FAA /* NSIndexPath+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C36863768858858D8C8B9E8 /* NSIndexPath+PMUtils.h */; };
-		1A14AEABA576DDD869171821 /* UIResponder+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E79A035DDDA25552677BBED /* UIResponder+PMUtils.m */; };
-		1C6645C917CCCEC6F756BE14 /* NSThread+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6C9E939FEF2B84EBADA19A /* NSThread+PMUtils.h */; };
-		1F4B61DC77964FA9B8AD38E9 /* UICollectionView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC3036BFDFD35B0AA4BD89 /* UICollectionView+PMUtils.m */; };
-		1F81FF090A420D306E6C370E /* UINavigationController+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EAC235374E6E4C0FD95F93EF /* UINavigationController+PMUtils.h */; };
-		2109AC8638D1FA90582D6A4C /* UITableViewCell+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 220BA335EA52EF56AA629A45 /* UITableViewCell+PMUtils.h */; };
-		22944E4DAC29A868F070B2CA /* NSData+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E63930E3AF05C285195A145 /* NSData+PMUtils.m */; };
-		23D86DF5967AD31D6CF52702 /* UITableViewCell+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AA8DDF98C6EA776408A4AF /* UITableViewCell+PMUtils.m */; };
-		25890A21CCA5A30671DCA764 /* PMProtocolInterceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5CAA23E20BE07206373FCC9 /* PMProtocolInterceptor.h */; };
-		292DD1B1B48D006EC596C0B7 /* UINavigationController+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EA127F7F6EE9246BA95B /* UINavigationController+PMUtils.m */; };
-		29A34900775399DF06D78DC3 /* NSData+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EF7ADC1707C98A497529F6E6 /* NSData+PMUtils.h */; };
-		29B7DA416A716EF4027ABB3A /* UIColor+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C9F62DC84F1CE60EF1A026F7 /* UIColor+PMUtils.h */; };
-		2A592782C70B1438223C3997 /* NSDictionary+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E7964DBD03E327C4A18EE524 /* NSDictionary+PMUtils.m */; };
-		2A80DF5611F3FCEDDA098177 /* NSArray+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9845D2130719EBB2716475F1 /* NSArray+PMUtils.m */; };
-		2C030073FEF229F34867908D /* UINavigationController+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EA127F7F6EE9246BA95B /* UINavigationController+PMUtils.m */; };
-		2CCDD55FB849547F9E7CB971 /* UITableView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3035E9EF4424C67960D54778 /* UITableView+PMUtils.h */; };
-		2E0669364405CDD7D7C31A45 /* UIGestureRecognizer+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3085A9442BD4FBC778FC77 /* UIGestureRecognizer+PMUtils.h */; };
-		2EB4D0AA8E9D4D5C5320E487 /* UICollectionReusableView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF9F6D5510E343A8F498281 /* UICollectionReusableView+PMUtils.m */; };
-		3061F381878F29839592891E /* NSString+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AA04C087DB771DF09CFA6358 /* NSString+PMUtils.m */; };
-		33FB84D024CD6ED852A15413 /* UITableView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D80889F1FAF146F5F87915 /* UITableView+PMUtils.m */; };
-		3800D982C17A010C718FBB7C /* NSData+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E63930E3AF05C285195A145 /* NSData+PMUtils.m */; };
-		3B2CFBCF0C6EAC5D86D4C58C /* NSThread+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9250BC548F0B42560B38FD /* NSThread+PMUtils.m */; };
-		3BD47699C5D5B7C6BB090B5C /* UITableView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D80889F1FAF146F5F87915 /* UITableView+PMUtils.m */; };
-		3C31BF0C8227C8D3EE087BF0 /* UIImageView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 44406B707E65526A3862A7AF /* UIImageView+PMUtils.m */; };
-		43B4E9CECD852EDB7E87C3FB /* UIScrollView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BCF3EADFC1A1EB5BFE9BD134 /* UIScrollView+PMUtils.h */; };
-		488804B2E7511D1AF1216FE7 /* UIView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B42751CF839FE38B9D2F0 /* UIView+PMUtils.m */; };
-		48A101632C60C5282DD89981 /* NSMutableDictionary+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 41CDBE389052FD99FC3206DB /* NSMutableDictionary+PMUtils.m */; };
-		4F0F45FE91BCB8C8572CBF33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B32F552BCA9C98EBD857834 /* Foundation.framework */; };
-		50767D60EE335BC386BAEF18 /* UIImage+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 57545A6DC8E998B68723B698 /* UIImage+PMUtils.m */; };
-		52381EF227498F8DF222E4DD /* PMProtocolInterceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5CAA23E20BE07206373FCC9 /* PMProtocolInterceptor.h */; };
-		56929DF0B486CF0BF7B1915A /* UIImageView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 44406B707E65526A3862A7AF /* UIImageView+PMUtils.m */; };
-		56D03A9DC7335D0BBE79B510 /* UICollectionViewFlowLayout+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 855DF2723C9F3BDA3946AD94 /* UICollectionViewFlowLayout+PMUtils.h */; };
-		5988A58E58E6B960509D5EEF /* UIDevice+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A2F3F4670DE75831C3B5281 /* UIDevice+PMUtils.h */; };
-		59FD11F0E262D8E53F31F50F /* UINavigationController+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EAC235374E6E4C0FD95F93EF /* UINavigationController+PMUtils.h */; };
-		5D7589017D3B2B5E8DCEDB61 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B32F552BCA9C98EBD857834 /* Foundation.framework */; };
-		5FD0F58900B5456C4EA3893F /* NSArray+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00BE099630E513FD0374348E /* NSArray+PMUtils.h */; };
-		6100F8504CAB61942D7057CE /* NSThread+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6C9E939FEF2B84EBADA19A /* NSThread+PMUtils.h */; };
-		6182E486FBFB71E7C8540916 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AA6CC21A3272771496E220 /* CoreData.framework */; };
-		6943433608664393AFED40D7 /* NSRegularExpression+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 59A7AE246255F6CA691215E4 /* NSRegularExpression+PMUtils.h */; };
-		6B4CA88224570EDF3EBEAA1B /* NSMutableDictionary+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D6B86E319E2915092D12702 /* NSMutableDictionary+PMUtils.h */; };
-		6CB21D0E9CC3E10C8BD4E5A7 /* NSString+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D495A09B95516E96AB84E175 /* NSString+PMUtils.h */; };
-		6F0C6824E6C1A63608C5C05E /* NSNumber+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BC4FECEC2E0713FEAFF717 /* NSNumber+PMUtils.m */; };
-		6FCE32D6C76DBEBE0116D858 /* NSArray+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9845D2130719EBB2716475F1 /* NSArray+PMUtils.m */; };
-		708F7C57DD36372987F18BAF /* UIKit+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D3C575C6F1BEDE17310EDA4A /* UIKit+PMUtils.h */; };
-		71CAC644468CDCF9491468E4 /* NSObject+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BECD1747F0A1BDFA2AC5F63 /* NSObject+PMUtils.m */; };
-		738A00817F1C843A620A40C9 /* Pods-UIKit+PMUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE6487A1BC2218CAAE40C48 /* Pods-UIKit+PMUtils-dummy.m */; };
-		739B5D6A7CBD8F83DC235AE9 /* UIGestureRecognizer+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3085A9442BD4FBC778FC77 /* UIGestureRecognizer+PMUtils.h */; };
-		73BCCB3D1BDB278797B04DE2 /* UIImage+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 57545A6DC8E998B68723B698 /* UIImage+PMUtils.m */; };
-		74C3DD8297AA8FBCE9D9AAF1 /* UIImage+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 50B8E58181612C09620EBDE7 /* UIImage+PMUtils.h */; };
-		7545FDDF33DD3861645EE060 /* UIViewController+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E2F027AAC8248D7419D3A802 /* UIViewController+PMUtils.h */; };
-		79E274C116D37F7AB95CB7E2 /* UICollectionViewFlowLayout+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3289BB91A9FD0A13CAC22C2F /* UICollectionViewFlowLayout+PMUtils.m */; };
-		7A7FF2754F53CAC3C4CF89AD /* NSRegularExpression+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AB137F3F7A150EDD9C79ABEC /* NSRegularExpression+PMUtils.m */; };
-		7D93E26F6431B4F5381AD914 /* NSDictionary+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F135D0563E88ED96B4B8D8 /* NSDictionary+PMUtils.h */; };
-		7FA4A47F723CB0F97184D1EF /* PMProtocolInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A90F4C054A49A90189BF17 /* PMProtocolInterceptor.m */; };
-		80AF33E0B77E5E0918E0D99C /* NSFileManager+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8F72F288453F0C790F6860 /* NSFileManager+PMUtils.m */; };
-		8165F1DBC17B470E9659BBF3 /* NSObject+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 06412DF67E9E65CAFFC47443 /* NSObject+PMUtils.h */; };
-		868C3137612CE25187BC6623 /* UIColor+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C9F62DC84F1CE60EF1A026F7 /* UIColor+PMUtils.h */; };
-		89DB807362DC4ED5AEA9622F /* Pods-UIKit+PMUtilsTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFD98174716A101644BC39 /* Pods-UIKit+PMUtilsTests-dummy.m */; };
-		8A21FDA035200232E6898662 /* NSThread+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9250BC548F0B42560B38FD /* NSThread+PMUtils.m */; };
-		8C113922BD54EC8A2ED9612D /* UITableViewCell+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 220BA335EA52EF56AA629A45 /* UITableViewCell+PMUtils.h */; };
-		9031B930EE7E99834996E691 /* NSNumber+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 010C1619931C47F30ABCBFB6 /* NSNumber+PMUtils.h */; };
-		90433190804B8F6C7530A98C /* UITableViewHeaderFooterView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 39BC7A72E21E1BC909BED4DF /* UITableViewHeaderFooterView+PMUtils.m */; };
-		93508D959D2A410756DBFCF7 /* UIDevice+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FC40D96C485706938F26949F /* UIDevice+PMUtils.m */; };
-		95EADF693AAF03CB34D35196 /* UIGestureRecognizer+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B731A0D20204669BDA4B6B9 /* UIGestureRecognizer+PMUtils.m */; };
-		96590C4FCCA5B2C701FC3860 /* UIDevice+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A2F3F4670DE75831C3B5281 /* UIDevice+PMUtils.h */; };
-		96809A1615311D4EC3296459 /* UIScreen+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 93897D1863B186E7B1B5E83D /* UIScreen+PMUtils.h */; };
-		9B2608DB6C5268FF4B84CDFA /* NSFileManager+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C0E43EF9F05CC9838BDBF7 /* NSFileManager+PMUtils.h */; };
-		9B9FA85949BDD612C3FEDA4D /* UIScrollView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7E16FABE9D30C203543B58 /* UIScrollView+PMUtils.m */; };
-		9C2D8FB790922C54BE40D5F9 /* UITableViewHeaderFooterView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 39BC7A72E21E1BC909BED4DF /* UITableViewHeaderFooterView+PMUtils.m */; };
-		9CCE8AC1DD979A87F973DBC5 /* NSData+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EF7ADC1707C98A497529F6E6 /* NSData+PMUtils.h */; };
-		9DD7CF3A51FC7A576EE80847 /* UICollectionView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC3036BFDFD35B0AA4BD89 /* UICollectionView+PMUtils.m */; };
-		9EEE5241AB9CF8CD9FB95AC7 /* UICollectionReusableView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B55D8008652AE340072C54AC /* UICollectionReusableView+PMUtils.h */; };
-		9F7D80A51A2A8392C5AFE148 /* UIScreen+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29E0325CD9573FF86D1C02 /* UIScreen+PMUtils.m */; };
-		A0EBFA525BE499EB7A868932 /* NSObject+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BECD1747F0A1BDFA2AC5F63 /* NSObject+PMUtils.m */; };
-		A1266AC63B99B649C21766CC /* NSRegularExpression+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 59A7AE246255F6CA691215E4 /* NSRegularExpression+PMUtils.h */; };
-		A3B2EA24074F6320271E3B7C /* NSNumber+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 010C1619931C47F30ABCBFB6 /* NSNumber+PMUtils.h */; };
-		A53F7161D34C0F2BACD2BEF2 /* UIColor+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F6B5C962E6A27533B922A /* UIColor+PMUtils.m */; };
-		A5CA8379E5E5BF7780EC0B25 /* UICollectionView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E762F1684774F723BAD78DCC /* UICollectionView+PMUtils.h */; };
-		AAD12A79647E817595A7D8E8 /* NSArray+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00BE099630E513FD0374348E /* NSArray+PMUtils.h */; };
-		AB13D0745A08F1DE47830D08 /* Pods-UIKit+PMUtilsTests-PMUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A98B22121D002E521C203433 /* Pods-UIKit+PMUtilsTests-PMUtils-dummy.m */; };
-		AE42085E43CBAEEBEE1D59B2 /* UITableViewCell+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AA8DDF98C6EA776408A4AF /* UITableViewCell+PMUtils.m */; };
-		B1799840B57EA7D965C66472 /* Foundation+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D674408384EDB5221DCD8554 /* Foundation+PMUtils.h */; };
-		B36DB01CEB98DD388F0CDEAA /* UIViewController+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFD0ACFE893D6A1C06B6622 /* UIViewController+PMUtils.m */; };
-		B3822E91380E92E3160148F5 /* UIViewController+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E2F027AAC8248D7419D3A802 /* UIViewController+PMUtils.h */; };
-		B478330A4D6780A9CE6E4EEA /* UICollectionViewFlowLayout+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 855DF2723C9F3BDA3946AD94 /* UICollectionViewFlowLayout+PMUtils.h */; };
-		B6C5FE94870C64C4065AF50A /* UICollectionView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E762F1684774F723BAD78DCC /* UICollectionView+PMUtils.h */; };
-		B93D6EEEAE17B56927C5843D /* UIImage+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 50B8E58181612C09620EBDE7 /* UIImage+PMUtils.h */; };
-		BA2D32AB0EF7758F7EF785BA /* UIView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 236CFC17C15F5DE523FCD228 /* UIView+PMUtils.h */; };
-		BB022260A004E6CD5A3320AA /* UIScreen+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 93897D1863B186E7B1B5E83D /* UIScreen+PMUtils.h */; };
-		BD794201381BC5B37FA15CD9 /* NSDictionary+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F135D0563E88ED96B4B8D8 /* NSDictionary+PMUtils.h */; };
-		BF9255C2FAEB14426A48EE05 /* NSMutableDictionary+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D6B86E319E2915092D12702 /* NSMutableDictionary+PMUtils.h */; };
-		C0A1690851B5185CEBD762F9 /* UIDevice+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FC40D96C485706938F26949F /* UIDevice+PMUtils.m */; };
-		CA3EA892CB50F170E6701277 /* UIImageView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 78BA00F9A0D62B2666DF9925 /* UIImageView+PMUtils.h */; };
-		CD3CE37A66090FF80DF9AA47 /* PMProtocolInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A90F4C054A49A90189BF17 /* PMProtocolInterceptor.m */; };
-		D31C99439F2E5FB8F1A59F54 /* UICollectionViewFlowLayout+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3289BB91A9FD0A13CAC22C2F /* UICollectionViewFlowLayout+PMUtils.m */; };
-		D3F31794EC584B8C695F1967 /* UIKit+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D3C575C6F1BEDE17310EDA4A /* UIKit+PMUtils.h */; };
-		D49D49C1E731F8F4AF788E38 /* NSObject+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 06412DF67E9E65CAFFC47443 /* NSObject+PMUtils.h */; };
-		D80BE6835FA57D03D072A901 /* UITableViewHeaderFooterView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D5D20D83C2A282D4EDCF026B /* UITableViewHeaderFooterView+PMUtils.h */; };
-		D843219A82B8B663D4DB5A98 /* UIScrollView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BCF3EADFC1A1EB5BFE9BD134 /* UIScrollView+PMUtils.h */; };
-		DBD605E5EF91D888A14C7D79 /* NSMutableDictionary+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 41CDBE389052FD99FC3206DB /* NSMutableDictionary+PMUtils.m */; };
-		DE2B0516EE0BB526DE7B0D57 /* UIView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 236CFC17C15F5DE523FCD228 /* UIView+PMUtils.h */; };
-		E0870C29384CA03E7D22688D /* Foundation+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D674408384EDB5221DCD8554 /* Foundation+PMUtils.h */; };
-		E3A2BA1918635F1C2E19357F /* Pods-UIKit+PMUtils-PMUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4E87A31B7F0819AC568F84 /* Pods-UIKit+PMUtils-PMUtils-dummy.m */; };
-		E41C3D1E509BC5D05F12DA4C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AA6CC21A3272771496E220 /* CoreData.framework */; };
-		E51A9DFC0B668B2FD64A4969 /* UIScrollView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7E16FABE9D30C203543B58 /* UIScrollView+PMUtils.m */; };
-		E7036F2B7524496AC705D3C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B32F552BCA9C98EBD857834 /* Foundation.framework */; };
-		EA374613921E3ECF7B1A5970 /* NSString+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D495A09B95516E96AB84E175 /* NSString+PMUtils.h */; };
-		ED77AB55108CA05EDCA9E432 /* UIColor+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F6B5C962E6A27533B922A /* UIColor+PMUtils.m */; };
-		F044DFF1D577F10147C5D122 /* UIResponder+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C6626EDF0FEF0F60134BE0 /* UIResponder+PMUtils.h */; };
-		F2873175E7C234BF57BCD1EE /* NSIndexPath+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C36863768858858D8C8B9E8 /* NSIndexPath+PMUtils.h */; };
-		F60A86E23270E0DDFE1BCE0C /* UITableView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3035E9EF4424C67960D54778 /* UITableView+PMUtils.h */; };
-		F6BE0BCD92E9E4E2266EB829 /* UICollectionReusableView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF9F6D5510E343A8F498281 /* UICollectionReusableView+PMUtils.m */; };
-		FC1A38B842C56CFF3382D958 /* NSDictionary+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E7964DBD03E327C4A18EE524 /* NSDictionary+PMUtils.m */; };
-		FC8069C293DB18B1B566073C /* UICollectionReusableView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B55D8008652AE340072C54AC /* UICollectionReusableView+PMUtils.h */; };
-		FF1F3BFF26E063FF620FE66B /* NSFileManager+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C0E43EF9F05CC9838BDBF7 /* NSFileManager+PMUtils.h */; };
+		0241663CB6DA66BC8B57E6E1 /* UINavigationController+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 16E15C978506A42B8AD7E736 /* UINavigationController+PMUtils.h */; };
+		048BDFBFEE6CD2FD03197464 /* UIImage+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD6D78B05042C51C2BB4CA0 /* UIImage+PMUtils.h */; };
+		05333E922719FB7DCC1399A5 /* NSFileManager+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 171AFEC98BD783A04DB9709E /* NSFileManager+PMUtils.m */; };
+		0725E665EF300121F3082994 /* NSData+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 721CA720D1E0E98A2639589B /* NSData+PMUtils.m */; };
+		0D1A340A822D873CC893DE09 /* PMProtocolInterceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = D23D1665133A5E82B34EF1E3 /* PMProtocolInterceptor.h */; };
+		0F8E6A478B62B51CAF5A7C9F /* UIDevice+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D9099C1FD83E5B4CBC569FA /* UIDevice+PMUtils.h */; };
+		121288C8595E501DE92CBEB2 /* NSObject+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F8EDD0615ABD1BD9BC1ECD /* NSObject+PMUtils.h */; };
+		14F153CCA17D1E4B15EB7B5E /* UICollectionReusableView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F64DCBF7A186DCB37CFD3F18 /* UICollectionReusableView+PMUtils.h */; };
+		16C7D159E3FB06AF8E84BBED /* UIView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412EC845E733CE1F74403E8 /* UIView+PMUtils.m */; };
+		1CCB06EC36111937A77C3B49 /* UIImageView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 729F4E554101C6FD8212BE31 /* UIImageView+PMUtils.h */; };
+		1D5968733E248359625FBB61 /* NSIndexPath+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB43B810223F7A634588262 /* NSIndexPath+PMUtils.h */; };
+		202F169D0565D6143D4BE215 /* Foundation+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F944EBB2E6FC6F0AD093F72 /* Foundation+PMUtils.h */; };
+		21CD90D6BEC0087374FA6D38 /* NSObject+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F8EDD0615ABD1BD9BC1ECD /* NSObject+PMUtils.h */; };
+		239FF32EEC8258502CDE9E84 /* UIScreen+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 76EB030090F531E9E5B4F4F2 /* UIScreen+PMUtils.m */; };
+		267774F199848FCEF8FF864C /* NSArray+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BC93502AEB968FAB73034E /* NSArray+PMUtils.m */; };
+		26C56FCEFA8F60481A7C9DAD /* UITableView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F9C7CE1632A5E903823D4D /* UITableView+PMUtils.m */; };
+		28CD1AE93AC8DA8C26FCA8B0 /* UICollectionViewFlowLayout+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E7C3C56EB65BEB6CA54B1F3 /* UICollectionViewFlowLayout+PMUtils.h */; };
+		2B577EBD98387DDBB03A8CB3 /* NSData+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D569BA39ED60036602E70F61 /* NSData+PMUtils.h */; };
+		2B88DE1F4BE9661CD3EFF5BC /* UIScrollView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FDB3DCEC49B426DA3850CC /* UIScrollView+PMUtils.m */; };
+		334913420985303278160B8B /* UIKit+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7645AB56365B9335FDACB4BA /* UIKit+PMUtils.h */; };
+		34BA795E1C49642C4179CF3A /* NSNumber+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 494ECC2F919C0353423675B7 /* NSNumber+PMUtils.m */; };
+		35DC95D98464B6F59431A131 /* UITableViewHeaderFooterView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA22C1D57C627B15AF994E4 /* UITableViewHeaderFooterView+PMUtils.m */; };
+		3974003728F7D1CCC9064A4F /* UITableViewHeaderFooterView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B70D643B0DEB590E05763C8F /* UITableViewHeaderFooterView+PMUtils.h */; };
+		3BB9BD5ED992E762B4D9BF77 /* NSThread+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 68D9CF8A58B61B1D33C0B12F /* NSThread+PMUtils.h */; };
+		3CB30D0217D0A4AB91A5A938 /* UIScreen+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 76EB030090F531E9E5B4F4F2 /* UIScreen+PMUtils.m */; };
+		41F4D9570D04B23F7E355671 /* UINavigationController+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 16E15C978506A42B8AD7E736 /* UINavigationController+PMUtils.h */; };
+		429AE71CD89DFC558E282E69 /* NSMutableDictionary+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 418A673CA4E8E3A8F40F6757 /* NSMutableDictionary+PMUtils.m */; };
+		43C0ADBC019C8869CA8E0F52 /* UIKit+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7645AB56365B9335FDACB4BA /* UIKit+PMUtils.h */; };
+		44E3AEF0266B9148ABD5180A /* UITableViewCell+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 18981249D73B79EF3F5DDB44 /* UITableViewCell+PMUtils.h */; };
+		47FF0636669E8A986282E12E /* UICollectionReusableView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 276E0DF498973B61C0DB6E65 /* UICollectionReusableView+PMUtils.m */; };
+		4D5ADE344A17BA8A814F908A /* UITableView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F9C7CE1632A5E903823D4D /* UITableView+PMUtils.m */; };
+		4DCE4A5A398173E666A90A00 /* NSString+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D375D9A308BF4C3910F32 /* NSString+PMUtils.m */; };
+		4F07C407777B3C77AB45F5B7 /* Pods-UIKit+PMUtilsTests-PMUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FEF400C6467CD0B9BE1B0D /* Pods-UIKit+PMUtilsTests-PMUtils-dummy.m */; };
+		56605DEF7AD15889BE0603F2 /* Pods-UIKit+PMUtilsTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F47A20EE873AA8D0F04533FA /* Pods-UIKit+PMUtilsTests-dummy.m */; };
+		5D4AEC9877F142941B982BCC /* UIView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 809EC0A8B2B05E03B44438B6 /* UIView+PMUtils.h */; };
+		6071FCD2D7A0AE24DF33853B /* UITableViewHeaderFooterView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA22C1D57C627B15AF994E4 /* UITableViewHeaderFooterView+PMUtils.m */; };
+		61B341CE3042B8BC15739356 /* UICollectionView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 354337F50B4EDEF595D08515 /* UICollectionView+PMUtils.m */; };
+		624FEA7F2A424FB98099CDDE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83065EB15E540C39AA4FB0 /* CoreData.framework */; };
+		631643985DFAAC788A3F7F83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEC4173FB65A336C416A36C /* Foundation.framework */; };
+		655BB723F351C041C00B17EC /* NSIndexPath+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B01A8A8667B8F9E887815 /* NSIndexPath+PMUtils.m */; };
+		662BD02D376135E9A81D4282 /* UIImageView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D3825B6E2600448F5148C62C /* UIImageView+PMUtils.m */; };
+		66695BB42FC39CB198585586 /* NSArray+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EB6E341AAE436E235786A84 /* NSArray+PMUtils.h */; };
+		68259B9F58371ACAEA63492A /* NSDictionary+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0226F216803C14416FCD19F8 /* NSDictionary+PMUtils.m */; };
+		6CE2F34F8AA8830F33E7FF4E /* UICollectionViewFlowLayout+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B0227DED2B3BF6D9E95F5 /* UICollectionViewFlowLayout+PMUtils.m */; };
+		6F506D49F4CA3F5F390D297D /* UIScreen+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = FDAC2B98958BC4BDF03D3E27 /* UIScreen+PMUtils.h */; };
+		71E4478A3B89798C80EEF383 /* NSRegularExpression+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 46472B6C87CABE97B3EC807F /* NSRegularExpression+PMUtils.m */; };
+		72B6647A691F005E2281E961 /* UIViewController+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BA5C416CB336EB4E66C0B8B /* UIViewController+PMUtils.h */; };
+		72DA6B5ED698B4B715A0C829 /* NSArray+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EB6E341AAE436E235786A84 /* NSArray+PMUtils.h */; };
+		73BE4198C8CD1EE85C378F09 /* Pods-UIKit+PMUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5CBFD5B36D1C1BA242D226 /* Pods-UIKit+PMUtils-dummy.m */; };
+		74D672970C9BD3889AE22772 /* UICollectionReusableView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F64DCBF7A186DCB37CFD3F18 /* UICollectionReusableView+PMUtils.h */; };
+		75578B87F526259BAAE26355 /* NSIndexPath+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB43B810223F7A634588262 /* NSIndexPath+PMUtils.h */; };
+		75DF245F528A2CB2FE0757C3 /* UITableViewCell+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 18981249D73B79EF3F5DDB44 /* UITableViewCell+PMUtils.h */; };
+		7B90450A5C585FC2604C729C /* NSObject+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFE34215FE653B117D63868 /* NSObject+PMUtils.m */; };
+		7DC7C07C33FADD75A292F917 /* UIResponder+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 5451FAE160F1A62792DBACC5 /* UIResponder+PMUtils.h */; };
+		7E2CCEA734C0144CB0E38F39 /* NSDictionary+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EB542BA95C9B0D609F07753D /* NSDictionary+PMUtils.h */; };
+		7F3080EFA579DB2FCCC74B66 /* UIImage+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD6D78B05042C51C2BB4CA0 /* UIImage+PMUtils.h */; };
+		7FC34305F2DB95774CBD0978 /* UIGestureRecognizer+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E76F3E55591B99533091775C /* UIGestureRecognizer+PMUtils.h */; };
+		809A6AA833DC32750E59BE5B /* NSObject+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFE34215FE653B117D63868 /* NSObject+PMUtils.m */; };
+		83F8C26C49C18F30B5E0A2D3 /* NSFileManager+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 171AFEC98BD783A04DB9709E /* NSFileManager+PMUtils.m */; };
+		845436A4D3EBC6A4FCA35B14 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEC4173FB65A336C416A36C /* Foundation.framework */; };
+		869E6A8576A6212F8B424290 /* UICollectionView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 354337F50B4EDEF595D08515 /* UICollectionView+PMUtils.m */; };
+		86B73CD44AA93D95AFA959E5 /* UICollectionView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = FCEF5D590B1D5E7827F5DBB8 /* UICollectionView+PMUtils.h */; };
+		86E7D6DE23807472BD756486 /* UINavigationController+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 502D934C9214DA7391BD84AD /* UINavigationController+PMUtils.m */; };
+		89ADDFF97689D102F1844416 /* UIView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412EC845E733CE1F74403E8 /* UIView+PMUtils.m */; };
+		8B77E80A787CE8D82814D980 /* NSData+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D569BA39ED60036602E70F61 /* NSData+PMUtils.h */; };
+		8DF4581C6A393C571BD091A1 /* UIResponder+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D65C507EF9DACD6F7CE173 /* UIResponder+PMUtils.m */; };
+		8FD844B4AA037CCA06CBE36E /* UIColor+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EB25F16F2DA6394BD8EB87 /* UIColor+PMUtils.h */; };
+		9053AE71CDDEE40568E9DF40 /* NSDictionary+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EB542BA95C9B0D609F07753D /* NSDictionary+PMUtils.h */; };
+		91D7252AF6870FAFC726EFDE /* NSData+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 721CA720D1E0E98A2639589B /* NSData+PMUtils.m */; };
+		9433D44176CB31A80E01935C /* NSFileManager+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C5E1CA6BC5DC85704551CB2 /* NSFileManager+PMUtils.h */; };
+		9ED1D63B976F51B469A0B951 /* UITableView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 05CF6E13CAE222765ED3EB64 /* UITableView+PMUtils.h */; };
+		9F30A3B234D66D24D95AEC7E /* PMProtocolInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C9D2A7162E74FBFB29131 /* PMProtocolInterceptor.m */; };
+		A17BDBF3D6F89592BFEA5894 /* NSString+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BFA80C553BC468FB6893928 /* NSString+PMUtils.h */; };
+		A6A98C8B33FEEEC8E9F5F540 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEC4173FB65A336C416A36C /* Foundation.framework */; };
+		A8B7A4CC4FB46BA45514A795 /* UIColor+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EB25F16F2DA6394BD8EB87 /* UIColor+PMUtils.h */; };
+		A963CC023D1804A6A4B7A410 /* UIGestureRecognizer+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460784411A48E8C10B08D31 /* UIGestureRecognizer+PMUtils.m */; };
+		AA048A6F0F400A7FC42508E0 /* NSString+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BFA80C553BC468FB6893928 /* NSString+PMUtils.h */; };
+		AC0F629DA3A8C1B11E17B509 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEC4173FB65A336C416A36C /* Foundation.framework */; };
+		ACFD9F4CD7137C9E2DE83AB8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83065EB15E540C39AA4FB0 /* CoreData.framework */; };
+		AD2006FF2B69C292AEDF8860 /* NSThread+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 772B33AE02E5A790962FFED7 /* NSThread+PMUtils.m */; };
+		ADED92BE47A10BFED096A719 /* NSString+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D375D9A308BF4C3910F32 /* NSString+PMUtils.m */; };
+		B17834BEBB0366AE2058E18F /* UIImage+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185AD046D7C9C35C7ED8659 /* UIImage+PMUtils.m */; };
+		B427F84D9B898982CF9B8552 /* NSNumber+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7779ED40EF52DF41AE835902 /* NSNumber+PMUtils.h */; };
+		B5EB969740B4F2711DC28F08 /* UIScreen+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = FDAC2B98958BC4BDF03D3E27 /* UIScreen+PMUtils.h */; };
+		BA61966FC5611D7E7F694288 /* UINavigationController+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 502D934C9214DA7391BD84AD /* UINavigationController+PMUtils.m */; };
+		BE9D6EF9021CBF8371D4310C /* UICollectionViewFlowLayout+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E7C3C56EB65BEB6CA54B1F3 /* UICollectionViewFlowLayout+PMUtils.h */; };
+		BF435091B8B63FE30627ED84 /* NSRegularExpression+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 46472B6C87CABE97B3EC807F /* NSRegularExpression+PMUtils.m */; };
+		C0828213885622505A95F3B9 /* UIColor+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD563C0F6EC8D156B132BFB /* UIColor+PMUtils.m */; };
+		C0EEA12299538D582BC65353 /* UIGestureRecognizer+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E76F3E55591B99533091775C /* UIGestureRecognizer+PMUtils.h */; };
+		C6AAD86AB234E28131A1D928 /* NSFileManager+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C5E1CA6BC5DC85704551CB2 /* NSFileManager+PMUtils.h */; };
+		C9CE0AABBD0AACAFFE714A74 /* UITableViewHeaderFooterView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B70D643B0DEB590E05763C8F /* UITableViewHeaderFooterView+PMUtils.h */; };
+		C9E265CACF4835BB26A75027 /* UICollectionReusableView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 276E0DF498973B61C0DB6E65 /* UICollectionReusableView+PMUtils.m */; };
+		CC676DC31106F98D7CC13B0D /* UIDevice+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B96F23674711B76DD7090779 /* UIDevice+PMUtils.m */; };
+		CC91634A531E71CA95E1D862 /* UIResponder+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 5451FAE160F1A62792DBACC5 /* UIResponder+PMUtils.h */; };
+		D04007853A0415CBA9D631C0 /* NSRegularExpression+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 784A6EB37ADF1A9137B6856A /* NSRegularExpression+PMUtils.h */; };
+		D0AB923B2BCE9253C2252F35 /* UIViewController+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFFC2BD4D56EB65C75040A0 /* UIViewController+PMUtils.m */; };
+		D2EB2D309C4DA2921B942EA9 /* NSMutableDictionary+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD42EDB3EE1AE262D681104 /* NSMutableDictionary+PMUtils.h */; };
+		D32729036775AE4EC7588463 /* UIDevice+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B96F23674711B76DD7090779 /* UIDevice+PMUtils.m */; };
+		D55CC68A98F529C3EAEA834C /* UICollectionView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = FCEF5D590B1D5E7827F5DBB8 /* UICollectionView+PMUtils.h */; };
+		D7AB119F18BD2A045EF749C6 /* UICollectionViewFlowLayout+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B0227DED2B3BF6D9E95F5 /* UICollectionViewFlowLayout+PMUtils.m */; };
+		DA880617EB9CA153965CEBD4 /* NSDictionary+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0226F216803C14416FCD19F8 /* NSDictionary+PMUtils.m */; };
+		DAC9DE13E1A1A29575DB30B5 /* UITableView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 05CF6E13CAE222765ED3EB64 /* UITableView+PMUtils.h */; };
+		E17F03821F7D83D86F6646FB /* UIGestureRecognizer+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460784411A48E8C10B08D31 /* UIGestureRecognizer+PMUtils.m */; };
+		E1D5773D88F4F3D0F8AA0DE6 /* UIColor+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD563C0F6EC8D156B132BFB /* UIColor+PMUtils.m */; };
+		E39596A635DBDD59B36AFEFB /* NSMutableDictionary+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD42EDB3EE1AE262D681104 /* NSMutableDictionary+PMUtils.h */; };
+		E584D7E2563A080E94A59865 /* UIImageView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D3825B6E2600448F5148C62C /* UIImageView+PMUtils.m */; };
+		E63A5BF65580868AC8D5B1E8 /* UIDevice+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D9099C1FD83E5B4CBC569FA /* UIDevice+PMUtils.h */; };
+		E680B7875F4C8E44CD226D21 /* NSIndexPath+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B01A8A8667B8F9E887815 /* NSIndexPath+PMUtils.m */; };
+		E8E95FCCD4040E9DFB485837 /* UITableViewCell+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 92EE9B39B0679569DBC3374A /* UITableViewCell+PMUtils.m */; };
+		E9218A1337F6C8A6D2A3331E /* UIViewController+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFFC2BD4D56EB65C75040A0 /* UIViewController+PMUtils.m */; };
+		E9ED5B99AA1B518621A21BAF /* UIScrollView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = DC9191C6D43CE5E3E03B82F1 /* UIScrollView+PMUtils.h */; };
+		ECF5F65A4EEBE41DD4B25FC8 /* NSMutableDictionary+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 418A673CA4E8E3A8F40F6757 /* NSMutableDictionary+PMUtils.m */; };
+		EDD01A55092E04CB65E6927D /* NSRegularExpression+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 784A6EB37ADF1A9137B6856A /* NSRegularExpression+PMUtils.h */; };
+		F31C1093ABE2ED773A2B6377 /* UIViewController+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BA5C416CB336EB4E66C0B8B /* UIViewController+PMUtils.h */; };
+		F37267E1107C762C6C89DA1C /* UIImage+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185AD046D7C9C35C7ED8659 /* UIImage+PMUtils.m */; };
+		F55C2F03A786D37B598F205A /* NSNumber+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 494ECC2F919C0353423675B7 /* NSNumber+PMUtils.m */; };
+		F60611BCB3A2F139FE18C66B /* NSThread+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 772B33AE02E5A790962FFED7 /* NSThread+PMUtils.m */; };
+		F6B8F6F511651BA8CFCEA76E /* NSArray+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BC93502AEB968FAB73034E /* NSArray+PMUtils.m */; };
+		F6C97CAD1E98AB85A77001D8 /* NSThread+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 68D9CF8A58B61B1D33C0B12F /* NSThread+PMUtils.h */; };
+		F73BFCBEEC81D91D0D876AD2 /* UIImageView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 729F4E554101C6FD8212BE31 /* UIImageView+PMUtils.h */; };
+		F75E3B8A5F3A1197D821AF4F /* UIScrollView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = DC9191C6D43CE5E3E03B82F1 /* UIScrollView+PMUtils.h */; };
+		F80158420DCF421519C0B443 /* UITableViewCell+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 92EE9B39B0679569DBC3374A /* UITableViewCell+PMUtils.m */; };
+		FB227C239FA37E81649EE301 /* UIResponder+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D65C507EF9DACD6F7CE173 /* UIResponder+PMUtils.m */; };
+		FB968B45A73798C0A38E7548 /* NSNumber+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7779ED40EF52DF41AE835902 /* NSNumber+PMUtils.h */; };
+		FC9A60F6D3002103E439575B /* PMProtocolInterceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = D23D1665133A5E82B34EF1E3 /* PMProtocolInterceptor.h */; };
+		FCDE58164ED6229506DA488B /* UIView+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 809EC0A8B2B05E03B44438B6 /* UIView+PMUtils.h */; };
+		FDB1A24155E57BBA8D9B64DC /* PMProtocolInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C9D2A7162E74FBFB29131 /* PMProtocolInterceptor.m */; };
+		FDC2D65C5B34275E6C14390D /* UIScrollView+PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FDB3DCEC49B426DA3850CC /* UIScrollView+PMUtils.m */; };
+		FE25B0CE8E48B3F3E7953128 /* Pods-UIKit+PMUtils-PMUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BA1A24A3C43AF968B2BE74 /* Pods-UIKit+PMUtils-PMUtils-dummy.m */; };
+		FFE61854863B4A6E2E3EF153 /* Foundation+PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F944EBB2E6FC6F0AD093F72 /* Foundation+PMUtils.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		21C832F7BF4C624A4165B692 /* PBXContainerItemProxy */ = {
+		4B01BF343F13DCF22E6EF0E1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 06E7C3888AAB0F611253574F /* Project object */;
+			containerPortal = D041C73DF65AAFAEB883C999 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6C8D929130BA3C7D98DAF937;
-			remoteInfo = "Pods-UIKit+PMUtils-PMUtils";
-		};
-		E09E4EAA460B40715E024A07 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 06E7C3888AAB0F611253574F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3987C56F288B2045168FE512;
+			remoteGlobalIDString = 0688FD03DEDB749DE72E6230;
 			remoteInfo = "Pods-UIKit+PMUtilsTests-PMUtils";
+		};
+		B9403AD5AAAD43A0782CC556 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D041C73DF65AAFAEB883C999 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08B7368B0960528226045754;
+			remoteInfo = "Pods-UIKit+PMUtils-PMUtils";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00062246454B525B5378323E /* libPods-UIKit+PMUtils-PMUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UIKit+PMUtils-PMUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		00BE099630E513FD0374348E /* NSArray+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSArray+PMUtils.h"; sourceTree = "<group>"; };
-		010C1619931C47F30ABCBFB6 /* NSNumber+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNumber+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSNumber+PMUtils.h"; sourceTree = "<group>"; };
-		0122F578992E863BF29AE873 /* Pods-UIKit+PMUtilsTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UIKit+PMUtilsTests-resources.sh"; sourceTree = "<group>"; };
-		06412DF67E9E65CAFFC47443 /* NSObject+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSObject+PMUtils.h"; sourceTree = "<group>"; };
-		0DFD0ACFE893D6A1C06B6622 /* UIViewController+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIViewController+PMUtils.m"; sourceTree = "<group>"; };
-		0FF9F6D5510E343A8F498281 /* UICollectionReusableView+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionReusableView+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UICollectionReusableView+PMUtils.m"; sourceTree = "<group>"; };
-		1B3085A9442BD4FBC778FC77 /* UIGestureRecognizer+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIGestureRecognizer+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIGestureRecognizer+PMUtils.h"; sourceTree = "<group>"; };
-		1D29E0325CD9573FF86D1C02 /* UIScreen+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScreen+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIScreen+PMUtils.m"; sourceTree = "<group>"; };
-		1D6B86E319E2915092D12702 /* NSMutableDictionary+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSMutableDictionary+PMUtils.h"; sourceTree = "<group>"; };
-		1E63930E3AF05C285195A145 /* NSData+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSData+PMUtils.m"; sourceTree = "<group>"; };
-		20BC4FECEC2E0713FEAFF717 /* NSNumber+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSNumber+PMUtils.m"; sourceTree = "<group>"; };
-		220BA335EA52EF56AA629A45 /* UITableViewCell+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UITableViewCell+PMUtils.h"; sourceTree = "<group>"; };
-		236CFC17C15F5DE523FCD228 /* UIView+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIView+PMUtils.h"; sourceTree = "<group>"; };
-		263669B5A287F02E4E57215A /* Pods-UIKit+PMUtilsTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UIKit+PMUtilsTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		27C0E43EF9F05CC9838BDBF7 /* NSFileManager+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSFileManager+PMUtils.h"; sourceTree = "<group>"; };
-		2B32F552BCA9C98EBD857834 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		2FF0BFBBEB3E61CA1BD71789 /* Pods-UIKit+PMUtils-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UIKit+PMUtils-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3035E9EF4424C67960D54778 /* UITableView+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UITableView+PMUtils.h"; sourceTree = "<group>"; };
-		3289BB91A9FD0A13CAC22C2F /* UICollectionViewFlowLayout+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionViewFlowLayout+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UICollectionViewFlowLayout+PMUtils.m"; sourceTree = "<group>"; };
-		367F8D4C59A631EA064AAD71 /* Pods-UIKit+PMUtils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIKit+PMUtils.debug.xcconfig"; sourceTree = "<group>"; };
-		37D80889F1FAF146F5F87915 /* UITableView+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UITableView+PMUtils.m"; sourceTree = "<group>"; };
-		39AAFC21B1441C21D8D8E816 /* libPods-UIKit+PMUtilsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UIKit+PMUtilsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		39BC7A72E21E1BC909BED4DF /* UITableViewHeaderFooterView+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableViewHeaderFooterView+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UITableViewHeaderFooterView+PMUtils.m"; sourceTree = "<group>"; };
-		3B4E87A31B7F0819AC568F84 /* Pods-UIKit+PMUtils-PMUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UIKit+PMUtils-PMUtils-dummy.m"; sourceTree = "<group>"; };
-		40630FCC8B27C5D101F1B3B9 /* Pods-UIKit+PMUtilsTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UIKit+PMUtilsTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		41CDBE389052FD99FC3206DB /* NSMutableDictionary+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSMutableDictionary+PMUtils.m"; sourceTree = "<group>"; };
-		42F135D0563E88ED96B4B8D8 /* NSDictionary+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSDictionary+PMUtils.h"; sourceTree = "<group>"; };
-		44406B707E65526A3862A7AF /* UIImageView+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIImageView+PMUtils.m"; sourceTree = "<group>"; };
-		468DDE98B64E1B659F63DFE3 /* Pods-UIKit+PMUtilsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIKit+PMUtilsTests.release.xcconfig"; sourceTree = "<group>"; };
-		4A2F3F4670DE75831C3B5281 /* UIDevice+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIDevice+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIDevice+PMUtils.h"; sourceTree = "<group>"; };
-		4C36863768858858D8C8B9E8 /* NSIndexPath+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSIndexPath+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSIndexPath+PMUtils.h"; sourceTree = "<group>"; };
-		50B8E58181612C09620EBDE7 /* UIImage+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIImage+PMUtils.h"; sourceTree = "<group>"; };
-		52AA8DDF98C6EA776408A4AF /* UITableViewCell+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UITableViewCell+PMUtils.m"; sourceTree = "<group>"; };
-		55A8BEBABC822BE22E18C473 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		57545A6DC8E998B68723B698 /* UIImage+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIImage+PMUtils.m"; sourceTree = "<group>"; };
-		57DEFC4EA2E11C6791028E8F /* Pods-UIKit+PMUtils-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UIKit+PMUtils-resources.sh"; sourceTree = "<group>"; };
-		59A7AE246255F6CA691215E4 /* NSRegularExpression+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSRegularExpression+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSRegularExpression+PMUtils.h"; sourceTree = "<group>"; };
-		5B7E2D9B497478B28FE0E51E /* Pods-UIKit+PMUtils-PMUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIKit+PMUtils-PMUtils.xcconfig"; sourceTree = "<group>"; };
-		61B6DABD2CE97EAF9D0B7EEB /* Pods-UIKit+PMUtils-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UIKit+PMUtils-acknowledgements.plist"; sourceTree = "<group>"; };
-		6E79A035DDDA25552677BBED /* UIResponder+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIResponder+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIResponder+PMUtils.m"; sourceTree = "<group>"; };
-		778B42751CF839FE38B9D2F0 /* UIView+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIView+PMUtils.m"; sourceTree = "<group>"; };
-		78BA00F9A0D62B2666DF9925 /* UIImageView+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIImageView+PMUtils.h"; sourceTree = "<group>"; };
-		7A0F6B5C962E6A27533B922A /* UIColor+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIColor+PMUtils.m"; sourceTree = "<group>"; };
-		7FAC3036BFDFD35B0AA4BD89 /* UICollectionView+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionView+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UICollectionView+PMUtils.m"; sourceTree = "<group>"; };
-		80AA6CC21A3272771496E220 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
-		855DF2723C9F3BDA3946AD94 /* UICollectionViewFlowLayout+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionViewFlowLayout+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UICollectionViewFlowLayout+PMUtils.h"; sourceTree = "<group>"; };
-		8B731A0D20204669BDA4B6B9 /* UIGestureRecognizer+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIGestureRecognizer+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIGestureRecognizer+PMUtils.m"; sourceTree = "<group>"; };
-		8BECD1747F0A1BDFA2AC5F63 /* NSObject+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSObject+PMUtils.m"; sourceTree = "<group>"; };
-		8C2146358F935B17090487B9 /* Pods-UIKit+PMUtils-PMUtils-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIKit+PMUtils-PMUtils-Private.xcconfig"; sourceTree = "<group>"; };
-		8D0F2BE608BF7BE945A80563 /* Pods-UIKit+PMUtils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIKit+PMUtils.release.xcconfig"; sourceTree = "<group>"; };
-		93897D1863B186E7B1B5E83D /* UIScreen+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScreen+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIScreen+PMUtils.h"; sourceTree = "<group>"; };
-		93B79C217CC2D1CBB964E29E /* Pods-UIKit+PMUtilsTests-PMUtils-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKit+PMUtilsTests-PMUtils-Private.xcconfig"; path = "../Pods-UIKit+PMUtilsTests-PMUtils/Pods-UIKit+PMUtilsTests-PMUtils-Private.xcconfig"; sourceTree = "<group>"; };
-		9845D2130719EBB2716475F1 /* NSArray+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSArray+PMUtils.m"; sourceTree = "<group>"; };
-		9B7E16FABE9D30C203543B58 /* UIScrollView+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIScrollView+PMUtils.m"; sourceTree = "<group>"; };
-		9BE6487A1BC2218CAAE40C48 /* Pods-UIKit+PMUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UIKit+PMUtils-dummy.m"; sourceTree = "<group>"; };
-		9D9250BC548F0B42560B38FD /* NSThread+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSThread+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSThread+PMUtils.m"; sourceTree = "<group>"; };
-		9D9F1BC733B38CB00CF28055 /* NSIndexPath+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSIndexPath+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSIndexPath+PMUtils.m"; sourceTree = "<group>"; };
-		9FAFD98174716A101644BC39 /* Pods-UIKit+PMUtilsTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UIKit+PMUtilsTests-dummy.m"; sourceTree = "<group>"; };
-		A5C6626EDF0FEF0F60134BE0 /* UIResponder+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIResponder+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIResponder+PMUtils.h"; sourceTree = "<group>"; };
-		A98B22121D002E521C203433 /* Pods-UIKit+PMUtilsTests-PMUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-UIKit+PMUtilsTests-PMUtils-dummy.m"; path = "../Pods-UIKit+PMUtilsTests-PMUtils/Pods-UIKit+PMUtilsTests-PMUtils-dummy.m"; sourceTree = "<group>"; };
-		AA04C087DB771DF09CFA6358 /* NSString+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSString+PMUtils.m"; sourceTree = "<group>"; };
-		AB137F3F7A150EDD9C79ABEC /* NSRegularExpression+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSRegularExpression+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSRegularExpression+PMUtils.m"; sourceTree = "<group>"; };
-		AC8F72F288453F0C790F6860 /* NSFileManager+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSFileManager+PMUtils.m"; sourceTree = "<group>"; };
-		AD570E12E8419F8C7E4766E8 /* Pods-UIKit+PMUtilsTests-PMUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-UIKit+PMUtilsTests-PMUtils-prefix.pch"; path = "../Pods-UIKit+PMUtilsTests-PMUtils/Pods-UIKit+PMUtilsTests-PMUtils-prefix.pch"; sourceTree = "<group>"; };
-		B55D8008652AE340072C54AC /* UICollectionReusableView+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionReusableView+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UICollectionReusableView+PMUtils.h"; sourceTree = "<group>"; };
-		B5CAA23E20BE07206373FCC9 /* PMProtocolInterceptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMProtocolInterceptor.h; path = Pod/Classes/PMProtocolInterceptor/PMProtocolInterceptor.h; sourceTree = "<group>"; };
-		BCF3EADFC1A1EB5BFE9BD134 /* UIScrollView+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIScrollView+PMUtils.h"; sourceTree = "<group>"; };
-		C9F62DC84F1CE60EF1A026F7 /* UIColor+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIColor+PMUtils.h"; sourceTree = "<group>"; };
-		CA4AF581CA934CD4920AEB86 /* Pods-UIKit+PMUtils-PMUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UIKit+PMUtils-PMUtils-prefix.pch"; sourceTree = "<group>"; };
-		D3C575C6F1BEDE17310EDA4A /* UIKit+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIKit+PMUtils.h"; sourceTree = "<group>"; };
-		D495A09B95516E96AB84E175 /* NSString+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSString+PMUtils.h"; sourceTree = "<group>"; };
-		D5D20D83C2A282D4EDCF026B /* UITableViewHeaderFooterView+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableViewHeaderFooterView+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UITableViewHeaderFooterView+PMUtils.h"; sourceTree = "<group>"; };
-		D674408384EDB5221DCD8554 /* Foundation+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Foundation+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/Foundation+PMUtils.h"; sourceTree = "<group>"; };
-		DC6C9E939FEF2B84EBADA19A /* NSThread+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSThread+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSThread+PMUtils.h"; sourceTree = "<group>"; };
-		DE06D99DAAAC959F7CFB8676 /* libPods-UIKit+PMUtilsTests-PMUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UIKit+PMUtilsTests-PMUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0A90F4C054A49A90189BF17 /* PMProtocolInterceptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMProtocolInterceptor.m; path = Pod/Classes/PMProtocolInterceptor/PMProtocolInterceptor.m; sourceTree = "<group>"; };
-		E0F04F8B00A29B065B96617D /* libPods-UIKit+PMUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UIKit+PMUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2F027AAC8248D7419D3A802 /* UIViewController+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIViewController+PMUtils.h"; sourceTree = "<group>"; };
-		E6207AD18F78A25AA98585F6 /* Pods-UIKit+PMUtilsTests-PMUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKit+PMUtilsTests-PMUtils.xcconfig"; path = "../Pods-UIKit+PMUtilsTests-PMUtils/Pods-UIKit+PMUtilsTests-PMUtils.xcconfig"; sourceTree = "<group>"; };
-		E762F1684774F723BAD78DCC /* UICollectionView+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionView+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UICollectionView+PMUtils.h"; sourceTree = "<group>"; };
-		E7964DBD03E327C4A18EE524 /* NSDictionary+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSDictionary+PMUtils.m"; sourceTree = "<group>"; };
-		EAC235374E6E4C0FD95F93EF /* UINavigationController+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UINavigationController+PMUtils.h"; sourceTree = "<group>"; };
-		EF215C85C1A3984FBC4795E9 /* Pods-UIKit+PMUtilsTests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UIKit+PMUtilsTests-environment.h"; sourceTree = "<group>"; };
-		EF7ADC1707C98A497529F6E6 /* NSData+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSData+PMUtils.h"; sourceTree = "<group>"; };
-		F5D4EA127F7F6EE9246BA95B /* UINavigationController+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UINavigationController+PMUtils.m"; sourceTree = "<group>"; };
-		F93C430083B606DC5B1C2792 /* Pods-UIKit+PMUtils-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UIKit+PMUtils-environment.h"; sourceTree = "<group>"; };
-		FA233F2FCAD740F08AE04B36 /* Pods-UIKit+PMUtilsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIKit+PMUtilsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		FC40D96C485706938F26949F /* UIDevice+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIDevice+PMUtils.m"; sourceTree = "<group>"; };
+		0226F216803C14416FCD19F8 /* NSDictionary+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSDictionary+PMUtils.m"; sourceTree = "<group>"; };
+		02B1E0D4DE2A11E96E8BAFAD /* Pods-UIKit+PMUtilsTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UIKit+PMUtilsTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		05CF6E13CAE222765ED3EB64 /* UITableView+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UITableView+PMUtils.h"; sourceTree = "<group>"; };
+		0DB43B810223F7A634588262 /* NSIndexPath+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSIndexPath+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSIndexPath+PMUtils.h"; sourceTree = "<group>"; };
+		16BC93502AEB968FAB73034E /* NSArray+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSArray+PMUtils.m"; sourceTree = "<group>"; };
+		16E15C978506A42B8AD7E736 /* UINavigationController+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UINavigationController+PMUtils.h"; sourceTree = "<group>"; };
+		171AFEC98BD783A04DB9709E /* NSFileManager+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSFileManager+PMUtils.m"; sourceTree = "<group>"; };
+		18981249D73B79EF3F5DDB44 /* UITableViewCell+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UITableViewCell+PMUtils.h"; sourceTree = "<group>"; };
+		1C5E1CA6BC5DC85704551CB2 /* NSFileManager+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSFileManager+PMUtils.h"; sourceTree = "<group>"; };
+		2185AD046D7C9C35C7ED8659 /* UIImage+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIImage+PMUtils.m"; sourceTree = "<group>"; };
+		2459B045CA66D33DB6F47B49 /* Pods-UIKit+PMUtilsTests-PMUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-UIKit+PMUtilsTests-PMUtils-prefix.pch"; path = "../Pods-UIKit+PMUtilsTests-PMUtils/Pods-UIKit+PMUtilsTests-PMUtils-prefix.pch"; sourceTree = "<group>"; };
+		2460784411A48E8C10B08D31 /* UIGestureRecognizer+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIGestureRecognizer+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIGestureRecognizer+PMUtils.m"; sourceTree = "<group>"; };
+		24EE78B16ED092D1BE125173 /* Pods-UIKit+PMUtils-PMUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UIKit+PMUtils-PMUtils-prefix.pch"; sourceTree = "<group>"; };
+		251C9D2A7162E74FBFB29131 /* PMProtocolInterceptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMProtocolInterceptor.m; path = Pod/Classes/PMProtocolInterceptor/PMProtocolInterceptor.m; sourceTree = "<group>"; };
+		276E0DF498973B61C0DB6E65 /* UICollectionReusableView+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionReusableView+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UICollectionReusableView+PMUtils.m"; sourceTree = "<group>"; };
+		28F9C7CE1632A5E903823D4D /* UITableView+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UITableView+PMUtils.m"; sourceTree = "<group>"; };
+		2AFE34215FE653B117D63868 /* NSObject+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSObject+PMUtils.m"; sourceTree = "<group>"; };
+		31BA1A24A3C43AF968B2BE74 /* Pods-UIKit+PMUtils-PMUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UIKit+PMUtils-PMUtils-dummy.m"; sourceTree = "<group>"; };
+		32B210FA0ADD2FE1084EB91E /* Pods-UIKit+PMUtils-PMUtils-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIKit+PMUtils-PMUtils-Private.xcconfig"; sourceTree = "<group>"; };
+		32EDFDCF130D755A1F7F6F27 /* Pods-UIKit+PMUtilsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIKit+PMUtilsTests.release.xcconfig"; sourceTree = "<group>"; };
+		354337F50B4EDEF595D08515 /* UICollectionView+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionView+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UICollectionView+PMUtils.m"; sourceTree = "<group>"; };
+		374AA67E5CFF9E8C0DCD0EF6 /* libPods-UIKit+PMUtilsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UIKit+PMUtilsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E7C3C56EB65BEB6CA54B1F3 /* UICollectionViewFlowLayout+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionViewFlowLayout+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UICollectionViewFlowLayout+PMUtils.h"; sourceTree = "<group>"; };
+		41556DA8FA21BA1F64805E22 /* Pods-UIKit+PMUtilsTests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UIKit+PMUtilsTests-environment.h"; sourceTree = "<group>"; };
+		418A673CA4E8E3A8F40F6757 /* NSMutableDictionary+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSMutableDictionary+PMUtils.m"; sourceTree = "<group>"; };
+		42F8EDD0615ABD1BD9BC1ECD /* NSObject+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSObject+PMUtils.h"; sourceTree = "<group>"; };
+		43EB25F16F2DA6394BD8EB87 /* UIColor+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIColor+PMUtils.h"; sourceTree = "<group>"; };
+		44FDB3DCEC49B426DA3850CC /* UIScrollView+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIScrollView+PMUtils.m"; sourceTree = "<group>"; };
+		46472B6C87CABE97B3EC807F /* NSRegularExpression+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSRegularExpression+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSRegularExpression+PMUtils.m"; sourceTree = "<group>"; };
+		471418E9BCF6E6D2F641AF47 /* Pods-UIKit+PMUtils-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UIKit+PMUtils-resources.sh"; sourceTree = "<group>"; };
+		494ECC2F919C0353423675B7 /* NSNumber+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSNumber+PMUtils.m"; sourceTree = "<group>"; };
+		4C49E07CD31E59043471FC8D /* Pods-UIKit+PMUtilsTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UIKit+PMUtilsTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		502D934C9214DA7391BD84AD /* UINavigationController+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UINavigationController+PMUtils.m"; sourceTree = "<group>"; };
+		5036A88A59FB0EDF240EBD2E /* libPods-UIKit+PMUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UIKit+PMUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5451FAE160F1A62792DBACC5 /* UIResponder+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIResponder+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIResponder+PMUtils.h"; sourceTree = "<group>"; };
+		59E4B63E929366CCACF0B89E /* Pods-UIKit+PMUtilsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIKit+PMUtilsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5E83065EB15E540C39AA4FB0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		5F3D375D9A308BF4C3910F32 /* NSString+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSString+PMUtils.m"; sourceTree = "<group>"; };
+		60883459AC0D0496BCF23E12 /* libPods-UIKit+PMUtils-PMUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UIKit+PMUtils-PMUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68D9CF8A58B61B1D33C0B12F /* NSThread+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSThread+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSThread+PMUtils.h"; sourceTree = "<group>"; };
+		6BA5C416CB336EB4E66C0B8B /* UIViewController+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIViewController+PMUtils.h"; sourceTree = "<group>"; };
+		6EA31420620CACFFDC423419 /* Pods-UIKit+PMUtils-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UIKit+PMUtils-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6EB6E341AAE436E235786A84 /* NSArray+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSArray+PMUtils.h"; sourceTree = "<group>"; };
+		6F8654A3C99FD11EE1FD85F5 /* Pods-UIKit+PMUtils-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UIKit+PMUtils-environment.h"; sourceTree = "<group>"; };
+		721CA720D1E0E98A2639589B /* NSData+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSData+PMUtils.m"; sourceTree = "<group>"; };
+		729F4E554101C6FD8212BE31 /* UIImageView+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIImageView+PMUtils.h"; sourceTree = "<group>"; };
+		752B01A8A8667B8F9E887815 /* NSIndexPath+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSIndexPath+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSIndexPath+PMUtils.m"; sourceTree = "<group>"; };
+		7645AB56365B9335FDACB4BA /* UIKit+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIKit+PMUtils.h"; sourceTree = "<group>"; };
+		76D6790755E7189599767746 /* Pods-UIKit+PMUtilsTests-PMUtils-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKit+PMUtilsTests-PMUtils-Private.xcconfig"; path = "../Pods-UIKit+PMUtilsTests-PMUtils/Pods-UIKit+PMUtilsTests-PMUtils-Private.xcconfig"; sourceTree = "<group>"; };
+		76EB030090F531E9E5B4F4F2 /* UIScreen+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScreen+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIScreen+PMUtils.m"; sourceTree = "<group>"; };
+		772B33AE02E5A790962FFED7 /* NSThread+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSThread+PMUtils.m"; path = "Pod/Classes/Foundation+PMUtils/NSThread+PMUtils.m"; sourceTree = "<group>"; };
+		7779ED40EF52DF41AE835902 /* NSNumber+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNumber+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSNumber+PMUtils.h"; sourceTree = "<group>"; };
+		784A6EB37ADF1A9137B6856A /* NSRegularExpression+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSRegularExpression+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSRegularExpression+PMUtils.h"; sourceTree = "<group>"; };
+		7F944EBB2E6FC6F0AD093F72 /* Foundation+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Foundation+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/Foundation+PMUtils.h"; sourceTree = "<group>"; };
+		809EC0A8B2B05E03B44438B6 /* UIView+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIView+PMUtils.h"; sourceTree = "<group>"; };
+		83C117D8250F1651C4416D32 /* Pods-UIKit+PMUtils-PMUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIKit+PMUtils-PMUtils.xcconfig"; sourceTree = "<group>"; };
+		8412EC845E733CE1F74403E8 /* UIView+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIView+PMUtils.m"; sourceTree = "<group>"; };
+		8FA7C2026B24A5C250693955 /* Pods-UIKit+PMUtils-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UIKit+PMUtils-acknowledgements.plist"; sourceTree = "<group>"; };
+		92EE9B39B0679569DBC3374A /* UITableViewCell+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UITableViewCell+PMUtils.m"; sourceTree = "<group>"; };
+		9811EE1DF189DB7172FFC811 /* libPods-UIKit+PMUtilsTests-PMUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UIKit+PMUtilsTests-PMUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BFA80C553BC468FB6893928 /* NSString+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSString+PMUtils.h"; sourceTree = "<group>"; };
+		9BFFC2BD4D56EB65C75040A0 /* UIViewController+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIViewController+PMUtils.m"; sourceTree = "<group>"; };
+		9D9099C1FD83E5B4CBC569FA /* UIDevice+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIDevice+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIDevice+PMUtils.h"; sourceTree = "<group>"; };
+		A48F8FB99456C26A78701DAC /* Pods-UIKit+PMUtils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIKit+PMUtils.debug.xcconfig"; sourceTree = "<group>"; };
+		B1FF1D0B1E20574A05FBCEA2 /* Pods-UIKit+PMUtilsTests-PMUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKit+PMUtilsTests-PMUtils.xcconfig"; path = "../Pods-UIKit+PMUtilsTests-PMUtils/Pods-UIKit+PMUtilsTests-PMUtils.xcconfig"; sourceTree = "<group>"; };
+		B70D643B0DEB590E05763C8F /* UITableViewHeaderFooterView+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableViewHeaderFooterView+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UITableViewHeaderFooterView+PMUtils.h"; sourceTree = "<group>"; };
+		B96F23674711B76DD7090779 /* UIDevice+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIDevice+PMUtils.m"; sourceTree = "<group>"; };
+		BBD563C0F6EC8D156B132BFB /* UIColor+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIColor+PMUtils.m"; sourceTree = "<group>"; };
+		CC99C5E876B254D6DB80862C /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D15B0227DED2B3BF6D9E95F5 /* UICollectionViewFlowLayout+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionViewFlowLayout+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UICollectionViewFlowLayout+PMUtils.m"; sourceTree = "<group>"; };
+		D23D1665133A5E82B34EF1E3 /* PMProtocolInterceptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMProtocolInterceptor.h; path = Pod/Classes/PMProtocolInterceptor/PMProtocolInterceptor.h; sourceTree = "<group>"; };
+		D3825B6E2600448F5148C62C /* UIImageView+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIImageView+PMUtils.m"; sourceTree = "<group>"; };
+		D569BA39ED60036602E70F61 /* NSData+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSData+PMUtils.h"; sourceTree = "<group>"; };
+		D8B641C89B6F997593DA3E2B /* Pods-UIKit+PMUtils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIKit+PMUtils.release.xcconfig"; sourceTree = "<group>"; };
+		DC9191C6D43CE5E3E03B82F1 /* UIScrollView+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIScrollView+PMUtils.h"; sourceTree = "<group>"; };
+		DCD42EDB3EE1AE262D681104 /* NSMutableDictionary+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSMutableDictionary+PMUtils.h"; sourceTree = "<group>"; };
+		DCD6D78B05042C51C2BB4CA0 /* UIImage+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIImage+PMUtils.h"; sourceTree = "<group>"; };
+		E0FEF400C6467CD0B9BE1B0D /* Pods-UIKit+PMUtilsTests-PMUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-UIKit+PMUtilsTests-PMUtils-dummy.m"; path = "../Pods-UIKit+PMUtilsTests-PMUtils/Pods-UIKit+PMUtilsTests-PMUtils-dummy.m"; sourceTree = "<group>"; };
+		E76F3E55591B99533091775C /* UIGestureRecognizer+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIGestureRecognizer+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIGestureRecognizer+PMUtils.h"; sourceTree = "<group>"; };
+		EB542BA95C9B0D609F07753D /* NSDictionary+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+PMUtils.h"; path = "Pod/Classes/Foundation+PMUtils/NSDictionary+PMUtils.h"; sourceTree = "<group>"; };
+		EBEC4173FB65A336C416A36C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EBED48AE87CC5CC57BECDB4B /* Pods-UIKit+PMUtilsTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UIKit+PMUtilsTests-resources.sh"; sourceTree = "<group>"; };
+		EFA22C1D57C627B15AF994E4 /* UITableViewHeaderFooterView+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableViewHeaderFooterView+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UITableViewHeaderFooterView+PMUtils.m"; sourceTree = "<group>"; };
+		F47A20EE873AA8D0F04533FA /* Pods-UIKit+PMUtilsTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UIKit+PMUtilsTests-dummy.m"; sourceTree = "<group>"; };
+		F5D65C507EF9DACD6F7CE173 /* UIResponder+PMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIResponder+PMUtils.m"; path = "Pod/Classes/UIKit+PMUtils/UIResponder+PMUtils.m"; sourceTree = "<group>"; };
+		F64DCBF7A186DCB37CFD3F18 /* UICollectionReusableView+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionReusableView+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UICollectionReusableView+PMUtils.h"; sourceTree = "<group>"; };
+		FCEF5D590B1D5E7827F5DBB8 /* UICollectionView+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionView+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UICollectionView+PMUtils.h"; sourceTree = "<group>"; };
+		FDAC2B98958BC4BDF03D3E27 /* UIScreen+PMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScreen+PMUtils.h"; path = "Pod/Classes/UIKit+PMUtils/UIScreen+PMUtils.h"; sourceTree = "<group>"; };
+		FE5CBFD5B36D1C1BA242D226 /* Pods-UIKit+PMUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UIKit+PMUtils-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		36A9500EE54AF98FFC548207 /* Frameworks */ = {
+		529F573A45D4BA0768E5642D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6182E486FBFB71E7C8540916 /* CoreData.framework in Frameworks */,
-				4F0F45FE91BCB8C8572CBF33 /* Foundation.framework in Frameworks */,
+				845436A4D3EBC6A4FCA35B14 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		38783EEDB369ADC67F30EEC3 /* Frameworks */ = {
+		84DB41342D708D5F1D462505 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E41C3D1E509BC5D05F12DA4C /* CoreData.framework in Frameworks */,
-				0D81DC2391EA83C6A6916AA7 /* Foundation.framework in Frameworks */,
+				631643985DFAAC788A3F7F83 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		47A5BE6B728086EEC8478818 /* Frameworks */ = {
+		F68AF5C144CD1E0903B385D9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7036F2B7524496AC705D3C8 /* Foundation.framework in Frameworks */,
+				624FEA7F2A424FB98099CDDE /* CoreData.framework in Frameworks */,
+				AC0F629DA3A8C1B11E17B509 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DEA89EB2A38F92803E8955EA /* Frameworks */ = {
+		F9E69D4FA327047450863EC5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D7589017D3B2B5E8DCEDB61 /* Foundation.framework in Frameworks */,
+				ACFD9F4CD7137C9E2DE83AB8 /* CoreData.framework in Frameworks */,
+				A6A98C8B33FEEEC8E9F5F540 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00FEF7FA967FB08CD0467706 = {
+		0FA41D7F4122BACB6DE380EA /* Foundation+PMUtils */ = {
 			isa = PBXGroup;
 			children = (
-				55A8BEBABC822BE22E18C473 /* Podfile */,
-				61D123B611C041E3EB87AB04 /* Development Pods */,
-				68DA07C1B92BE8237C26D7BC /* Frameworks */,
-				CD8E0841AFA549C5DA64DF65 /* Products */,
-				E34ADBD1F171A65859D0962F /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		09EC88476FB9FF96769924D1 /* PMUtils */ = {
-			isa = PBXGroup;
-			children = (
-				6D310D33F8998792A7B4F984 /* Foundation+PMUtils */,
-				34D659A76F263C40FECF1346 /* PMProtocolInterceptor */,
-				886F1147BA4BFE7931C86B6F /* Support Files */,
-				354059487E72BFACA546FAE2 /* UIKit+PMUtils */,
-			);
-			name = PMUtils;
-			path = ../../..;
-			sourceTree = "<group>";
-		};
-		34D659A76F263C40FECF1346 /* PMProtocolInterceptor */ = {
-			isa = PBXGroup;
-			children = (
-				B5CAA23E20BE07206373FCC9 /* PMProtocolInterceptor.h */,
-				E0A90F4C054A49A90189BF17 /* PMProtocolInterceptor.m */,
-			);
-			name = PMProtocolInterceptor;
-			sourceTree = "<group>";
-		};
-		354059487E72BFACA546FAE2 /* UIKit+PMUtils */ = {
-			isa = PBXGroup;
-			children = (
-				B55D8008652AE340072C54AC /* UICollectionReusableView+PMUtils.h */,
-				0FF9F6D5510E343A8F498281 /* UICollectionReusableView+PMUtils.m */,
-				E762F1684774F723BAD78DCC /* UICollectionView+PMUtils.h */,
-				7FAC3036BFDFD35B0AA4BD89 /* UICollectionView+PMUtils.m */,
-				855DF2723C9F3BDA3946AD94 /* UICollectionViewFlowLayout+PMUtils.h */,
-				3289BB91A9FD0A13CAC22C2F /* UICollectionViewFlowLayout+PMUtils.m */,
-				C9F62DC84F1CE60EF1A026F7 /* UIColor+PMUtils.h */,
-				7A0F6B5C962E6A27533B922A /* UIColor+PMUtils.m */,
-				4A2F3F4670DE75831C3B5281 /* UIDevice+PMUtils.h */,
-				FC40D96C485706938F26949F /* UIDevice+PMUtils.m */,
-				1B3085A9442BD4FBC778FC77 /* UIGestureRecognizer+PMUtils.h */,
-				8B731A0D20204669BDA4B6B9 /* UIGestureRecognizer+PMUtils.m */,
-				50B8E58181612C09620EBDE7 /* UIImage+PMUtils.h */,
-				57545A6DC8E998B68723B698 /* UIImage+PMUtils.m */,
-				78BA00F9A0D62B2666DF9925 /* UIImageView+PMUtils.h */,
-				44406B707E65526A3862A7AF /* UIImageView+PMUtils.m */,
-				D3C575C6F1BEDE17310EDA4A /* UIKit+PMUtils.h */,
-				EAC235374E6E4C0FD95F93EF /* UINavigationController+PMUtils.h */,
-				F5D4EA127F7F6EE9246BA95B /* UINavigationController+PMUtils.m */,
-				A5C6626EDF0FEF0F60134BE0 /* UIResponder+PMUtils.h */,
-				6E79A035DDDA25552677BBED /* UIResponder+PMUtils.m */,
-				93897D1863B186E7B1B5E83D /* UIScreen+PMUtils.h */,
-				1D29E0325CD9573FF86D1C02 /* UIScreen+PMUtils.m */,
-				BCF3EADFC1A1EB5BFE9BD134 /* UIScrollView+PMUtils.h */,
-				9B7E16FABE9D30C203543B58 /* UIScrollView+PMUtils.m */,
-				3035E9EF4424C67960D54778 /* UITableView+PMUtils.h */,
-				37D80889F1FAF146F5F87915 /* UITableView+PMUtils.m */,
-				220BA335EA52EF56AA629A45 /* UITableViewCell+PMUtils.h */,
-				52AA8DDF98C6EA776408A4AF /* UITableViewCell+PMUtils.m */,
-				D5D20D83C2A282D4EDCF026B /* UITableViewHeaderFooterView+PMUtils.h */,
-				39BC7A72E21E1BC909BED4DF /* UITableViewHeaderFooterView+PMUtils.m */,
-				236CFC17C15F5DE523FCD228 /* UIView+PMUtils.h */,
-				778B42751CF839FE38B9D2F0 /* UIView+PMUtils.m */,
-				E2F027AAC8248D7419D3A802 /* UIViewController+PMUtils.h */,
-				0DFD0ACFE893D6A1C06B6622 /* UIViewController+PMUtils.m */,
-			);
-			name = "UIKit+PMUtils";
-			sourceTree = "<group>";
-		};
-		61D123B611C041E3EB87AB04 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				09EC88476FB9FF96769924D1 /* PMUtils */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		68DA07C1B92BE8237C26D7BC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7EDB1D67A64202F32D3E8253 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6D310D33F8998792A7B4F984 /* Foundation+PMUtils */ = {
-			isa = PBXGroup;
-			children = (
-				D674408384EDB5221DCD8554 /* Foundation+PMUtils.h */,
-				00BE099630E513FD0374348E /* NSArray+PMUtils.h */,
-				9845D2130719EBB2716475F1 /* NSArray+PMUtils.m */,
-				EF7ADC1707C98A497529F6E6 /* NSData+PMUtils.h */,
-				1E63930E3AF05C285195A145 /* NSData+PMUtils.m */,
-				42F135D0563E88ED96B4B8D8 /* NSDictionary+PMUtils.h */,
-				E7964DBD03E327C4A18EE524 /* NSDictionary+PMUtils.m */,
-				27C0E43EF9F05CC9838BDBF7 /* NSFileManager+PMUtils.h */,
-				AC8F72F288453F0C790F6860 /* NSFileManager+PMUtils.m */,
-				4C36863768858858D8C8B9E8 /* NSIndexPath+PMUtils.h */,
-				9D9F1BC733B38CB00CF28055 /* NSIndexPath+PMUtils.m */,
-				1D6B86E319E2915092D12702 /* NSMutableDictionary+PMUtils.h */,
-				41CDBE389052FD99FC3206DB /* NSMutableDictionary+PMUtils.m */,
-				010C1619931C47F30ABCBFB6 /* NSNumber+PMUtils.h */,
-				20BC4FECEC2E0713FEAFF717 /* NSNumber+PMUtils.m */,
-				06412DF67E9E65CAFFC47443 /* NSObject+PMUtils.h */,
-				8BECD1747F0A1BDFA2AC5F63 /* NSObject+PMUtils.m */,
-				59A7AE246255F6CA691215E4 /* NSRegularExpression+PMUtils.h */,
-				AB137F3F7A150EDD9C79ABEC /* NSRegularExpression+PMUtils.m */,
-				D495A09B95516E96AB84E175 /* NSString+PMUtils.h */,
-				AA04C087DB771DF09CFA6358 /* NSString+PMUtils.m */,
-				DC6C9E939FEF2B84EBADA19A /* NSThread+PMUtils.h */,
-				9D9250BC548F0B42560B38FD /* NSThread+PMUtils.m */,
+				7F944EBB2E6FC6F0AD093F72 /* Foundation+PMUtils.h */,
+				6EB6E341AAE436E235786A84 /* NSArray+PMUtils.h */,
+				16BC93502AEB968FAB73034E /* NSArray+PMUtils.m */,
+				D569BA39ED60036602E70F61 /* NSData+PMUtils.h */,
+				721CA720D1E0E98A2639589B /* NSData+PMUtils.m */,
+				EB542BA95C9B0D609F07753D /* NSDictionary+PMUtils.h */,
+				0226F216803C14416FCD19F8 /* NSDictionary+PMUtils.m */,
+				1C5E1CA6BC5DC85704551CB2 /* NSFileManager+PMUtils.h */,
+				171AFEC98BD783A04DB9709E /* NSFileManager+PMUtils.m */,
+				0DB43B810223F7A634588262 /* NSIndexPath+PMUtils.h */,
+				752B01A8A8667B8F9E887815 /* NSIndexPath+PMUtils.m */,
+				DCD42EDB3EE1AE262D681104 /* NSMutableDictionary+PMUtils.h */,
+				418A673CA4E8E3A8F40F6757 /* NSMutableDictionary+PMUtils.m */,
+				7779ED40EF52DF41AE835902 /* NSNumber+PMUtils.h */,
+				494ECC2F919C0353423675B7 /* NSNumber+PMUtils.m */,
+				42F8EDD0615ABD1BD9BC1ECD /* NSObject+PMUtils.h */,
+				2AFE34215FE653B117D63868 /* NSObject+PMUtils.m */,
+				784A6EB37ADF1A9137B6856A /* NSRegularExpression+PMUtils.h */,
+				46472B6C87CABE97B3EC807F /* NSRegularExpression+PMUtils.m */,
+				9BFA80C553BC468FB6893928 /* NSString+PMUtils.h */,
+				5F3D375D9A308BF4C3910F32 /* NSString+PMUtils.m */,
+				68D9CF8A58B61B1D33C0B12F /* NSThread+PMUtils.h */,
+				772B33AE02E5A790962FFED7 /* NSThread+PMUtils.m */,
 			);
 			name = "Foundation+PMUtils";
 			sourceTree = "<group>";
 		};
-		7EDB1D67A64202F32D3E8253 /* iOS */ = {
+		21D3EC425EF1C9D199D1BD44 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80AA6CC21A3272771496E220 /* CoreData.framework */,
-				2B32F552BCA9C98EBD857834 /* Foundation.framework */,
+				5036A88A59FB0EDF240EBD2E /* libPods-UIKit+PMUtils.a */,
+				60883459AC0D0496BCF23E12 /* libPods-UIKit+PMUtils-PMUtils.a */,
+				374AA67E5CFF9E8C0DCD0EF6 /* libPods-UIKit+PMUtilsTests.a */,
+				9811EE1DF189DB7172FFC811 /* libPods-UIKit+PMUtilsTests-PMUtils.a */,
 			);
-			name = iOS;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		886F1147BA4BFE7931C86B6F /* Support Files */ = {
+		2BED4561015004C46D51E2ED /* Pods-UIKit+PMUtils */ = {
 			isa = PBXGroup;
 			children = (
-				5B7E2D9B497478B28FE0E51E /* Pods-UIKit+PMUtils-PMUtils.xcconfig */,
-				8C2146358F935B17090487B9 /* Pods-UIKit+PMUtils-PMUtils-Private.xcconfig */,
-				3B4E87A31B7F0819AC568F84 /* Pods-UIKit+PMUtils-PMUtils-dummy.m */,
-				CA4AF581CA934CD4920AEB86 /* Pods-UIKit+PMUtils-PMUtils-prefix.pch */,
-				E6207AD18F78A25AA98585F6 /* Pods-UIKit+PMUtilsTests-PMUtils.xcconfig */,
-				93B79C217CC2D1CBB964E29E /* Pods-UIKit+PMUtilsTests-PMUtils-Private.xcconfig */,
-				A98B22121D002E521C203433 /* Pods-UIKit+PMUtilsTests-PMUtils-dummy.m */,
-				AD570E12E8419F8C7E4766E8 /* Pods-UIKit+PMUtilsTests-PMUtils-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "Examples/UIKit+PMUtils/Pods/Target Support Files/Pods-UIKit+PMUtils-PMUtils";
-			sourceTree = "<group>";
-		};
-		8997609ED9EE32B10FC46D5B /* Pods-UIKit+PMUtilsTests */ = {
-			isa = PBXGroup;
-			children = (
-				40630FCC8B27C5D101F1B3B9 /* Pods-UIKit+PMUtilsTests-acknowledgements.markdown */,
-				263669B5A287F02E4E57215A /* Pods-UIKit+PMUtilsTests-acknowledgements.plist */,
-				9FAFD98174716A101644BC39 /* Pods-UIKit+PMUtilsTests-dummy.m */,
-				EF215C85C1A3984FBC4795E9 /* Pods-UIKit+PMUtilsTests-environment.h */,
-				0122F578992E863BF29AE873 /* Pods-UIKit+PMUtilsTests-resources.sh */,
-				FA233F2FCAD740F08AE04B36 /* Pods-UIKit+PMUtilsTests.debug.xcconfig */,
-				468DDE98B64E1B659F63DFE3 /* Pods-UIKit+PMUtilsTests.release.xcconfig */,
-			);
-			name = "Pods-UIKit+PMUtilsTests";
-			path = "Target Support Files/Pods-UIKit+PMUtilsTests";
-			sourceTree = "<group>";
-		};
-		944657DE7BDC8FFB46B9EAD0 /* Pods-UIKit+PMUtils */ = {
-			isa = PBXGroup;
-			children = (
-				2FF0BFBBEB3E61CA1BD71789 /* Pods-UIKit+PMUtils-acknowledgements.markdown */,
-				61B6DABD2CE97EAF9D0B7EEB /* Pods-UIKit+PMUtils-acknowledgements.plist */,
-				9BE6487A1BC2218CAAE40C48 /* Pods-UIKit+PMUtils-dummy.m */,
-				F93C430083B606DC5B1C2792 /* Pods-UIKit+PMUtils-environment.h */,
-				57DEFC4EA2E11C6791028E8F /* Pods-UIKit+PMUtils-resources.sh */,
-				367F8D4C59A631EA064AAD71 /* Pods-UIKit+PMUtils.debug.xcconfig */,
-				8D0F2BE608BF7BE945A80563 /* Pods-UIKit+PMUtils.release.xcconfig */,
+				6EA31420620CACFFDC423419 /* Pods-UIKit+PMUtils-acknowledgements.markdown */,
+				8FA7C2026B24A5C250693955 /* Pods-UIKit+PMUtils-acknowledgements.plist */,
+				FE5CBFD5B36D1C1BA242D226 /* Pods-UIKit+PMUtils-dummy.m */,
+				6F8654A3C99FD11EE1FD85F5 /* Pods-UIKit+PMUtils-environment.h */,
+				471418E9BCF6E6D2F641AF47 /* Pods-UIKit+PMUtils-resources.sh */,
+				A48F8FB99456C26A78701DAC /* Pods-UIKit+PMUtils.debug.xcconfig */,
+				D8B641C89B6F997593DA3E2B /* Pods-UIKit+PMUtils.release.xcconfig */,
 			);
 			name = "Pods-UIKit+PMUtils";
 			path = "Target Support Files/Pods-UIKit+PMUtils";
 			sourceTree = "<group>";
 		};
-		CD8E0841AFA549C5DA64DF65 /* Products */ = {
+		44BAD3281D39CC3562D2DBD1 /* Pods-UIKit+PMUtilsTests */ = {
 			isa = PBXGroup;
 			children = (
-				E0F04F8B00A29B065B96617D /* libPods-UIKit+PMUtils.a */,
-				00062246454B525B5378323E /* libPods-UIKit+PMUtils-PMUtils.a */,
-				39AAFC21B1441C21D8D8E816 /* libPods-UIKit+PMUtilsTests.a */,
-				DE06D99DAAAC959F7CFB8676 /* libPods-UIKit+PMUtilsTests-PMUtils.a */,
+				02B1E0D4DE2A11E96E8BAFAD /* Pods-UIKit+PMUtilsTests-acknowledgements.markdown */,
+				4C49E07CD31E59043471FC8D /* Pods-UIKit+PMUtilsTests-acknowledgements.plist */,
+				F47A20EE873AA8D0F04533FA /* Pods-UIKit+PMUtilsTests-dummy.m */,
+				41556DA8FA21BA1F64805E22 /* Pods-UIKit+PMUtilsTests-environment.h */,
+				EBED48AE87CC5CC57BECDB4B /* Pods-UIKit+PMUtilsTests-resources.sh */,
+				59E4B63E929366CCACF0B89E /* Pods-UIKit+PMUtilsTests.debug.xcconfig */,
+				32EDFDCF130D755A1F7F6F27 /* Pods-UIKit+PMUtilsTests.release.xcconfig */,
 			);
-			name = Products;
+			name = "Pods-UIKit+PMUtilsTests";
+			path = "Target Support Files/Pods-UIKit+PMUtilsTests";
 			sourceTree = "<group>";
 		};
-		E34ADBD1F171A65859D0962F /* Targets Support Files */ = {
+		5406E6BB7C09EBCC024B344E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				944657DE7BDC8FFB46B9EAD0 /* Pods-UIKit+PMUtils */,
-				8997609ED9EE32B10FC46D5B /* Pods-UIKit+PMUtilsTests */,
+				BE9719C21CCB19B588302B9F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B36473EFA3DECBB37277B22 /* PMProtocolInterceptor */ = {
+			isa = PBXGroup;
+			children = (
+				D23D1665133A5E82B34EF1E3 /* PMProtocolInterceptor.h */,
+				251C9D2A7162E74FBFB29131 /* PMProtocolInterceptor.m */,
+			);
+			name = PMProtocolInterceptor;
+			sourceTree = "<group>";
+		};
+		785DF35EC3AC09A57A8B0E70 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				83C117D8250F1651C4416D32 /* Pods-UIKit+PMUtils-PMUtils.xcconfig */,
+				32B210FA0ADD2FE1084EB91E /* Pods-UIKit+PMUtils-PMUtils-Private.xcconfig */,
+				31BA1A24A3C43AF968B2BE74 /* Pods-UIKit+PMUtils-PMUtils-dummy.m */,
+				24EE78B16ED092D1BE125173 /* Pods-UIKit+PMUtils-PMUtils-prefix.pch */,
+				B1FF1D0B1E20574A05FBCEA2 /* Pods-UIKit+PMUtilsTests-PMUtils.xcconfig */,
+				76D6790755E7189599767746 /* Pods-UIKit+PMUtilsTests-PMUtils-Private.xcconfig */,
+				E0FEF400C6467CD0B9BE1B0D /* Pods-UIKit+PMUtilsTests-PMUtils-dummy.m */,
+				2459B045CA66D33DB6F47B49 /* Pods-UIKit+PMUtilsTests-PMUtils-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "Examples/UIKit+PMUtils/Pods/Target Support Files/Pods-UIKit+PMUtils-PMUtils";
+			sourceTree = "<group>";
+		};
+		79435A9AC2C44B0CEB319BD5 /* UIKit+PMUtils */ = {
+			isa = PBXGroup;
+			children = (
+				F64DCBF7A186DCB37CFD3F18 /* UICollectionReusableView+PMUtils.h */,
+				276E0DF498973B61C0DB6E65 /* UICollectionReusableView+PMUtils.m */,
+				FCEF5D590B1D5E7827F5DBB8 /* UICollectionView+PMUtils.h */,
+				354337F50B4EDEF595D08515 /* UICollectionView+PMUtils.m */,
+				3E7C3C56EB65BEB6CA54B1F3 /* UICollectionViewFlowLayout+PMUtils.h */,
+				D15B0227DED2B3BF6D9E95F5 /* UICollectionViewFlowLayout+PMUtils.m */,
+				43EB25F16F2DA6394BD8EB87 /* UIColor+PMUtils.h */,
+				BBD563C0F6EC8D156B132BFB /* UIColor+PMUtils.m */,
+				9D9099C1FD83E5B4CBC569FA /* UIDevice+PMUtils.h */,
+				B96F23674711B76DD7090779 /* UIDevice+PMUtils.m */,
+				E76F3E55591B99533091775C /* UIGestureRecognizer+PMUtils.h */,
+				2460784411A48E8C10B08D31 /* UIGestureRecognizer+PMUtils.m */,
+				DCD6D78B05042C51C2BB4CA0 /* UIImage+PMUtils.h */,
+				2185AD046D7C9C35C7ED8659 /* UIImage+PMUtils.m */,
+				729F4E554101C6FD8212BE31 /* UIImageView+PMUtils.h */,
+				D3825B6E2600448F5148C62C /* UIImageView+PMUtils.m */,
+				7645AB56365B9335FDACB4BA /* UIKit+PMUtils.h */,
+				16E15C978506A42B8AD7E736 /* UINavigationController+PMUtils.h */,
+				502D934C9214DA7391BD84AD /* UINavigationController+PMUtils.m */,
+				5451FAE160F1A62792DBACC5 /* UIResponder+PMUtils.h */,
+				F5D65C507EF9DACD6F7CE173 /* UIResponder+PMUtils.m */,
+				FDAC2B98958BC4BDF03D3E27 /* UIScreen+PMUtils.h */,
+				76EB030090F531E9E5B4F4F2 /* UIScreen+PMUtils.m */,
+				DC9191C6D43CE5E3E03B82F1 /* UIScrollView+PMUtils.h */,
+				44FDB3DCEC49B426DA3850CC /* UIScrollView+PMUtils.m */,
+				05CF6E13CAE222765ED3EB64 /* UITableView+PMUtils.h */,
+				28F9C7CE1632A5E903823D4D /* UITableView+PMUtils.m */,
+				18981249D73B79EF3F5DDB44 /* UITableViewCell+PMUtils.h */,
+				92EE9B39B0679569DBC3374A /* UITableViewCell+PMUtils.m */,
+				B70D643B0DEB590E05763C8F /* UITableViewHeaderFooterView+PMUtils.h */,
+				EFA22C1D57C627B15AF994E4 /* UITableViewHeaderFooterView+PMUtils.m */,
+				809EC0A8B2B05E03B44438B6 /* UIView+PMUtils.h */,
+				8412EC845E733CE1F74403E8 /* UIView+PMUtils.m */,
+				6BA5C416CB336EB4E66C0B8B /* UIViewController+PMUtils.h */,
+				9BFFC2BD4D56EB65C75040A0 /* UIViewController+PMUtils.m */,
+			);
+			name = "UIKit+PMUtils";
+			sourceTree = "<group>";
+		};
+		7BED2271EC6CC0538372BB89 = {
+			isa = PBXGroup;
+			children = (
+				CC99C5E876B254D6DB80862C /* Podfile */,
+				8E54475314023BDF3D386D7B /* Development Pods */,
+				5406E6BB7C09EBCC024B344E /* Frameworks */,
+				21D3EC425EF1C9D199D1BD44 /* Products */,
+				F09637A682419DBF6AF4A355 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8E54475314023BDF3D386D7B /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF93A23FA3CDEAA33A1A5DA6 /* PMUtils */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		BE9719C21CCB19B588302B9F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5E83065EB15E540C39AA4FB0 /* CoreData.framework */,
+				EBEC4173FB65A336C416A36C /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF93A23FA3CDEAA33A1A5DA6 /* PMUtils */ = {
+			isa = PBXGroup;
+			children = (
+				0FA41D7F4122BACB6DE380EA /* Foundation+PMUtils */,
+				6B36473EFA3DECBB37277B22 /* PMProtocolInterceptor */,
+				785DF35EC3AC09A57A8B0E70 /* Support Files */,
+				79435A9AC2C44B0CEB319BD5 /* UIKit+PMUtils */,
+			);
+			name = PMUtils;
+			path = ../../..;
+			sourceTree = "<group>";
+		};
+		F09637A682419DBF6AF4A355 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2BED4561015004C46D51E2ED /* Pods-UIKit+PMUtils */,
+				44BAD3281D39CC3562D2DBD1 /* Pods-UIKit+PMUtilsTests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -484,92 +484,92 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		037FF3234F6F12BAA559AB4D /* Headers */ = {
+		2A3A053400EBF5240B1ACBF1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1799840B57EA7D965C66472 /* Foundation+PMUtils.h in Headers */,
-				5FD0F58900B5456C4EA3893F /* NSArray+PMUtils.h in Headers */,
-				9CCE8AC1DD979A87F973DBC5 /* NSData+PMUtils.h in Headers */,
-				BD794201381BC5B37FA15CD9 /* NSDictionary+PMUtils.h in Headers */,
-				9B2608DB6C5268FF4B84CDFA /* NSFileManager+PMUtils.h in Headers */,
-				18A3C34BD5FF020E355E7FAA /* NSIndexPath+PMUtils.h in Headers */,
-				BF9255C2FAEB14426A48EE05 /* NSMutableDictionary+PMUtils.h in Headers */,
-				A3B2EA24074F6320271E3B7C /* NSNumber+PMUtils.h in Headers */,
-				8165F1DBC17B470E9659BBF3 /* NSObject+PMUtils.h in Headers */,
-				6943433608664393AFED40D7 /* NSRegularExpression+PMUtils.h in Headers */,
-				6CB21D0E9CC3E10C8BD4E5A7 /* NSString+PMUtils.h in Headers */,
-				6100F8504CAB61942D7057CE /* NSThread+PMUtils.h in Headers */,
-				52381EF227498F8DF222E4DD /* PMProtocolInterceptor.h in Headers */,
-				9EEE5241AB9CF8CD9FB95AC7 /* UICollectionReusableView+PMUtils.h in Headers */,
-				B6C5FE94870C64C4065AF50A /* UICollectionView+PMUtils.h in Headers */,
-				B478330A4D6780A9CE6E4EEA /* UICollectionViewFlowLayout+PMUtils.h in Headers */,
-				29B7DA416A716EF4027ABB3A /* UIColor+PMUtils.h in Headers */,
-				5988A58E58E6B960509D5EEF /* UIDevice+PMUtils.h in Headers */,
-				739B5D6A7CBD8F83DC235AE9 /* UIGestureRecognizer+PMUtils.h in Headers */,
-				B93D6EEEAE17B56927C5843D /* UIImage+PMUtils.h in Headers */,
-				CA3EA892CB50F170E6701277 /* UIImageView+PMUtils.h in Headers */,
-				708F7C57DD36372987F18BAF /* UIKit+PMUtils.h in Headers */,
-				1F81FF090A420D306E6C370E /* UINavigationController+PMUtils.h in Headers */,
-				F044DFF1D577F10147C5D122 /* UIResponder+PMUtils.h in Headers */,
-				96809A1615311D4EC3296459 /* UIScreen+PMUtils.h in Headers */,
-				D843219A82B8B663D4DB5A98 /* UIScrollView+PMUtils.h in Headers */,
-				2CCDD55FB849547F9E7CB971 /* UITableView+PMUtils.h in Headers */,
-				2109AC8638D1FA90582D6A4C /* UITableViewCell+PMUtils.h in Headers */,
-				09CB3C1E21783CABB894FA9B /* UITableViewHeaderFooterView+PMUtils.h in Headers */,
-				DE2B0516EE0BB526DE7B0D57 /* UIView+PMUtils.h in Headers */,
-				B3822E91380E92E3160148F5 /* UIViewController+PMUtils.h in Headers */,
+				FFE61854863B4A6E2E3EF153 /* Foundation+PMUtils.h in Headers */,
+				72DA6B5ED698B4B715A0C829 /* NSArray+PMUtils.h in Headers */,
+				8B77E80A787CE8D82814D980 /* NSData+PMUtils.h in Headers */,
+				7E2CCEA734C0144CB0E38F39 /* NSDictionary+PMUtils.h in Headers */,
+				9433D44176CB31A80E01935C /* NSFileManager+PMUtils.h in Headers */,
+				1D5968733E248359625FBB61 /* NSIndexPath+PMUtils.h in Headers */,
+				D2EB2D309C4DA2921B942EA9 /* NSMutableDictionary+PMUtils.h in Headers */,
+				B427F84D9B898982CF9B8552 /* NSNumber+PMUtils.h in Headers */,
+				121288C8595E501DE92CBEB2 /* NSObject+PMUtils.h in Headers */,
+				D04007853A0415CBA9D631C0 /* NSRegularExpression+PMUtils.h in Headers */,
+				A17BDBF3D6F89592BFEA5894 /* NSString+PMUtils.h in Headers */,
+				F6C97CAD1E98AB85A77001D8 /* NSThread+PMUtils.h in Headers */,
+				0D1A340A822D873CC893DE09 /* PMProtocolInterceptor.h in Headers */,
+				14F153CCA17D1E4B15EB7B5E /* UICollectionReusableView+PMUtils.h in Headers */,
+				D55CC68A98F529C3EAEA834C /* UICollectionView+PMUtils.h in Headers */,
+				BE9D6EF9021CBF8371D4310C /* UICollectionViewFlowLayout+PMUtils.h in Headers */,
+				8FD844B4AA037CCA06CBE36E /* UIColor+PMUtils.h in Headers */,
+				E63A5BF65580868AC8D5B1E8 /* UIDevice+PMUtils.h in Headers */,
+				C0EEA12299538D582BC65353 /* UIGestureRecognizer+PMUtils.h in Headers */,
+				7F3080EFA579DB2FCCC74B66 /* UIImage+PMUtils.h in Headers */,
+				F73BFCBEEC81D91D0D876AD2 /* UIImageView+PMUtils.h in Headers */,
+				43C0ADBC019C8869CA8E0F52 /* UIKit+PMUtils.h in Headers */,
+				0241663CB6DA66BC8B57E6E1 /* UINavigationController+PMUtils.h in Headers */,
+				7DC7C07C33FADD75A292F917 /* UIResponder+PMUtils.h in Headers */,
+				6F506D49F4CA3F5F390D297D /* UIScreen+PMUtils.h in Headers */,
+				E9ED5B99AA1B518621A21BAF /* UIScrollView+PMUtils.h in Headers */,
+				9ED1D63B976F51B469A0B951 /* UITableView+PMUtils.h in Headers */,
+				44E3AEF0266B9148ABD5180A /* UITableViewCell+PMUtils.h in Headers */,
+				3974003728F7D1CCC9064A4F /* UITableViewHeaderFooterView+PMUtils.h in Headers */,
+				FCDE58164ED6229506DA488B /* UIView+PMUtils.h in Headers */,
+				72B6647A691F005E2281E961 /* UIViewController+PMUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		799C879D80EC0F413F3D436B /* Headers */ = {
+		833A79C58F91838BE7B0ECC9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0870C29384CA03E7D22688D /* Foundation+PMUtils.h in Headers */,
-				AAD12A79647E817595A7D8E8 /* NSArray+PMUtils.h in Headers */,
-				29A34900775399DF06D78DC3 /* NSData+PMUtils.h in Headers */,
-				7D93E26F6431B4F5381AD914 /* NSDictionary+PMUtils.h in Headers */,
-				FF1F3BFF26E063FF620FE66B /* NSFileManager+PMUtils.h in Headers */,
-				F2873175E7C234BF57BCD1EE /* NSIndexPath+PMUtils.h in Headers */,
-				6B4CA88224570EDF3EBEAA1B /* NSMutableDictionary+PMUtils.h in Headers */,
-				9031B930EE7E99834996E691 /* NSNumber+PMUtils.h in Headers */,
-				D49D49C1E731F8F4AF788E38 /* NSObject+PMUtils.h in Headers */,
-				A1266AC63B99B649C21766CC /* NSRegularExpression+PMUtils.h in Headers */,
-				EA374613921E3ECF7B1A5970 /* NSString+PMUtils.h in Headers */,
-				1C6645C917CCCEC6F756BE14 /* NSThread+PMUtils.h in Headers */,
-				25890A21CCA5A30671DCA764 /* PMProtocolInterceptor.h in Headers */,
-				FC8069C293DB18B1B566073C /* UICollectionReusableView+PMUtils.h in Headers */,
-				A5CA8379E5E5BF7780EC0B25 /* UICollectionView+PMUtils.h in Headers */,
-				56D03A9DC7335D0BBE79B510 /* UICollectionViewFlowLayout+PMUtils.h in Headers */,
-				868C3137612CE25187BC6623 /* UIColor+PMUtils.h in Headers */,
-				96590C4FCCA5B2C701FC3860 /* UIDevice+PMUtils.h in Headers */,
-				2E0669364405CDD7D7C31A45 /* UIGestureRecognizer+PMUtils.h in Headers */,
-				74C3DD8297AA8FBCE9D9AAF1 /* UIImage+PMUtils.h in Headers */,
-				1666656B0FE9E1E74DF794D1 /* UIImageView+PMUtils.h in Headers */,
-				D3F31794EC584B8C695F1967 /* UIKit+PMUtils.h in Headers */,
-				59FD11F0E262D8E53F31F50F /* UINavigationController+PMUtils.h in Headers */,
-				0621C6ACB63034E3F8193EDC /* UIResponder+PMUtils.h in Headers */,
-				BB022260A004E6CD5A3320AA /* UIScreen+PMUtils.h in Headers */,
-				43B4E9CECD852EDB7E87C3FB /* UIScrollView+PMUtils.h in Headers */,
-				F60A86E23270E0DDFE1BCE0C /* UITableView+PMUtils.h in Headers */,
-				8C113922BD54EC8A2ED9612D /* UITableViewCell+PMUtils.h in Headers */,
-				D80BE6835FA57D03D072A901 /* UITableViewHeaderFooterView+PMUtils.h in Headers */,
-				BA2D32AB0EF7758F7EF785BA /* UIView+PMUtils.h in Headers */,
-				7545FDDF33DD3861645EE060 /* UIViewController+PMUtils.h in Headers */,
+				202F169D0565D6143D4BE215 /* Foundation+PMUtils.h in Headers */,
+				66695BB42FC39CB198585586 /* NSArray+PMUtils.h in Headers */,
+				2B577EBD98387DDBB03A8CB3 /* NSData+PMUtils.h in Headers */,
+				9053AE71CDDEE40568E9DF40 /* NSDictionary+PMUtils.h in Headers */,
+				C6AAD86AB234E28131A1D928 /* NSFileManager+PMUtils.h in Headers */,
+				75578B87F526259BAAE26355 /* NSIndexPath+PMUtils.h in Headers */,
+				E39596A635DBDD59B36AFEFB /* NSMutableDictionary+PMUtils.h in Headers */,
+				FB968B45A73798C0A38E7548 /* NSNumber+PMUtils.h in Headers */,
+				21CD90D6BEC0087374FA6D38 /* NSObject+PMUtils.h in Headers */,
+				EDD01A55092E04CB65E6927D /* NSRegularExpression+PMUtils.h in Headers */,
+				AA048A6F0F400A7FC42508E0 /* NSString+PMUtils.h in Headers */,
+				3BB9BD5ED992E762B4D9BF77 /* NSThread+PMUtils.h in Headers */,
+				FC9A60F6D3002103E439575B /* PMProtocolInterceptor.h in Headers */,
+				74D672970C9BD3889AE22772 /* UICollectionReusableView+PMUtils.h in Headers */,
+				86B73CD44AA93D95AFA959E5 /* UICollectionView+PMUtils.h in Headers */,
+				28CD1AE93AC8DA8C26FCA8B0 /* UICollectionViewFlowLayout+PMUtils.h in Headers */,
+				A8B7A4CC4FB46BA45514A795 /* UIColor+PMUtils.h in Headers */,
+				0F8E6A478B62B51CAF5A7C9F /* UIDevice+PMUtils.h in Headers */,
+				7FC34305F2DB95774CBD0978 /* UIGestureRecognizer+PMUtils.h in Headers */,
+				048BDFBFEE6CD2FD03197464 /* UIImage+PMUtils.h in Headers */,
+				1CCB06EC36111937A77C3B49 /* UIImageView+PMUtils.h in Headers */,
+				334913420985303278160B8B /* UIKit+PMUtils.h in Headers */,
+				41F4D9570D04B23F7E355671 /* UINavigationController+PMUtils.h in Headers */,
+				CC91634A531E71CA95E1D862 /* UIResponder+PMUtils.h in Headers */,
+				B5EB969740B4F2711DC28F08 /* UIScreen+PMUtils.h in Headers */,
+				F75E3B8A5F3A1197D821AF4F /* UIScrollView+PMUtils.h in Headers */,
+				DAC9DE13E1A1A29575DB30B5 /* UITableView+PMUtils.h in Headers */,
+				75DF245F528A2CB2FE0757C3 /* UITableViewCell+PMUtils.h in Headers */,
+				C9CE0AABBD0AACAFFE714A74 /* UITableViewHeaderFooterView+PMUtils.h in Headers */,
+				5D4AEC9877F142941B982BCC /* UIView+PMUtils.h in Headers */,
+				F31C1093ABE2ED773A2B6377 /* UIViewController+PMUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3987C56F288B2045168FE512 /* Pods-UIKit+PMUtilsTests-PMUtils */ = {
+		0688FD03DEDB749DE72E6230 /* Pods-UIKit+PMUtilsTests-PMUtils */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C6C3C597C8A25D11B73C6AE6 /* Build configuration list for PBXNativeTarget "Pods-UIKit+PMUtilsTests-PMUtils" */;
+			buildConfigurationList = 188F488CE2AE96222B403855 /* Build configuration list for PBXNativeTarget "Pods-UIKit+PMUtilsTests-PMUtils" */;
 			buildPhases = (
-				30D11C3CEB195088D03B4124 /* Sources */,
-				36A9500EE54AF98FFC548207 /* Frameworks */,
-				799C879D80EC0F413F3D436B /* Headers */,
+				8EB7B6FA66944005250035C3 /* Sources */,
+				F68AF5C144CD1E0903B385D9 /* Frameworks */,
+				833A79C58F91838BE7B0ECC9 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -577,16 +577,16 @@
 			);
 			name = "Pods-UIKit+PMUtilsTests-PMUtils";
 			productName = "Pods-UIKit+PMUtilsTests-PMUtils";
-			productReference = DE06D99DAAAC959F7CFB8676 /* libPods-UIKit+PMUtilsTests-PMUtils.a */;
+			productReference = 9811EE1DF189DB7172FFC811 /* libPods-UIKit+PMUtilsTests-PMUtils.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		6C8D929130BA3C7D98DAF937 /* Pods-UIKit+PMUtils-PMUtils */ = {
+		08B7368B0960528226045754 /* Pods-UIKit+PMUtils-PMUtils */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 44505EECF2269295D23AD03A /* Build configuration list for PBXNativeTarget "Pods-UIKit+PMUtils-PMUtils" */;
+			buildConfigurationList = 3AF3C6A10CB330A9B1786227 /* Build configuration list for PBXNativeTarget "Pods-UIKit+PMUtils-PMUtils" */;
 			buildPhases = (
-				0D358A2D1D5268F53A0184E2 /* Sources */,
-				38783EEDB369ADC67F30EEC3 /* Frameworks */,
-				037FF3234F6F12BAA559AB4D /* Headers */,
+				F09CC758556B801A95DA0CF8 /* Sources */,
+				F9E69D4FA327047450863EC5 /* Frameworks */,
+				2A3A053400EBF5240B1ACBF1 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -594,181 +594,236 @@
 			);
 			name = "Pods-UIKit+PMUtils-PMUtils";
 			productName = "Pods-UIKit+PMUtils-PMUtils";
-			productReference = 00062246454B525B5378323E /* libPods-UIKit+PMUtils-PMUtils.a */;
+			productReference = 60883459AC0D0496BCF23E12 /* libPods-UIKit+PMUtils-PMUtils.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		6E5731AADD1B38DA094D8394 /* Pods-UIKit+PMUtils */ = {
+		8A9440FCC301E914E5DA720C /* Pods-UIKit+PMUtilsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63ADC8FB61711D25BE9F3BDD /* Build configuration list for PBXNativeTarget "Pods-UIKit+PMUtils" */;
+			buildConfigurationList = F6AAFDBDF7194A07E7559115 /* Build configuration list for PBXNativeTarget "Pods-UIKit+PMUtilsTests" */;
 			buildPhases = (
-				D4962981D933998571A51EC2 /* Sources */,
-				47A5BE6B728086EEC8478818 /* Frameworks */,
+				2D7C28E6336BAE58B9FA9B75 /* Sources */,
+				529F573A45D4BA0768E5642D /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C56B393AF1F7B198F5C556B2 /* PBXTargetDependency */,
-			);
-			name = "Pods-UIKit+PMUtils";
-			productName = "Pods-UIKit+PMUtils";
-			productReference = E0F04F8B00A29B065B96617D /* libPods-UIKit+PMUtils.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		76B23052DCF6B8B53D2EF544 /* Pods-UIKit+PMUtilsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8D094D0FD1F173CDAAF0C1CE /* Build configuration list for PBXNativeTarget "Pods-UIKit+PMUtilsTests" */;
-			buildPhases = (
-				E674EAD94585576E23EED298 /* Sources */,
-				DEA89EB2A38F92803E8955EA /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				96470C296C5991D3B853E081 /* PBXTargetDependency */,
+				D09505E86D285B2DF9773A03 /* PBXTargetDependency */,
 			);
 			name = "Pods-UIKit+PMUtilsTests";
 			productName = "Pods-UIKit+PMUtilsTests";
-			productReference = 39AAFC21B1441C21D8D8E816 /* libPods-UIKit+PMUtilsTests.a */;
+			productReference = 374AA67E5CFF9E8C0DCD0EF6 /* libPods-UIKit+PMUtilsTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		ACF9B24D7F3FB10E07490892 /* Pods-UIKit+PMUtils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2612963C1AD99DCFE690904B /* Build configuration list for PBXNativeTarget "Pods-UIKit+PMUtils" */;
+			buildPhases = (
+				6EDA16CE95706AC97F05039A /* Sources */,
+				84DB41342D708D5F1D462505 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7C171DF9FEF69813A0C0B0C /* PBXTargetDependency */,
+			);
+			name = "Pods-UIKit+PMUtils";
+			productName = "Pods-UIKit+PMUtils";
+			productReference = 5036A88A59FB0EDF240EBD2E /* libPods-UIKit+PMUtils.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		06E7C3888AAB0F611253574F /* Project object */ = {
+		D041C73DF65AAFAEB883C999 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = C4131CAC25E8BBB68EDF5CEA /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = D87D91DE7309FB481BCF3F80 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 00FEF7FA967FB08CD0467706;
-			productRefGroup = CD8E0841AFA549C5DA64DF65 /* Products */;
+			mainGroup = 7BED2271EC6CC0538372BB89;
+			productRefGroup = 21D3EC425EF1C9D199D1BD44 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6E5731AADD1B38DA094D8394 /* Pods-UIKit+PMUtils */,
-				6C8D929130BA3C7D98DAF937 /* Pods-UIKit+PMUtils-PMUtils */,
-				76B23052DCF6B8B53D2EF544 /* Pods-UIKit+PMUtilsTests */,
-				3987C56F288B2045168FE512 /* Pods-UIKit+PMUtilsTests-PMUtils */,
+				ACF9B24D7F3FB10E07490892 /* Pods-UIKit+PMUtils */,
+				08B7368B0960528226045754 /* Pods-UIKit+PMUtils-PMUtils */,
+				8A9440FCC301E914E5DA720C /* Pods-UIKit+PMUtilsTests */,
+				0688FD03DEDB749DE72E6230 /* Pods-UIKit+PMUtilsTests-PMUtils */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0D358A2D1D5268F53A0184E2 /* Sources */ = {
+		2D7C28E6336BAE58B9FA9B75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A80DF5611F3FCEDDA098177 /* NSArray+PMUtils.m in Sources */,
-				22944E4DAC29A868F070B2CA /* NSData+PMUtils.m in Sources */,
-				2A592782C70B1438223C3997 /* NSDictionary+PMUtils.m in Sources */,
-				80AF33E0B77E5E0918E0D99C /* NSFileManager+PMUtils.m in Sources */,
-				09259E720AD17C4C644AE5B8 /* NSIndexPath+PMUtils.m in Sources */,
-				48A101632C60C5282DD89981 /* NSMutableDictionary+PMUtils.m in Sources */,
-				6F0C6824E6C1A63608C5C05E /* NSNumber+PMUtils.m in Sources */,
-				71CAC644468CDCF9491468E4 /* NSObject+PMUtils.m in Sources */,
-				7A7FF2754F53CAC3C4CF89AD /* NSRegularExpression+PMUtils.m in Sources */,
-				0581370A9240D664A6C43597 /* NSString+PMUtils.m in Sources */,
-				8A21FDA035200232E6898662 /* NSThread+PMUtils.m in Sources */,
-				CD3CE37A66090FF80DF9AA47 /* PMProtocolInterceptor.m in Sources */,
-				E3A2BA1918635F1C2E19357F /* Pods-UIKit+PMUtils-PMUtils-dummy.m in Sources */,
-				F6BE0BCD92E9E4E2266EB829 /* UICollectionReusableView+PMUtils.m in Sources */,
-				9DD7CF3A51FC7A576EE80847 /* UICollectionView+PMUtils.m in Sources */,
-				D31C99439F2E5FB8F1A59F54 /* UICollectionViewFlowLayout+PMUtils.m in Sources */,
-				ED77AB55108CA05EDCA9E432 /* UIColor+PMUtils.m in Sources */,
-				93508D959D2A410756DBFCF7 /* UIDevice+PMUtils.m in Sources */,
-				95EADF693AAF03CB34D35196 /* UIGestureRecognizer+PMUtils.m in Sources */,
-				50767D60EE335BC386BAEF18 /* UIImage+PMUtils.m in Sources */,
-				56929DF0B486CF0BF7B1915A /* UIImageView+PMUtils.m in Sources */,
-				2C030073FEF229F34867908D /* UINavigationController+PMUtils.m in Sources */,
-				0930D9B5FCF345A0D72F66D9 /* UIResponder+PMUtils.m in Sources */,
-				9F7D80A51A2A8392C5AFE148 /* UIScreen+PMUtils.m in Sources */,
-				E51A9DFC0B668B2FD64A4969 /* UIScrollView+PMUtils.m in Sources */,
-				3BD47699C5D5B7C6BB090B5C /* UITableView+PMUtils.m in Sources */,
-				23D86DF5967AD31D6CF52702 /* UITableViewCell+PMUtils.m in Sources */,
-				90433190804B8F6C7530A98C /* UITableViewHeaderFooterView+PMUtils.m in Sources */,
-				03CF198177E603F40DCF5CE6 /* UIView+PMUtils.m in Sources */,
-				128B2C52B345FE9FCE32B340 /* UIViewController+PMUtils.m in Sources */,
+				56605DEF7AD15889BE0603F2 /* Pods-UIKit+PMUtilsTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		30D11C3CEB195088D03B4124 /* Sources */ = {
+		6EDA16CE95706AC97F05039A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FCE32D6C76DBEBE0116D858 /* NSArray+PMUtils.m in Sources */,
-				3800D982C17A010C718FBB7C /* NSData+PMUtils.m in Sources */,
-				FC1A38B842C56CFF3382D958 /* NSDictionary+PMUtils.m in Sources */,
-				0F731E5D708A02647CF23F46 /* NSFileManager+PMUtils.m in Sources */,
-				0549CCA78FFEB16A9CB86C98 /* NSIndexPath+PMUtils.m in Sources */,
-				DBD605E5EF91D888A14C7D79 /* NSMutableDictionary+PMUtils.m in Sources */,
-				04B4E735ACC461EDD5B544DD /* NSNumber+PMUtils.m in Sources */,
-				A0EBFA525BE499EB7A868932 /* NSObject+PMUtils.m in Sources */,
-				08CA88585DE5326BCF56F56E /* NSRegularExpression+PMUtils.m in Sources */,
-				3061F381878F29839592891E /* NSString+PMUtils.m in Sources */,
-				3B2CFBCF0C6EAC5D86D4C58C /* NSThread+PMUtils.m in Sources */,
-				7FA4A47F723CB0F97184D1EF /* PMProtocolInterceptor.m in Sources */,
-				AB13D0745A08F1DE47830D08 /* Pods-UIKit+PMUtilsTests-PMUtils-dummy.m in Sources */,
-				2EB4D0AA8E9D4D5C5320E487 /* UICollectionReusableView+PMUtils.m in Sources */,
-				1F4B61DC77964FA9B8AD38E9 /* UICollectionView+PMUtils.m in Sources */,
-				79E274C116D37F7AB95CB7E2 /* UICollectionViewFlowLayout+PMUtils.m in Sources */,
-				A53F7161D34C0F2BACD2BEF2 /* UIColor+PMUtils.m in Sources */,
-				C0A1690851B5185CEBD762F9 /* UIDevice+PMUtils.m in Sources */,
-				0ECCF8736E70D5B74DA10AAB /* UIGestureRecognizer+PMUtils.m in Sources */,
-				73BCCB3D1BDB278797B04DE2 /* UIImage+PMUtils.m in Sources */,
-				3C31BF0C8227C8D3EE087BF0 /* UIImageView+PMUtils.m in Sources */,
-				292DD1B1B48D006EC596C0B7 /* UINavigationController+PMUtils.m in Sources */,
-				1A14AEABA576DDD869171821 /* UIResponder+PMUtils.m in Sources */,
-				03F38AE8DD8AA688C75B3B14 /* UIScreen+PMUtils.m in Sources */,
-				9B9FA85949BDD612C3FEDA4D /* UIScrollView+PMUtils.m in Sources */,
-				33FB84D024CD6ED852A15413 /* UITableView+PMUtils.m in Sources */,
-				AE42085E43CBAEEBEE1D59B2 /* UITableViewCell+PMUtils.m in Sources */,
-				9C2D8FB790922C54BE40D5F9 /* UITableViewHeaderFooterView+PMUtils.m in Sources */,
-				488804B2E7511D1AF1216FE7 /* UIView+PMUtils.m in Sources */,
-				B36DB01CEB98DD388F0CDEAA /* UIViewController+PMUtils.m in Sources */,
+				73BE4198C8CD1EE85C378F09 /* Pods-UIKit+PMUtils-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D4962981D933998571A51EC2 /* Sources */ = {
+		8EB7B6FA66944005250035C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				738A00817F1C843A620A40C9 /* Pods-UIKit+PMUtils-dummy.m in Sources */,
+				F6B8F6F511651BA8CFCEA76E /* NSArray+PMUtils.m in Sources */,
+				91D7252AF6870FAFC726EFDE /* NSData+PMUtils.m in Sources */,
+				DA880617EB9CA153965CEBD4 /* NSDictionary+PMUtils.m in Sources */,
+				05333E922719FB7DCC1399A5 /* NSFileManager+PMUtils.m in Sources */,
+				E680B7875F4C8E44CD226D21 /* NSIndexPath+PMUtils.m in Sources */,
+				429AE71CD89DFC558E282E69 /* NSMutableDictionary+PMUtils.m in Sources */,
+				34BA795E1C49642C4179CF3A /* NSNumber+PMUtils.m in Sources */,
+				7B90450A5C585FC2604C729C /* NSObject+PMUtils.m in Sources */,
+				71E4478A3B89798C80EEF383 /* NSRegularExpression+PMUtils.m in Sources */,
+				4DCE4A5A398173E666A90A00 /* NSString+PMUtils.m in Sources */,
+				AD2006FF2B69C292AEDF8860 /* NSThread+PMUtils.m in Sources */,
+				9F30A3B234D66D24D95AEC7E /* PMProtocolInterceptor.m in Sources */,
+				4F07C407777B3C77AB45F5B7 /* Pods-UIKit+PMUtilsTests-PMUtils-dummy.m in Sources */,
+				C9E265CACF4835BB26A75027 /* UICollectionReusableView+PMUtils.m in Sources */,
+				869E6A8576A6212F8B424290 /* UICollectionView+PMUtils.m in Sources */,
+				D7AB119F18BD2A045EF749C6 /* UICollectionViewFlowLayout+PMUtils.m in Sources */,
+				C0828213885622505A95F3B9 /* UIColor+PMUtils.m in Sources */,
+				CC676DC31106F98D7CC13B0D /* UIDevice+PMUtils.m in Sources */,
+				E17F03821F7D83D86F6646FB /* UIGestureRecognizer+PMUtils.m in Sources */,
+				B17834BEBB0366AE2058E18F /* UIImage+PMUtils.m in Sources */,
+				E584D7E2563A080E94A59865 /* UIImageView+PMUtils.m in Sources */,
+				86E7D6DE23807472BD756486 /* UINavigationController+PMUtils.m in Sources */,
+				8DF4581C6A393C571BD091A1 /* UIResponder+PMUtils.m in Sources */,
+				239FF32EEC8258502CDE9E84 /* UIScreen+PMUtils.m in Sources */,
+				2B88DE1F4BE9661CD3EFF5BC /* UIScrollView+PMUtils.m in Sources */,
+				26C56FCEFA8F60481A7C9DAD /* UITableView+PMUtils.m in Sources */,
+				F80158420DCF421519C0B443 /* UITableViewCell+PMUtils.m in Sources */,
+				35DC95D98464B6F59431A131 /* UITableViewHeaderFooterView+PMUtils.m in Sources */,
+				89ADDFF97689D102F1844416 /* UIView+PMUtils.m in Sources */,
+				D0AB923B2BCE9253C2252F35 /* UIViewController+PMUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E674EAD94585576E23EED298 /* Sources */ = {
+		F09CC758556B801A95DA0CF8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89DB807362DC4ED5AEA9622F /* Pods-UIKit+PMUtilsTests-dummy.m in Sources */,
+				267774F199848FCEF8FF864C /* NSArray+PMUtils.m in Sources */,
+				0725E665EF300121F3082994 /* NSData+PMUtils.m in Sources */,
+				68259B9F58371ACAEA63492A /* NSDictionary+PMUtils.m in Sources */,
+				83F8C26C49C18F30B5E0A2D3 /* NSFileManager+PMUtils.m in Sources */,
+				655BB723F351C041C00B17EC /* NSIndexPath+PMUtils.m in Sources */,
+				ECF5F65A4EEBE41DD4B25FC8 /* NSMutableDictionary+PMUtils.m in Sources */,
+				F55C2F03A786D37B598F205A /* NSNumber+PMUtils.m in Sources */,
+				809A6AA833DC32750E59BE5B /* NSObject+PMUtils.m in Sources */,
+				BF435091B8B63FE30627ED84 /* NSRegularExpression+PMUtils.m in Sources */,
+				ADED92BE47A10BFED096A719 /* NSString+PMUtils.m in Sources */,
+				F60611BCB3A2F139FE18C66B /* NSThread+PMUtils.m in Sources */,
+				FDB1A24155E57BBA8D9B64DC /* PMProtocolInterceptor.m in Sources */,
+				FE25B0CE8E48B3F3E7953128 /* Pods-UIKit+PMUtils-PMUtils-dummy.m in Sources */,
+				47FF0636669E8A986282E12E /* UICollectionReusableView+PMUtils.m in Sources */,
+				61B341CE3042B8BC15739356 /* UICollectionView+PMUtils.m in Sources */,
+				6CE2F34F8AA8830F33E7FF4E /* UICollectionViewFlowLayout+PMUtils.m in Sources */,
+				E1D5773D88F4F3D0F8AA0DE6 /* UIColor+PMUtils.m in Sources */,
+				D32729036775AE4EC7588463 /* UIDevice+PMUtils.m in Sources */,
+				A963CC023D1804A6A4B7A410 /* UIGestureRecognizer+PMUtils.m in Sources */,
+				F37267E1107C762C6C89DA1C /* UIImage+PMUtils.m in Sources */,
+				662BD02D376135E9A81D4282 /* UIImageView+PMUtils.m in Sources */,
+				BA61966FC5611D7E7F694288 /* UINavigationController+PMUtils.m in Sources */,
+				FB227C239FA37E81649EE301 /* UIResponder+PMUtils.m in Sources */,
+				3CB30D0217D0A4AB91A5A938 /* UIScreen+PMUtils.m in Sources */,
+				FDC2D65C5B34275E6C14390D /* UIScrollView+PMUtils.m in Sources */,
+				4D5ADE344A17BA8A814F908A /* UITableView+PMUtils.m in Sources */,
+				E8E95FCCD4040E9DFB485837 /* UITableViewCell+PMUtils.m in Sources */,
+				6071FCD2D7A0AE24DF33853B /* UITableViewHeaderFooterView+PMUtils.m in Sources */,
+				16C7D159E3FB06AF8E84BBED /* UIView+PMUtils.m in Sources */,
+				E9218A1337F6C8A6D2A3331E /* UIViewController+PMUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		96470C296C5991D3B853E081 /* PBXTargetDependency */ = {
+		D09505E86D285B2DF9773A03 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-UIKit+PMUtilsTests-PMUtils";
-			target = 3987C56F288B2045168FE512 /* Pods-UIKit+PMUtilsTests-PMUtils */;
-			targetProxy = E09E4EAA460B40715E024A07 /* PBXContainerItemProxy */;
+			target = 0688FD03DEDB749DE72E6230 /* Pods-UIKit+PMUtilsTests-PMUtils */;
+			targetProxy = 4B01BF343F13DCF22E6EF0E1 /* PBXContainerItemProxy */;
 		};
-		C56B393AF1F7B198F5C556B2 /* PBXTargetDependency */ = {
+		D7C171DF9FEF69813A0C0B0C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-UIKit+PMUtils-PMUtils";
-			target = 6C8D929130BA3C7D98DAF937 /* Pods-UIKit+PMUtils-PMUtils */;
-			targetProxy = 21C832F7BF4C624A4165B692 /* PBXContainerItemProxy */;
+			target = 08B7368B0960528226045754 /* Pods-UIKit+PMUtils-PMUtils */;
+			targetProxy = B9403AD5AAAD43A0782CC556 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		08FF665C4D9A48CF2F7533E0 /* Debug */ = {
+		1EE201F327AA431D5A813068 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32EDFDCF130D755A1F7F6F27 /* Pods-UIKit+PMUtilsTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		214ABCA789194A60752217FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76D6790755E7189599767746 /* Pods-UIKit+PMUtilsTests-PMUtils-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-UIKit+PMUtilsTests-PMUtils/Pods-UIKit+PMUtilsTests-PMUtils-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		44BF329A0BD761737C90C8C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -804,9 +859,9 @@
 			};
 			name = Debug;
 		};
-		182B2B83E5E4A8BC274A3577 /* Release */ = {
+		91CC11AAE3F86778074A9FF9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C2146358F935B17090487B9 /* Pods-UIKit+PMUtils-PMUtils-Private.xcconfig */;
+			baseConfigurationReference = 32B210FA0ADD2FE1084EB91E /* Pods-UIKit+PMUtils-PMUtils-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
@@ -833,9 +888,9 @@
 			};
 			name = Release;
 		};
-		4825FF26164F4B3B8DA68D90 /* Release */ = {
+		9278DBC8C6116587DC5814C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D0F2BE608BF7BE945A80563 /* Pods-UIKit+PMUtils.release.xcconfig */;
+			baseConfigurationReference = D8B641C89B6F997593DA3E2B /* Pods-UIKit+PMUtils.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
@@ -861,9 +916,9 @@
 			};
 			name = Release;
 		};
-		4B5BBD39C09C9F55878AA153 /* Release */ = {
+		94FCDBDEB61DA5E9D45E772C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93B79C217CC2D1CBB964E29E /* Pods-UIKit+PMUtilsTests-PMUtils-Private.xcconfig */;
+			baseConfigurationReference = 76D6790755E7189599767746 /* Pods-UIKit+PMUtilsTests-PMUtils-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
@@ -890,36 +945,9 @@
 			};
 			name = Release;
 		};
-		618C6068ECC6374FB3AD1495 /* Debug */ = {
+		9EB73D256117F04B78121750 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93B79C217CC2D1CBB964E29E /* Pods-UIKit+PMUtilsTests-PMUtils-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-UIKit+PMUtilsTests-PMUtils/Pods-UIKit+PMUtilsTests-PMUtils-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		72463E57E3C5598BB720256F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA233F2FCAD740F08AE04B36 /* Pods-UIKit+PMUtilsTests.debug.xcconfig */;
+			baseConfigurationReference = A48F8FB99456C26A78701DAC /* Pods-UIKit+PMUtils.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
@@ -943,88 +971,7 @@
 			};
 			name = Debug;
 		};
-		86B3D2243D0F9FE318A7C5D1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 468DDE98B64E1B659F63DFE3 /* Pods-UIKit+PMUtilsTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		95FA4EF3F135A8B54C27D4ED /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 367F8D4C59A631EA064AAD71 /* Pods-UIKit+PMUtils.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		9CDCA37CB47F084395E82E40 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C2146358F935B17090487B9 /* Pods-UIKit+PMUtils-PMUtils-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-UIKit+PMUtils-PMUtils/Pods-UIKit+PMUtils-PMUtils-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		D4372868B86136602775144B /* Release */ = {
+		C8E5607847605A93F7F5DAB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1055,55 +1002,108 @@
 			};
 			name = Release;
 		};
+		E16FF9CB910E45C8216F2CD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59E4B63E929366CCACF0B89E /* Pods-UIKit+PMUtilsTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FA784A6D5964ACF7B57856F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32B210FA0ADD2FE1084EB91E /* Pods-UIKit+PMUtils-PMUtils-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-UIKit+PMUtils-PMUtils/Pods-UIKit+PMUtils-PMUtils-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		44505EECF2269295D23AD03A /* Build configuration list for PBXNativeTarget "Pods-UIKit+PMUtils-PMUtils" */ = {
+		188F488CE2AE96222B403855 /* Build configuration list for PBXNativeTarget "Pods-UIKit+PMUtilsTests-PMUtils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9CDCA37CB47F084395E82E40 /* Debug */,
-				182B2B83E5E4A8BC274A3577 /* Release */,
+				214ABCA789194A60752217FB /* Debug */,
+				94FCDBDEB61DA5E9D45E772C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63ADC8FB61711D25BE9F3BDD /* Build configuration list for PBXNativeTarget "Pods-UIKit+PMUtils" */ = {
+		2612963C1AD99DCFE690904B /* Build configuration list for PBXNativeTarget "Pods-UIKit+PMUtils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				95FA4EF3F135A8B54C27D4ED /* Debug */,
-				4825FF26164F4B3B8DA68D90 /* Release */,
+				9EB73D256117F04B78121750 /* Debug */,
+				9278DBC8C6116587DC5814C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8D094D0FD1F173CDAAF0C1CE /* Build configuration list for PBXNativeTarget "Pods-UIKit+PMUtilsTests" */ = {
+		3AF3C6A10CB330A9B1786227 /* Build configuration list for PBXNativeTarget "Pods-UIKit+PMUtils-PMUtils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				72463E57E3C5598BB720256F /* Debug */,
-				86B3D2243D0F9FE318A7C5D1 /* Release */,
+				FA784A6D5964ACF7B57856F3 /* Debug */,
+				91CC11AAE3F86778074A9FF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C4131CAC25E8BBB68EDF5CEA /* Build configuration list for PBXProject "Pods" */ = {
+		D87D91DE7309FB481BCF3F80 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				08FF665C4D9A48CF2F7533E0 /* Debug */,
-				D4372868B86136602775144B /* Release */,
+				44BF329A0BD761737C90C8C4 /* Debug */,
+				C8E5607847605A93F7F5DAB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C6C3C597C8A25D11B73C6AE6 /* Build configuration list for PBXNativeTarget "Pods-UIKit+PMUtilsTests-PMUtils" */ = {
+		F6AAFDBDF7194A07E7559115 /* Build configuration list for PBXNativeTarget "Pods-UIKit+PMUtilsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				618C6068ECC6374FB3AD1495 /* Debug */,
-				4B5BBD39C09C9F55878AA153 /* Release */,
+				E16FF9CB910E45C8216F2CD6 /* Debug */,
+				1EE201F327AA431D5A813068 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 06E7C3888AAB0F611253574F /* Project object */;
+	rootObject = D041C73DF65AAFAEB883C999 /* Project object */;
 }

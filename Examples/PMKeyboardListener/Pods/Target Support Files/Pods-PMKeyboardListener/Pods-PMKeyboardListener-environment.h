@@ -9,6 +9,6 @@
 // PMUtils/PMKeyboardListener
 #define COCOAPODS_POD_AVAILABLE_PMUtils_PMKeyboardListener
 #define COCOAPODS_VERSION_MAJOR_PMUtils_PMKeyboardListener 1
-#define COCOAPODS_VERSION_MINOR_PMUtils_PMKeyboardListener 1
-#define COCOAPODS_VERSION_PATCH_PMUtils_PMKeyboardListener 2
+#define COCOAPODS_VERSION_MINOR_PMUtils_PMKeyboardListener 2
+#define COCOAPODS_VERSION_PATCH_PMUtils_PMKeyboardListener 0
 

@@ -9,6 +9,6 @@
 // PMUtils/Foundation+PMUtils
 #define COCOAPODS_POD_AVAILABLE_PMUtils_Foundation_PMUtils
 #define COCOAPODS_VERSION_MAJOR_PMUtils_Foundation_PMUtils 1
-#define COCOAPODS_VERSION_MINOR_PMUtils_Foundation_PMUtils 1
-#define COCOAPODS_VERSION_PATCH_PMUtils_Foundation_PMUtils 2
+#define COCOAPODS_VERSION_MINOR_PMUtils_Foundation_PMUtils 2
+#define COCOAPODS_VERSION_PATCH_PMUtils_Foundation_PMUtils 0
 

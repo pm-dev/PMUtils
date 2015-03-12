@@ -33,7 +33,7 @@
 #import "UICollectionViewFlowLayout+PMUtils.h"
 #import "UIColor+PMUtils.h"
 #import "UIDevice+PMUtils.h"
-#import "UIGestureRecognizer.h"
+#import "UIGestureRecognizer+PMUtils.h"
 #import "UIImage+PMUtils.h"
 #import "UIImageView+PMUtils.h"
 #import "UINavigationController+PMUtils.h"

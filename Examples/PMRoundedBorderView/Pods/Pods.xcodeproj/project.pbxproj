@@ -7,200 +7,183 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E603CF372637321AEA52C17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E0D09BB3FE1D968B2FD3F8 /* Foundation.framework */; };
-		3895C1D66F20F42C8EEAB88E /* Pods-PMRoundedBorderView-PMUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 721402215D4A3BF4EEBDB93A /* Pods-PMRoundedBorderView-PMUtils-dummy.m */; };
-		5D2FB34EDDEE751AB29242F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E0D09BB3FE1D968B2FD3F8 /* Foundation.framework */; };
-		7A61DA60F9446CA9F741F95E /* PMRoundedBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E1D3DE83C8CCEF7D2C19E9 /* PMRoundedBorderView.m */; };
-		CF54135D86B32B8BF07AA739 /* Pods-PMRoundedBorderView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CF433E0F2AF70956FEBACF58 /* Pods-PMRoundedBorderView-dummy.m */; };
-		FD8B591A8C33D06B4B6F5192 /* PMRoundedBorderView.h in Headers */ = {isa = PBXBuildFile; fileRef = FE81BE75D91BB798A765E9BC /* PMRoundedBorderView.h */; };
+		5A24E295939C4E7E2AE73FEE /* PMRoundedBorderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 906C50838746C5ABB597D554 /* PMRoundedBorderView.h */; };
+		A8919D8C11452DC8EFD3FCE3 /* Pods-PMRoundedBorderView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 368C8FBFAE5BEBBDEDCB3D56 /* Pods-PMRoundedBorderView-dummy.m */; };
+		BD2A8E1A8CE1DAEC1E4E20FF /* Pods-PMRoundedBorderView-PMUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EAA02E6D296FDE400902F7 /* Pods-PMRoundedBorderView-PMUtils-dummy.m */; };
+		C5E7DCD964B7555F0BF1696E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9DCE84927669AACC73B4F8A /* Foundation.framework */; };
+		DC5D2BC2D6F4C343AFADADDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9DCE84927669AACC73B4F8A /* Foundation.framework */; };
+		ED3B70D7D2F95A3A1096EB87 /* PMRoundedBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF86853BE62B3FC253D0A2E /* PMRoundedBorderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		14633F08162E18686C01C3BF /* PBXContainerItemProxy */ = {
+		63E6B3D1D6268592CE1D2C90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 91DD337F0F03A11646B7FB6C /* Project object */;
+			containerPortal = 3E0D11013DD79AF7B76D68A3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 95CF5EF8F3BA9C88715DFCCA;
+			remoteGlobalIDString = 41881DDCFD189428EE6799BE;
 			remoteInfo = "Pods-PMRoundedBorderView-PMUtils";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E50391AE20CB80391F2A04F /* Pods-PMRoundedBorderView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PMRoundedBorderView-acknowledgements.plist"; sourceTree = "<group>"; };
-		3A554C6C76838495BA5C1210 /* Pods-PMRoundedBorderView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PMRoundedBorderView-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3C58B3082E9E904C184D792A /* Pods-PMRoundedBorderView-PMUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMRoundedBorderView-PMUtils-prefix.pch"; sourceTree = "<group>"; };
-		3CA4C1AAFB1E796E80F8F75D /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		5237C72A40645AA7C362352D /* libPods-PMRoundedBorderView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMRoundedBorderView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		60940E3886DC26CC75717E9F /* Pods-PMRoundedBorderView-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PMRoundedBorderView-resources.sh"; sourceTree = "<group>"; };
-		721402215D4A3BF4EEBDB93A /* Pods-PMRoundedBorderView-PMUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMRoundedBorderView-PMUtils-dummy.m"; sourceTree = "<group>"; };
-		72E1D3DE83C8CCEF7D2C19E9 /* PMRoundedBorderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMRoundedBorderView.m; path = Pod/Classes/PMRoundedBorderView/PMRoundedBorderView.m; sourceTree = "<group>"; };
-		95E0D09BB3FE1D968B2FD3F8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		A9FD8A717FE8AEDFCFB15051 /* Pods-PMRoundedBorderView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMRoundedBorderView.debug.xcconfig"; sourceTree = "<group>"; };
-		B2741CDD810C7A2C16EF6E37 /* Pods-PMRoundedBorderView-PMUtils-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMRoundedBorderView-PMUtils-Private.xcconfig"; sourceTree = "<group>"; };
-		B888B03DC4326C93DA686A65 /* Pods-PMRoundedBorderView-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMRoundedBorderView-environment.h"; sourceTree = "<group>"; };
-		CF433E0F2AF70956FEBACF58 /* Pods-PMRoundedBorderView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMRoundedBorderView-dummy.m"; sourceTree = "<group>"; };
-		D50D79A4CB50C63595A0AB8D /* libPods-PMRoundedBorderView-PMUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMRoundedBorderView-PMUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB0A837F70818D05E6E97281 /* Pods-PMRoundedBorderView-PMUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMRoundedBorderView-PMUtils.xcconfig"; sourceTree = "<group>"; };
-		FCC560C358D7FC1E402E5162 /* Pods-PMRoundedBorderView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMRoundedBorderView.release.xcconfig"; sourceTree = "<group>"; };
-		FE81BE75D91BB798A765E9BC /* PMRoundedBorderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMRoundedBorderView.h; path = Pod/Classes/PMRoundedBorderView/PMRoundedBorderView.h; sourceTree = "<group>"; };
+		06F9DD8F7DAE9F44F66648B5 /* libPods-PMRoundedBorderView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMRoundedBorderView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1697F4792A23094494B2BAAC /* Pods-PMRoundedBorderView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMRoundedBorderView.release.xcconfig"; sourceTree = "<group>"; };
+		2195E2FEAAA23BC46F32B2D1 /* Pods-PMRoundedBorderView-PMUtils-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMRoundedBorderView-PMUtils-Private.xcconfig"; sourceTree = "<group>"; };
+		3479CB0024ED8B254095C71E /* Pods-PMRoundedBorderView-PMUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMRoundedBorderView-PMUtils-prefix.pch"; sourceTree = "<group>"; };
+		368C8FBFAE5BEBBDEDCB3D56 /* Pods-PMRoundedBorderView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMRoundedBorderView-dummy.m"; sourceTree = "<group>"; };
+		4B969727A98DE5A410A734FF /* libPods-PMRoundedBorderView-PMUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMRoundedBorderView-PMUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		60EAA02E6D296FDE400902F7 /* Pods-PMRoundedBorderView-PMUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMRoundedBorderView-PMUtils-dummy.m"; sourceTree = "<group>"; };
+		6ECCB848A1BE750C578B5B55 /* Pods-PMRoundedBorderView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PMRoundedBorderView-acknowledgements.plist"; sourceTree = "<group>"; };
+		78E0AF794922D0345C6734E9 /* Pods-PMRoundedBorderView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PMRoundedBorderView-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8EF86853BE62B3FC253D0A2E /* PMRoundedBorderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMRoundedBorderView.m; path = Pod/Classes/PMRoundedBorderView/PMRoundedBorderView.m; sourceTree = "<group>"; };
+		906C50838746C5ABB597D554 /* PMRoundedBorderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMRoundedBorderView.h; path = Pod/Classes/PMRoundedBorderView/PMRoundedBorderView.h; sourceTree = "<group>"; };
+		971AAD69E7DC9C68C9C96FF4 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97B90D320246C8B0F4A54C2E /* Pods-PMRoundedBorderView-PMUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMRoundedBorderView-PMUtils.xcconfig"; sourceTree = "<group>"; };
+		A9DCE84927669AACC73B4F8A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		ABF1D7BDA4FE910D1AAFBB94 /* Pods-PMRoundedBorderView-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMRoundedBorderView-environment.h"; sourceTree = "<group>"; };
+		DEA77F02D5B9A24C750FE6F1 /* Pods-PMRoundedBorderView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMRoundedBorderView.debug.xcconfig"; sourceTree = "<group>"; };
+		E25939D7EE01364E025D0624 /* Pods-PMRoundedBorderView-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PMRoundedBorderView-resources.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9C85F3E4836944E7CA91EBA7 /* Frameworks */ = {
+		FC506503C85B1DD03FB7D9B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E603CF372637321AEA52C17 /* Foundation.framework in Frameworks */,
+				DC5D2BC2D6F4C343AFADADDE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F984106D7E061A0AC6B4D167 /* Frameworks */ = {
+		FCCDFCBE4AA0C0A5589EC078 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D2FB34EDDEE751AB29242F9 /* Foundation.framework in Frameworks */,
+				C5E7DCD964B7555F0BF1696E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		156B95763EF5DB95DDAB0685 /* PMUtils */ = {
+		48961385594FC4D49FA03402 /* PMRoundedBorderView */ = {
 			isa = PBXGroup;
 			children = (
-				E1103757F4595F8DFCBFD7D8 /* PMRoundedBorderView */,
-				DBB185EC41320D6EBF1CDD29 /* Support Files */,
+				906C50838746C5ABB597D554 /* PMRoundedBorderView.h */,
+				8EF86853BE62B3FC253D0A2E /* PMRoundedBorderView.m */,
 			);
-			name = PMUtils;
-			path = ../../..;
+			name = PMRoundedBorderView;
 			sourceTree = "<group>";
 		};
-		1AF397728A2B5E0F068007A1 /* Pods-PMRoundedBorderView */ = {
+		837BD75BEC351A8C6D957811 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3A554C6C76838495BA5C1210 /* Pods-PMRoundedBorderView-acknowledgements.markdown */,
-				2E50391AE20CB80391F2A04F /* Pods-PMRoundedBorderView-acknowledgements.plist */,
-				CF433E0F2AF70956FEBACF58 /* Pods-PMRoundedBorderView-dummy.m */,
-				B888B03DC4326C93DA686A65 /* Pods-PMRoundedBorderView-environment.h */,
-				60940E3886DC26CC75717E9F /* Pods-PMRoundedBorderView-resources.sh */,
-				A9FD8A717FE8AEDFCFB15051 /* Pods-PMRoundedBorderView.debug.xcconfig */,
-				FCC560C358D7FC1E402E5162 /* Pods-PMRoundedBorderView.release.xcconfig */,
+				F0060EFDD80CF20041E5821A /* PMUtils */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		9B7DED2FEE6827C25999D67F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06F9DD8F7DAE9F44F66648B5 /* libPods-PMRoundedBorderView.a */,
+				4B969727A98DE5A410A734FF /* libPods-PMRoundedBorderView-PMUtils.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A828016255AD0E34C104A581 /* Pods-PMRoundedBorderView */ = {
+			isa = PBXGroup;
+			children = (
+				78E0AF794922D0345C6734E9 /* Pods-PMRoundedBorderView-acknowledgements.markdown */,
+				6ECCB848A1BE750C578B5B55 /* Pods-PMRoundedBorderView-acknowledgements.plist */,
+				368C8FBFAE5BEBBDEDCB3D56 /* Pods-PMRoundedBorderView-dummy.m */,
+				ABF1D7BDA4FE910D1AAFBB94 /* Pods-PMRoundedBorderView-environment.h */,
+				E25939D7EE01364E025D0624 /* Pods-PMRoundedBorderView-resources.sh */,
+				DEA77F02D5B9A24C750FE6F1 /* Pods-PMRoundedBorderView.debug.xcconfig */,
+				1697F4792A23094494B2BAAC /* Pods-PMRoundedBorderView.release.xcconfig */,
 			);
 			name = "Pods-PMRoundedBorderView";
 			path = "Target Support Files/Pods-PMRoundedBorderView";
 			sourceTree = "<group>";
 		};
-		4FED478940AEF87953455631 = {
+		ACAC81E70DBC762BE98F494A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3CA4C1AAFB1E796E80F8F75D /* Podfile */,
-				968C7E04A2AD482C238DA269 /* Development Pods */,
-				AE48D80B9151F80A4F6C39FD /* Frameworks */,
-				924A773F86267597EAF5A22D /* Products */,
-				88E46D5F91EAEA3632EFD089 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		88E46D5F91EAEA3632EFD089 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1AF397728A2B5E0F068007A1 /* Pods-PMRoundedBorderView */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		91670DF73E95A1C4A3745F56 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				95E0D09BB3FE1D968B2FD3F8 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		924A773F86267597EAF5A22D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5237C72A40645AA7C362352D /* libPods-PMRoundedBorderView.a */,
-				D50D79A4CB50C63595A0AB8D /* libPods-PMRoundedBorderView-PMUtils.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		968C7E04A2AD482C238DA269 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				156B95763EF5DB95DDAB0685 /* PMUtils */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		AE48D80B9151F80A4F6C39FD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				91670DF73E95A1C4A3745F56 /* iOS */,
+				D2B4F5EACDD35F4EE3807D3F /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DBB185EC41320D6EBF1CDD29 /* Support Files */ = {
+		D2B4F5EACDD35F4EE3807D3F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				DB0A837F70818D05E6E97281 /* Pods-PMRoundedBorderView-PMUtils.xcconfig */,
-				B2741CDD810C7A2C16EF6E37 /* Pods-PMRoundedBorderView-PMUtils-Private.xcconfig */,
-				721402215D4A3BF4EEBDB93A /* Pods-PMRoundedBorderView-PMUtils-dummy.m */,
-				3C58B3082E9E904C184D792A /* Pods-PMRoundedBorderView-PMUtils-prefix.pch */,
+				A9DCE84927669AACC73B4F8A /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D39EB5D3826066BFDAD52B14 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				97B90D320246C8B0F4A54C2E /* Pods-PMRoundedBorderView-PMUtils.xcconfig */,
+				2195E2FEAAA23BC46F32B2D1 /* Pods-PMRoundedBorderView-PMUtils-Private.xcconfig */,
+				60EAA02E6D296FDE400902F7 /* Pods-PMRoundedBorderView-PMUtils-dummy.m */,
+				3479CB0024ED8B254095C71E /* Pods-PMRoundedBorderView-PMUtils-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "Examples/PMRoundedBorderView/Pods/Target Support Files/Pods-PMRoundedBorderView-PMUtils";
 			sourceTree = "<group>";
 		};
-		E1103757F4595F8DFCBFD7D8 /* PMRoundedBorderView */ = {
+		E784CF02992DB407CC165FB6 = {
 			isa = PBXGroup;
 			children = (
-				FE81BE75D91BB798A765E9BC /* PMRoundedBorderView.h */,
-				72E1D3DE83C8CCEF7D2C19E9 /* PMRoundedBorderView.m */,
+				971AAD69E7DC9C68C9C96FF4 /* Podfile */,
+				837BD75BEC351A8C6D957811 /* Development Pods */,
+				ACAC81E70DBC762BE98F494A /* Frameworks */,
+				9B7DED2FEE6827C25999D67F /* Products */,
+				F35DD0619EFE2A82681D1C0B /* Targets Support Files */,
 			);
-			name = PMRoundedBorderView;
+			sourceTree = "<group>";
+		};
+		F0060EFDD80CF20041E5821A /* PMUtils */ = {
+			isa = PBXGroup;
+			children = (
+				48961385594FC4D49FA03402 /* PMRoundedBorderView */,
+				D39EB5D3826066BFDAD52B14 /* Support Files */,
+			);
+			name = PMUtils;
+			path = ../../..;
+			sourceTree = "<group>";
+		};
+		F35DD0619EFE2A82681D1C0B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A828016255AD0E34C104A581 /* Pods-PMRoundedBorderView */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		FFDCEA06F27FA59E838C0E36 /* Headers */ = {
+		B58033DD3405C79848951FF5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD8B591A8C33D06B4B6F5192 /* PMRoundedBorderView.h in Headers */,
+				5A24E295939C4E7E2AE73FEE /* PMRoundedBorderView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5A5648AFE9E9D7A3F6096C03 /* Pods-PMRoundedBorderView */ = {
+		41881DDCFD189428EE6799BE /* Pods-PMRoundedBorderView-PMUtils */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 790A7AD9132282765C677D3E /* Build configuration list for PBXNativeTarget "Pods-PMRoundedBorderView" */;
+			buildConfigurationList = D2E9F21B21AE09581BB8948B /* Build configuration list for PBXNativeTarget "Pods-PMRoundedBorderView-PMUtils" */;
 			buildPhases = (
-				7ADC301402C0DD6BB304785D /* Sources */,
-				F984106D7E061A0AC6B4D167 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				811051DFDAE4DFBAEA23D001 /* PBXTargetDependency */,
-			);
-			name = "Pods-PMRoundedBorderView";
-			productName = "Pods-PMRoundedBorderView";
-			productReference = 5237C72A40645AA7C362352D /* libPods-PMRoundedBorderView.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		95CF5EF8F3BA9C88715DFCCA /* Pods-PMRoundedBorderView-PMUtils */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5843FD347BFBEB231FB1C98F /* Build configuration list for PBXNativeTarget "Pods-PMRoundedBorderView-PMUtils" */;
-			buildPhases = (
-				B2B639F26844621AADC306F7 /* Sources */,
-				9C85F3E4836944E7CA91EBA7 /* Frameworks */,
-				FFDCEA06F27FA59E838C0E36 /* Headers */,
+				219C2DA839842FB97AD4C1A2 /* Sources */,
+				FCCDFCBE4AA0C0A5589EC078 /* Frameworks */,
+				B58033DD3405C79848951FF5 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -208,95 +191,141 @@
 			);
 			name = "Pods-PMRoundedBorderView-PMUtils";
 			productName = "Pods-PMRoundedBorderView-PMUtils";
-			productReference = D50D79A4CB50C63595A0AB8D /* libPods-PMRoundedBorderView-PMUtils.a */;
+			productReference = 4B969727A98DE5A410A734FF /* libPods-PMRoundedBorderView-PMUtils.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5DAFBDD512D3795E7B052CDD /* Pods-PMRoundedBorderView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AAB997D30ABDA424BCE4D4E /* Build configuration list for PBXNativeTarget "Pods-PMRoundedBorderView" */;
+			buildPhases = (
+				83F2794CC2ABC6B9EF18329C /* Sources */,
+				FC506503C85B1DD03FB7D9B4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				784FD7C929FB5A0C430DF67E /* PBXTargetDependency */,
+			);
+			name = "Pods-PMRoundedBorderView";
+			productName = "Pods-PMRoundedBorderView";
+			productReference = 06F9DD8F7DAE9F44F66648B5 /* libPods-PMRoundedBorderView.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		91DD337F0F03A11646B7FB6C /* Project object */ = {
+		3E0D11013DD79AF7B76D68A3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = 2CD9A520AAD762A538259D59 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = EC4C3F2609D6C171A802FFF3 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 4FED478940AEF87953455631;
-			productRefGroup = 924A773F86267597EAF5A22D /* Products */;
+			mainGroup = E784CF02992DB407CC165FB6;
+			productRefGroup = 9B7DED2FEE6827C25999D67F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5A5648AFE9E9D7A3F6096C03 /* Pods-PMRoundedBorderView */,
-				95CF5EF8F3BA9C88715DFCCA /* Pods-PMRoundedBorderView-PMUtils */,
+				5DAFBDD512D3795E7B052CDD /* Pods-PMRoundedBorderView */,
+				41881DDCFD189428EE6799BE /* Pods-PMRoundedBorderView-PMUtils */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7ADC301402C0DD6BB304785D /* Sources */ = {
+		219C2DA839842FB97AD4C1A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF54135D86B32B8BF07AA739 /* Pods-PMRoundedBorderView-dummy.m in Sources */,
+				ED3B70D7D2F95A3A1096EB87 /* PMRoundedBorderView.m in Sources */,
+				BD2A8E1A8CE1DAEC1E4E20FF /* Pods-PMRoundedBorderView-PMUtils-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B2B639F26844621AADC306F7 /* Sources */ = {
+		83F2794CC2ABC6B9EF18329C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A61DA60F9446CA9F741F95E /* PMRoundedBorderView.m in Sources */,
-				3895C1D66F20F42C8EEAB88E /* Pods-PMRoundedBorderView-PMUtils-dummy.m in Sources */,
+				A8919D8C11452DC8EFD3FCE3 /* Pods-PMRoundedBorderView-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		811051DFDAE4DFBAEA23D001 /* PBXTargetDependency */ = {
+		784FD7C929FB5A0C430DF67E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-PMRoundedBorderView-PMUtils";
-			target = 95CF5EF8F3BA9C88715DFCCA /* Pods-PMRoundedBorderView-PMUtils */;
-			targetProxy = 14633F08162E18686C01C3BF /* PBXContainerItemProxy */;
+			target = 41881DDCFD189428EE6799BE /* Pods-PMRoundedBorderView-PMUtils */;
+			targetProxy = 63E6B3D1D6268592CE1D2C90 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		046A920648FC1D60BB233263 /* Release */ = {
+		277159A43524006ECE72DFE0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2741CDD810C7A2C16EF6E37 /* Pods-PMRoundedBorderView-PMUtils-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7C7FECA1F119140508CA1745 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2195E2FEAAA23BC46F32B2D1 /* Pods-PMRoundedBorderView-PMUtils-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-PMRoundedBorderView-PMUtils/Pods-PMRoundedBorderView-PMUtils-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
-		356F540CA4AECC60E14A49F4 /* Debug */ = {
+		A225213699BEAD9E4C2B5FCB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -332,40 +361,38 @@
 			};
 			name = Debug;
 		};
-		372D07334410DDF634ABFA1B /* Release */ = {
+		B7FA1094AF33F5F5CE2BFD32 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2195E2FEAAA23BC46F32B2D1 /* Pods-PMRoundedBorderView-PMUtils-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PMRoundedBorderView-PMUtils/Pods-PMRoundedBorderView-PMUtils-prefix.pch";
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				STRIP_INSTALLED_PRODUCT = NO;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		9FFE80BFA2FA0700AAA66934 /* Debug */ = {
+		CE1A12716CECEF413E609B7D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9FD8A717FE8AEDFCFB15051 /* Pods-PMRoundedBorderView.debug.xcconfig */;
+			baseConfigurationReference = DEA77F02D5B9A24C750FE6F1 /* Pods-PMRoundedBorderView.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
@@ -389,36 +416,9 @@
 			};
 			name = Debug;
 		};
-		D77665C227B94D21CE6C0FC1 /* Debug */ = {
+		D8B95AD6602449D207F0E6F0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2741CDD810C7A2C16EF6E37 /* Pods-PMRoundedBorderView-PMUtils-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-PMRoundedBorderView-PMUtils/Pods-PMRoundedBorderView-PMUtils-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		D9D696E5D1F17BBCE6D5379C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCC560C358D7FC1E402E5162 /* Pods-PMRoundedBorderView.release.xcconfig */;
+			baseConfigurationReference = 1697F4792A23094494B2BAAC /* Pods-PMRoundedBorderView.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
@@ -447,34 +447,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2CD9A520AAD762A538259D59 /* Build configuration list for PBXProject "Pods" */ = {
+		9AAB997D30ABDA424BCE4D4E /* Build configuration list for PBXNativeTarget "Pods-PMRoundedBorderView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				356F540CA4AECC60E14A49F4 /* Debug */,
-				372D07334410DDF634ABFA1B /* Release */,
+				CE1A12716CECEF413E609B7D /* Debug */,
+				D8B95AD6602449D207F0E6F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5843FD347BFBEB231FB1C98F /* Build configuration list for PBXNativeTarget "Pods-PMRoundedBorderView-PMUtils" */ = {
+		D2E9F21B21AE09581BB8948B /* Build configuration list for PBXNativeTarget "Pods-PMRoundedBorderView-PMUtils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D77665C227B94D21CE6C0FC1 /* Debug */,
-				046A920648FC1D60BB233263 /* Release */,
+				7C7FECA1F119140508CA1745 /* Debug */,
+				B7FA1094AF33F5F5CE2BFD32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		790A7AD9132282765C677D3E /* Build configuration list for PBXNativeTarget "Pods-PMRoundedBorderView" */ = {
+		EC4C3F2609D6C171A802FFF3 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9FFE80BFA2FA0700AAA66934 /* Debug */,
-				D9D696E5D1F17BBCE6D5379C /* Release */,
+				A225213699BEAD9E4C2B5FCB /* Debug */,
+				277159A43524006ECE72DFE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 91DD337F0F03A11646B7FB6C /* Project object */;
+	rootObject = 3E0D11013DD79AF7B76D68A3 /* Project object */;
 }

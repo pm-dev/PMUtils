@@ -1,10 +1,10 @@
 PODS:
-  - PMUtils/Foundation+PMUtils (1.1.2)
-  - PMUtils/PMCircularCollectionView (1.1.2):
+  - PMUtils/Foundation+PMUtils (1.2.0)
+  - PMUtils/PMCircularCollectionView (1.2.0):
     - PMUtils/PMProtocolInterceptor
     - PMUtils/UIKit+PMUtils
-  - PMUtils/PMProtocolInterceptor (1.1.2)
-  - PMUtils/UIKit+PMUtils (1.1.2):
+  - PMUtils/PMProtocolInterceptor (1.2.0)
+  - PMUtils/UIKit+PMUtils (1.2.0):
     - PMUtils/Foundation+PMUtils
     - PMUtils/PMProtocolInterceptor
 
@@ -16,6 +16,6 @@ EXTERNAL SOURCES:
     :path: ../../
 
 SPEC CHECKSUMS:
-  PMUtils: 5b4962f6daecfb61053450403ec580f06924770c
+  PMUtils: 2217f846d25e3177c418bc0f27476d733d4144aa
 
 COCOAPODS: 0.35.0

@@ -1,7 +1,7 @@
 PODS:
-  - PMUtils/PMPlaceholderTextView (1.1.2):
+  - PMUtils/PMPlaceholderTextView (1.2.0):
     - PMUtils/PMProtocolInterceptor
-  - PMUtils/PMProtocolInterceptor (1.1.2)
+  - PMUtils/PMProtocolInterceptor (1.2.0)
 
 DEPENDENCIES:
   - PMUtils/PMPlaceholderTextView (from `../../`)
@@ -11,6 +11,6 @@ EXTERNAL SOURCES:
     :path: ../../
 
 SPEC CHECKSUMS:
-  PMUtils: 17f08b4c5e695360cd7777f2b7430a9ca7d5d969
+  PMUtils: 2217f846d25e3177c418bc0f27476d733d4144aa
 
 COCOAPODS: 0.35.0

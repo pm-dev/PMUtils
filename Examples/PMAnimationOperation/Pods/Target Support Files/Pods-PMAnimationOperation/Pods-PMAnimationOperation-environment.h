@@ -9,6 +9,6 @@
 // PMUtils/PMAnimationOperation
 #define COCOAPODS_POD_AVAILABLE_PMUtils_PMAnimationOperation
 #define COCOAPODS_VERSION_MAJOR_PMUtils_PMAnimationOperation 1
-#define COCOAPODS_VERSION_MINOR_PMUtils_PMAnimationOperation 1
-#define COCOAPODS_VERSION_PATCH_PMUtils_PMAnimationOperation 2
+#define COCOAPODS_VERSION_MINOR_PMUtils_PMAnimationOperation 2
+#define COCOAPODS_VERSION_PATCH_PMUtils_PMAnimationOperation 0
 

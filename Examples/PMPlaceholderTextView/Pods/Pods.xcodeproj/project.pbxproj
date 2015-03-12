@@ -7,198 +7,198 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0CFAEA815673863C95B4D28A /* PMPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 455236EEA436D3B891F86049 /* PMPlaceholderTextView.m */; };
-		5513829F7D7202B71ADECE22 /* PMProtocolInterceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD8E38107DFA519DED3B677 /* PMProtocolInterceptor.h */; };
-		630D31AF783698895543D48D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CD3F8EE4FA606D442ADA3A /* Foundation.framework */; };
-		656DD4BDFE22701EAC2D795A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CD3F8EE4FA606D442ADA3A /* Foundation.framework */; };
-		75FDFB1347DFC4F3F25E67A2 /* PMPlaceholderTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B13F94FDC9F1075B2784A97 /* PMPlaceholderTextView.h */; };
-		78E80D22BDB4B61B731CF510 /* PMProtocolInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 373360BC0029100930CF384E /* PMProtocolInterceptor.m */; };
-		83497CA5E539377BB561B8CB /* Pods-PMPlaceholderTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 69460E3054FC5BA3860D15F6 /* Pods-PMPlaceholderTextView-dummy.m */; };
-		AC6CAA43D9860A0F938FB6E1 /* Pods-PMPlaceholderTextView-PMUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C641297564D0E70FB51AD50E /* Pods-PMPlaceholderTextView-PMUtils-dummy.m */; };
+		41A46D98269BC47585290C6E /* Pods-PMPlaceholderTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF8AEF2CC50D183351CCB2E /* Pods-PMPlaceholderTextView-dummy.m */; };
+		815D0AAE5ED02C340441799E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D6464ED4DA1F11EC8C9621 /* Foundation.framework */; };
+		90260EC76F455115943A8876 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D6464ED4DA1F11EC8C9621 /* Foundation.framework */; };
+		A9E70F7C44EA7018D4A47603 /* PMPlaceholderTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = EAEC50ECD84301ADF1FB4A38 /* PMPlaceholderTextView.h */; };
+		B8049D7A6C272EBD74CDF20F /* PMProtocolInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 83025C6EA90888B7D934DA44 /* PMProtocolInterceptor.m */; };
+		BDCE3C6CAFFD5DCE027A3EEF /* PMProtocolInterceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = A6FEE49064A78FD65FCAAAA3 /* PMProtocolInterceptor.h */; };
+		D522B467466200B799A3D645 /* PMPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC826938DCB971051BF54C07 /* PMPlaceholderTextView.m */; };
+		FA2819DB7533C8C97C54A692 /* Pods-PMPlaceholderTextView-PMUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E81AC1441B8C1C4E9E6DBA /* Pods-PMPlaceholderTextView-PMUtils-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		34592F4621F26E376B1CA583 /* PBXContainerItemProxy */ = {
+		00A8676F610214FCD17EFAB7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6B6E7DE43CC71F72F9119838 /* Project object */;
+			containerPortal = 1D2314FDEC210AF7ADFEF7BC /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B60E7854DC22FFBEC780D247;
+			remoteGlobalIDString = 23E3B6591B552405EEC2F80E;
 			remoteInfo = "Pods-PMPlaceholderTextView-PMUtils";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		004C43E6C01E972A0AF898EC /* libPods-PMPlaceholderTextView-PMUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMPlaceholderTextView-PMUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1180BE70FDA89012A08455B7 /* libPods-PMPlaceholderTextView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMPlaceholderTextView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AEB109D04D449E1EDEE3A30 /* Pods-PMPlaceholderTextView-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMPlaceholderTextView-environment.h"; sourceTree = "<group>"; };
-		2B13F94FDC9F1075B2784A97 /* PMPlaceholderTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMPlaceholderTextView.h; path = Pod/Classes/PMPlaceholderTextView/PMPlaceholderTextView.h; sourceTree = "<group>"; };
-		373360BC0029100930CF384E /* PMProtocolInterceptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMProtocolInterceptor.m; path = Pod/Classes/PMProtocolInterceptor/PMProtocolInterceptor.m; sourceTree = "<group>"; };
-		3EDF5C59C85CB11844ED936B /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		455236EEA436D3B891F86049 /* PMPlaceholderTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMPlaceholderTextView.m; path = Pod/Classes/PMPlaceholderTextView/PMPlaceholderTextView.m; sourceTree = "<group>"; };
-		4BF5C7C2DFBFAC09F4577646 /* Pods-PMPlaceholderTextView-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PMPlaceholderTextView-resources.sh"; sourceTree = "<group>"; };
-		50942BABFD2C10F3BF564F08 /* Pods-PMPlaceholderTextView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMPlaceholderTextView.debug.xcconfig"; sourceTree = "<group>"; };
-		5AD8E38107DFA519DED3B677 /* PMProtocolInterceptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMProtocolInterceptor.h; path = Pod/Classes/PMProtocolInterceptor/PMProtocolInterceptor.h; sourceTree = "<group>"; };
-		637B79BF1BEFF2FB66C26ACC /* Pods-PMPlaceholderTextView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PMPlaceholderTextView-acknowledgements.plist"; sourceTree = "<group>"; };
-		69460E3054FC5BA3860D15F6 /* Pods-PMPlaceholderTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMPlaceholderTextView-dummy.m"; sourceTree = "<group>"; };
-		7C48612DD774BB0D06CBCA38 /* Pods-PMPlaceholderTextView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMPlaceholderTextView.release.xcconfig"; sourceTree = "<group>"; };
-		89542DF56D8A5B1702097BDB /* Pods-PMPlaceholderTextView-PMUtils-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMPlaceholderTextView-PMUtils-Private.xcconfig"; sourceTree = "<group>"; };
-		8D6B075D36443DE3E56727F1 /* Pods-PMPlaceholderTextView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PMPlaceholderTextView-acknowledgements.markdown"; sourceTree = "<group>"; };
-		95DF320DD296B65DAF890E8C /* Pods-PMPlaceholderTextView-PMUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMPlaceholderTextView-PMUtils-prefix.pch"; sourceTree = "<group>"; };
-		C641297564D0E70FB51AD50E /* Pods-PMPlaceholderTextView-PMUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMPlaceholderTextView-PMUtils-dummy.m"; sourceTree = "<group>"; };
-		D5CD3F8EE4FA606D442ADA3A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D6EBDECDB2D52FFD1A843145 /* Pods-PMPlaceholderTextView-PMUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMPlaceholderTextView-PMUtils.xcconfig"; sourceTree = "<group>"; };
+		0C58B00012584C5F2B228F44 /* Pods-PMPlaceholderTextView-PMUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMPlaceholderTextView-PMUtils-prefix.pch"; sourceTree = "<group>"; };
+		0ED9937478AA93D25FF09CBA /* libPods-PMPlaceholderTextView-PMUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMPlaceholderTextView-PMUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28726A03EA5A0EBB72DBFF0F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		39CA4C194FBA9256D5C7C5CA /* Pods-PMPlaceholderTextView-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PMPlaceholderTextView-resources.sh"; sourceTree = "<group>"; };
+		41E81AC1441B8C1C4E9E6DBA /* Pods-PMPlaceholderTextView-PMUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMPlaceholderTextView-PMUtils-dummy.m"; sourceTree = "<group>"; };
+		496E682D60A6BF378E06D534 /* libPods-PMPlaceholderTextView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMPlaceholderTextView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		823B99E274EBCF326ADF3F62 /* Pods-PMPlaceholderTextView-PMUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMPlaceholderTextView-PMUtils.xcconfig"; sourceTree = "<group>"; };
+		83025C6EA90888B7D934DA44 /* PMProtocolInterceptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMProtocolInterceptor.m; path = Pod/Classes/PMProtocolInterceptor/PMProtocolInterceptor.m; sourceTree = "<group>"; };
+		96A0CF0F24CA1D36C084E292 /* Pods-PMPlaceholderTextView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMPlaceholderTextView.release.xcconfig"; sourceTree = "<group>"; };
+		970AD8D46A7C814DC9681748 /* Pods-PMPlaceholderTextView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMPlaceholderTextView.debug.xcconfig"; sourceTree = "<group>"; };
+		971D1402A980F1955EB66C38 /* Pods-PMPlaceholderTextView-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMPlaceholderTextView-environment.h"; sourceTree = "<group>"; };
+		9EF8AEF2CC50D183351CCB2E /* Pods-PMPlaceholderTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMPlaceholderTextView-dummy.m"; sourceTree = "<group>"; };
+		A6FEE49064A78FD65FCAAAA3 /* PMProtocolInterceptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMProtocolInterceptor.h; path = Pod/Classes/PMProtocolInterceptor/PMProtocolInterceptor.h; sourceTree = "<group>"; };
+		A9D6464ED4DA1F11EC8C9621 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		BC826938DCB971051BF54C07 /* PMPlaceholderTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMPlaceholderTextView.m; path = Pod/Classes/PMPlaceholderTextView/PMPlaceholderTextView.m; sourceTree = "<group>"; };
+		C4CE6940C9E401221EC47822 /* Pods-PMPlaceholderTextView-PMUtils-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMPlaceholderTextView-PMUtils-Private.xcconfig"; sourceTree = "<group>"; };
+		EAEC50ECD84301ADF1FB4A38 /* PMPlaceholderTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMPlaceholderTextView.h; path = Pod/Classes/PMPlaceholderTextView/PMPlaceholderTextView.h; sourceTree = "<group>"; };
+		F1E8C02E3CBFFC566DB592B7 /* Pods-PMPlaceholderTextView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PMPlaceholderTextView-acknowledgements.plist"; sourceTree = "<group>"; };
+		FB0B0B6626F072B96F610289 /* Pods-PMPlaceholderTextView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PMPlaceholderTextView-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2A16F1126C74546D31261AA5 /* Frameworks */ = {
+		98A36642674294E3ADAB1378 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				656DD4BDFE22701EAC2D795A /* Foundation.framework in Frameworks */,
+				815D0AAE5ED02C340441799E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		41B3A00AB584C6CB68BA0408 /* Frameworks */ = {
+		FC85D60357FDDEFB6C9608B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630D31AF783698895543D48D /* Foundation.framework in Frameworks */,
+				90260EC76F455115943A8876 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1CE44B9EFF15FD47EE1CC0BA /* Development Pods */ = {
+		09BB1918C183EEE45E731994 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7614597625B51F23BBCDC116 /* PMUtils */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		32604C9EBB6A384D461A635B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1180BE70FDA89012A08455B7 /* libPods-PMPlaceholderTextView.a */,
-				004C43E6C01E972A0AF898EC /* libPods-PMPlaceholderTextView-PMUtils.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3AEAE861D3DEC97BBEC6FF00 /* PMPlaceholderTextView */ = {
-			isa = PBXGroup;
-			children = (
-				2B13F94FDC9F1075B2784A97 /* PMPlaceholderTextView.h */,
-				455236EEA436D3B891F86049 /* PMPlaceholderTextView.m */,
-			);
-			name = PMPlaceholderTextView;
-			sourceTree = "<group>";
-		};
-		63CF3B72C1F8F953003B3AD2 /* Pods-PMPlaceholderTextView */ = {
-			isa = PBXGroup;
-			children = (
-				8D6B075D36443DE3E56727F1 /* Pods-PMPlaceholderTextView-acknowledgements.markdown */,
-				637B79BF1BEFF2FB66C26ACC /* Pods-PMPlaceholderTextView-acknowledgements.plist */,
-				69460E3054FC5BA3860D15F6 /* Pods-PMPlaceholderTextView-dummy.m */,
-				1AEB109D04D449E1EDEE3A30 /* Pods-PMPlaceholderTextView-environment.h */,
-				4BF5C7C2DFBFAC09F4577646 /* Pods-PMPlaceholderTextView-resources.sh */,
-				50942BABFD2C10F3BF564F08 /* Pods-PMPlaceholderTextView.debug.xcconfig */,
-				7C48612DD774BB0D06CBCA38 /* Pods-PMPlaceholderTextView.release.xcconfig */,
-			);
-			name = "Pods-PMPlaceholderTextView";
-			path = "Target Support Files/Pods-PMPlaceholderTextView";
-			sourceTree = "<group>";
-		};
-		7614597625B51F23BBCDC116 /* PMUtils */ = {
-			isa = PBXGroup;
-			children = (
-				3AEAE861D3DEC97BBEC6FF00 /* PMPlaceholderTextView */,
-				BAA738699A7AC4ECC95DAF33 /* PMProtocolInterceptor */,
-				9B664B03A599CF1CF53691E7 /* Support Files */,
-			);
-			name = PMUtils;
-			path = ../../..;
-			sourceTree = "<group>";
-		};
-		78C1AA363040B6B005A5F9DC /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D5CD3F8EE4FA606D442ADA3A /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		9B664B03A599CF1CF53691E7 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D6EBDECDB2D52FFD1A843145 /* Pods-PMPlaceholderTextView-PMUtils.xcconfig */,
-				89542DF56D8A5B1702097BDB /* Pods-PMPlaceholderTextView-PMUtils-Private.xcconfig */,
-				C641297564D0E70FB51AD50E /* Pods-PMPlaceholderTextView-PMUtils-dummy.m */,
-				95DF320DD296B65DAF890E8C /* Pods-PMPlaceholderTextView-PMUtils-prefix.pch */,
+				823B99E274EBCF326ADF3F62 /* Pods-PMPlaceholderTextView-PMUtils.xcconfig */,
+				C4CE6940C9E401221EC47822 /* Pods-PMPlaceholderTextView-PMUtils-Private.xcconfig */,
+				41E81AC1441B8C1C4E9E6DBA /* Pods-PMPlaceholderTextView-PMUtils-dummy.m */,
+				0C58B00012584C5F2B228F44 /* Pods-PMPlaceholderTextView-PMUtils-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "Examples/PMPlaceholderTextView/Pods/Target Support Files/Pods-PMPlaceholderTextView-PMUtils";
 			sourceTree = "<group>";
 		};
-		BAA738699A7AC4ECC95DAF33 /* PMProtocolInterceptor */ = {
+		17942A6EBAF77DBFC0D1DCEF /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5AD8E38107DFA519DED3B677 /* PMProtocolInterceptor.h */,
-				373360BC0029100930CF384E /* PMProtocolInterceptor.m */,
-			);
-			name = PMProtocolInterceptor;
-			sourceTree = "<group>";
-		};
-		CCE3C60E3E187F4D1150D2EC /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				63CF3B72C1F8F953003B3AD2 /* Pods-PMPlaceholderTextView */,
+				A406E939128FB88A2D2F3801 /* Pods-PMPlaceholderTextView */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		D102373960AA2190FF8B7B94 = {
+		1DD19F8DE1FC34D7051148C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3EDF5C59C85CB11844ED936B /* Podfile */,
-				1CE44B9EFF15FD47EE1CC0BA /* Development Pods */,
-				D8196FD3E0A4D074B056469A /* Frameworks */,
-				32604C9EBB6A384D461A635B /* Products */,
-				CCE3C60E3E187F4D1150D2EC /* Targets Support Files */,
+				734D8BC239F85AF0A2D21AB8 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		534C4D56D41F5FCE7B244F99 /* PMProtocolInterceptor */ = {
+			isa = PBXGroup;
+			children = (
+				A6FEE49064A78FD65FCAAAA3 /* PMProtocolInterceptor.h */,
+				83025C6EA90888B7D934DA44 /* PMProtocolInterceptor.m */,
+			);
+			name = PMProtocolInterceptor;
+			sourceTree = "<group>";
+		};
+		661EA552FBFF44248211CD8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				496E682D60A6BF378E06D534 /* libPods-PMPlaceholderTextView.a */,
+				0ED9937478AA93D25FF09CBA /* libPods-PMPlaceholderTextView-PMUtils.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		734D8BC239F85AF0A2D21AB8 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A9D6464ED4DA1F11EC8C9621 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A406E939128FB88A2D2F3801 /* Pods-PMPlaceholderTextView */ = {
+			isa = PBXGroup;
+			children = (
+				FB0B0B6626F072B96F610289 /* Pods-PMPlaceholderTextView-acknowledgements.markdown */,
+				F1E8C02E3CBFFC566DB592B7 /* Pods-PMPlaceholderTextView-acknowledgements.plist */,
+				9EF8AEF2CC50D183351CCB2E /* Pods-PMPlaceholderTextView-dummy.m */,
+				971D1402A980F1955EB66C38 /* Pods-PMPlaceholderTextView-environment.h */,
+				39CA4C194FBA9256D5C7C5CA /* Pods-PMPlaceholderTextView-resources.sh */,
+				970AD8D46A7C814DC9681748 /* Pods-PMPlaceholderTextView.debug.xcconfig */,
+				96A0CF0F24CA1D36C084E292 /* Pods-PMPlaceholderTextView.release.xcconfig */,
+			);
+			name = "Pods-PMPlaceholderTextView";
+			path = "Target Support Files/Pods-PMPlaceholderTextView";
+			sourceTree = "<group>";
+		};
+		A65CCF0132609C53A3A14009 /* PMUtils */ = {
+			isa = PBXGroup;
+			children = (
+				C53FAE7B098F82B295550FDF /* PMPlaceholderTextView */,
+				534C4D56D41F5FCE7B244F99 /* PMProtocolInterceptor */,
+				09BB1918C183EEE45E731994 /* Support Files */,
+			);
+			name = PMUtils;
+			path = ../../..;
+			sourceTree = "<group>";
+		};
+		C53FAE7B098F82B295550FDF /* PMPlaceholderTextView */ = {
+			isa = PBXGroup;
+			children = (
+				EAEC50ECD84301ADF1FB4A38 /* PMPlaceholderTextView.h */,
+				BC826938DCB971051BF54C07 /* PMPlaceholderTextView.m */,
+			);
+			name = PMPlaceholderTextView;
+			sourceTree = "<group>";
+		};
+		CE27738A03768897E2030639 = {
+			isa = PBXGroup;
+			children = (
+				28726A03EA5A0EBB72DBFF0F /* Podfile */,
+				EEB815CA1098B8879590C046 /* Development Pods */,
+				1DD19F8DE1FC34D7051148C9 /* Frameworks */,
+				661EA552FBFF44248211CD8B /* Products */,
+				17942A6EBAF77DBFC0D1DCEF /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D8196FD3E0A4D074B056469A /* Frameworks */ = {
+		EEB815CA1098B8879590C046 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				78C1AA363040B6B005A5F9DC /* iOS */,
+				A65CCF0132609C53A3A14009 /* PMUtils */,
 			);
-			name = Frameworks;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		89A7E1AC87E747E58E9FE28D /* Headers */ = {
+		44D08F0B386819C36DC8A46E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75FDFB1347DFC4F3F25E67A2 /* PMPlaceholderTextView.h in Headers */,
-				5513829F7D7202B71ADECE22 /* PMProtocolInterceptor.h in Headers */,
+				A9E70F7C44EA7018D4A47603 /* PMPlaceholderTextView.h in Headers */,
+				BDCE3C6CAFFD5DCE027A3EEF /* PMProtocolInterceptor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B60E7854DC22FFBEC780D247 /* Pods-PMPlaceholderTextView-PMUtils */ = {
+		23E3B6591B552405EEC2F80E /* Pods-PMPlaceholderTextView-PMUtils */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E2A26B38FC7BA12D177044F6 /* Build configuration list for PBXNativeTarget "Pods-PMPlaceholderTextView-PMUtils" */;
+			buildConfigurationList = 6EC2D65E4DFFAA95AE1EEAC3 /* Build configuration list for PBXNativeTarget "Pods-PMPlaceholderTextView-PMUtils" */;
 			buildPhases = (
-				74FAF089E3C93380BAE851E6 /* Sources */,
-				2A16F1126C74546D31261AA5 /* Frameworks */,
-				89A7E1AC87E747E58E9FE28D /* Headers */,
+				DB90739BD9B8FBD498E6BDAE /* Sources */,
+				FC85D60357FDDEFB6C9608B8 /* Frameworks */,
+				44D08F0B386819C36DC8A46E /* Headers */,
 			);
 			buildRules = (
 			);
@@ -206,111 +206,84 @@
 			);
 			name = "Pods-PMPlaceholderTextView-PMUtils";
 			productName = "Pods-PMPlaceholderTextView-PMUtils";
-			productReference = 004C43E6C01E972A0AF898EC /* libPods-PMPlaceholderTextView-PMUtils.a */;
+			productReference = 0ED9937478AA93D25FF09CBA /* libPods-PMPlaceholderTextView-PMUtils.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		FB29745052972EB51715D06E /* Pods-PMPlaceholderTextView */ = {
+		6E091F38FF85F08E11DB524D /* Pods-PMPlaceholderTextView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA453B13314E2B89D4461393 /* Build configuration list for PBXNativeTarget "Pods-PMPlaceholderTextView" */;
+			buildConfigurationList = 63D27C206EF60519C8D2CA7B /* Build configuration list for PBXNativeTarget "Pods-PMPlaceholderTextView" */;
 			buildPhases = (
-				AA883D1740A149A297BB165C /* Sources */,
-				41B3A00AB584C6CB68BA0408 /* Frameworks */,
+				51C19A6AD9DB6BB89C24B7AF /* Sources */,
+				98A36642674294E3ADAB1378 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A555060A99F5208E6AE71DBF /* PBXTargetDependency */,
+				7022F3EE214A6C9778995723 /* PBXTargetDependency */,
 			);
 			name = "Pods-PMPlaceholderTextView";
 			productName = "Pods-PMPlaceholderTextView";
-			productReference = 1180BE70FDA89012A08455B7 /* libPods-PMPlaceholderTextView.a */;
+			productReference = 496E682D60A6BF378E06D534 /* libPods-PMPlaceholderTextView.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6B6E7DE43CC71F72F9119838 /* Project object */ = {
+		1D2314FDEC210AF7ADFEF7BC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = 54B0BB94FE07BA13281844B5 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 53AAC39344C9A6A3119580C0 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = D102373960AA2190FF8B7B94;
-			productRefGroup = 32604C9EBB6A384D461A635B /* Products */;
+			mainGroup = CE27738A03768897E2030639;
+			productRefGroup = 661EA552FBFF44248211CD8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FB29745052972EB51715D06E /* Pods-PMPlaceholderTextView */,
-				B60E7854DC22FFBEC780D247 /* Pods-PMPlaceholderTextView-PMUtils */,
+				6E091F38FF85F08E11DB524D /* Pods-PMPlaceholderTextView */,
+				23E3B6591B552405EEC2F80E /* Pods-PMPlaceholderTextView-PMUtils */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		74FAF089E3C93380BAE851E6 /* Sources */ = {
+		51C19A6AD9DB6BB89C24B7AF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CFAEA815673863C95B4D28A /* PMPlaceholderTextView.m in Sources */,
-				78E80D22BDB4B61B731CF510 /* PMProtocolInterceptor.m in Sources */,
-				AC6CAA43D9860A0F938FB6E1 /* Pods-PMPlaceholderTextView-PMUtils-dummy.m in Sources */,
+				41A46D98269BC47585290C6E /* Pods-PMPlaceholderTextView-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AA883D1740A149A297BB165C /* Sources */ = {
+		DB90739BD9B8FBD498E6BDAE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83497CA5E539377BB561B8CB /* Pods-PMPlaceholderTextView-dummy.m in Sources */,
+				D522B467466200B799A3D645 /* PMPlaceholderTextView.m in Sources */,
+				B8049D7A6C272EBD74CDF20F /* PMProtocolInterceptor.m in Sources */,
+				FA2819DB7533C8C97C54A692 /* Pods-PMPlaceholderTextView-PMUtils-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A555060A99F5208E6AE71DBF /* PBXTargetDependency */ = {
+		7022F3EE214A6C9778995723 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-PMPlaceholderTextView-PMUtils";
-			target = B60E7854DC22FFBEC780D247 /* Pods-PMPlaceholderTextView-PMUtils */;
-			targetProxy = 34592F4621F26E376B1CA583 /* PBXContainerItemProxy */;
+			target = 23E3B6591B552405EEC2F80E /* Pods-PMPlaceholderTextView-PMUtils */;
+			targetProxy = 00A8676F610214FCD17EFAB7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		C6DE9F2DDF76C9E73BAAAEB3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89542DF56D8A5B1702097BDB /* Pods-PMPlaceholderTextView-PMUtils-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-PMPlaceholderTextView-PMUtils/Pods-PMPlaceholderTextView-PMUtils-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		C733EA2F43A0F61C2D22DD71 /* Release */ = {
+		1149593AD2331FAA0183E591 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -341,9 +314,64 @@
 			};
 			name = Release;
 		};
-		DB8BA314B8F3884E0B02E944 /* Release */ = {
+		2E091E1F7EA845BC28AD6E36 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C48612DD774BB0D06CBCA38 /* Pods-PMPlaceholderTextView.release.xcconfig */;
+			baseConfigurationReference = C4CE6940C9E401221EC47822 /* Pods-PMPlaceholderTextView-PMUtils-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PMPlaceholderTextView-PMUtils/Pods-PMPlaceholderTextView-PMUtils-prefix.pch";
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		450E207288C1273B5CAE96EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 970AD8D46A7C814DC9681748 /* Pods-PMPlaceholderTextView.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		58EAE1757ED6E1B1959161EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96A0CF0F24CA1D36C084E292 /* Pods-PMPlaceholderTextView.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
@@ -369,7 +397,34 @@
 			};
 			name = Release;
 		};
-		F8B766121A2C39678303AE20 /* Debug */ = {
+		B4E86DCC693963FD2EC96AB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4CE6940C9E401221EC47822 /* Pods-PMPlaceholderTextView-PMUtils-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PMPlaceholderTextView-PMUtils/Pods-PMPlaceholderTextView-PMUtils-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E2F1017AC85476CBB312B9D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -405,92 +460,37 @@
 			};
 			name = Debug;
 		};
-		FA5BA24964E9A5F09B6AA7D4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50942BABFD2C10F3BF564F08 /* Pods-PMPlaceholderTextView.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		FAD4B1E17DE1062119715EA9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89542DF56D8A5B1702097BDB /* Pods-PMPlaceholderTextView-PMUtils-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-PMPlaceholderTextView-PMUtils/Pods-PMPlaceholderTextView-PMUtils-prefix.pch";
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		54B0BB94FE07BA13281844B5 /* Build configuration list for PBXProject "Pods" */ = {
+		53AAC39344C9A6A3119580C0 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F8B766121A2C39678303AE20 /* Debug */,
-				C733EA2F43A0F61C2D22DD71 /* Release */,
+				E2F1017AC85476CBB312B9D7 /* Debug */,
+				1149593AD2331FAA0183E591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA453B13314E2B89D4461393 /* Build configuration list for PBXNativeTarget "Pods-PMPlaceholderTextView" */ = {
+		63D27C206EF60519C8D2CA7B /* Build configuration list for PBXNativeTarget "Pods-PMPlaceholderTextView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA5BA24964E9A5F09B6AA7D4 /* Debug */,
-				DB8BA314B8F3884E0B02E944 /* Release */,
+				450E207288C1273B5CAE96EB /* Debug */,
+				58EAE1757ED6E1B1959161EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E2A26B38FC7BA12D177044F6 /* Build configuration list for PBXNativeTarget "Pods-PMPlaceholderTextView-PMUtils" */ = {
+		6EC2D65E4DFFAA95AE1EEAC3 /* Build configuration list for PBXNativeTarget "Pods-PMPlaceholderTextView-PMUtils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C6DE9F2DDF76C9E73BAAAEB3 /* Debug */,
-				FAD4B1E17DE1062119715EA9 /* Release */,
+				B4E86DCC693963FD2EC96AB4 /* Debug */,
+				2E091E1F7EA845BC28AD6E36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6B6E7DE43CC71F72F9119838 /* Project object */;
+	rootObject = 1D2314FDEC210AF7ADFEF7BC /* Project object */;
 }
