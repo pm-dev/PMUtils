@@ -5,10 +5,6 @@
 ## Requirements & Notes
 
 - PMFloatLabel was built for iOS and requires a minimum iOS target of iOS 7.
-- Thorough commenting of header files is currently in progress. (3/8/15).
-
-## How To Get Started
-
 
 ### Installation with CocoaPods
 
@@ -23,9 +19,28 @@ pod "PMUtils/PMFloatLabel"
 ## Usage
 
 
+``` objective-c
 
-#### Discussion
+#pragma mark - PMFloatTextFieldDelegate
 
+
+- (BOOL) floatTextField:(PMFloatTextField *)floatTextField shouldShowFloatLabelWithText:(BOOL)isText editing:(BOOL)isEditing
+{
+    return isText;
+}
+
+- (CGFloat) floatTextField:(PMFloatTextField *)floatTextField floatLabelVerticalSpacing:(BOOL)isEditing
+{
+    return 6.0f;
+}
+
+- (NSAttributedString *) floatTextField:(PMFloatTextField *)floatTextField floatLabelAttributedString:(BOOL)isEditing
+{
+    UIColor *color = isEditing? [UIColor colorWithRed:0.5f green:0.5f blue:0.9f alpha:1.0f] : [UIColor colorWithWhite:0.0f alpha:1.0f];
+    return [[NSAttributedString alloc] initWithString:@"Name" attributes:@{NSForegroundColorAttributeName: color, NSFontAttributeName: [UIFont systemFontOfSize:13.0f]}];
+}
+
+```
 
 ## Communication
 

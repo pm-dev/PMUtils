@@ -5,14 +5,6 @@
 ## Requirements & Notes
 
 - PMAnimationOperation was built for iOS and requires a minimum iOS target of iOS 7.
-- Thorough commenting of header files is currently in progress. (3/8/15).
-
-## How To Get Started
-
-
-### Installation with CocoaPods
-
-[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries in your projects. See the ["Getting Started" guide for more information](http://guides.cocoapods.org/using/getting-started.html).
 
 #### Podfile
 
@@ -22,9 +14,18 @@ pod "PMUtils/PMAnimationOperation"
 
 ## Usage
 
-
-
-#### Discussion
+```objective-c
+        [[PMAnimationOperation animationWithDelay:0.0
+                                         duration:i
+                                          options:UIViewAnimationOptionCurveLinear
+                                     preAnimation:^(PMAnimationOperation *operation) {
+                                         // Do something immediately before the animation
+                                     } animation:^{
+                                         // Animate something
+                                     } postAnimation:^(BOOL finished) {
+                                         // Do something immediately after the animation
+                                     }] enqueue];
+```
 
 
 ## Communication

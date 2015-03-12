@@ -39,6 +39,7 @@
 
 - (void) imageFilmstrip:(PMImageFilmstrip *)imageFilmstrip configureFilmstripImageView:(UIImageView *)imageView atIndex:(NSUInteger)index
 {
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
     switch (index) {
         case 0:
             imageView.image = [UIImage imageNamed:@"one.jpg"];
@@ -52,7 +53,6 @@
         default:
             break;
     }
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 @end

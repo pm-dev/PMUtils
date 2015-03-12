@@ -8,12 +8,7 @@ PMCircularCollectionView is a subclass of UICollectionView that scrolls infinite
 ## Requirements & Notes
 
 - PMCircularCollectionView was built for iOS and requires a minimum iOS target of iOS 7.
-- Thorough commenting of header files is currently in progress. (6/11/14).
-- PMCircularCollectionView is currently lacking unit tests.
 
-## How To Get Started
-
-- Check out the documentation (coming soon).
 
 ### Installation with CocoaPods
 
@@ -22,8 +17,7 @@ PMCircularCollectionView is a subclass of UICollectionView that scrolls infinite
 #### Podfile
 
 ```ruby
-platform :ios, '7.0'
-pod "PMCircularCollectionView"
+pod "PMUtils/PMCircularCollectionView"
 ```
 
 ## Usage

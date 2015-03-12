@@ -1,26 +1,41 @@
 # PMUtils
 
-[![CI Status](http://img.shields.io/travis/Peter Meyers/PMUtils.svg?style=flat)](https://travis-ci.org/Peter Meyers/PMUtils)
-[![Version](https://img.shields.io/cocoapods/v/PMUtils.svg?style=flat)](http://cocoadocs.org/docsets/PMUtils)
-[![License](https://img.shields.io/cocoapods/l/PMUtils.svg?style=flat)](http://cocoadocs.org/docsets/PMUtils)
-[![Platform](https://img.shields.io/cocoapods/p/PMUtils.svg?style=flat)](http://cocoadocs.org/docsets/PMUtils)
+PMUtils is a collection of useful generic classes and categories on Foundation and UIKit classes. This repo is broken down into the following subspecs:
 
-## Usage
+- [Foundation+PMUtils](https://github.com/pm-dev/PMUtils/tree/master/Examples/Foundation%2BPMUtils)
+- [PMAnimationOperation](https://github.com/pm-dev/PMUtils/tree/master/Examples/PMAnimationOperation)
+- [PMCircularCollectionView](https://github.com/pm-dev/PMUtils/tree/master/Examples/PMCircularCollectionView)
+- [PMCollectionViewSwipeCell](https://github.com/pm-dev/PMUtils/tree/master/Examples/PMCollectionViewSwipeCell)
+- [PMFloatLabel](https://github.com/pm-dev/PMUtils/tree/master/Examples/PMFloatLabel)
+- [PMGradientView](https://github.com/pm-dev/PMUtils/tree/master/Examples/PMGradientVIew)
+- [PMImageFilmstrip](https://github.com/pm-dev/PMUtils/tree/master/Examples/PMImageFilmstrip)
+- [PMInfiniteScrollView](https://github.com/pm-dev/PMUtils/tree/master/Examples/PMInfiniteScrollView)
+- [PMInnerShadowView](https://github.com/pm-dev/PMUtils/tree/master/Examples/PMInnerShadowView)
+- [PMKeyboardListener](https://github.com/pm-dev/PMUtils/tree/master/Examples/PMKeyboardListener)
+- [PMPlaceholderTextView](https://github.com/pm-dev/PMUtils/tree/master/Examples/PMPlaceholderTextView)
+- [PMProgressHUD](https://github.com/pm-dev/PMUtils/tree/master/Examples/PMProgressHUD)
+- [PMRoundedBorderView](https://github.com/pm-dev/PMUtils/tree/master/Examples/PMRoundedBorderView)
+- [PMStickyHeaderFlowLayout](https://github.com/pm-dev/PMUtils/tree/master/Examples/PMStickyHeaderFlowLayout)
+- [UIKit+PMUtils](https://github.com/pm-dev/PMUtils/tree/master/Examples/UIKit%2BPMUtils)
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+### Documentation
 
-## Installation
+- [Cocoadocs](http://cocoadocs.org/docsets/PMUtils).
 
-PMUtils is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+### Installation with CocoaPods
 
-    pod "PMUtils"
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like PMCircularCollectionView in your projects. See the ["Getting Started" guide for more information](http://guides.cocoapods.org/using/getting-started.html).
+
+#### Podfile
+
+```ruby
+pod "PMUtils"
+```
 
 ## Author
 
-Peter Meyers, meyers@operator.com
+- [Peter Meyers](mailto:petermeyers1@gmail.com)
 
 ## License
 

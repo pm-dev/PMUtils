@@ -5,14 +5,6 @@
 ## Requirements & Notes
 
 - PMProgressHUD was built for iOS and requires a minimum iOS target of iOS 7.
-- Thorough commenting of header files is currently in progress. (3/8/15).
-
-## How To Get Started
-
-
-### Installation with CocoaPods
-
-[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries in your projects. See the ["Getting Started" guide for more information](http://guides.cocoapods.org/using/getting-started.html).
 
 #### Podfile
 
@@ -22,10 +14,38 @@ pod "PMUtils/PMProgressHUD"
 
 ## Usage
 
+```objective-c
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self connect];
+}
 
+- (void) connect {
+    _HUD.message = @"Connecting...";
+    _HUD.progressHUDState = PMProgressHUDStatePending;
+    [_HUD presentAfterDelay:0.0 completion:nil];
+    [self performSelector:@selector(failed) withObject:nil afterDelay:3.0];
+}
 
-#### Discussion
+- (void) failed {
+    _HUD.message = @"Failed.";
+    _HUD.progressHUDState = PMProgressHUDStateFailed;
+    [self performSelector:@selector(tryAgain) withObject:nil afterDelay:3.0];
+}
 
+- (void) tryAgain {
+    _HUD.message = @"Trying Again...";
+    _HUD.progressHUDState = PMProgressHUDStatePending;
+    [self performSelector:@selector(complete) withObject:nil afterDelay:3.0];
+}
+
+- (void) complete {
+    _HUD.message = @"Complete!";
+    _HUD.progressHUDState = PMProgressHUDStateComplete;
+    [_HUD dismissAfterDelay:2.0 completion:nil];
+}
+```
 
 ## Communication
 

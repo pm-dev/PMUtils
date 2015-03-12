@@ -5,14 +5,6 @@
 ## Requirements & Notes
 
 - PMRoundedBorderView was built for iOS and requires a minimum iOS target of iOS 7.
-- Thorough commenting of header files is currently in progress. (3/8/15).
-
-## How To Get Started
-
-
-### Installation with CocoaPods
-
-[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries in your projects. See the ["Getting Started" guide for more information](http://guides.cocoapods.org/using/getting-started.html).
 
 #### Podfile
 
@@ -22,10 +14,27 @@ pod "PMUtils/PMRoundedBorderView"
 
 ## Usage
 
+```objective-c
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
 
-#### Discussion
-
+    self.topView = [[PMRoundedBorderView alloc] init];
+    self.bottomView =[[PMRoundedBorderView alloc] init];
+    
+    self.topView.cornerRadii = CGSizeMake(10.0f, 10.0f);
+    self.bottomView.cornerRadii = CGSizeMake(10.0f, 10.0f);
+    
+    self.topView.corners = UIRectCornerTopLeft | UIRectCornerTopRight;
+    self.bottomView.corners = UIRectCornerBottomLeft | UIRectCornerBottomRight;
+    
+    self.topView.borderWidth = 2.0f;
+    self.bottomView.borderWidth = 2.0f;
+    
+    self.topView.borderColor = [UIColor blackColor];
+    self.bottomView.borderColor = [UIColor blackColor];
+}
+```
 
 ## Communication
 
