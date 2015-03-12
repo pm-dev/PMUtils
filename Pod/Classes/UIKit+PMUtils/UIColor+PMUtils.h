@@ -34,10 +34,9 @@ extern inline UIColor * PMColorWithGreyscaleRGBA(uint8_t greyscale, CGFloat alph
 
 
 /**
- *  Returns the alpha component that makes up the color in the RGB color space, if the color is in a compatible color space.
- *
- *  @return The opacity component of the receiver, specified as a value between 0.0 and 1.0.
+ *  The alpha component that makes up the color in the RGB color space, if the color is in a compatible 
+ *  color space. Specified as a value between 0.0 and 1.0.
  */
-- (CGFloat) alpha;
+@property (nonatomic, readonly) CGFloat alpha;
 
 @end

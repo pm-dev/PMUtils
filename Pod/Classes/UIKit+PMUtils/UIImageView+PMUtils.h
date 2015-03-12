@@ -50,7 +50,11 @@
 
 @interface UIImageView (PMUtils)
 
-- (CGRect)imageFrame;
+/**
+ *  Using the content mode of the reciever, this property computes the frame of the reciever's rendered 
+ *  image within its bounds.
+ */
+@property (nonatomic, readonly) CGRect imageFrame;
 
 /**
  *  @param delegate The object that acts as the delegate of the UIImageView class.

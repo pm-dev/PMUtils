@@ -68,19 +68,35 @@ extern CGRect PMRectOfContentInBounds(CGRect bounds, UIViewContentMode mode, CGS
  */
 + (instancetype) viewFromDefaultNibWithOwner:(id)ownerOrNil;
 
-
-- (BOOL) isVisible;
+/**
+ *  YES if the reciever is not hidden and has an alpha of greater than 0.0
+ */
+@property (nonatomic, readonly) BOOL isVisible;
 
 /**
  *  Iterates through each subview and unlinks the view from its superview and its window, and removes it from the responder chain. If the view’s superview is not nil, the superview releases the view. Calling this method removes any constraints that refer to the view you are removing, or that refer to any view in the subtree of the view you are removing. Important: Never call this method from inside your view’s drawRect: method.
  */
 - (void) removeSubviews;
 
+/**
+ *  This method recursively looks through its subviews and cancels any gesture recognizers currently
+ *  enabled on those subviews.
+ */
 - (void) cancelInteraction;
 
+/**
+ *  Returns an the closest ancestor superview of a given class type.
+ *
+ *  @param ancestorClass The class type of the ancestor to search for. Must be a UIView or UIView subclass.
+ *
+ *  @return An instance of the closest ancestor of a given class type. If the reciever has no ancestor of the given class type, returns nil.
+ */
 - (UIView *) ancestorOfClass:(Class)ancestorClass;
 
-- (UIImage *) snapshot;
+/**
+ *  Creates a snapshot of the complete view hierarchy as visible onscreen into a new UIImage. Renders a snapshot in the view hierarchy’s current state, which might not include recent changes.
+ */
+@property (nonatomic, copy, readonly) UIImage *snapshot;
 
 /**
  *  Apply scale, blur, tint and/or saturation to a snapshot of the UIView or a cropped portion of the UIView.
@@ -104,8 +120,25 @@ extern CGRect PMRectOfContentInBounds(CGRect bounds, UIViewContentMode mode, CGS
 
 #pragma mark - Layout
 
+/**
+ *  Returns the edge insets created by finding the difference between each edge of the reciever and
+ *  the corresponding edges of a passed in rect.
+ *
+ *  @param rect The rect used to inset the reciever's edges.
+ *
+ *  @return Edge insets representing the difference between each edge of the reciever and
+ *  the corresponding edges a given rect.
+ */
 - (UIEdgeInsets) edgeInsetsWithRect:(CGRect)rect;
 
+/**
+ *  Returns the rect that, if applied as the frame of the reciever, would center the reciever about a given size in the supplied direction(s)
+ *
+ *  @param size      The size to center the reciever's dimensions around.
+ *  @param direction The direction(s) about which the resulting rect is centered.
+ *
+ *  @return A rect centered around around a given size.
+ */
 - (CGRect) centeredRectWithSize:(CGSize)size forDirection:(PMDirection)direction;
 
 /**
@@ -149,77 +182,80 @@ extern CGRect PMRectOfContentInBounds(CGRect bounds, UIViewContentMode mode, CGS
  */
 - (void) centerInRect:(CGRect)rect forDirection:(PMDirection)direction;
 
-- (BOOL) isSquare;
+/**
+ *  YES if the reciever's width is equal to its height. Otherwise NO.
+ */
+@property (nonatomic, readonly) BOOL isSquare;
 
 /**
  *  Returns the x-coordinate of the view's frame's origin.
  *
  *  @return The x-coordinate of the view's frame's origin.
  */
-- (CGFloat) x;
+@property (nonatomic, readonly) CGFloat x;
 
 /**
  *  Returns the y-coordinate of the view's frame's origin.
  *
  *  @return The y-coordinate of the view's frame's origin.
  */
-- (CGFloat) y;
+@property (nonatomic, readonly) CGFloat y;
 
 /**
  *  Returns the view's frame's origin.
  *
  *  @return The the view's frame's origin.
  */
-- (CGPoint) origin;
+@property (nonatomic, readonly) CGFloat origin;
 
 /**
  *  Returns the width of the view's frame.
  *
  *  @return The width of the view's frame.
  */
-- (CGFloat) width;
+@property (nonatomic, readonly) CGFloat width;
 
 /**
  *  Returns the height of the view's frame.
  *
  *  @return The height of the view's frame.
  */
-- (CGFloat) height;
+@property (nonatomic, readonly) CGFloat height;
 
 /**
  *  Returns the size of the view's frame.
  *
  *  @return The size of the view's frame.
  */
-- (CGSize) size;
+@property (nonatomic, readonly) CGSize size;
 
 /**
  *  Returns the x-coordinate of the view's right edge in its superview's coordinate system.
  *
  *  @return The x-coordinate of the view's right edge in its superview's coordinate system.
  */
-- (CGFloat) maxX;
+@property (nonatomic, readonly) CGFloat maxX;
 
 /**
  *  Returns the y-coordinate of the view's bottom edge in its superview's coordinate system.
  *
  *  @return The y-coordinate of the view's bottom edge in its superview's coordinate system.
  */
-- (CGFloat) maxY;
+@property (nonatomic, readonly) CGFloat maxY;
 
 /**
  *  Returns the x-coordinate of the view's center in its superview's coordinate system.
  *
  *  @return The x-coordinate of the view's center in its superview's coordinate system.
  */
-- (CGFloat) midX;
+@property (nonatomic, readonly) CGFloat midX;
 
 /**
  *  Returns the y-coordinate of the view's center in its superview's coordinate system.
  *
  *  @return The y-coordinate of the view's center in its superview's coordinate system.
  */
-- (CGFloat) midY;
+@property (nonatomic, readonly) CGFloat midY;
 
 
 @end

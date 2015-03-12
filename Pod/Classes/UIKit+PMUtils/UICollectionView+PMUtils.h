@@ -38,21 +38,31 @@
 - (NSIndexPath *) indexPathNearestToPoint:(CGPoint)point;
 
 /**
- *  This method finds the index path of the item whose frame is closest to the center of the rect returned by -[self visibleRect].
+ *  This property returns the index path of the item whose frame is closest to the center of the rect returned by -[self visibleRect].
  *
  *	@see -[self visibleRect]
  *  @return The index path of the item closest to the center of the currently visible content. 
  *	If there are no items or the content size is CGSizeZero, nil is returned.
  */
-- (NSIndexPath *) indexPathNearestToBoundsCenter;
+@property (nonatomic, copy, readonly) NSIndexPath *indexPathNearestToBoundsCenter;
 
 /**
  *  Reloads just the items at visible index paths. Call this method to selectively reload only items at currently visable index paths.
  */
 - (void) reloadVisibleItems;
 
+/**
+ *  Scrolls the content offset of the reciever so that the top left corner of the content is visible.
+ *
+ *  @param animated YES if the scrolling should be animated, NO if it should be immediate.
+ */
 - (void) scrollToTopAnimated:(BOOL)animated;
 
+/**
+ *  Scrolls the content offset of the reciever so that the bottom right corner of the content is visible.
+ *
+ *  @param animated YES if the scrolling should be animated, NO if it should be immediate.
+ */
 - (void) scrollToBottomAnimated:(BOOL)animated;
 
 @end

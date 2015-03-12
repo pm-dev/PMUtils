@@ -28,18 +28,17 @@
 @interface UIDevice (PMUtils)
 
 /**
- *  Checks if the style of interface to use on the current device is equal to UIUserInterfaceIdiomPad.
- *
- *  @return Yes if the style of interface to use on the current device is equal to UIUserInterfaceIdiomPad.
+ *  Checks if the style of interface to use on the current device is equal to UIUserInterfaceIdiomPad. 
+ *  Yes if the style of interface to use on the current device is equal to UIUserInterfaceIdiomPad.
  */
-- (BOOL) isPad;
+@property (nonatomic, readonly) BOOL isPad;
 
 /**
  *  Checks if the style of interface to use on the current device is equal to UIUserInterfaceIdiomPhone.
- *
- *  @return Yes if the style of interface to use on the current device is equal to UIUserInterfaceIdiomPhone.
+ *  Yes if the style of interface to use on the current device is equal to UIUserInterfaceIdiomPhone.
  */
-- (BOOL) isPhone;
+@property (nonatomic, readonly) BOOL isPhone;
+
 
 /**
  *  @return The number of independent cpu's running on the current device.

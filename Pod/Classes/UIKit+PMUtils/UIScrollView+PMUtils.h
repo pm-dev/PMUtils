@@ -38,7 +38,10 @@ typedef NS_ENUM(NSUInteger, PMScrollDirection) {
  */
 - (void) killScroll;
 
-- (CGPoint) contentCenter;
+/**
+ *  The center point of the recievers content.
+ */
+@property (nonatomic, readonly) CGPoint contentCenter;
 
 /**
  *  Calculates the content offset if the supplied rect was centered within the currently visible rect.
@@ -51,17 +54,13 @@ typedef NS_ENUM(NSUInteger, PMScrollDirection) {
 - (CGPoint) contentOffsetForCenteredRect:(CGRect)rect;
 
 /**
- *  Calculates the content offset at the center of the the bounds
- *
- *  @return The point at which the origin of the content view is offset from the center of the scroll view.
+ *  The point at which the origin of the content view is offset from the center of the scroll view's bounds.
  */
-- (CGPoint) contentOffsetInBoundsCenter;
+@property (nonatomic, readonly) CGPoint contentOffsetInBoundsCenter;
 
 /**
- *  Calculates the rect of the content view currently visible within the bounds of the scroll view.
- *
- *  @return The rect of the content view currently visible within the bounds of the scroll view.
+ *  The rect of the content view currently visible within the bounds of the scroll view..
  */
-- (CGRect) visibleRect;
+@property (nonatomic, readonly) CGRect visibleRect;
 
 @end

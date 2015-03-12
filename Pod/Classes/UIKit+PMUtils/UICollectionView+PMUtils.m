@@ -112,7 +112,7 @@ static inline CGFloat PMSquaredDistanceFromRectToPoint(CGRect rect, CGPoint poin
 
 - (void) scrollToTopAnimated:(BOOL)animated
 {
-    if (self.contentSize.height && self.contentSize.width) {
+    if (self.contentSize.height >= 1.0f && self.contentSize.width >= 1.0f) {
         CGRect top = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
         [self scrollRectToVisible:top animated:animated];
     }
@@ -120,7 +120,7 @@ static inline CGFloat PMSquaredDistanceFromRectToPoint(CGRect rect, CGPoint poin
 
 - (void) scrollToBottomAnimated:(BOOL)animated
 {
-    if (self.contentSize.height && self.contentSize.width) {
+    if (self.contentSize.height >= 1.0f && self.contentSize.width >= 1.0f) {
         CGRect bottom = CGRectMake(self.contentSize.width - 1.0f, self.contentSize.height - 1.0f, 1.0f, 1.0f);
         [self scrollRectToVisible:bottom animated:animated];
     }

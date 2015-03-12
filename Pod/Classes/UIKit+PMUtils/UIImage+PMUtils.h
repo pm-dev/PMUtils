@@ -132,6 +132,13 @@
  */
 - (UIImage *) resizeWithPoints:(CGSize)sizeInPoints;
 
+/**
+ *  Scales the receiver to a new size.
+ *
+ *  @param sizeInPixels Size to scale the image to. The dimensions are in pixels (not points) on the main screen.
+ *
+ *  @return A scaled copy of the recieving image.
+ */
 - (UIImage *) resizeWithPixels:(CGSize)sizeInPixels;
 
 /**
@@ -144,11 +151,9 @@
 - (UIImage *) crop:(CGRect)rect;
 
 /**
- *  Draws the entire image in a graphics context, respecting the image's orientation setting, and returns the result. This method can be called from any thread. In the default coordinate system, images are situated down and to the right of the specified point. This method draws the image at full opacity using the kCGBlendModeNormal blend mode.
- *
- *  @return An image object rendered into an offscreen graphics context.
+ *  An image object rendered into an offscreen graphics context. Draws the entire image in a graphics context, respecting the image's orientation setting, and returns the result. This method can be called from any thread. In the default coordinate system, images are situated down and to the right of the specified point. This method draws the image at full opacity using the kCGBlendModeNormal blend mode.
  */
-- (UIImage *) drawnImage;
+@property (nonatomic, copy, readonly) UIImage *drawnImage;
 
 /**
  *  Creates and returns an image object by loading the image data from the file at the specified path. This differs from +imageWithContentsOfFile: in that the underlying CGImage is cached in decoded form.
@@ -168,7 +173,13 @@
  */
 + (UIImage *) cachedImageWithData:(NSData *)data;
 
-
+/**
+ *  Returns an image based on a UIColor.
+ *
+ *  @param color The color to create a UIImage from
+ *
+ *  @return An image based on the given UIColor.
+ */
 + (UIImage *) imageWithColor:(UIColor *)color;
 
 /**

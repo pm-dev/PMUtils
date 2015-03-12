@@ -35,12 +35,37 @@
  */
 - (void) reloadVisibleRowsWithRowAnimation:(UITableViewRowAnimation)animation;
 
+/**
+ *  Scrolls the content offset of the reciever so that the top left corner of the content is visible.
+ *
+ *  @param animated YES if the scrolling should be animated, NO if it should be immediate.
+ */
 - (void) scrollToTopAnimated:(BOOL)animated;
 
+/**
+ *  Scrolls the content offset of the reciever so that the bottom right corner of the content is visible.
+ *
+ *  @param animated YES if the scrolling should be animated, NO if it should be immediate.
+ */
 - (void) scrollToBottomAnimated:(BOOL)animated;
 
+/**
+ *  Returns a boolean indicating if a given index path's row is the last row in its section.
+ *
+ *  @param indexPath The index path to check.
+ *
+ *  @return YES if the index path's row index is equal to the number of rows in the
+ *  index path's section minus one. Otherwise, NO.
+ */
 - (BOOL) isLastRowInSection:(NSIndexPath *)indexPath;
 
+/**
+ *  Returns a boolean indicating if a given index represents the last section in the reciever.
+ *
+ *  @param index The section index the check.
+ *
+ *  @return YES if the index is equal to the number of sections in the receiver minus one. Otherwise, NO.
+ */
 - (BOOL) isLastSection:(NSInteger)index;
 
 @end

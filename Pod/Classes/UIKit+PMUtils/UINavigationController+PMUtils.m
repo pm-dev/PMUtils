@@ -1,3 +1,22 @@
+// Copyright (c) 2013-2014 Peter Meyers
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 //
 //  UINavigationController+PMUtils.m
 //  Pods
@@ -12,12 +31,16 @@
 
 
 @interface PMNavigationControllerCompletionDelegate : NSObject <UINavigationControllerDelegate>
-@property (nonatomic, copy) dispatch_block_t completion;
+@property (nonatomic, strong, readonly) NSMutableArray *completionQueue;
 @property (nonatomic, strong, readonly) PMProtocolInterceptor *interceptor;
 @end
 
 @implementation UINavigationController (PMUtils)
 
+- (UIViewController *) rootViewController
+{
+    return self.viewControllers.firstObject;
+}
 
 - (void) setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated completion:(void (^)(void))completion
 {
@@ -84,25 +107,21 @@
     return nil;
 }
 
-- (UIViewController *) rootViewController
-{
-    return self.viewControllers.firstObject;
-}
-
 
 #pragma mark - Private
 
 - (void) PM_addNavigationControllerDelegate:(void (^)(void))completion
 {
-    PMNavigationControllerCompletionDelegate *existingDelegate = [self PM_navigationControllerCompletionDelegate];
-    if (existingDelegate.completion) {
-        existingDelegate.completion();
+    PMNavigationControllerCompletionDelegate *delegate = [self PM_navigationControllerCompletionDelegate];
+    if (!delegate) {
+        delegate = [[PMNavigationControllerCompletionDelegate alloc] init];
+        [self PM_setNavigationControllerCompletionDelegate:delegate];
     }
-    PMNavigationControllerCompletionDelegate *delegate = [[PMNavigationControllerCompletionDelegate alloc] init];
-    delegate.interceptor.receiver = existingDelegate.interceptor.receiver?: self.delegate;
-    self.delegate = (id)delegate.interceptor;
-    delegate.completion = completion;
-    [self PM_setNavigationControllerCompletionDelegate:delegate];
+    if (self.delegate != delegate.interceptor) {
+        delegate.interceptor.receiver = self.delegate;
+        self.delegate = (id)delegate.interceptor;
+    }
+    [delegate.completionQueue addObject:[completion copy]];
 }
 
 - (PMNavigationControllerCompletionDelegate *)PM_navigationControllerCompletionDelegate {
@@ -123,6 +142,7 @@
     self = [super init];
     if (self) {
         _interceptor = [PMProtocolInterceptor interceptorWithMiddleMan:self forProtocol:@protocol(UINavigationControllerDelegate)];
+        _completionQueue = [@[] mutableCopy];
     }
     return self;
 }
@@ -131,15 +151,22 @@
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    if (self.completion) {
-        self.completion();
-    }
     navigationController.delegate = self.interceptor.receiver;
     if ([navigationController.delegate respondsToSelector:@selector(navigationController:didShowViewController:animated:)]) {
         [navigationController.delegate navigationController:navigationController didShowViewController:viewController animated:animated];
     }
     
-    [navigationController PM_setNavigationControllerCompletionDelegate:nil];
+    if (_completionQueue.count) {
+        dispatch_block_t completion = _completionQueue.firstObject;
+        [_completionQueue removeObjectAtIndex:0];
+        completion();
+    }
+    if (_completionQueue.count) {
+        navigationController.delegate = (id)self.interceptor;
+    }
+    else {
+        [navigationController PM_setNavigationControllerCompletionDelegate:nil];
+    }
 }
 
 @end
