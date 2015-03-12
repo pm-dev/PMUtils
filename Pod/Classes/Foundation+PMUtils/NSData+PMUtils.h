@@ -27,24 +27,18 @@
 @interface NSData (PMUtils)
 
 /**
- *  Returns an NSString object that contains a hexadecimal representation of the receiver’s contents.
- *
- *  @return An NSString object that contains a hexadecimal representation of the receiver’s contents.
+ *  An NSString object that contains a hexadecimal representation of the receiver’s contents.
  */
-- (NSString *) hexString;
+@property (nonatomic, copy, readonly) NSString *hexString;
 
 /**
- *  Returns a SHA1 hash of the receiver, expressed as a 160 bit hex number.
- *
- *  @return A NSData object containing the SHA1 hash of the receiver.
+ *  A SHA1 hash of the receiver, expressed as a 160 bit hex number.
  */
-- (NSData *)sha1Hash;
+@property (nonatomic, copy, readonly) NSData *sha1Hash;
 
 /**
- *  Returns a MD5 hash of the receiver, expressed as a 128 bit hex number.
- *
- *  @return A NSData object containing the MD5 hash of the receiver.
+ *  A MD5 hash of the receiver, expressed as a 128 bit hex number.
  */
-- (NSData *)md5Hash;
+@property (nonatomic, copy, readonly) NSData *md5Hash;
 
 @end

@@ -33,17 +33,13 @@
 - (BOOL) compareToArray:(NSArray *)otherArray withKey:(NSString *)key;
 
 /**
- *  Returns a copy of the receiver, but with duplicate values removed.
- *
- *  @return An array containing unqiue values contained in the original array.
+ *  A copy of the receiver, but with duplicate values removed.
  */
-- (NSArray *) distinctArray;
+@property (nonatomic, copy, readonly) NSArray *distinctArray;
 
 /**
- *  Returns a JSON formatted string from the receiver.
- *
- *  @return JSON string form of the reciever, or nil if an internal error occurs.
+ *  A JSON formatted string from the receiver.
  */
-- (NSString *) JSONString;
+@property (nonatomic, copy, readonly) NSString *JSONString;
 
 @end

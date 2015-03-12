@@ -51,10 +51,26 @@
  */
 + (instancetype) verifyMemberOfClass:(id)object;
 
+/**
+ *  Returns an NSSet of NSString objects describing the properties declared by the class. Any properties declared by superclasses are not included.
+ *
+ *  @return An NSSet of NSStrings naming the properties declared by the class.
+ */
 + (NSSet *) propertyNames;
 
-- (NSDictionary *) propertiesByName;
+/**
+ *  A dictionary with the instance's property names as its keys and their values and the dictionary values.
+ *  This method calls -valueForKey: on itself for each property declared by the class, but not any superclasses. If -valueForKey: returns nil, [NSNull null] is added to the dictionary for that key.
+ */
+@property (nonatomic, readonly) NSDictionary *propertiesByName;
 
+/**
+ *  Given a property name from +propertyNames return the class type attribute;
+ *
+ *  @param propertyName The name of the declared property.
+ *
+ *  @return The class declared by the property.
+ */
 + (Class) classOfProperty:(NSString *)propertyName;
 
 @end

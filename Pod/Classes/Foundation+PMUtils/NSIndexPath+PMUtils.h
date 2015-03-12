@@ -32,11 +32,9 @@ extern NSInteger PMForwardCircularDistance(NSInteger fromIndex, NSInteger toInde
 @interface NSIndexPath (PMUtils)
 
 /**
- *  Creates a copy of the receiver with the index at position 0 ommitted.
- *
- *  @return An index path equal to the reciever minus the index at position 0.
+ *  A copy of the receiver with the index at position 0 ommitted.
  */
-- (NSIndexPath *) indexPathByRemovingFirstIndex;
+@property (nonatomic, copy, readonly) NSIndexPath *indexPathByRemovingFirstIndex;
 
 /**
  *  Creates a copy of the receiver and inserts an index at position 0. The current indexes' positions are incremented by 1.

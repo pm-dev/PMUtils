@@ -12,7 +12,7 @@
 
 - (BOOL)isNonZero
 {
-    return ![[NSNull null] isEqual:self] && ![self isEqualToNumber:@0];
+    return ![self isEqual:@0];
 }
 
 @end

@@ -28,36 +28,41 @@
 @interface NSString (PMUtils)
 
 
-- (BOOL) isNonEmpty;
+/**
+ *  YES if the reciever is a string and has a length greater than zero.
+ */
+@property (nonatomic, readonly) BOOL isNonEmpty;
 
 
+/**
+ *  Constructs and returns an NSString object that is the result of removing all characters from
+ *  a given NSCharacter set.
+ *
+ *  @param characterSet The character set representing characters to be removed from the receiver.
+ *
+ *  @return A copy of the receiver with the characters in characterSet removed.
+ */
 - (NSString *) stringByRemovingCharactersInSet:(NSCharacterSet *)characterSet;
 
 
 /**
- *  Returns a new string made from the receiver by replacing all characters not in the specified set
+ *  Creates a new string made from the receiver by replacing all characters not in the specified set
  *  with percent encoded characters allowed in a query URL component. UTF-8 encoding is used to determine the correct percent encoded characters.
  *  Entire URL strings cannot be percent-encoded. This method is intended to percent-encode an URL query, NOT the entire URL string.
  *  The query component of a URL is the component immediately following a question mark (?).
  *  For example, in the URL http://www.example.com/index.php?key1=value1#jumpLink, the query component is key1=value1.
- *
- *  @return The encoded string or nil if the transformation is not possible.
  */
-- (NSString *) encodedURLQuery;
+@property (nonatomic, copy, readonly) NSString *encodedURLQuery;
 
 /**
  *  Returns a SHA1 hash of the receiver, expressed as a 160 bit hex number.
- *
- *  @return A new string representing the SHA1 hash of the receiver.
  */
-- (NSString *)sha1Hash;
+@property (nonatomic, copy, readonly) NSString *sha1Hash;
 
 /**
  *  Returns a MD5 hash of the receiver, expressed as a 128 bit hex number.
- *
- *  @return A new string representing the MD5 hash of the receiver.
  */
-- (NSString *)md5Hash;
+@property (nonatomic, copy, readonly) NSString *md5Hash;
 
 /**
  *  Create a Base-64 encoded NSString from the receiver's contents using the given options. By default, no line endings are inserted.
@@ -83,10 +88,8 @@
 
 /**
  *  Compares the receiver to its capitalized string.
- *
- *  @return YES if the reciever is equal to [self capitalizedString], otherwise NO.
  */
-- (BOOL) isCapitalized;
+@property (nonatomic, readonly) BOOL isCapitalized;
 
 /**
  *  Compares the receiver to otherVersion after stripping any trailing periods or zeros. The receiver must be a string of dot, '.',
@@ -116,24 +119,26 @@
 
 /**
  *  Checks for an emoji character in the receiver.
- *
- *  @return YES if the receiver contains an emoji character, otherwise NO.
  */
-- (BOOL) containsEmoji;
+@property (nonatomic, readonly) BOOL containsEmoji;
 
-- (NSString *) stringByCapitalizingFirstLetter;
+/**
+ *  A copy of the receiver with the first character capitalized.
+ */
+@property (nonatomic, copy, readonly) NSString *stringByCapitalizingFirstLetter;
 
-- (NSString *) stringByLowercasingFirstLetter;
+/**
+ *  Returns a copy of the receiver with the first character lowercased.
+ */
+@property (nonatomic, copy, readonly) NSString *stringByLowercasingFirstLetter;
 
 /**
  *  If the receiver contains one or more sequential underscores, the first character following the underscore(s)
  *  is capitalized and the underscores are removed.
  *
  *  For example @"this_is__underscored" becomes @"thisIsUnderscored"
- *
- *  @return A camelCased string.
  */
-- (NSString *) camelCaseFromUnderscores;
+@property (nonatomic, copy, readonly) NSString *camelCaseFromUnderscores;
 
 
 /**
@@ -141,10 +146,8 @@
  *  before the uppercase character and the uppercase character is converted to lowercase.
  *
  *  For example, @"thisIsCamelCase" becomes @"this_is_camel_case"
- *
- *  @return An underscored string.
  */
-- (NSString *) underscoresFromCamelCase;
+@property (nonatomic, copy, readonly) NSString *underscoresFromCamelCase;
 
 
 /**

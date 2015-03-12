@@ -10,6 +10,11 @@
 
 @interface NSNumber (PMUtils)
 
-- (BOOL) isNonZero;
+/**
+ *  Returns NO if the receiver is equal to [NSNumber numberWithInt:0], otherwise YES.
+ *
+ *  @return NO if the receiver is equal to [NSNumber numberWithInt:0], otherwise YES
+ */
+@property (nonatomic, readonly) BOOL isNonZero;
 
 @end
