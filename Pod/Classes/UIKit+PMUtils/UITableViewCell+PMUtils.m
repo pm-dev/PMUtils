@@ -42,8 +42,9 @@ static inline NSMutableDictionary *PMSharedSizingCellsByReuseIdentifier() {
 
 + (instancetype) sizingCellWithReuseIdentifier:(NSString *)reuseIdentifier
 {
+    reuseIdentifier = reuseIdentifier?: [self defaultReuseIdentifier];
     NSMutableDictionary *sharedDictionary = PMSharedSizingCellsByReuseIdentifier();
-    UITableViewCell *cell = reuseIdentifier? sharedDictionary[reuseIdentifier] : nil;
+    UITableViewCell *cell = sharedDictionary[reuseIdentifier];
     if (!cell) {
         cell = [self viewFromDefaultNibWithOwner:nil];
         if (!cell) {
