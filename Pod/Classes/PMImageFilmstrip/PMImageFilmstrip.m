@@ -69,6 +69,7 @@ static CGFloat const PMPageControlHeight = 37.0f;
     if (self) {
         self.imageView = [[UIImageView alloc] initWithFrame:self.contentView.bounds];
         self.imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [self.contentView addSubview:self.imageView];
     }
     return self;
@@ -147,18 +148,26 @@ static CGFloat const PMPageControlHeight = 37.0f;
 
 - (void) setFrame:(CGRect)frame
 {
+    NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
     _collectionViewFlowLayout.itemSize = frame.size;
     [self invalidateIntrinsicContentSize];
     super.frame = frame;
-    [self PM_updateContentOffset];
+    [self reloadImages];
+    [self.collectionView scrollToItemAtIndexPath:indexPath
+                                atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally | UICollectionViewScrollPositionCenteredVertically
+                                        animated:NO];
 }
 
 - (void) setBounds:(CGRect)bounds
 {
+    NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
     _collectionViewFlowLayout.itemSize = bounds.size;
     [self invalidateIntrinsicContentSize];
     super.bounds = bounds;
-    [self PM_updateContentOffset];
+    [self reloadImages];
+    [self.collectionView scrollToItemAtIndexPath:indexPath
+                                atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally | UICollectionViewScrollPositionCenteredVertically
+                                        animated:NO];
 }
 
 - (CGSize)intrinsicContentSize
@@ -351,15 +360,6 @@ static CGFloat const PMPageControlHeight = 37.0f;
     self.singleTap.numberOfTapsRequired = 1;
     [_singleTap addTarget:self action:@selector(didSingleTap:)];
     [self addGestureRecognizer:self.singleTap];
-}
-
-- (void) PM_updateContentOffset
-{
-    NSIndexPath *indexPath = [self.collectionView indexPathNearestToBoundsCenter];
-    if (indexPath) {
-        UICollectionViewLayoutAttributes *attributes = [self.collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath];
-        [self.collectionView setContentOffset:attributes.frame.origin];
-    }
 }
 
 @end
