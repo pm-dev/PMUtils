@@ -191,15 +191,21 @@
 
 - (BOOL)textView:(PMPlaceholderTextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    BOOL change = _delegateRespondsToShouldChangeTextInRange? [_delegateInterceptor.receiver textView:textView shouldChangeTextInRange:range replacementText:text] : YES;
-    if (change && text.length && textView.attributedText.length == 0) {
-        super.attributedText = [[NSAttributedString alloc] initWithString:text attributes:self.textAttributes];
-        if (_delegateRespondsToDidChange) {
-            [_delegateInterceptor.receiver textViewDidChange:textView];
+    static BOOL isSetting = NO;
+    if (!isSetting) {
+        BOOL change = _delegateRespondsToShouldChangeTextInRange? [_delegateInterceptor.receiver textView:textView shouldChangeTextInRange:range replacementText:text] : YES;
+        if (change && text.length && textView.attributedText.length == 0) {
+            isSetting = YES;
+            super.attributedText = [[NSAttributedString alloc] initWithString:text attributes:self.textAttributes];
+            isSetting = NO;
+            if (_delegateRespondsToDidChange) {
+                [_delegateInterceptor.receiver textViewDidChange:textView];
+            }
+            return NO;
         }
-        return NO;
+        return change;
     }
-    return change;
+    return NO;
 }
 
 - (void) textViewDidChange:(PMPlaceholderTextView *)textView
