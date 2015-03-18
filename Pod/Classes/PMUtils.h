@@ -53,6 +53,9 @@
 #define DEF_weak(var, weakName)    __weak __typeof(var) weakName = var;
 #define DEF_strong(var, strongName) __strong __typeof(var) strongName = var;
 
+#define STRINGIFY2(s) #s
+#define STRINGIFY(s) @STRINGIFY2(s)
+
 // Units
 extern NSTimeInterval const PMOneMilisecond;
 extern NSTimeInterval const PMOneSecond;
