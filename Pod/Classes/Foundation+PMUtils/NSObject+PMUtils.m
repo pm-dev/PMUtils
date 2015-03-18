@@ -38,13 +38,13 @@ static inline NSMutableDictionary * PMSharedInstancesByClassName() {
     return _sharedInstancesByClassName;
 }
 
-static inline NSLock *PMSharedInstanceLock() {
-    static NSLock *_sharedInstanceLock = nil;
+static inline NSMutableDictionary * PMLocksByClassName() {
+    static NSMutableDictionary *_sharedInstancesByClassName = nil;
     static dispatch_once_t cacheToken = 0;
     dispatch_once(&cacheToken, ^{
-        _sharedInstanceLock = [[NSLock alloc] init];
+        _sharedInstancesByClassName = [NSMutableDictionary dictionary];
     });
-    return _sharedInstanceLock;
+    return _sharedInstancesByClassName;
 }
 
 
@@ -55,7 +55,12 @@ static inline NSLock *PMSharedInstanceLock() {
 {
     NSMutableDictionary *sharedDictionary = PMSharedInstancesByClassName();
     NSString *className = NSStringFromClass(self);
-    [PMSharedInstanceLock() lock];
+    NSLock *lock = PMLocksByClassName()[className];
+    if (!lock) {
+        lock = [[NSLock alloc] init];
+        PMLocksByClassName()[className] = lock;
+    }
+    [lock lock];
     if (shared) {
         NSAssert([shared isKindOfClass:self], @"Parameter shared - %@ - must be an instance of the receiving class %@", shared, self);
         sharedDictionary[className] = shared;
@@ -63,20 +68,25 @@ static inline NSLock *PMSharedInstanceLock() {
     else {
         [sharedDictionary removeObjectForKey:className];
     }
-    [PMSharedInstanceLock() unlock];
+    [lock unlock];
 }
 
 + (instancetype)shared
 {
     NSMutableDictionary *sharedDictionary = PMSharedInstancesByClassName();
     NSString *className = NSStringFromClass(self);
-    [PMSharedInstanceLock() lock];
+    NSLock *lock = PMLocksByClassName()[className];
+    if (!lock) {
+        lock = [[NSLock alloc] init];
+        PMLocksByClassName()[className] = lock;
+    }
+    [lock lock];
     id shared = sharedDictionary[className];
     if (!shared) {
         shared = [self new];
         sharedDictionary[className] = shared;
     }
-    [PMSharedInstanceLock() unlock];
+    [lock unlock];
     return shared;
 }
 
