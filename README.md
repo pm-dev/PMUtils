@@ -1,5 +1,7 @@
 # PMUtils
 
+### PMUtils is no longer being maintained. Development of PMUtils has moved to a private repo and will be open sourced at a later date.
+
 PMUtils is a collection of useful generic classes and categories on Foundation and UIKit classes. This repo is broken down into the following subspecs:
 
 - [Foundation+PMUtils](https://github.com/pm-dev/PMUtils/tree/master/Examples/Foundation%2BPMUtils)
